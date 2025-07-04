@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="打田裕馬 | AI時代に生き残るエンジニアPMのポートフォリオ。技術×マネジメント×メンタルケアでキャリアを切り拓く。">
+  <title>打田裕馬 | エンジニアPMポートフォリオ</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/2b2e7e2e2e.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <!-- パーティクル背景 -->
+  <canvas id="particles-bg"></canvas>
+
+  <!-- ヘッダー -->
+  <header class="header">
+    <div class="header-inner">
+      <img src="images/profile.png" alt="プロフィール画像" class="profile-img">
+      <div class="header-info">
+        <h1 class="name">打田裕馬 <span class="title">Engineer × PM × メンタルケア</span></h1>
+        <nav class="nav">
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#works">Works</a></li>
+            <li><a href="#career">Career</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- アバウト -->
+  <section id="about" class="section fade-in">
+    <h2>About</h2>
+    <div class="about-content">
+      <div class="about-text">
+        <p class="typing">AI時代でも価値が下がらないエンジニアPM戦略。<br>技術×マネジメント×メンタルケアでキャリアを切り拓く。</p>
+        <ul>
+          <li><strong>名前：</strong>打田裕馬（うちだ ゆうま）</li>
+          <li><strong>年齢：</strong>36歳</li>
+          <li><strong>資格：</strong>メンタルケア心理士</li>
+          <li><strong>拠点：</strong>JR山手線 鶯谷駅</li>
+          <li><strong>得意技術：</strong>Laravel, React, AWS, Docker</li>
+          <li><strong>得意業務：</strong>プロジェクトマネジメント、システム・DB設計、実装</li>
+        </ul>
+      </div>
+      <div class="about-photo">
+        <img src="images/profile.png" alt="打田裕馬の写真">
+      </div>
+    </div>
+  </section>
+
+  <!-- スキル -->
+  <section id="skills" class="section fade-in">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h3><i class="fas fa-code"></i> プログラミング</h3>
+        <div class="skill-bar" data-level="9"><span>PHP</span></div>
+        <div class="skill-bar" data-level="8"><span>JavaScript</span></div>
+        <div class="skill-bar" data-level="7"><span>React.js</span></div>
+        <div class="skill-bar" data-level="6"><span>Svelte.js</span></div>
+        <div class="skill-bar" data-level="4"><span>Go</span></div>
+      </div>
+      <div class="skill-card">
+        <h3><i class="fas fa-server"></i> バックエンド/インフラ</h3>
+        <div class="skill-bar" data-level="9"><span>Docker</span></div>
+        <div class="skill-bar" data-level="6"><span>AWS ECS</span></div>
+        <div class="skill-bar" data-level="4"><span>Kubernetes</span></div>
+        <div class="skill-bar" data-level="7"><span>Laravel</span></div>
+        <div class="skill-bar" data-level="6"><span>Node.js</span></div>
+      </div>
+      <div class="skill-card">
+        <h3><i class="fas fa-database"></i> データベース</h3>
+        <div class="skill-bar" data-level="8"><span>MySQL</span></div>
+        <div class="skill-bar" data-level="7"><span>PostgreSQL</span></div>
+        <div class="skill-bar" data-level="7"><span>MariaDB</span></div>
+        <div class="skill-bar" data-level="6"><span>Firestore</span></div>
+      </div>
+      <div class="skill-card">
+        <h3><i class="fas fa-users-cog"></i> マネジメント/マーケ</h3>
+        <div class="skill-bar" data-level="9"><span>PM/PL</span></div>
+        <div class="skill-bar" data-level="8"><span>要件定義</span></div>
+        <div class="skill-bar" data-level="7"><span>チームビルディング</span></div>
+        <div class="skill-bar" data-level="7"><span>データ分析</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 実績・成果 -->
+  <section id="works" class="section fade-in">
+    <h2>Works / Achievements</h2>
+    <div class="works-cards">
+      <!-- 案件1 -->
+      <div class="work-card">
+        <button class="work-toggle" aria-expanded="false" aria-controls="work-detail-1">
+          <h3>医療機関向けCRM/LINEミニアプリ開発</h3>
+          <span class="toggle-icon">＋</span>
+        </button>
+        <div class="work-detail" id="work-detail-1" hidden>
+          <ul>
+            <li><strong>役割:</strong> PM/PL/PG（20名規模）</li>
+            <li><strong>期間:</strong> 2024年1月 - 2025年4月</li>
+            <li><strong>技術:</strong> PHP8.1, Laravel9, AWS, Docker, BigQuery, Google App Script, GitLab CI, jQuery(Vue.js)</li>
+            <li><strong>業務内容:</strong> 3部門ヒアリング・要件定義・設計・テスト・マニュアル作成・コードレビュー・設計レビュー・自動テスト導入戦略立案</li>
+            <li><strong>成果:</strong> 20名規模のチームをマネジメントし、複数部門の利害調整・要件定義・設計・開発・テスト・運用まで一気通貫でリード。任せるマネジメントでメンバーの成長を促進し、広告/マーケ部門との連携によるシステム価値向上を実現。</li>
+            <li><strong>発揮した実力:</strong> 技術とマネジメントの両立、複雑な利害関係者間の合意形成、設計・進め方のレビューによる品質向上、マーケティング視点でのシステム提案。</li>
+          </ul>
+        </div>
+      </div>
+      <!-- 案件2 -->
+      <div class="work-card">
+        <button class="work-toggle" aria-expanded="false" aria-controls="work-detail-2">
+          <h3>フランチャイズ本部・加盟店向け新規システム開発</h3>
+          <span class="toggle-icon">＋</span>
+        </button>
+        <div class="work-detail" id="work-detail-2" hidden>
+          <ul>
+            <li><strong>役割:</strong> PM/PG（2-5名規模）</li>
+            <li><strong>期間:</strong> 2019年6月 - 2024年2月</li>
+            <li><strong>技術:</strong> Laravel6/8/10, AWS ECS, CircleCI, MariaDB, E2Eテスト, Lightsail, jQuery, S3, CloudFront</li>
+            <li><strong>業務内容:</strong> 顧客ヒアリング・要件定義・設計・DB設計・フロント/サーバー実装・CI/CD構築・E2Eテスト・運用・マニュアル作成・チーム指導</li>
+            <li><strong>成果:</strong> 小規模チームで全工程を担当し、顧客との密な関係構築・運用負荷軽減・CI/CD導入・E2Eテストによる品質向上を実現。</li>
+            <li><strong>発揮した実力:</strong> 顧客ヒアリング力、運用を見据えた設計・自動化、チームマネジメント、技術選定・導入。</li>
+          </ul>
+        </div>
+      </div>
+      <!-- 案件3 -->
+      <div class="work-card">
+        <button class="work-toggle" aria-expanded="false" aria-controls="work-detail-3">
+          <h3>AIカウンセリングアプリ「AI Therapy Hub」</h3>
+          <span class="toggle-icon">＋</span>
+        </button>
+        <div class="work-detail" id="work-detail-3" hidden>
+          <ul>
+            <li><strong>役割:</strong> 企画・設計・実装（2名規模）</li>
+            <li><strong>期間:</strong> 2023年6月 - 2024年12月</li>
+            <li><strong>技術:</strong> React Native, Next.js, ChatGPT API, Firestore, Supabase, Prisma, Jest, Vercel, Amazon ECS</li>
+            <li><strong>業務内容:</strong> 企画・デザイン・設計・コーディング・多言語対応・プロンプト設計・クラウドビルド</li>
+            <li><strong>成果:</strong> ChatGPT APIを活用したカウンセリングアプリをゼロから設計・開発。最新技術のキャッチアップと実装力を発揮。</li>
+            <li><strong>発揮した実力:</strong> 生成AI活用、モバイルアプリ開発、プロンプト設計、多言語対応、少人数での全工程遂行。</li>
+          </ul>
+        </div>
+      </div>
+      <!-- 案件4 -->
+      <div class="work-card">
+        <button class="work-toggle" aria-expanded="false" aria-controls="work-detail-4">
+          <h3>旅程立案アプリ</h3>
+          <span class="toggle-icon">＋</span>
+        </button>
+        <div class="work-detail" id="work-detail-4" hidden>
+          <ul>
+            <li><strong>役割:</strong> リーダー・フロント/バック/インフラ全担当（5名規模）</li>
+            <li><strong>期間:</strong> 2020年6月 - 2021年3月</li>
+            <li><strong>技術:</strong> Go, React.js, PostgreSQL, Kubernetes(GKE), PWA, Service Worker</li>
+            <li><strong>業務内容:</strong> API設計・フロント/バック実装・インフラ構築・PWA対応・キャッシュ設計</li>
+            <li><strong>成果:</strong> Webとモバイル両対応の旅程アプリを開発。PWAによるオフライン対応、API設計・インフラ構築まで一貫して担当。</li>
+            <li><strong>発揮した実力:</strong> サーバー/フロント/インフラ横断の技術力、PWA・Kubernetes運用、失敗からの学びと顧客期待値コントロール。</li>
+          </ul>
+        </div>
+      </div>
+      <!-- 案件5 -->
+      <div class="work-card">
+        <button class="work-toggle" aria-expanded="false" aria-controls="work-detail-5">
+          <h3>イベント企画会社向け営業ツール</h3>
+          <span class="toggle-icon">＋</span>
+        </button>
+        <div class="work-detail" id="work-detail-5" hidden>
+          <ul>
+            <li><strong>役割:</strong> 顧客ヒアリング・コーディング・インフラ構築（4名規模）</li>
+            <li><strong>期間:</strong> 2019年12月 - 2020年3月</li>
+            <li><strong>技術:</strong> PHP7.1, Laravel6.2, Blade, MariaDB, Ubuntu, JavaScript, Sass</li>
+            <li><strong>業務内容:</strong> 顧客ヒアリング・要件定義・設計・実装・インフラ構築・グラフレンダリング</li>
+            <li><strong>成果:</strong> インタラクティブな営業ツールを短期間で開発。非同期処理やグラフ描画などフロント技術も活用。</li>
+            <li><strong>発揮した実力:</strong> 顧客要望の具現化、短納期開発、フロント/バック両面の実装力。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 経歴 -->
+  <section id="career" class="section fade-in">
+    <h2>Career</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-date">2012-2016</div>
+        <div class="timeline-content">製造業（基礎開発）</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">2016-</div>
+        <div class="timeline-content">IT業界転身、Webサービス立ち上げ</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">2017-</div>
+        <div class="timeline-content">受託開発事業開始</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">2019-2024</div>
+        <div class="timeline-content">フランチャイズ本部向けシステム開発</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">2024-2025</div>
+        <div class="timeline-content">医療機関向けCRM/LINEミニアプリ開発</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- お問い合わせ -->
+  <section id="contact" class="section fade-in">
+    <h2>Contact</h2>
+    <div class="contact-links">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfgFsBeJfFhODnu9uKZh4X3R_CB-vphyrn46T_o0r9QqL1o8w/viewform?usp=dialog" target="_blank" class="contact-btn"><i class="fas fa-envelope"></i> Googleフォームで問い合わせ</a>
+      <a href="https://twitter.com/uchidayuma" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
+      <a href="https://github.com/uchidayuma" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+      <!-- 必要に応じて他SNS追加 -->
+    </div>
+    <div class="contact-info">
+      <p>メール: uchidayuma@gmail.com</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span>&copy; 2024 打田裕馬 | Engineer × PM × MentalCare</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html> 
