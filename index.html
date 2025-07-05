@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;700&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/2b2e7e2e2e.js" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body>
   <!-- パーティクル背景 -->
@@ -44,7 +45,7 @@
           <li><strong>名前：</strong>打田裕馬（うちだ ゆうま）</li>
           <li><strong>年齢：</strong>36歳</li>
           <li><strong>資格：</strong>メンタルケア心理士</li>
-          <li><strong>拠点：</strong>JR山手線 鶯谷駅</li>
+          <li><strong>拠点：</strong>東京23区</li>
           <li><strong>得意技術：</strong>Laravel, React, AWS, Docker</li>
           <li><strong>得意業務：</strong>プロジェクトマネジメント、システム・DB設計、実装</li>
         </ul>
@@ -211,17 +212,62 @@
     </div>
   </section>
 
+  <!-- サービス紹介 -->
+  <section id="services" class="section fade-in">
+    <h2>提供サービス</h2>
+    <div class="services-list">
+      <a href="services/mentoring.html" class="service-card">
+        <h3>1on1メンタリング</h3>
+        <p>キャリア・技術・心理面まで幅広くサポートする個別メンタリングサービス</p>
+        <span class="service-link">詳細を見る &rarr;</span>
+      </a>
+      <a href="pm.html" class="service-card">
+        <h3>業務委託プロジェクトマネジメント</h3>
+        <p>貴社のプロジェクトを成功に導く実践型PMサービス</p>
+        <span class="service-link">詳細を見る &rarr;</span>
+      </a>
+    </div>
+  </section>
+
   <!-- お問い合わせ -->
   <section id="contact" class="section fade-in">
     <h2>Contact</h2>
-    <div class="contact-links">
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfgFsBeJfFhODnu9uKZh4X3R_CB-vphyrn46T_o0r9QqL1o8w/viewform?usp=dialog" target="_blank" class="contact-btn"><i class="fas fa-envelope"></i> Googleフォームで問い合わせ</a>
-      <a href="https://twitter.com/uchidayuma" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
-      <a href="https://github.com/uchidayuma" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-      <!-- 必要に応じて他SNS追加 -->
-    </div>
-    <div class="contact-info">
-      <p>メール: uchidayuma@gmail.com</p>
+    <div class="contact-content">
+      <form id="contact-form">
+        <div class="form-group">
+          <input type="text" id="name" name="user_name" placeholder="お名前" required>
+        </div>
+        <div class="form-group">
+          <input type="email" id="email" name="user_email" placeholder="メールアドレス" required>
+        </div>
+        <div class="form-group">
+          <select id="inquiry_type" name="inquiry_type" required>
+            <option value="">種類を選択してください</option>
+            <option value="サービスについて">サービスについて</option>
+            <option value="メンタリングについて">メンタリングについて</option>
+            <option value="PM業務について">PM業務について</option>
+            <option value="その他">その他</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <textarea id="message" name="message" placeholder="メッセージ" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="contact-btn">送信</button>
+      </form>
+      <div id="form-success" style="display: none;">
+        <div class="form-message success-message">
+          <div class="message-icon">✅</div>
+          <h3>送信完了！</h3>
+          <p>お問い合わせありがとうございます。<br>48時間以内にご返信いたします。</p>
+        </div>
+      </div>
+      <div id="form-error" style="display: none;">
+        <div class="form-message error-message">
+          <div class="message-icon">❌</div>
+          <h3>送信エラー</h3>
+          <p>申し訳ございません。<br>しばらく後にもう一度お試しください。</p>
+        </div>
+      </div>
     </div>
   </section>
 

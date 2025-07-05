@@ -158,3 +158,41 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+// ===== EmailJS お問い合わせフォーム送信 =====
+document.addEventListener("DOMContentLoaded", function () {
+  if (window.emailjs) {
+    emailjs.init("iCeORWdojmPHJx0je");
+  }
+  const form = document.getElementById("contact-form");
+  if (form) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const button = form.querySelector('button[type="submit"]');
+      const originalText = button.textContent;
+      button.textContent = "送信中...";
+      button.disabled = true;
+      emailjs
+        .sendForm("service_cm72dfl", "template_ww5gsgz", form)
+        .then(() => {
+          document.getElementById("form-success").style.display = "block";
+          document.getElementById("form-error").style.display = "none";
+          setTimeout(() => {
+            document.getElementById("form-success").style.display = "none";
+            form.reset();
+            button.textContent = originalText;
+            button.disabled = false;
+          }, 5000);
+        })
+        .catch(() => {
+          document.getElementById("form-error").style.display = "block";
+          document.getElementById("form-success").style.display = "none";
+          setTimeout(() => {
+            document.getElementById("form-error").style.display = "none";
+            button.textContent = originalText;
+            button.disabled = false;
+          }, 5000);
+        });
+    });
+  }
+});

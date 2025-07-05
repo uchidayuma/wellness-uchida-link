@@ -466,4 +466,204 @@ body::before {
 .work-detail li {
   margin-bottom: 0.4em;
   line-height: 1.6;
+}
+
+/* ====== Contactフォーム ====== */
+.contact-content {
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#contact-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1em;
+  margin-bottom: 1.2em;
+}
+.form-group {
+  width: 100%;
+}
+#contact-form input,
+#contact-form textarea {
+  width: 100%;
+  padding: 0.8em 1em;
+  border: none;
+  border-radius: 8px;
+  background: var(--color-bg-light);
+  color: var(--color-text);
+  font-family: var(--font-mono);
+  font-size: 1.05em;
+  box-shadow: 0 2px 8px var(--color-shadow);
+  margin-bottom: 0.2em;
+  transition: box-shadow 0.2s, background 0.2s;
+  outline: none;
+  resize: vertical;
+}
+#contact-form input:focus,
+#contact-form textarea:focus {
+  box-shadow: 0 0 0 2px var(--color-accent), 0 2px 8px var(--color-shadow);
+  background: #22304a;
+}
+#contact-form textarea {
+  min-height: 100px;
+  max-height: 260px;
+}
+#contact-form select {
+  width: 100%;
+  padding: 0.8em 1em;
+  border: none;
+  border-radius: 8px;
+  background: var(--color-bg-light);
+  color: var(--color-text);
+  font-family: var(--font-mono);
+  font-size: 1.05em;
+  box-shadow: 0 2px 8px var(--color-shadow);
+  margin-bottom: 0.2em;
+  transition: box-shadow 0.2s, background 0.2s;
+  outline: none;
+}
+#contact-form select:focus {
+  box-shadow: 0 0 0 2px var(--color-accent), 0 2px 8px var(--color-shadow);
+  background: #22304a;
+}
+.contact-btn {
+  width: 100%;
+  padding: 0.9em 0;
+  font-size: 1.15em;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(90deg, var(--color-accent) 60%, #1E3A5F 100%);
+  color: #fff !important;
+  box-shadow: 0 4px 16px var(--color-shadow);
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  margin-top: 0.5em;
+  letter-spacing: 0.04em;
+  display: block;
+}
+.contact-btn:hover, .contact-btn:focus {
+  background: linear-gradient(90deg, #1E3A5F 0%, var(--color-accent) 100%);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 8px 32px var(--color-shadow);
+}
+.form-message {
+  text-align: center;
+  padding: 1.2em 0.5em;
+  border-radius: 10px;
+  background: rgba(30,58,95,0.12);
+  color: var(--color-text);
+  box-shadow: 0 2px 12px var(--color-shadow);
+  margin-bottom: 0.5em;
+}
+.success-message .message-icon {
+  font-size: 2em;
+  color: var(--color-accent);
+  margin-bottom: 0.3em;
+}
+.error-message .message-icon {
+  font-size: 2em;
+  color: #f55;
+  margin-bottom: 0.3em;
+}
+@media (max-width: 600px) {
+  .contact-content {
+    max-width: 98vw;
+    padding: 0 0.5em;
+  }
+}
+
+/* ====== サービス紹介セクション ====== */
+.services-list {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 1.5em;
+}
+.service-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: var(--color-bg-light);
+  border-radius: 14px;
+  box-shadow: 0 4px 24px var(--color-shadow);
+  border-left: 5px solid var(--color-accent);
+  padding: 2em 1.5em 1.5em 1.5em;
+  min-width: 260px;
+  max-width: 340px;
+  color: var(--color-text);
+  text-decoration: none;
+  transition: transform 0.18s, box-shadow 0.18s, border-color 0.18s;
+  margin-bottom: 1.2em;
+  position: relative;
+}
+.service-card h3 {
+  color: var(--color-accent);
+  font-size: 1.2em;
+  margin-bottom: 0.7em;
+  font-weight: 700;
+}
+.service-card p {
+  font-size: 1em;
+  color: var(--color-sub);
+  margin-bottom: 1.2em;
+}
+.service-link {
+  color: var(--color-accent);
+  font-weight: 700;
+  font-size: 1em;
+  margin-top: auto;
+  text-align: right;
+  display: block;
+  transition: color 0.2s;
+}
+.service-card:hover, .service-card:focus {
+  transform: translateY(-6px) scale(1.03) rotate(-1deg);
+  box-shadow: 0 8px 32px var(--color-shadow);
+  border-left: 5px solid var(--color-main);
+  text-decoration: none;
+}
+.service-card:hover .service-link, .service-card:focus .service-link {
+  color: #fff;
+}
+@media (max-width: 900px) {
+  .services-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+  }
+  .service-card {
+    min-width: 0;
+    width: 100%;
+    max-width: 98vw;
+  }
+}
+
+/* ====== サービス詳細ページのテキスト色強制 ====== */
+.section, .section h3, .section p, .section ul, .section li {
+  color: var(--color-text);
+}
+.section h2, .accent {
+  color: var(--color-accent);
+}
+
+/* ====== パンくずリスト ====== */
+.breadcrumb {
+  font-size: 1.25em;
+  margin-bottom: 1.2em;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+.breadcrumb a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+.breadcrumb a:hover {
+  color: var(--color-sub);
+  text-decoration: underline wavy;
 } 
