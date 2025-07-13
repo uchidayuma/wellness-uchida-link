@@ -1,6 +1,6 @@
 // ===== パーティクル背景 =====
 const canvas = document.getElementById("particles-bg");
-if (canvas) {
+if (canvas && canvas.tagName === "CANVAS") {
   const ctx = canvas.getContext("2d");
   let w = window.innerWidth,
     h = window.innerHeight;
@@ -197,6 +197,29 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+// ===== スムーズスクロール =====
+document.addEventListener("DOMContentLoaded", function () {
+  const navLinks = document.querySelectorAll('.nav a[href^="#"]');
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute("href");
+      const targetElement = document.querySelector(targetId);
+
+      if (targetElement) {
+        const headerHeight = document.querySelector(".header").offsetHeight;
+        const targetPosition = targetElement.offsetTop - headerHeight - 20;
+
+        window.scrollTo({
+          top: targetPosition,
+          behavior: "smooth",
+        });
+      }
+    });
+  });
+});
+
 // ===== Careerアコーディオン =====
 document.addEventListener("DOMContentLoaded", function () {
   const careerToggles = document.querySelectorAll(".career-toggle");
@@ -239,4 +262,36 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
   updateCareerIcons();
+});
+
+// ===== メンタリングページ FAQアコーディオン =====
+document.addEventListener("DOMContentLoaded", function () {
+  const faqQuestions = document.querySelectorAll(".faq-question");
+
+  faqQuestions.forEach((question) => {
+    question.addEventListener("click", function () {
+      const answer = this.nextElementSibling;
+      const isActive = this.classList.contains("active");
+
+      // 他のすべてのFAQを閉じる
+      faqQuestions.forEach((q) => {
+        q.classList.remove("active");
+        q.nextElementSibling.classList.remove("active");
+      });
+
+      // クリックされたFAQを開く
+      if (!isActive) {
+        this.classList.add("active");
+        answer.classList.add("active");
+      }
+    });
+
+    // キーボード操作対応
+    question.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        this.click();
+      }
+    });
+  });
 });
