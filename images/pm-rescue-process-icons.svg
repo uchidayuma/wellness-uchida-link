@@ -1,0 +1,69 @@
+<svg width="800" height="200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="iconGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1E3A5F;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00C896;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="arrowGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00C896;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1E3A5F;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- ステップ1: 炎上状態 -->
+  <g transform="translate(50, 60)">
+    <circle cx="40" cy="40" r="35" fill="url(#iconGradient)" stroke="#00C896" stroke-width="3"/>
+    <!-- 炎のアイコン -->
+    <path d="M30,60 L40,35 L50,60 L40,50 Z" fill="#FF6B35"/>
+    <path d="M35,58 L40,45 L45,58 L40,50 Z" fill="#FF8C42"/>
+    <text x="40" y="110" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">炎上状態</text>
+  </g>
+  
+  <!-- 矢印1 -->
+  <g transform="translate(170, 95)">
+    <path d="M0,0 L40,0 L35,-8 L40,0 L35,8" stroke="url(#arrowGradient)" stroke-width="4" fill="none"/>
+  </g>
+  
+  <!-- ステップ2: 診断・分析 -->
+  <g transform="translate(250, 60)">
+    <circle cx="40" cy="40" r="35" fill="url(#iconGradient)" stroke="#00C896" stroke-width="3"/>
+    <!-- 虫眼鏡アイコン -->
+    <circle cx="30" cy="30" r="12" fill="none" stroke="white" stroke-width="3"/>
+    <line x1="38" y1="38" x2="50" y2="50" stroke="white" stroke-width="3"/>
+    <text x="40" y="110" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">診断・分析</text>
+  </g>
+  
+  <!-- 矢印2 -->
+  <g transform="translate(370, 95)">
+    <path d="M0,0 L40,0 L35,-8 L40,0 L35,8" stroke="url(#arrowGradient)" stroke-width="4" fill="none"/>
+  </g>
+  
+  <!-- ステップ3: 介入・サポート -->
+  <g transform="translate(450, 60)">
+    <circle cx="40" cy="40" r="35" fill="url(#iconGradient)" stroke="#00C896" stroke-width="3"/>
+    <!-- 手のサポートアイコン -->
+    <path d="M20,50 L30,40 L40,50 L50,40 L60,50" fill="none" stroke="white" stroke-width="3"/>
+    <circle cx="40" cy="30" r="4" fill="white"/>
+    <text x="40" y="110" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">介入・サポート</text>
+  </g>
+  
+  <!-- 矢印3 -->
+  <g transform="translate(570, 95)">
+    <path d="M0,0 L40,0 L35,-8 L40,0 L35,8" stroke="url(#arrowGradient)" stroke-width="4" fill="none"/>
+  </g>
+  
+  <!-- ステップ4: 自立・成長 -->
+  <g transform="translate(650, 60)">
+    <circle cx="40" cy="40" r="35" fill="url(#iconGradient)" stroke="#00C896" stroke-width="3"/>
+    <!-- 成長矢印アイコン -->
+    <path d="M25,60 L40,25 L55,60" fill="none" stroke="white" stroke-width="3"/>
+    <path d="M40,25 L35,35 L40,25 L45,35" fill="none" stroke="white" stroke-width="3"/>
+    <text x="40" y="110" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">自立・成長</text>
+  </g>
+  
+  <!-- 装飾的な要素 -->
+  <g fill="none" stroke="#00C896" stroke-width="1" opacity="0.3">
+    <circle cx="400" cy="20" r="4"/>
+    <circle cx="400" cy="180" r="4"/>
+  </g>
+</svg> 
