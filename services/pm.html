@@ -3,11 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>業務委託プロジェクトマネジメント | サービス詳細</title>
+  <title>業務委託プロジェクトマネジメント | 打田裕馬</title>
   <link rel="stylesheet" href="../styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+  <canvas id="particles-bg"></canvas>
   <header class="header">
     <div class="header-inner">
       <img src="../images/profile.png" alt="プロフィール画像" class="profile-img">
@@ -28,42 +30,292 @@
     </div>
   </header>
   <main>
+    <!-- ヒーローセクション -->
+    <section class="hero-section fade-in">
+      <div class="hero-content">
+        <h1 class="hero-title">経営層と開発現場の「本当の橋渡し」ができるPM</h1>
+        <p class="hero-subtitle">製造業→IT転身→6人チーム経営の経験から、技術とビジネス両方を理解したプロジェクトマネジメントを提供</p>
+        <div style="margin:2.5rem 0 1.5rem 0;display:flex;justify-content:center;gap:2.5rem;flex-wrap:wrap;">
+          <div class="stat-card"><div class="stat-number">20+</div><div class="stat-label">最大チーム規模</div></div>
+          <div class="stat-card"><div class="stat-number">10+</div><div class="stat-label">累計プロジェクト数</div></div>
+          <div class="stat-card"><div class="stat-number">70%</div><div class="stat-label">プロジェクト成功率</div></div>
+        </div>
+        <a href="#contact" class="hero-cta">プロジェクト課題を相談する</a>
+      </div>
+    </section>
+
+    <!-- 問題提起セクション -->
     <section class="section fade-in">
       <nav class="breadcrumb"><a href="../index.html#services">提供サービス</a> &gt; 業務委託プロジェクトマネジメント</nav>
-      <h2 class="accent">業務委託プロジェクトマネジメント</h2>
-      <p>経営層と開発現場の"本当の橋渡し"を実現し、心理的安全性の高いチームでプロジェクトを成功に導きます。</p>
-      <h3>サービスの特徴</h3>
-      <ul>
-        <li><strong>経営層と開発チームのつなぎ役</strong><br>中間管理職がいない組織や、経営層と現場の距離が近い企業で、双方の意図や課題を翻訳・調整。経営視点と現場視点の両方を理解し、プロジェクトを円滑に推進します。</li>
-        <li><strong>心理的安全性の高いチーム作り</strong><br>メンタルケア心理士の知見を活かし、HSP・内向的なメンバーも安心して意見を出せる環境を構築。傾聴・1on1・フィードバックを重視し、離職率低減・生産性向上に貢献します。</li>
-        <li><strong>柔軟なマネジメントと技術力</strong><br>役割分担が曖昧な小規模チームや、不確実性の高いプロジェクトでも、技術力とマネジメント力の両方で価値を発揮。必要に応じて設計・実装・インフラ・テストまでハンズオンでサポート可能。</li>
-        <li><strong>幅広い技術スタック</strong><br>フロントエンドからバックエンド、インフラ、DevOpsまで一気通貫で対応。最新技術（React, Laravel, AWS, Docker, ChatGPT API等）にも精通。</li>
-      </ul>
-      <h3>ご依頼可能な業務例</h3>
-      <ul>
-        <li>要件定義・仕様策定・設計レビュー</li>
-        <li>開発チームのマネジメント・進捗管理</li>
-        <li>経営層・現場間の調整・ファシリテーション</li>
-        <li>心理的安全性の高いチームビルディング</li>
-        <li>技術選定・設計・実装・テスト・インフラ構築</li>
-        <li>ドキュメント整備・ナレッジ共有</li>
-      </ul>
-      <h3>稼働条件</h3>
-      <ul>
-        <li>稼働開始：2025年8月中旬以降</li>
-        <li>最大稼働：週4日まで（リモート・一部出社も応相談）</li>
-      </ul>
-      <div style="margin-top:2.5em; text-align: center;">
-        <div style="margin-bottom: 1.5em;">
-          <a href="https://6zso3iarmop.typeform.com/to/ou5rL8Ya" target="_blank" rel="noopener" class="contact-btn" style="font-size:1.1rem; padding:1.1em 2.2em; max-width:320px; display:inline-block;">
-            業務委託PMへのお問い合わせはこちら
-          </a>
-          <p style="color: var(--color-sub); font-size: 0.95rem; margin-top: 0.7em;">
-            別ウィンドウでTypeformのフォームが開きます
-          </p>
+      <h2 class="accent">こんなプロジェクトの課題、抱えていませんか？</h2>
+      <div class="problems-bridge-grid">
+        <div>
+          <h4 style="color:var(--color-accent);margin-bottom:0.7em;">経営層が感じる課題</h4>
+          <div class="problem-card"><i class="fas fa-coins problem-icon"></i>開発コストが予算を大幅に超過している</div>
+          <div class="problem-card"><i class="fas fa-clock problem-icon"></i>納期遅延が常態化して事業計画に影響</div>
+          <div class="problem-card"><i class="fas fa-search problem-icon"></i>開発チームの進捗や課題が見えない</div>
+          <div class="problem-card"><i class="fas fa-file-alt problem-icon"></i>要件変更のたびに追加費用が発生</div>
+          <div class="problem-card"><i class="fas fa-bullseye problem-icon"></i>投資対効果が曖昧で判断に困る</div>
         </div>
-        <a href="../index.html#services" class="contact-btn" style="max-width:200px;margin-left:1em;background:var(--color-bg-light);color:var(--color-accent)!important; display:inline-block;">サービス一覧に戻る</a>
+        <div class="problems-bridge-arrow">
+          <span class="arrow-icon">⬅️➡️</span>
+          <span>この溝を埋めるのがPMの役割</span>
+        </div>
+        <div>
+          <h4 style="color:var(--color-accent);margin-bottom:0.7em;">開発現場が感じる課題</h4>
+          <div class="problem-card"><i class="fas fa-question-circle problem-icon"></i>曖昧な要件で仕様が頻繁に変わる</div>
+          <div class="problem-card"><i class="fas fa-handshake problem-icon"></i>ビジネスサイドとの認識齟齬が多い</div>
+          <div class="problem-card"><i class="fas fa-bolt problem-icon"></i>技術的制約を理解してもらえない</div>
+          <div class="problem-card"><i class="fas fa-random problem-icon"></i>優先順位がコロコロ変わって混乱</div>
+          <div class="problem-card"><i class="fas fa-tools problem-icon"></i>技術的負債が溜まって開発効率悪化</div>
+        </div>
       </div>
+    </section>
+
+    <!-- 解決アプローチ・独自性セクション -->
+    <section class="section fade-in">
+      <h2 class="accent">なぜ打田のPMが両方の課題を解決できるのか</h2>
+      <div class="strengths-grid">
+        <div class="strength-card">
+          <i class="fas fa-tools strength-icon"></i>
+          <h4>技術を深く理解しているPM</h4>
+          <ul style="text-align:left; color:var(--color-sub); font-size:1rem; line-height:1.7;">
+            <li>フロントエンド〜インフラまで実装経験</li>
+            <li>技術的制約と工数見積もりの精度</li>
+            <li>エンジニアとの信頼関係構築力</li>
+            <li style="color:var(--color-accent);font-size:0.97em;">実績例: 医療CRM 20名チーム技術選定〜リリースまで一気通貫</li>
+          </ul>
+        </div>
+        <div class="strength-card">
+          <i class="fas fa-chart-line strength-icon"></i>
+          <h4>ビジネスを理解している元経営者</h4>
+          <ul style="text-align:left; color:var(--color-sub); font-size:1rem; line-height:1.7;">
+            <li>6人チーム経営で売上・利益責任を経験</li>
+            <li>ROI重視の優先順位付けができる</li>
+            <li>経営層への分かりやすい報告・提案</li>
+            <li style="color:var(--color-accent);font-size:0.97em;">実績例: フランチャイズ本部システム 投資回収2年で実現</li>
+          </ul>
+        </div>
+        <div class="strength-card">
+          <i class="fas fa-shield-alt strength-icon"></i>
+          <h4>失敗を知っているからこそのリスク管理</h4>
+          <ul style="text-align:left; color:var(--color-sub); font-size:1rem; line-height:1.7;">
+            <li>2000万借金という失敗経験からの学び</li>
+            <li>プロジェクト炎上の兆候を早期発見</li>
+            <li>現実的なスケジュール・予算設定</li>
+            <li style="color:var(--color-accent);font-size:0.97em;">実績例: 炎上寸前案件を3ヶ月で立て直し成功</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- サービス内容詳細セクション -->
+    <section class="section fade-in">
+      <h2 class="accent">具体的にお任せいただける業務範囲</h2>
+      <div class="faq-section">
+        <div class="faq-item">
+          <div class="faq-question">プロジェクト企画・立上げ段階</div>
+          <div class="faq-answer">
+            <ul>
+              <li>要件ヒアリング・整理・ドキュメント化</li>
+              <li>技術選定・アーキテクチャ設計方針</li>
+              <li>開発体制設計・役割分担の明確化</li>
+              <li>プロジェクト計画書・WBS作成</li>
+              <li>リスク分析・対策立案</li>
+            </ul>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">開発・運用段階</div>
+          <div class="faq-answer">
+            <ul>
+              <li>チームマネジメント・進捗管理</li>
+              <li>品質管理・レビュープロセス設計</li>
+              <li>ステークホルダー間の調整・報告</li>
+              <li>仕様変更・課題のエスカレーション管理</li>
+              <li>インフラ構築・デプロイメント戦略</li>
+            </ul>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">トラブル対応・改善段階</div>
+          <div class="faq-answer">
+            <ul>
+              <li>炎上プロジェクトの立て直し</li>
+              <li>技術的負債の解消戦略</li>
+              <li>チームパフォーマンス改善</li>
+              <li>プロセス改善・標準化</li>
+              <li>ナレッジ共有体制構築</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 実績・事例セクション -->
+    <section class="section fade-in">
+      <h2 class="accent">プロジェクト成功事例</h2>
+      <div class="testimonials">
+        <div class="testimonial-card">
+          <h4>医療機関向けCRMシステム</h4>
+          <ul>
+            <li>規模: 20名チーム・開発期間16ヶ月</li>
+            <li>課題: 3部署の要件が異なり仕様が混乱</li>
+            <li>解決: 部署別ヒアリングで要件整理→統合設計</li>
+            <li>成果: 予定通りリリース・利用率95%達成</li>
+          </ul>
+          <div class="testimonial-author">関係者コメント: 「複雑な要件を整理し、現場の納得感を得られた」</div>
+        </div>
+        <div class="testimonial-card">
+          <h4>フランチャイズ管理システム</h4>
+          <ul>
+            <li>規模: 5年間継続プロジェクト</li>
+            <li>課題: 本部と加盟店の業務フローが複雑</li>
+            <li>解決: 段階的リリースで現場負荷を軽減</li>
+            <li>成果: 業務効率30%向上・投資回収2年</li>
+          </ul>
+          <div class="testimonial-author">関係者コメント: 「現場の声を反映したシステムで満足度が高い」</div>
+        </div>
+        <div class="testimonial-card">
+          <h4>人工芝ECサイト</h4>
+          <ul>
+            <li>規模: 在庫管理〜顧客管理統合システム</li>
+            <li>課題: 既存Excel業務からのデジタル化</li>
+            <li>解決: 現場ワークフローを維持した設計</li>
+            <li>成果: 受注処理時間50%短縮</li>
+          </ul>
+          <div class="testimonial-author">関係者コメント: 「現場の混乱なくスムーズに移行できた」</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 料金・契約形態セクション -->
+    <section class="section fade-in">
+      <h2 class="accent">柔軟な契約形態でご支援</h2>
+      <div class="services-list">
+        <div class="service-card" style="border-left:5px solid #00C896;">
+          <h3><i class="fas fa-user-tie"></i> フルタイム参画</h3>
+          <ul style="color:var(--color-sub);font-size:1rem;line-height:1.7;text-align:left;">
+            <li>月額: 120万円〜（応相談）</li>
+            <li>専任PMとしてフルコミット</li>
+            <li>要件定義〜リリースまで一気通貫</li>
+            <li>チームマネジメント・進捗管理</li>
+            <li>経営層への定期報告</li>
+          </ul>
+        </div>
+        <div class="service-card" style="border-left:5px solid #1E3A5F;">
+          <h3><i class="fas fa-user-clock"></i> パートタイム参画</h3>
+          <ul style="color:var(--color-sub);font-size:1rem;line-height:1.7;text-align:left;">
+            <li>月額: 50万円〜（週2-3日）</li>
+            <li>既存チームのPMサポート</li>
+            <li>設計レビュー・方針策定支援</li>
+            <li>課題解決・プロセス改善</li>
+            <li>スポット相談対応</li>
+          </ul>
+        </div>
+        <div class="service-card" style="border-left:5px solid #E8F4F8;">
+          <h3><i class="fas fa-bolt"></i> スポット支援</h3>
+          <ul style="color:var(--color-sub);font-size:1rem;line-height:1.7;text-align:left;">
+            <li>時間単価: 10,000円〜/時間</li>
+            <li>プロジェクト炎上時の緊急支援</li>
+            <li>技術選定・アーキテクチャ相談</li>
+            <li>要件整理・仕様策定支援</li>
+            <li>セカンドオピニオン</li>
+          </ul>
+        </div>
+      </div>
+      <div style="color:var(--color-sub);font-size:0.97em;margin-top:1em;">※リモート・一部出社両方対応可能</div>
+    </section>
+
+    <!-- 開始までのフローセクション -->
+    <section class="section fade-in">
+      <h2 class="accent">ご支援開始までの流れ</h2>
+      <div class="flow-steps">
+        <div class="flow-step"><div class="flow-step-number">1</div></div>
+        <div class="flow-step"><div class="flow-step-number">2</div></div>
+        <div class="flow-step"><div class="flow-step-number">3</div></div>
+        <div class="flow-step"><div class="flow-step-number">4</div></div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; margin-top: 2rem;">
+        <div style="text-align: center;">
+          <h4 style="color: var(--color-accent);">STEP 1: 初回ヒアリング（無料・1時間）</h4>
+          <ul style="font-size:0.95rem;text-align:left;display:inline-block;">
+            <li>プロジェクトの現状・課題整理</li>
+            <li>技術スタック・チーム構成確認</li>
+            <li>期待する成果・予算感共有</li>
+          </ul>
+        </div>
+        <div style="text-align: center;">
+          <h4 style="color: var(--color-accent);">STEP 2: 支援提案書作成（1週間）</h4>
+          <ul style="font-size:0.95rem;text-align:left;display:inline-block;">
+            <li>課題分析・解決アプローチ</li>
+            <li>具体的な支援内容・スケジュール</li>
+            <li>見積もり・契約条件提示</li>
+          </ul>
+        </div>
+        <div style="text-align: center;">
+          <h4 style="color: var(--color-accent);">STEP 3: 契約・参画準備（1週間）</h4>
+          <ul style="font-size:0.95rem;text-align:left;display:inline-block;">
+            <li>契約手続き・NDA締結</li>
+            <li>開発環境・ツールアクセス準備</li>
+            <li>チームメンバーとの顔合わせ</li>
+          </ul>
+        </div>
+        <div style="text-align: center;">
+          <h4 style="color: var(--color-accent);">STEP 4: 支援開始</h4>
+          <ul style="font-size:0.95rem;text-align:left;display:inline-block;">
+            <li>キックオフMTG・現状把握</li>
+            <li>改善施策の実行・効果測定</li>
+            <li>定期報告・フィードバック</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ・よくある質問 -->
+    <section class="section fade-in">
+      <h2 class="accent">よくある質問</h2>
+      <div class="faq-section">
+        <div class="faq-item">
+          <div class="faq-question">リモートでの支援は可能ですか？</div>
+          <div class="faq-answer"><p>はい、全国どこからでもリモートでご支援可能です。一部出社もご相談に応じます。</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">途中で契約内容を変更できますか？</div>
+          <div class="faq-answer"><p>プロジェクト状況に応じて柔軟に契約内容を見直せます。お気軽にご相談ください。</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">他のPMとの違いは何ですか？</div>
+          <div class="faq-answer"><p>技術・ビジネス両面の実務経験と、失敗から学んだリスク管理力が強みです。経営層・現場双方の信頼を得て推進できます。</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">技術スタックに制限はありますか？</div>
+          <div class="faq-answer"><p>主要なWeb技術（React, Laravel, AWS, Docker等）に精通していますが、その他の技術もキャッチアップ可能です。</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">最低契約期間はありますか？</div>
+          <div class="faq-answer"><p>特に設けていません。スポット支援から長期参画まで柔軟に対応します。</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">同業他社との競合は大丈夫ですか？</div>
+          <div class="faq-answer"><p>守秘義務を徹底し、競合案件の情報は厳重に管理します。ご安心ください。</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">支援効果はどう測定しますか？</div>
+          <div class="faq-answer"><p>事前にKPIや成果指標を設定し、定期的に進捗・効果を可視化してご報告します。</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 最終CTA・お問い合わせ -->
+    <section class="final-cta fade-in" id="contact">
+      <h3>まずはプロジェクトの課題をお聞かせください</h3>
+      <p>技術も分かり、ビジネスも分かるPMだからこそ、本当の課題解決ができます。初回相談は無料です。</p>
+      <div class="cta-buttons">
+        <a href="https://6zso3iarmop.typeform.com/to/ou5rL8Ya" target="_blank" rel="noopener" class="cta-primary">無料相談を申し込む</a>
+        <a href="../index.html#services" class="cta-secondary">サービス一覧に戻る</a>
+      </div>
+      <div style="margin-top:1.5em;color:var(--color-sub);font-size:1rem;">メール: <a href="mailto:info@uchidayuma.com" style="color:var(--color-accent);">info@uchidayuma.com</a></div>
     </section>
   </main>
   <script src="../script.js"></script>
