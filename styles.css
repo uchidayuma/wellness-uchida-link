@@ -666,4 +666,66 @@ body::before {
 .breadcrumb a:hover {
   color: var(--color-sub);
   text-decoration: underline wavy;
+}
+
+/* ====== Careerタイムライン・アコーディオン ====== */
+.career-toggle {
+  width: 100%;
+  background: var(--color-bg-light);
+  color: var(--color-accent);
+  border: none;
+  border-radius: 10px 10px 0 0;
+  font-family: var(--font-mono);
+  font-size: 1.1em;
+  font-weight: 700;
+  text-align: left;
+  padding: 1.1em 1.2em;
+  margin-bottom: 0;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 2px 8px var(--color-shadow);
+  display: flex;
+  align-items: center;
+  gap: 1.2em;
+  transition: background 0.2s, color 0.2s;
+}
+.career-toggle[aria-expanded="true"] {
+  background: var(--color-accent);
+  color: #fff;
+}
+.career-toggle:focus {
+  box-shadow: 0 0 0 2px var(--color-accent), 0 2px 8px var(--color-shadow);
+}
+.career-toggle .timeline-date {
+  font-size: 1em;
+  color: inherit;
+  min-width: 140px;
+  font-weight: 600;
+}
+.career-toggle .timeline-title {
+  font-size: 1.1em;
+  color: inherit;
+  font-weight: 700;
+}
+.career-detail {
+  background: var(--color-card);
+  border-radius: 0 0 12px 12px;
+  margin-bottom: 2em;
+  box-shadow: 0 2px 12px var(--color-shadow);
+  padding: 1.5em 1.2em 1.2em 1.2em;
+  animation: fadeInCareer 0.5s;
+}
+@keyframes fadeInCareer {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: none; }
+}
+@media (max-width: 600px) {
+  .career-toggle, .career-detail {
+    padding: 1em 0.7em;
+    font-size: 1em;
+  }
+  .career-toggle .timeline-date {
+    min-width: 90px;
+    font-size: 0.98em;
+  }
 } 

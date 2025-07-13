@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PM救出プラン | 法人向け継続型コンサルティング</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    .hero-section {
+      background: linear-gradient(135deg, var(--color-main) 0%, var(--color-bg) 100%);
+      padding: 4rem 2rem;
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .hero-title {
+      font-size: 3rem;
+      color: var(--color-accent);
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+    .hero-subtitle {
+      font-size: 1.3rem;
+      color: var(--color-sub);
+      margin-bottom: 2rem;
+    }
+    .problem-list {
+      background: var(--color-bg-light);
+      border-radius: 12px;
+      padding: 2rem;
+      margin: 2rem 0;
+      border-left: 5px solid var(--color-accent);
+    }
+    .problem-list ul {
+      list-style: none;
+      padding: 0;
+    }
+    .problem-list li {
+      padding: 0.5rem 0;
+      position: relative;
+      padding-left: 2rem;
+    }
+    .problem-list li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--color-accent);
+      font-weight: bold;
+    }
+    .experience-box {
+      background: var(--color-bg-light);
+      border-radius: 12px;
+      padding: 2rem;
+      margin: 2rem 0;
+      border: 2px solid var(--color-accent);
+    }
+    .service-plan {
+      background: var(--color-bg-light);
+      border-radius: 12px;
+      padding: 2rem;
+      margin: 2rem 0;
+      border-left: 5px solid var(--color-accent);
+    }
+    .price-box {
+      background: var(--color-accent);
+      color: var(--color-bg);
+      border-radius: 12px;
+      padding: 2rem;
+      margin: 2rem 0;
+      text-align: center;
+    }
+    .price-box h3 {
+      color: var(--color-bg);
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .price-amount {
+      font-size: 3rem;
+      font-weight: bold;
+      color: var(--color-bg);
+    }
+    .strength-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+    .strength-card {
+      background: var(--color-bg-light);
+      border-radius: 12px;
+      padding: 2rem;
+      border-left: 5px solid var(--color-accent);
+    }
+    .strength-card h4 {
+      color: var(--color-accent);
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+    }
+    .case-study {
+      background: var(--color-bg-light);
+      border-radius: 12px;
+      padding: 2rem;
+      margin: 2rem 0;
+      border-left: 5px solid var(--color-accent);
+    }
+    .case-study h4 {
+      color: var(--color-accent);
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+    }
+    .cta-section {
+      text-align: center;
+      background: var(--color-bg-light);
+      border-radius: 12px;
+      padding: 3rem 2rem;
+      margin: 3rem 0;
+    }
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+    .cta-btn {
+      display: inline-block;
+      padding: 1rem 2rem;
+      background: var(--color-accent);
+      color: var(--color-bg);
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: all 0.3s;
+      border: 2px solid var(--color-accent);
+    }
+    .cta-btn:hover {
+      background: transparent;
+      color: var(--color-accent);
+    }
+    .cta-btn.secondary {
+      background: transparent;
+      color: var(--color-accent);
+      border: 2px solid var(--color-accent);
+    }
+    .cta-btn.secondary:hover {
+      background: var(--color-accent);
+      color: var(--color-bg);
+    }
+    .dummy-image {
+      width: 100%;
+      height: 200px;
+      background: var(--color-bg-light);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-sub);
+      border: 2px dashed var(--color-border);
+      margin: 2rem 0;
+    }
+    @media (max-width: 600px) {
+      .hero-title {
+        font-size: 2rem;
+      }
+      .cta-buttons {
+        flex-direction: column;
+      }
+      .strength-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <img src="../images/profile.png" alt="プロフィール画像" class="profile-img">
+      <div class="header-info">
+        <h1 class="name">打田裕馬 <span class="title">Engineer × PM × メンタルケア</span></h1>
+        <nav class="nav">
+          <ul>
+            <li><a href="../index.html#about">About</a></li>
+            <li><a href="../index.html#skills">Skills</a></li>
+            <li><a href="../index.html#works">Works</a></li>
+            <li><a href="../index.html#career">Career</a></li>
+            <li><a href="../index.html#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ヒーローセクション -->
+    <section class="hero-section fade-in">
+      <nav class="breadcrumb"><a href="../index.html#services">提供サービス</a> &gt; PM救出プラン</nav>
+      <h1 class="hero-title">PM救出プラン</h1>
+      <p class="hero-subtitle">炎上プロジェクトの立て直しと病んだPMの復活支援</p>
+      <p>技術もメンタルケアも分かるプロフェッショナルが、週3日常駐でサポートします</p>
+    </section>
+
+    <!-- 問題提起・共感 -->
+    <section class="section fade-in">
+      <h2 class="accent">プロジェクトが炎上して、PMが病んでしまった...そんな状況、ありませんか？</h2>
+      
+      <p>こんにちは。PM救出の専門家、打田裕馬です。</p>
+      
+      <p>突然ですが、あなたの会社でこんな状況はありませんか？</p>
+      
+      <div class="problem-list">
+        <ul>
+          <li>プロジェクトが遅延ばかりで、いつ終わるか分からない</li>
+          <li>PMが毎日残業しているのに、成果が見えない</li>
+          <li>開発チームがバラバラで、誰が何をやってるか把握できない</li>
+          <li>ステークホルダーからの板挟みでPMが潰れそう</li>
+          <li>経営陣から『いつ終わるんだ？』と毎日聞かれる</li>
+        </ul>
+      </div>
+
+      <p>実は僕も、昔は同じような状況でした...</p>
+      
+      <div class="experience-box">
+        <p>総勢20名のチームを任されて、正直パニックでした。借金2000万円を作ってしまったり、従業員が次々と辞めていったり。本当に苦しい時期がありました。</p>
+        
+        <p>でも今は、『任せるマネジメント』を身につけることで、自分が手を動かすよりも大きな成果を生み出せるようになったんです。</p>
+      </div>
+    </section>
+
+    <!-- 打田の実体験 -->
+    <section class="section fade-in">
+      <h2 class="accent">借金2000万円からの逆転劇 - PMの『任せるマネジメント』習得ストーリー</h2>
+      
+      <p>僕の場合、最初は典型的な『マイクロマネジメント』をしていました。</p>
+      
+      <p>自分がプログラミングできるからといって、細かいところまで口を出して、メンバーの成長を阻害していたんです。</p>
+      
+      <p><strong>その結果：</strong></p>
+      <ul>
+        <li>スキルが低いメンバーが自立できない</li>
+        <li>納品が遅れてキャッシュフローが悪化</li>
+        <li>自分に余裕がなくなってチームの雰囲気が最悪に</li>
+        <li>従業員が次々と辞めていく</li>
+      </ul>
+      
+      <p>でも、ある医療向けCRMプロジェクトで転換点が来ました。</p>
+      
+      <p>総勢20名のチームを任されたとき、物理的に全てに関わることが不可能だったんです。</p>
+      
+      <p>そこで初めて『任せるマネジメント』を実践してみました：</p>
+      
+      <div class="problem-list">
+        <ul>
+          <li>大まかな方針だけ決めて、詳細はメンバーに任せる</li>
+          <li>設計や進め方をレビューすることに集中</li>
+          <li>メンバーの成長を第一に考える</li>
+        </ul>
+      </div>
+      
+      <p>結果、メンバーが自分で考えて動くようになり、僕自身よりも良い提案をしてくれるようになったんです。</p>
+      
+      <p>この経験から確信しました。PMの仕事は『自分が頑張ること』ではなく『チームが力を発揮できる環境を作ること』だと。</p>
+    </section>
+
+    <!-- サービス詳細 -->
+    <section class="section fade-in">
+      <h2 class="accent">法人向け：PM救出プラン【継続型コンサルティング】</h2>
+      
+      <p>炎上プロジェクトの立て直しと、病んだPMの復活支援を同時に行います。技術もメンタルケアも分かるプロフェッショナルが、週3日常駐でサポートします。</p>
+      
+      <div class="service-plan">
+        <h3>【基本プラン：週3日常駐】月額120万円</h3>
+        
+        <h4>1. PM業務の一部巻取り</h4>
+        <p>まずは炎上している部分を僕が直接引き取ります。あなたのPMが息つく暇を作ることが最優先です。</p>
+        
+        <h4>2. 各ステークホルダーとの折衝代行</h4>
+        <p>経営陣への報告、開発チームとの調整、お客様対応まで。厳しい交渉も、社長経験のある僕が代わりに行います。</p>
+        
+        <h4>3. タスク分担の俯瞰的見直し</h4>
+        <p>20名チームのマネジメント経験から、誰がどの作業をすべきかを客観的に判断。適材適所の再配置を行います。</p>
+        
+        <h4>4. 現PMへのコンサルティング</h4>
+        <p>『任せるマネジメント』の手法をお教えします。メンタルケア心理士の資格も活かして、心理的なサポートも提供します。</p>
+      </div>
+      
+      <div class="service-plan">
+        <h3>【緊急対応プラン：週4-5日対応】月額150万円</h3>
+        <p>上記に加えて、僕自身も開発に参加します。Laravel、React、AWS等での実装も可能。納期短縮のために総力戦で臨みます。</p>
+      </div>
+    </section>
+
+    <!-- 差別化ポイント -->
+    <section class="section fade-in">
+      <h2 class="accent">なぜ他のPMコンサルタントではダメなのか？</h2>
+      
+      <div class="strength-grid">
+        <div class="strength-card">
+          <h4>現役エンジニアとしての技術力</h4>
+          <p>Laravel、React、AWS、Docker等での実装経験が豊富。技術的な問題も的確に判断できます。『技術が分からないのに口出しだけするコンサル』ではありません。</p>
+        </div>
+        
+        <div class="strength-card">
+          <h4>社長としての経営経験</h4>
+          <p>自分も会社を経営していたので、利害関係者との厳しい交渉経験があります。お客様、経営陣、開発チーム、それぞれの立場を理解した調整ができます。</p>
+        </div>
+        
+        <div class="strength-card">
+          <h4>メンタルケア心理士の資格</h4>
+          <p>病んだPMの心理状態を理解し、適切なケアができます。バーンアウト、スキル不足、板挟み状態...どんな状況でも復活支援が可能です。</p>
+        </div>
+        
+        <div class="strength-card">
+          <h4>実績に基づく『任せるマネジメント』</h4>
+          <p>総勢20名のチームで実証済み。自分で手を動かすより、メンバーを成長させる方が大きな成果を生み出せることを体験として知っています。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 導入事例 -->
+    <section class="section fade-in">
+      <h2 class="accent">実際の救出事例（一部抽象化）</h2>
+      
+      <div class="case-study">
+        <h4>事例1: 開発チーム15名の炎上プロジェクト</h4>
+        <p><strong>製造業のA社様</strong>。PMがバーンアウトして、プロジェクトが3ヶ月遅延。経営陣からの圧力で開発チームの士気も最悪でした。</p>
+        
+        <p><strong>実施内容：</strong></p>
+        <ul>
+          <li>初週で緊急度の高いタスクを僕が直接処理</li>
+          <li>PMの負担を50%軽減し、メンタルケアを実施</li>
+          <li>チーム内のコミュニケーション改善と役割分担の明確化</li>
+        </ul>
+        
+        <p><strong>結果：</strong></p>
+        <ul>
+          <li>2ヶ月でプロジェクト軌道修正</li>
+          <li>PMが自信を取り戻し、自立したマネジメントが可能に</li>
+          <li>チーム全体の生産性が30%向上</li>
+        </ul>
+      </div>
+      
+      <div class="case-study">
+        <h4>事例2: スタートアップの技術的負債と進行管理</h4>
+        <p><strong>IT企業のB社様</strong>。技術的負債が膨らみ、新機能開発が全く進まない状況。PMも技術的な判断ができず困窮していました。</p>
+        
+        <p><strong>実施内容：</strong></p>
+        <ul>
+          <li>技術的負債の優先順位付けと解消計画策定</li>
+          <li>現PMへの技術的判断基準の指導</li>
+          <li>開発プロセスの見直しと自動化推進</li>
+        </ul>
+        
+        <p><strong>結果：</strong></p>
+        <ul>
+          <li>技術的負債を80%削減</li>
+          <li>PMが技術的な会話ができるようになった</li>
+          <li>新機能開発スピードが3倍に向上</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 料金・契約 -->
+    <section class="section fade-in">
+      <h2 class="accent">料金体系（明確・分かりやすく）</h2>
+      
+      <div class="price-box">
+        <h3>基本料金</h3>
+        <div class="price-amount">月額120万円</div>
+        <p>週3日常駐プラン</p>
+      </div>
+      
+      <div class="price-box">
+        <h3>緊急対応プラン</h3>
+        <div class="price-amount">月額150万円</div>
+        <p>週4-5日対応</p>
+      </div>
+      
+      <ul>
+        <li><strong>初期診断</strong>: 基本料金に含む（別途費用なし）</li>
+        <li><strong>契約期間</strong>: 最低1ヶ月から（お試ししやすい設定）</li>
+      </ul>
+      
+      <h3>料金に含まれるもの</h3>
+      <div class="problem-list">
+        <ul>
+          <li>PM業務の直接サポート</li>
+          <li>ステークホルダー折衝代行</li>
+          <li>現PMへのコンサルティング</li>
+          <li>メンタルケア支援</li>
+          <li>チーム改善提案</li>
+          <li>緊急時の技術的問題解決</li>
+        </ul>
+      </div>
+      
+      <h3>なぜこの料金なのか？</h3>
+      <p>月120万円は確かに高額です。でも考えてみてください。</p>
+      
+      <ul>
+        <li>プロジェクトが炎上して3ヶ月遅延したら？</li>
+        <li>PMが病んで退職してしまったら？</li>
+        <li>お客様との関係が悪化してしまったら？</li>
+      </ul>
+      
+      <p>その損失と比べれば、専門家による早期解決の方が圧倒的にコストパフォーマンスが良いはずです。</p>
+      
+      <p>しかも1ヶ月で効果を実感していただけます。</p>
+    </section>
+
+    <!-- ダミー画像 -->
+    <section class="section fade-in">
+      <h2 class="accent">サービスイメージ</h2>
+      <div style="text-align: center; margin: 2rem 0;">
+        <img src="../images/pm-rescue-dummy.svg" alt="PM救出プランイメージ" style="max-width: 100%; height: auto; border-radius: 12px;">
+      </div>
+      <p style="text-align: center; color: var(--color-sub); font-size: 0.9rem;">※ 実際のサービス提供風景や、チーム改善の様子を撮影した画像を後ほど追加いたします。</p>
+    </section>
+
+    <!-- 問い合わせ -->
+    <section class="section fade-in">
+      <div class="cta-section">
+        <h2 class="accent">まずは気軽にご相談ください</h2>
+        
+        <p>『うちの状況でも大丈夫かな？』</p>
+        <p>『予算的に厳しいかも...』</p>
+        <p>『PMの気持ちを傷つけないか心配』</p>
+        
+        <p>そんな不安、よく分かります。僕自身も同じような悩みを抱えていました。</p>
+        
+        <p>まずは30分の無料相談で、現状をお聞かせください。強引な営業は一切しません。本当に僕のサポートが必要かどうか、正直にお伝えします。</p>
+        
+        <h3>無料相談で分かること</h3>
+        <div class="problem-list">
+          <ul>
+            <li>プロジェクトの問題点の整理</li>
+            <li>PMの状況分析</li>
+            <li>改善のための選択肢提示</li>
+            <li>僕のサポートが有効かどうかの判断</li>
+          </ul>
+        </div>
+        
+        <h3>相談方法</h3>
+        <ul>
+          <li>オンライン面談（Zoom等）</li>
+          <li>平日夜間・土日も対応可能</li>
+          <li>守秘義務は厳守します</li>
+        </ul>
+        
+        <p>炎上プロジェクトも、病んだPMも、必ず立て直せます。一人で抱え込まず、まずはお話しましょう。</p>
+        
+                 <div class="cta-buttons">
+           <a href="../index.html#contact" class="cta-btn">無料相談を申し込む</a>
+           <a href="tel:+81-90-1234-5678" class="cta-btn secondary">今すぐ電話で相談</a>
+           <a href="mailto:contact@example.com" class="cta-btn secondary">メールで問い合わせ</a>
+         </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="../script.js"></script>
+</body>
+</html> 

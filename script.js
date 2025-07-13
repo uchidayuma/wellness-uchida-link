@@ -196,3 +196,47 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+// ===== Careerアコーディオン =====
+document.addEventListener("DOMContentLoaded", function () {
+  const careerToggles = document.querySelectorAll(".career-toggle");
+  function updateCareerIcons() {
+    careerToggles.forEach((btn) => {
+      const icon = btn.querySelector(".career-toggle-icon");
+      if (btn.getAttribute("aria-expanded") === "true") {
+        icon.textContent = "▼";
+      } else {
+        icon.textContent = "▶";
+      }
+    });
+  }
+  careerToggles.forEach((btn) => {
+    btn.addEventListener("click", function () {
+      const expanded = btn.getAttribute("aria-expanded") === "true";
+      careerToggles.forEach((b) => {
+        b.setAttribute("aria-expanded", "false");
+        const detail = document.getElementById(b.getAttribute("aria-controls"));
+        if (detail) {
+          detail.hidden = true;
+        }
+      });
+      if (!expanded) {
+        btn.setAttribute("aria-expanded", "true");
+        const detail = document.getElementById(
+          btn.getAttribute("aria-controls")
+        );
+        if (detail) {
+          detail.hidden = false;
+        }
+      }
+      updateCareerIcons();
+    });
+    btn.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        btn.click();
+      }
+    });
+  });
+  updateCareerIcons();
+});
