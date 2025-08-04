@@ -1,0 +1,27 @@
+# GitHub Pages用Jekyll設定
+# サイトの基本設定
+title: "打田裕馬 | Engineer × PM × メンタルケア"
+description: "AI時代に生き残るエンジニアPMのポートフォリオ。技術×マネジメント×メンタルケアでキャリアを切り拓く。"
+url: "https://wellness.uchida.link/" # あなたのGitHub Pages URLに変更してください
+baseurl: "/wellness-uchida-link" # リポジトリ名に変更してください
+
+# プラグイン設定
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# 除外ファイル
+exclude:
+  - README.md
+  - .gitignore
+  - _config.yml
+
+# 404エラーページ設定
+permalink: /:title/
+
+# デフォルト設定
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"

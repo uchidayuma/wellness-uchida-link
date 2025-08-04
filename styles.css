@@ -1260,4 +1260,160 @@ body::before {
     order: 2;
     margin: 2rem 0;
   }
+}
+
+/* ===== 404ページ専用スタイル ===== */
+.error-content {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.error-icon {
+  font-size: 8rem;
+  margin-bottom: 2rem;
+  color: #ff6b6b;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.error-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+.error-content h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--color-text);
+}
+
+.error-content p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: var(--color-sub);
+  line-height: 1.6;
+}
+
+.error-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.error-actions .contact-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  background: var(--color-accent);
+  color: var(--color-bg);
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.error-actions .contact-btn:hover {
+  background: #00b386;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 200, 150, 0.3);
+}
+
+.error-actions .contact-btn:nth-child(2) {
+  background: #4ecdc4;
+}
+
+.error-actions .contact-btn:nth-child(2):hover {
+  background: #45b7af;
+}
+
+.suggested-links {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.suggested-links h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: var(--color-text);
+}
+
+.suggested-links > div {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.suggested-link {
+  padding: 0.5rem 1rem;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 5px;
+  text-decoration: none;
+  color: var(--color-text);
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.suggested-link:hover {
+  background: var(--color-accent);
+  color: var(--color-bg);
+  border-color: var(--color-accent);
+  transform: translateY(-1px);
+}
+
+/* 404ページのレスポンシブ対応 */
+@media (max-width: 600px) {
+  .error-content {
+    padding: 1rem;
+  }
+  
+  .error-icon {
+    font-size: 6rem;
+  }
+  
+  .error-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .error-content h2 {
+    font-size: 1.3rem;
+  }
+  
+  .error-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .error-actions .contact-btn {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+  }
+  
+  .suggested-links > div {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .suggested-link {
+    width: 100%;
+    max-width: 200px;
+    text-align: center;
+  }
 } 

@@ -295,3 +295,117 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+// ===== GitHub Pages用404エラーハンドリング =====
+document.addEventListener("DOMContentLoaded", function () {
+  // 現在のページのパスを取得
+  const currentPath = window.location.pathname;
+
+  // GitHub Pagesのベースパスを考慮（リポジトリ名がある場合）
+  const basePath = window.location.pathname.split("/").slice(0, -1).join("/");
+
+  // 存在するページのリスト（GitHub Pages用）
+  const validPages = [
+    "/",
+    "/index.html",
+    "/404.html",
+    "/achievements.html",
+    "/services/mentoring.html",
+    "/services/pm.html",
+    "/services/pm-rescue.html",
+  ];
+
+  // GitHub Pagesのベースパスを考慮した有効ページリスト
+  const validPagesWithBase = validPages.map((page) => basePath + page);
+
+  // 現在のパスが有効なページかチェック
+  const isValidPage = validPagesWithBase.some((page) => {
+    if (page === basePath + "/" && currentPath === basePath + "/") return true;
+    if (
+      page !== basePath + "/" &&
+      currentPath.endsWith(page.replace(basePath, ""))
+    )
+      return true;
+    return false;
+  });
+
+  // 無効なページの場合、404ページにリダイレクト
+  if (
+    !isValidPage &&
+    currentPath !== basePath + "/404.html" &&
+    currentPath !== "/404.html"
+  ) {
+    // 404ページにリダイレクト（ベースパスを考慮）
+    const redirectPath = basePath + "/404.html";
+    window.location.href = redirectPath;
+  }
+});
+
+// ===== GitHub Pages用リンクエラーハンドリング =====
+document.addEventListener("DOMContentLoaded", function () {
+  // すべてのリンクにエラーハンドリングを追加
+  const links = document.querySelectorAll("a[href]");
+
+  // GitHub Pagesのベースパスを取得
+  const basePath = window.location.pathname.split("/").slice(0, -1).join("/");
+
+  links.forEach((link) => {
+    link.addEventListener("click", function (e) {
+      const href = this.getAttribute("href");
+
+      // 外部リンクやアンカーリンクは除外
+      if (
+        href.startsWith("http") ||
+        href.startsWith("#") ||
+        href.startsWith("mailto:") ||
+        href.startsWith("tel:")
+      ) {
+        return;
+      }
+
+      // 相対パスの場合、ファイルの存在をチェック
+      if (
+        href.startsWith("./") ||
+        href.startsWith("/") ||
+        !href.includes("://")
+      ) {
+        const targetPath = href.startsWith("/")
+          ? href
+          : window.location.pathname.replace(/\/[^\/]*$/, "/") + href;
+
+        // GitHub Pages用の有効パスリスト
+        const validPaths = [
+          "/",
+          "/index.html",
+          "/404.html",
+          "/achievements.html",
+          "/services/mentoring.html",
+          "/services/pm.html",
+          "/services/pm-rescue.html",
+        ];
+
+        // ベースパスを考慮した有効パスチェック
+        const isValidPath = validPaths.some((path) => {
+          const fullPath = basePath + path;
+          if (
+            path === "/" &&
+            (targetPath === basePath + "/" || targetPath === "/")
+          )
+            return true;
+          if (
+            path !== "/" &&
+            (targetPath.endsWith(path) || targetPath.endsWith(fullPath))
+          )
+            return true;
+          return false;
+        });
+
+        if (!isValidPath) {
+          e.preventDefault();
+          const redirectPath = basePath + "/404.html";
+          window.location.href = redirectPath;
+        }
+      }
+    });
+  });
+});
