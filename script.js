@@ -170,8 +170,25 @@ document.addEventListener("DOMContentLoaded", function () {
       e.preventDefault();
       const button = form.querySelector('button[type="submit"]');
       const originalText = button.textContent;
-      button.textContent = "送信中...";
+      const currentLang = localStorage.getItem("preferredLanguage") || "ja";
+
+      button.textContent = currentLang === "ja" ? "送信中..." : "Sending...";
       button.disabled = true;
+
+      const name = form.user_name.value.trim();
+      const email = form.user_email.value.trim();
+      const message = form.message.value.trim();
+
+      if (!name || !email || !message) {
+        alert(
+          currentLang === "ja"
+            ? "すべての項目を入力してください。"
+            : "Please fill in all fields."
+        );
+        button.textContent = originalText;
+        button.disabled = false;
+        return;
+      }
       emailjs
         .sendForm("service_cm72dfl", "template_ww5gsgz", form)
         .then(() => {
@@ -276,13 +293,17 @@ document.addEventListener("DOMContentLoaded", function () {
       // 他のすべてのFAQを閉じる
       faqQuestions.forEach((q) => {
         q.classList.remove("active");
-        q.nextElementSibling.classList.remove("active");
+        if (q.nextElementSibling) {
+          q.nextElementSibling.classList.remove("active");
+        }
       });
 
       // クリックされたFAQを開く
       if (!isActive) {
         this.classList.add("active");
-        answer.classList.add("active");
+        if (answer) {
+          answer.classList.add("active");
+        }
       }
     });
 
@@ -294,6 +315,124 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
+});
+
+// ===== 言語切り替え機能 =====
+function initLanguageSwitcher() {
+  // 保存された言語を取得
+  let currentLang = localStorage.getItem("preferredLanguage");
+
+  // 保存された言語がない場合、ブラウザの言語設定を確認
+  if (!currentLang) {
+    const browserLang = navigator.language || navigator.userLanguage;
+    currentLang = browserLang.startsWith("ja") ? "ja" : "en";
+  }
+
+  // 言語切り替えボタンのイベントリスナー
+  const langButtons = document.querySelectorAll(".lang-btn");
+  langButtons.forEach((btn) => {
+    btn.addEventListener("click", function () {
+      const lang = this.getAttribute("data-lang");
+      switchLanguage(lang);
+    });
+  });
+
+  // 初期言語を設定
+  switchLanguage(currentLang);
+}
+
+function switchLanguage(lang) {
+  localStorage.setItem("preferredLanguage", lang);
+  document.documentElement.setAttribute("lang", lang);
+
+  const customTitleJa = document.body?.getAttribute("data-title-ja");
+  const customTitleEn = document.body?.getAttribute("data-title-en");
+  if (customTitleJa && customTitleEn) {
+    document.title = lang === "ja" ? customTitleJa : customTitleEn;
+  } else if (lang === "ja") {
+    document.title = "打田裕馬 | エンジニアPMポートフォリオ";
+  } else {
+    document.title = "Yuma Uchida | Engineer PM Portfolio";
+  }
+
+  document.querySelectorAll(".lang-btn").forEach((btn) => {
+    if (btn.getAttribute("data-lang") === lang) {
+      btn.classList.add("active");
+    } else {
+      btn.classList.remove("active");
+    }
+  });
+
+  document.querySelectorAll("[data-ja][data-en]").forEach((element) => {
+    const jaText = element.getAttribute("data-ja");
+    const enText = element.getAttribute("data-en");
+    if (lang === "ja" && jaText !== null) {
+      element.textContent = jaText;
+    } else if (lang === "en" && enText !== null) {
+      element.textContent = enText;
+    }
+  });
+
+  document
+    .querySelectorAll("[data-placeholder-ja][data-placeholder-en]")
+    .forEach((element) => {
+      const jaPlaceholder = element.getAttribute("data-placeholder-ja");
+      const enPlaceholder = element.getAttribute("data-placeholder-en");
+      if (lang === "ja" && jaPlaceholder !== null) {
+        element.setAttribute("placeholder", jaPlaceholder);
+      } else if (lang === "en" && enPlaceholder !== null) {
+        element.setAttribute("placeholder", enPlaceholder);
+      }
+    });
+
+  document
+    .querySelectorAll("select option[data-ja][data-en]")
+    .forEach((option) => {
+      const jaText = option.getAttribute("data-ja");
+      const enText = option.getAttribute("data-en");
+      if (lang === "ja" && jaText !== null) {
+        option.textContent = jaText;
+      } else if (lang === "en" && enText !== null) {
+        option.textContent = enText;
+      }
+    });
+
+  document.querySelectorAll("[data-ja-title][data-en-title]").forEach((el) => {
+    const jaTitle = el.getAttribute("data-ja-title");
+    const enTitle = el.getAttribute("data-en-title");
+    if (lang === "ja" && jaTitle !== null) {
+      el.setAttribute("title", jaTitle);
+    } else if (lang === "en" && enTitle !== null) {
+      el.setAttribute("title", enTitle);
+    }
+  });
+
+  const form = document.getElementById("contact-form");
+  if (form) {
+    const submitButton = form.querySelector('button[type="submit"]');
+    if (submitButton) {
+      submitButton.textContent = lang === "ja" ? "送信" : "Send";
+    }
+  }
+
+  const typingEl = document.querySelector(".typing");
+  if (
+    typingEl &&
+    typingEl.hasAttribute("data-ja") &&
+    typingEl.hasAttribute("data-en")
+  ) {
+    typingEl.textContent =
+      lang === "ja"
+        ? typingEl.getAttribute("data-ja")
+        : typingEl.getAttribute("data-en");
+    typingEffect();
+  }
+
+  document.dispatchEvent(new CustomEvent("languagechange", { detail: { lang } }));
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  initLanguageSwitcher();
 });
 
 // ===== GitHub Pages用404エラーハンドリング =====

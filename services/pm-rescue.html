@@ -3,516 +3,207 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PM救出プラン | 法人向け継続型コンサルティング</title>
+  <title>PM救出プラン | 打田裕馬</title>
   <link rel="icon" href="/images/favicon.png" type="image/png">
-  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="/styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;700&display=swap" rel="stylesheet">
   <script async data-id="101489745" src="https://static.getclicky.com/js"></script>
   <style>
     .hero-section {
-      background: linear-gradient(135deg, var(--color-main) 0%, var(--color-bg) 100%);
+      background: linear-gradient(135deg, var(--color-main), var(--color-bg));
       padding: 4rem 2rem;
       text-align: center;
       margin-bottom: 3rem;
     }
-    .hero-title {
-      font-size: 3rem;
-      color: var(--color-accent);
-      margin-bottom: 1rem;
-      font-weight: 700;
+    .case-grid, .strength-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
     }
-    .hero-subtitle {
-      font-size: 1.3rem;
-      color: var(--color-sub);
-      margin-bottom: 2rem;
-    }
-    .problem-list {
+    .problem-list, .rescue-plan, .strength-card, .case-card, .cta-section {
       background: var(--color-bg-light);
       border-radius: 12px;
-      padding: 2rem;
-      margin: 2rem 0;
+      padding: 1.8rem;
       border-left: 5px solid var(--color-accent);
+      box-shadow: 0 2px 12px var(--color-shadow);
     }
-    .problem-list ul {
+    .problem-list ul, .rescue-plan ul {
       list-style: none;
       padding: 0;
     }
-    .problem-list li {
-      padding: 0.5rem 0;
+    .problem-list li, .rescue-plan li {
+      padding-left: 1.6rem;
+      margin-bottom: 0.6rem;
       position: relative;
-      padding-left: 2rem;
     }
-    .problem-list li::before {
+    .problem-list li::before, .rescue-plan li::before {
       content: '✓';
       position: absolute;
       left: 0;
       color: var(--color-accent);
-      font-weight: bold;
-    }
-    .experience-box {
-      background: var(--color-bg-light);
-      border-radius: 12px;
-      padding: 2rem;
-      margin: 2rem 0;
-      border: 2px solid var(--color-accent);
-    }
-    .service-plan {
-      background: var(--color-bg-light);
-      border-radius: 12px;
-      padding: 2rem;
-      margin: 2rem 0;
-      border-left: 5px solid var(--color-accent);
-    }
-    .price-box {
-      background: var(--color-accent);
-      color: var(--color-bg);
-      border-radius: 12px;
-      padding: 2rem;
-      margin: 2rem 0;
-      text-align: center;
-    }
-    .price-box h3 {
-      color: var(--color-bg);
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-    .price-amount {
-      font-size: 3rem;
-      font-weight: bold;
-      color: var(--color-bg);
-    }
-    .strength-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin: 2rem 0;
-    }
-    .strength-card {
-      background: var(--color-bg-light);
-      border-radius: 12px;
-      padding: 2rem;
-      border-left: 5px solid var(--color-accent);
-    }
-    .strength-card h4 {
-      color: var(--color-accent);
-      font-size: 1.3rem;
-      margin-bottom: 1rem;
-    }
-    .case-study {
-      background: var(--color-bg-light);
-      border-radius: 12px;
-      padding: 2rem;
-      margin: 2rem 0;
-      border-left: 5px solid var(--color-accent);
-    }
-    .case-study h4 {
-      color: var(--color-accent);
-      font-size: 1.3rem;
-      margin-bottom: 1rem;
-    }
-    .cta-section {
-      text-align: center;
-      background: var(--color-bg-light);
-      border-radius: 12px;
-      padding: 3rem 2rem;
-      margin: 3rem 0;
-    }
-    .cta-buttons {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-top: 2rem;
-    }
-    .cta-btn {
-      display: inline-block;
-      padding: 1rem 2rem;
-      background: var(--color-accent);
-      color: var(--color-bg);
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
-      transition: all 0.3s;
-      border: 2px solid var(--color-accent);
-    }
-    .cta-btn:hover {
-      background: transparent;
-      color: var(--color-accent);
-    }
-    .cta-btn.secondary {
-      background: transparent;
-      color: var(--color-accent);
-      border: 2px solid var(--color-accent);
-    }
-    .cta-btn.secondary:hover {
-      background: var(--color-accent);
-      color: var(--color-bg);
-    }
-    .dummy-image {
-      width: 100%;
-      height: 200px;
-      background: var(--color-bg-light);
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--color-sub);
-      border: 2px dashed var(--color-border);
-      margin: 2rem 0;
-    }
-    @media (max-width: 600px) {
-      .hero-title {
-        font-size: 2rem;
-      }
-      .cta-buttons {
-        flex-direction: column;
-      }
-      .strength-grid {
-        grid-template-columns: 1fr;
-      }
     }
   </style>
 </head>
-<body>
+<body data-title-ja="PM救出プラン | 打田裕馬" data-title-en="PM Rescue Plan | Yuma Uchida">
   <header class="header">
     <div class="header-inner">
-      <img src="../images/profile.png" alt="プロフィール画像" class="profile-img">
+      <a href="/index.html" class="logo-link"><img src="/images/profile.png" alt="プロフィール画像" class="profile-img"></a>
       <div class="header-info">
-        <h1 class="name">打田裕馬 <span class="title">Engineer × PM × メンタルケア</span></h1>
+        <h1 class="name"><a href="/index.html" data-ja="打田裕馬" data-en="Yuma Uchida">打田裕馬</a> <span class="title" data-ja="Engineer × PM × メンタルケア" data-en="Engineer × PM × Mental Care">Engineer × PM × メンタルケア</span></h1>
         <nav class="nav">
           <ul>
-            <li><a href="../index.html#about">About</a></li>
-            <li><a href="../index.html#skills">Skills</a></li>
-            <li><a href="../index.html#works">Works</a></li>
-            <li><a href="../index.html#career">Career</a></li>
-            <li><a href="../index.html#services">Services</a></li>
-            <li><a href="../index.html#contact">Contact</a></li>
-            <li><a href="../achievements.html">Achievements</a></li>
+            <li><a href="/index.html#about">About</a></li>
+            <li><a href="/index.html#skills">Skills</a></li>
+            <li><a href="/index.html#works">Works</a></li>
+            <li><a href="/index.html#career">Career</a></li>
+            <li><a href="/index.html#services">Services</a></li>
+            <li><a href="/index.html#contact">Contact</a></li>
+            <li><a href="/achievements.html">Achievements</a></li>
           </ul>
         </nav>
+      </div>
+      <div class="lang-switcher">
+        <button class="lang-btn" data-lang="ja">日本語</button>
+        <button class="lang-btn" data-lang="en">English</button>
       </div>
     </div>
   </header>
 
   <main>
-    <!-- ヒーローセクション -->
     <section class="hero-section fade-in">
-      <nav class="breadcrumb"><a href="../index.html#services">提供サービス</a> &gt; PM救出プラン</nav>
-      <h1 class="hero-title">PM救出プラン</h1>
-      <p class="hero-subtitle">炎上プロジェクトの立て直しと病んだPMの復活支援</p>
-      <p>技術もメンタルケアも分かるプロフェッショナルが、週3日常駐でサポートします</p>
-    </section>
-
-    <!-- 問題提起・共感 -->
-    <section class="section fade-in">
-      <h2 class="accent">プロジェクトが炎上して、PMが病んでしまった...そんな状況、ありませんか？</h2>
-      
-      <p>こんにちは。PM救出の専門家、打田裕馬です。</p>
-      
-      <p>突然ですが、あなたの会社でこんな状況はありませんか？</p>
-      
-      <div class="problem-list">
-        <ul>
-          <li>プロジェクトが遅延ばかりで、いつ終わるか分からない</li>
-          <li>PMが毎日残業しているのに、成果が見えない</li>
-          <li>開発チームがバラバラで、誰が何をやってるか把握できない</li>
-          <li>ステークホルダーからの板挟みでPMが潰れそう</li>
-          <li>経営陣から『いつ終わるんだ？』と毎日聞かれる</li>
-        </ul>
-      </div>
-
-      <p>実は僕も、昔は同じような状況でした...</p>
-      
-      <div class="experience-box">
-        <p>総勢20名のチームを任されて、正直パニックでした。借金2000万円を作ってしまったり、従業員が次々と辞めていったり。本当に苦しい時期がありました。</p>
-        
-        <p>でも今は、『任せるマネジメント』を身につけることで、自分が手を動かすよりも大きな成果を生み出せるようになったんです。</p>
-      </div>
-    </section>
-
-    <!-- サービス概要 -->
-    <section class="section fade-in">
-      <h2 class="accent">PM救出プランとは</h2>
-      
-      <div style="text-align: center; margin: 2rem 0;">
-        <img src="../images/pm-rescue-dummy.svg" alt="PM救出プラン概要" style="max-width: 100%; height: auto; border-radius: 12px;">
-      </div>
-      
-      <p style="text-align: center; color: var(--color-sub); font-size: 0.9rem;">※ 実際のサービス提供風景や、チーム改善の様子を撮影した画像を後ほど追加いたします。</p>
-    </section>
-
-    <!-- 打田の実体験 -->
-    <section class="section fade-in">
-      <h2 class="accent">借金2000万円からの逆転劇 - PMの『任せるマネジメント』習得ストーリー</h2>
-      
-      <p>僕の場合、最初は典型的な『マイクロマネジメント』をしていました。</p>
-      
-      <p>自分がプログラミングできるからといって、細かいところまで口を出して、メンバーの成長を阻害していたんです。</p>
-      
-      <p><strong>その結果：</strong></p>
-      <ul>
-        <li>スキルが低いメンバーが自立できない</li>
-        <li>納品が遅れてキャッシュフローが悪化</li>
-        <li>自分に余裕がなくなってチームの雰囲気が最悪に</li>
-        <li>従業員が次々と辞めていく</li>
-      </ul>
-      
-      <p>でも、ある医療向けCRMプロジェクトで転換点が来ました。</p>
-      
-      <p>総勢20名のチームを任されたとき、物理的に全てに関わることが不可能だったんです。</p>
-      
-      <p>そこで初めて『任せるマネジメント』を実践してみました：</p>
-      
-      <div class="problem-list">
-        <ul>
-          <li>大まかな方針だけ決めて、詳細はメンバーに任せる</li>
-          <li>設計や進め方をレビューすることに集中</li>
-          <li>メンバーの成長を第一に考える</li>
-        </ul>
-      </div>
-      
-      <p>結果、メンバーが自分で考えて動くようになり、僕自身よりも良い提案をしてくれるようになったんです。</p>
-      
-      <p>この経験から確信しました。PMの仕事は『自分が頑張ること』ではなく『チームが力を発揮できる環境を作ること』だと。</p>
-    </section>
-
-    <!-- サービス詳細 -->
-    <section class="section fade-in">
-      <h2 class="accent">法人向け：PM救出プラン【継続型コンサルティング】</h2>
-      
-      <p>炎上プロジェクトの立て直しと、病んだPMの復活支援を同時に行います。技術もメンタルケアも分かるプロフェッショナルが、週3日常駐でサポートします。</p>
-      
-      <div class="service-plan">
-        <h3>【基本プラン：週3日常駐】月額120万円</h3>
-        
-        <h4>1. PM業務の一部巻取り</h4>
-        <p>まずは炎上している部分を僕が直接引き取ります。あなたのPMが息つく暇を作ることが最優先です。</p>
-        
-        <h4>2. 各ステークホルダーとの折衝代行</h4>
-        <p>経営陣への報告、開発チームとの調整、お客様対応まで。厳しい交渉も、社長経験のある僕が代わりに行います。</p>
-        
-        <h4>3. タスク分担の俯瞰的見直し</h4>
-        <p>20名チームのマネジメント経験から、誰がどの作業をすべきかを客観的に判断。適材適所の再配置を行います。</p>
-        
-        <h4>4. 現PMへのコンサルティング</h4>
-                        <p>『任せるマネジメント』の手法をお教えします。メンタルケアの知識も活かして、心理的なサポートも提供します。</p>
-      </div>
-      
-      <div class="service-plan">
-        <h3>【緊急対応プラン：週4-5日対応】月額150万円</h3>
-        <p>上記に加えて、僕自身も開発に参加します。Laravel、React、AWS等での実装も可能。納期短縮のために総力戦で臨みます。</p>
-      </div>
-    </section>
-
-    <!-- 改善プロセス -->
-    <section class="section fade-in">
-      <h2 class="accent">PM救出の4ステップ改善プロセス</h2>
-      
-      <p>炎上プロジェクトと病んだPMを、段階的に改善していきます。各ステップで具体的な成果を実感していただけます。</p>
-      
-      <div style="text-align: center; margin: 2rem 0;">
-        <img src="../images/pm-rescue-process-icons.svg" alt="PM救出改善プロセス" style="max-width: 100%; height: auto;">
-      </div>
-      
-      <div class="strength-grid">
-        <div class="strength-card">
-          <div style="display: flex; align-items: center; margin-bottom: 1rem;">
-            <img src="../images/step1-fire.svg" alt="炎上状態" style="width: 40px; height: 40px; margin-right: 1rem;">
-            <h4 style="margin: 0;">Step 1: 炎上状態の把握</h4>
-          </div>
-          <p>プロジェクトの現状を詳細に分析し、PMの心理状態も含めて問題点を特定します。経営陣、開発チーム、顧客との関係性も含めて総合的に診断。</p>
+      <nav class="breadcrumb"><a href="/index.html#services" data-ja="提供サービス" data-en="Services">提供サービス</a> &gt; <span data-ja="PM救出プラン" data-en="PM Rescue Plan">PM救出プラン</span></nav>
+      <h1 class="hero-title" data-ja="炎上プロジェクトと疲弊したPMを立て直す" data-en="A Rescue Plan For Burning Projects & Burned-Out PMs">炎上プロジェクトと疲弊したPMを立て直す</h1>
+      <p class="hero-subtitle" data-ja="経営と現場の両視点を持つPMが、状況整理から改善実行まで伴走します。" data-en="I bring both leadership and engineering experience to diagnose, stabilize, and evolve troubled projects.">経営と現場の両視点を持つPMが、状況整理から改善実行まで伴走します。</p>
+      <div class="stats-grid" style="margin:2.5rem auto 1rem;max-width:900px;">
+        <div class="stat-card">
+          <div class="stat-number">3</div>
+          <div class="stat-label" data-ja="レイヤーを整理" data-en="Layers aligned (Exec/PM/Team)">レイヤーを整理</div>
         </div>
-        
-        <div class="strength-card">
-          <div style="display: flex; align-items: center; margin-bottom: 1rem;">
-            <img src="../images/step2-analyze.svg" alt="診断・分析" style="width: 40px; height: 40px; margin-right: 1rem;">
-            <h4 style="margin: 0;">Step 2: 改善計画の策定</h4>
-          </div>
-          <p>問題点を優先順位付けし、具体的な改善計画を策定。PMの負荷軽減とプロジェクトの立て直しを両立する戦略を立案します。</p>
+        <div class="stat-card">
+          <div class="stat-number">4step</div>
+          <div class="stat-label" data-ja="再建プロセス" data-en="Recovery Process">再建プロセス</div>
         </div>
-        
-        <div class="strength-card">
-          <div style="display: flex; align-items: center; margin-bottom: 1rem;">
-            <img src="../images/step3-support.svg" alt="介入・サポート" style="width: 40px; height: 40px; margin-right: 1rem;">
-            <h4 style="margin: 0;">Step 3: 直接サポートの実施</h4>
-          </div>
-          <p>週3日常駐で直接サポートを開始。炎上している部分を僕が引き取り、PMの息つく暇を作ります。同時にメンタルケアも実施。</p>
-        </div>
-        
-        <div class="strength-card">
-          <div style="display: flex; align-items: center; margin-bottom: 1rem;">
-            <img src="../images/step4-growth.svg" alt="自立・成長" style="width: 40px; height: 40px; margin-right: 1rem;">
-            <h4 style="margin: 0;">Step 4: 自立支援と成長</h4>
-          </div>
-          <p>段階的にPMの自立を支援。『任せるマネジメント』の手法を指導し、チーム全体の改善を実現。継続的な成長をサポート。</p>
+        <div class="stat-card">
+          <div class="stat-number">90日</div>
+          <div class="stat-label" data-ja="初期改善の目安" data-en="First Improvements">初期改善の目安</div>
         </div>
       </div>
     </section>
 
-    <!-- 差別化ポイント -->
     <section class="section fade-in">
-      <h2 class="accent">なぜ他のPMコンサルタントではダメなのか？</h2>
-      
-      <div class="strength-grid">
-        <div class="strength-card">
-          <h4>現役エンジニアとしての技術力</h4>
-          <p>Laravel、React、AWS、Docker等での実装経験が豊富。技術的な問題も的確に判断できます。『技術が分からないのに口出しだけするコンサル』ではありません。</p>
-        </div>
-        
-        <div class="strength-card">
-          <h4>社長としての経営経験</h4>
-          <p>自分も会社を経営していたので、利害関係者との厳しい交渉経験があります。お客様、経営陣、開発チーム、それぞれの立場を理解した調整ができます。</p>
-        </div>
-        
-        <div class="strength-card">
-                          <h4>メンタルケアの専門知識</h4>
-          <p>病んだPMの心理状態を理解し、適切なケアができます。バーンアウト、スキル不足、板挟み状態...どんな状況でも復活支援が可能です。</p>
-        </div>
-        
-        <div class="strength-card">
-          <h4>実績に基づく『任せるマネジメント』</h4>
-          <p>総勢20名のチームで実証済み。自分で手を動かすより、メンバーを成長させる方が大きな成果を生み出せることを体験として知っています。</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- 導入事例 -->
-    <section class="section fade-in">
-      <h2 class="accent">実際の救出事例（一部抽象化）</h2>
-      
-      <div class="case-study">
-        <h4>事例1: 開発チーム15名の炎上プロジェクト</h4>
-        <p><strong>製造業のA社様</strong>。PMがバーンアウトして、プロジェクトが3ヶ月遅延。経営陣からの圧力で開発チームの士気も最悪でした。</p>
-        
-        <p><strong>実施内容：</strong></p>
-        <ul>
-          <li>初週で緊急度の高いタスクを僕が直接処理</li>
-          <li>PMの負担を50%軽減し、メンタルケアを実施</li>
-          <li>チーム内のコミュニケーション改善と役割分担の明確化</li>
-        </ul>
-        
-        <p><strong>結果：</strong></p>
-        <ul>
-          <li>2ヶ月でプロジェクト軌道修正</li>
-          <li>PMが自信を取り戻し、自立したマネジメントが可能に</li>
-          <li>チーム全体の生産性が30%向上</li>
-        </ul>
-      </div>
-      
-      <div class="case-study">
-        <h4>事例2: スタートアップの技術的負債と進行管理</h4>
-        <p><strong>IT企業のB社様</strong>。技術的負債が膨らみ、新機能開発が全く進まない状況。PMも技術的な判断ができず困窮していました。</p>
-        
-        <p><strong>実施内容：</strong></p>
-        <ul>
-          <li>技術的負債の優先順位付けと解消計画策定</li>
-          <li>現PMへの技術的判断基準の指導</li>
-          <li>開発プロセスの見直しと自動化推進</li>
-        </ul>
-        
-        <p><strong>結果：</strong></p>
-        <ul>
-          <li>技術的負債を80%削減</li>
-          <li>PMが技術的な会話ができるようになった</li>
-          <li>新機能開発スピードが3倍に向上</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- 料金・契約 -->
-    <section class="section fade-in">
-      <h2 class="accent">料金体系（明確・分かりやすく）</h2>
-      
-      <div class="price-box">
-        <h3>基本料金</h3>
-        <div class="price-amount">月額120万円</div>
-        <p>週3日常駐プラン</p>
-      </div>
-      
-      <div class="price-box">
-        <h3>緊急対応プラン</h3>
-        <div class="price-amount">月額150万円</div>
-        <p>週4-5日対応</p>
-      </div>
-      
-      <ul>
-        <li><strong>初期診断</strong>: 基本料金に含む（別途費用なし）</li>
-        <li><strong>契約期間</strong>: 最低1ヶ月から（お試ししやすい設定）</li>
-      </ul>
-      
-      <h3>料金に含まれるもの</h3>
-      <div class="problem-list">
-        <ul>
-          <li>PM業務の直接サポート</li>
-          <li>ステークホルダー折衝代行</li>
-          <li>現PMへのコンサルティング</li>
-          <li>メンタルケア支援</li>
-          <li>チーム改善提案</li>
-          <li>緊急時の技術的問題解決</li>
-        </ul>
-      </div>
-      
-      <h3>なぜこの料金なのか？</h3>
-      <p>月120万円は確かに高額です。でも考えてみてください。</p>
-      
-      <ul>
-        <li>プロジェクトが炎上して3ヶ月遅延したら？</li>
-        <li>PMが病んで退職してしまったら？</li>
-        <li>お客様との関係が悪化してしまったら？</li>
-      </ul>
-      
-      <p>その損失と比べれば、専門家による早期解決の方が圧倒的にコストパフォーマンスが良いはずです。</p>
-      
-      <p>しかも1ヶ月で効果を実感していただけます。</p>
-    </section>
-
-
-
-        <!-- 問い合わせ -->
-    <section class="section fade-in">
-      <div class="cta-section">
-        <h2 class="accent">まずは気軽にご相談ください</h2>
-        
-        <p>『うちの状況でも大丈夫かな？』</p>
-        <p>『予算的に厳しいかも...』</p>
-        <p>『PMの気持ちを傷つけないか心配』</p>
-        
-        <p>そんな不安、よく分かります。僕自身も同じような悩みを抱えていました。</p>
-        
-        <p>まずは30分の無料相談で、現状をお聞かせください。強引な営業は一切しません。本当に僕のサポートが必要かどうか、正直にお伝えします。</p>
-        
-        <h3>無料相談で分かること</h3>
+      <h2 class="accent" data-ja="よくあるSOS" data-en="Common SOS Signals">よくあるSOS</h2>
+      <div class="case-grid">
         <div class="problem-list">
+          <h3 data-ja="PMが疲弊している" data-en="PM Is Burning Out">PMが疲弊している</h3>
           <ul>
-            <li>プロジェクトの問題点の整理</li>
-            <li>PMの状況分析</li>
-            <li>改善のための選択肢提示</li>
-            <li>僕のサポートが有効かどうかの判断</li>
+            <li data-ja="意思決定の孤立・責任過多" data-en="Isolated decision-making and excessive responsibility.">意思決定の孤立・責任過多</li>
+            <li data-ja="タスクが細分化されずマネジメントに集中できない" data-en="No support structure, so they can't focus on management.">タスクが細分化されずマネジメントに集中できない</li>
+            <li data-ja="経営との調整とチームケアを両立できていない" data-en="Struggle to balance stakeholder alignment and team care.">経営との調整とチームケアを両立できていない</li>
           </ul>
         </div>
-        
-        <h3>相談方法</h3>
-        <ul>
-          <li>オンライン面談（Zoom等）</li>
-          <li>平日夜間・土日も対応可能</li>
-          <li>守秘義務は厳守します</li>
-        </ul>
-        
-        <p>炎上プロジェクトも、病んだPMも、必ず立て直せます。一人で抱え込まず、まずはお話しましょう。</p>
+        <div class="problem-list">
+          <h3 data-ja="プロジェクトが炎上している" data-en="Project Is Burning">プロジェクトが炎上している</h3>
+          <ul>
+            <li data-ja="仕様変更と追加要望が止まらない" data-en="Unbounded scope and constant change requests.">仕様変更と追加要望が止まらない</li>
+            <li data-ja="優先順位や責任者が曖昧" data-en="No clear priorities or owners.">優先順位や責任者が曖昧</li>
+            <li data-ja="ビジネスと開発の信頼関係が崩れている" data-en="Trust between business and engineering is broken.">ビジネスと開発の信頼関係が崩れている</li>
+          </ul>
+        </div>
+        <div class="problem-list">
+          <h3 data-ja="経営が状況を把握できない" data-en="Leadership Lacks Visibility">経営が状況を把握できない</h3>
+          <ul>
+            <li data-ja="報告粒度がバラバラで現状が見えない" data-en="Reporting lacks consistency; status is opaque.">報告粒度がバラバラで現状が見えない</li>
+            <li data-ja="数値的な根拠がなく判断できない" data-en="No metrics to support decisions.">数値的な根拠がなく判断できない</li>
+            <li data-ja="リスク検知が遅く手遅れになりがち" data-en="Risks surface too late.">リスク検知が遅く手遅れになりがち</li>
+          </ul>
+        </div>
       </div>
-      
-      <!-- Typeform外部リンク -->
-      <div style="text-align: center; margin-top: 2rem;">
-        <a href="https://6zso3iarmop.typeform.com/to/QTpsl4Ro" target="_blank" rel="noopener" class="cta-btn" style="font-size:1.2rem; padding:1.2em 2.5em;">
-          お問い合わせフォームはこちら
-        </a>
-        <p style="color: var(--color-sub); font-size: 0.95rem; margin-top: 1em;">
-          別ウィンドウでTypeformのフォームが開きます
-        </p>
+    </section>
+
+    <section class="section fade-in">
+      <h2 class="accent" data-ja="4ステップ救出プロセス" data-en="Four-Step Rescue Process">4ステップ救出プロセス</h2>
+      <div class="rescue-plan">
+        <ol>
+          <li data-ja="診断：ヒアリング・成果物レビュー・数値分析で現状を可視化" data-en="Diagnose: interviews, artifact reviews, and metrics to visualize reality.">診断：ヒアリング・成果物レビュー・数値分析で現状を可視化</li>
+          <li data-ja="設計：優先順位と責任分解を明確化し、経営・現場の合意を形成" data-en="Design: clarify priorities and ownership, align leadership and teams.">設計：優先順位と責任分解を明確化し、経営・現場の合意を形成</li>
+          <li data-ja="実行：短サイクルで改善策を実装し、進捗・品質を毎週トラッキング" data-en="Execute: run short improvement cycles, track progress/quality weekly.">実行：短サイクルで改善策を実装し、進捗・品質を毎週トラッキング</li>
+          <li data-ja="定着：ナレッジ化とPM育成を並行し、自走できる状態へ移行" data-en="Institutionalize: document learnings, coach PMs, and transition to a self-sustaining system.">定着：ナレッジ化とPM育成を並行し、自走できる状態へ移行</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section fade-in">
+      <h2 class="accent" data-ja="案件事例" data-en="Selected Cases">案件事例</h2>
+      <div class="case-grid">
+        <div class="case-card">
+          <h3 data-ja="医療CRMプロジェクト再建" data-en="Medical CRM Recovery">医療CRMプロジェクト再建</h3>
+          <ul>
+            <li data-ja="3部署の利害がぶつかり仕様が混乱" data-en="Conflicting requirements across three departments.">3部署の利害がぶつかり仕様が混乱</li>
+            <li data-ja="診断→部門別要件→統合レビューで整理" data-en="Structured interviews per department, then held integration reviews.">診断→部門別要件→統合レビューで整理</li>
+            <li data-ja="16ヶ月の計画通りにリリース" data-en="Delivered on schedule after 16 months.">16ヶ月の計画通りにリリース</li>
+          </ul>
+        </div>
+        <div class="case-card">
+          <h3 data-ja="フランチャイズDX継続支援" data-en="Franchise DX Support">フランチャイズDX継続支援</h3>
+          <ul>
+            <li data-ja="5年間小規模チームで全工程を担当" data-en="Owned every phase with a compact team for 5 years.">5年間小規模チームで全工程を担当</li>
+            <li data-ja="段階的なリリースとCI/CDで安定運用" data-en="Phased releases and CI/CD stabilized operations.">段階的なリリースとCI/CDで安定運用</li>
+            <li data-ja="業務効率30%向上・投資回収2年" data-en="30% efficiency boost, ROI achieved in 2 years.">業務効率30%向上・投資回収2年</li>
+          </ul>
+        </div>
+        <div class="case-card">
+          <h3 data-ja="PM/EMオンボーディング支援" data-en="PM/EM Onboarding">PM/EMオンボーディング支援</h3>
+          <ul>
+            <li data-ja="複数PMが同時に離脱し体制が崩壊危機" data-en="Multiple PMs resigned, structure at risk.">複数PMが同時に離脱し体制が崩壊危機</li>
+            <li data-ja="暫定PMとして参画し、後任採用と育成を並走" data-en="Joined as interim PM while hiring and coaching successors.">暫定PMとして参画し、後任採用と育成を並走</li>
+            <li data-ja="3ヶ月で自走状態に移行" data-en="Transitioned back to self-sufficiency in 3 months.">3ヶ月で自走状態に移行</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section fade-in">
+      <h2 class="accent" data-ja="料金プラン" data-en="Pricing">料金プラン</h2>
+      <div class="services-list">
+        <div class="service-card" style="border-left:5px solid #00C896;">
+          <h3 data-ja="緊急スタビライズプラン" data-en="Emergency Stabilize Plan">緊急スタビライズプラン</h3>
+          <ul style="color:var(--color-sub);font-size:1rem;line-height:1.7;text-align:left;">
+            <li data-ja="週3-4日 / 最短1ヶ月" data-en="3–4 days per week / 1 month minimum">週3-4日 / 最短1ヶ月</li>
+            <li data-ja="現状診断と90日アクションプランの策定" data-en="Full diagnostic plus 90-day action plan.">現状診断と90日アクションプランの策定</li>
+            <li data-ja="経営層・現場へのレポートと伴走" data-en="Joint leadership + team updates each week.">経営層・現場へのレポートと伴走</li>
+          </ul>
+          <p data-ja="料金: 200万円/月〜（税込）" data-en="Fee: from ¥2M per month (tax incl.)">料金: 200万円/月〜（税込）</p>
+        </div>
+        <div class="service-card" style="border-left:5px solid var(--color-accent);">
+          <h3 data-ja="継続コンサルティング" data-en="Ongoing Consulting">継続コンサルティング</h3>
+          <ul style="color:var(--color-sub);font-size:1rem;line-height:1.7;text-align:left;">
+            <li data-ja="週1-2日 / 3ヶ月以上" data-en="1–2 days per week / 3+ months">週1-2日 / 3ヶ月以上</li>
+            <li data-ja="PM育成・ナレッジ化・プロセス定着" data-en="PM coaching, documentation, and process embedding.">PM育成・ナレッジ化・プロセス定着</li>
+            <li data-ja="必要に応じて採用/チーム構築もサポート" data-en="Support recruiting and team design as needed.">必要に応じて採用/チーム構築もサポート</li>
+          </ul>
+          <p data-ja="料金: 120万円/月〜（税込）" data-en="Fee: from ¥1.2M per month (tax incl.)">料金: 120万円/月〜（税込）</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section fade-in">
+      <div class="cta-section">
+        <h2 data-ja="48時間以内に初回レスポンス" data-en="First Response Within 48 Hours">48時間以内に初回レスポンス</h2>
+        <p data-ja="状況共有だけでも構いません。匿名化した資料やタイムラインがあれば、事前に共有いただけると診断がスムーズです。" data-en="Even if you're only sharing context for now, that's fine. Redacted docs or timelines help me respond faster.">状況共有だけでも構いません。匿名化した資料やタイムラインがあれば、事前に共有いただけると診断がスムーズです。</p>
+        <div class="cta-buttons">
+          <a href="/index.html#contact" class="cta-btn" data-ja="問い合わせフォームへ" data-en="Go to Contact Form">問い合わせフォームへ</a>
+          <a href="/achievements.html" class="cta-btn secondary" data-ja="関連実績を見る" data-en="See Related Work">関連実績を見る</a>
+        </div>
       </div>
     </section>
   </main>
 
-  <script src="../script.js"></script>
+  <footer class="footer">
+    <div class="footer-inner">
+      <span data-ja="&copy; 2024 打田裕馬 | Engineer × PM × MentalCare" data-en="&copy; 2024 Yuma Uchida | Engineer × PM × Mental Care">&copy; 2024 打田裕馬 | Engineer × PM × MentalCare</span>
+    </div>
+  </footer>
+
+  <script src="/script.js"></script>
 </body>
-</html> 
+</html>
