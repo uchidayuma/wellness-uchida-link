@@ -454,6 +454,14 @@ function switchLanguage(lang) {
     typingEffect();
   }
 
+  // 言語ごとの表示切り替え (表示/非表示)
+  document.querySelectorAll(".lang-ja-only").forEach((el) => {
+    el.style.display = lang === "ja" ? "" : "none";
+  });
+  document.querySelectorAll(".lang-en-only").forEach((el) => {
+    el.style.display = lang === "en" ? "" : "none";
+  });
+
   document.dispatchEvent(new CustomEvent("languagechange", { detail: { lang } }));
 }
 

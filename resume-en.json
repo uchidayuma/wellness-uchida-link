@@ -5,7 +5,7 @@
         "image": "https://wellness.uchida.link/images/profile.png",
         "email": "uchida.yuma@routeplus.co.jp",
         "url": "https://wellness.uchida.link",
-        "summary": "Engineer/PM bridging leadership and engineering. Expert in project recovery and technical management.",
+        "summary": "Full-Stack Engineer and Project Manager with a track record of bridging technical execution and business strategy. Specialized in project recovery, team leadership, and scalable infrastructure design.",
         "location": {
             "city": "Tokyo",
             "countryCode": "JP",
@@ -22,14 +22,13 @@
     "work": [
         {
             "name": "OR Lab Inc.",
-            "position": "Tech Lead",
+            "position": "Tech Lead / Project Manager",
             "startDate": "2025-09",
             "endDate": "2025-12",
-            "summary": "Lodging reservation & smart lock tool.",
             "highlights": [
-                "Infrastructure as Code (CDK)",
-                "E2E Testing (Playwright)",
-                "Multi-national team mgmt"
+                "Architected and automated cloud infrastructure using AWS CDK, reducing deployment time.",
+                "Established automated quality assurance with Playwright E2E testing.",
+                "Led a multi-national development team, ensuring seamless communication and delivery."
             ]
         },
         {
