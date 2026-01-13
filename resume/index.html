@@ -1,654 +1,1052 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
+  <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
   <title>打田 裕馬 (Yuma Uchida)</title>
-  <link href='//fonts.googleapis.com/css?family=Merriweather:400,300,700' rel='stylesheet' type='text/css'>
-  <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
-  <style>body, html {
-  padding-top:2.5em;
-  margin:0;
-  background-color:#fafafa;
-}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />  <style>
+  /********************************************
+* 	reset from
+* 	http://meyerweb.com/eric/tools/css/reset/
+*******************************************/
 
-.note {
-  display:block;
-  position: absolute;
-  top:10px;
-  left:10px;
-
-  font-family: "Open Sans";
-  font-size: 0.6em;
-}
-
-.new {
-  background-color: #81C784;
-
-  border: 1px solid #757575;
-  padding: 1px;
-  border-radius: 4px;
-
-}
-
-/* Header */
-
-header {
-  width:100%;
-  vertical-align: middle;
-  text-align: center;
- 
-}
-
-.header-content {
-  display: inline-block;
-}
-
-.pic {
-  margin: 0 auto;
-  margin-top:-2.5em;
-  
-  border-radius:10em;
-  height:4em;
-  width:4em;
-  
-  border: 2px solid #e0e0e0;
-  transition : all 0.5s linear;
-  
-}
-
-@-webkit-keyframes wiggle {
-  0%   {
-    transform: rotate(0deg);
-  }
-  25%  {
-    transform: rotate(-30deg);
-  }
-  50%  {
-    transform: rotate(15deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
-}
-
-.pic:hover {
-  /*Webkit fix*/
-  -webkit-transform: translateZ(0);
-  
-  cursor:pointer;
-  
-  -webkit-animation: wiggle 0.7s cubic-bezier(0.6, -0.28, 0.735, 0.045);
-}
-
-.header-text {
-  margin-top:0.5em;
-  margin-left:1em;
-}
-
-header p {
-  text-align:center;
-  font-family: "Merriweather";
-  
-  margin:0;
-  
-  color: #212121;
-}
-
-.first-name {
-   font-size: 1.05em;
-}
-
-.subtitle {
-  font-family: "Merriweather";
-  padding-top:.3em;
-  font-size:0.55em;
-  font-weight:500;
-  color: #424242;
-}
-
-/* Information */
-
-.paper {
-  margin: 0 auto;
-  margin-bottom:1em;
-  
-  background-color:white;
-  width:60%;
-  
-  padding:0.5em 0 0.5em 0;
-  
-  border-top: 1px solid #e0e0e0;
-  border-left: 1px solid #e0e0e0;
-  border-right: 1px solid #e0e0e0;
-  border-bottom: 3px solid #e0e0e0;
-  border-radius:3px;
-}
-
-@media(max-width:992px) {
-  .paper {
-    width:80%;
-  }
-}
-
-/* Content Part */
-
-.content-wrapper {
-  padding-right:7.25%;
-}
-
-.content {
-  display:table;
-  width:100%;
-  
-  padding-top:1.5em;
-  
-  /*border-top: 1px solid #eeeeee;*/
-}
-
-.content:last-child {
-  margin-bottom: 2em;
-}
-
-body > div > article > div > section:last-child {
-  padding-bottom:1.5em;
-}
-
-.row {
-    display:table-row;
-}
-.row div {
-    display:table-cell;
-}
-
-.content-cat {
-  font-family: "Merriweather";
-  font-variant:small-caps;
-  font-weight:300;
-  letter-spacing: 1px;
-  
-  color: #212121;
-  
-  font-size:0.975em;
-  
-  text-align:center;
-  vertical-align:middle;
-
-  padding-left:6.66%;
-  width:30%;
-}
-
-.content-cat p {
-  font-size:0.55em;
-  font-weight:600;
-  
-  margin-bottom:0;
-}
-
-.content-text {
-  border-left:1px solid #e0e0e0;
-  transition: border 0.66s ease-in;
-}
-
-.big-text {
-  vertical-align:top;
-}
-
-.content-text ul {
-  padding:0;
-  margin:0;
-  margin-top:0.15em;
-  
-  width:85%;
-  margin-left:1.5em;
-}
-
-.content-text ul:last-child {
-  margin-bottom:0.5em;
-}
-
-.content-text ul li {
-  font-family: "Open Sans";
-  font-size:0.7em;
-  
-  display:inline-block;
-  
-}
-
-.content-text ul li:first-child {
-  width:35%;
-  
-  color: #424242;
-  
-  font-weight:600;
-}
-
-.content-text ul li a, div.content-text.work-listing.education-listing > p > strong > a {
-  text-decoration: none;
-  color: #0277bd;
-}
-
-.content-text ul li a:hover {
-  color:#4fc3f7;
-}
-
-.work-listing p {
-  font-family: "Open Sans";
-  font-size:0.7em;
-  
-  color: #424242;
-  
-  margin-left:2em;
-  margin-top:0.45em;
-  margin-bottom: 0.45em;
-}
-
-div.content-text.work-listing.education-listing > p:nth-child(2) {
-  margin-top:0.25em;
-}
-
-.work-listing .highlight {
-  font-family: "Open Sans";
-  font-size:0.7em;
-  font-weight:400;
-  
-  color: #424242;
-  
-  margin-left:3.25em;
-  
-  list-style-type: disc;
-  list-style-position: inside;
-  display: list-item;
-  
-}
-
-.education-listing > .heading {
-  font-weight:600;
-  
-  margin-top:0.75em;
-  margin-left:2em;
-}
-
-.education-listing > .highlight {
-  margin-left:3.25em;
-}
-
-.highlight {
-  transition: border .33s ease-in;
-}
-
-.profiles-listing ul li, .profiles-listing ul li:first-child {
-  width:32%;
-  font-weight: normal;
-}
-
-.work-content, .education-content {
-  padding-top: .75em;
-  page-break-inside: avoid;
-}
-
-section.content.education-content > div > div.content-cat {
-  vertical-align: top;
-}
-
-div.content-text.skills-listing > p {
-  font-family: "Open Sans";
-  font-size:0.7em;
-  font-weight:400;
-
-  margin-left: 2em;
-  margin-top: 0.45em;
-  margin-bottom: 0.45em;
-}
-
-div.content-text.skills-listing > p > {
-  color:#212121;
-}
-
-@media screen and (max-width: 600px) {
-  body, html {
-    padding-top: 30px;
-  }
-
-  .paper {
-    width:95%;
-  }
-
-  .row div {
-    display: block;
-  }
-
-  .content-cat {
-    width: 100%;
-  }
-
-  .content-text ul li {
-    width: 100%;
-  }
-
-  .content-text ul li:first-child {
-    width: 100%;
-  }
-  
-  .education-listing > .highlight {
-    margin-left: 30px;
-  }
-}
-</style>
-  <style media="print">
-body, html {
-  background-color: white;
-  padding-top: 1.5em;
-  font-size: 104%;
-}
-
-.paper {
-  width:100%;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
   border: 0;
-
-  padding-top: 0;
+  font-size: 100%;
+  vertical-align: baseline;
 }
 
-header p {
-  font-size: 1.3em;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 
-.subtitle {
-  font-size: 0.7em;
+body {
+  line-height: 1;
 }
 
-.header-pic {
-  float:left;
+ol,
+ul {
+  list-style: none;
 }
 
-.profiles {
-  display:none;
+blockquote,
+q {
+  quotes: none;
 }
 
-.content {
-  page-break-inside:avoid; 
-  page-break-after:auto;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: none;
 }
 
-.header-text {
-  float:left;
-  margin-top: -1.6em;
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
-.content-wrapper > .content:first-child {
-  padding-top: 2em;
-}
+/****************
+*	COMMONS
+****************/
 
-.content:last-child {
-  padding-bottom: 0;
-}
-
-.content-cat {
-  width:33%;
-  color:black;
+body,
+html {
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 13px;
+  color: #40484f;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.46153846;
   text-align: left;
 }
 
-.content-cat p {
-  font-size:0.6em;
+p {
+  display: block;
+}
+
+a {
+  color: #0095ff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #0c65a5;
+  text-decoration: underline;
+}
+
+li {
+  list-style-type: square;
+  list-style-position: outside;
+  margin-left: 1.3em;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.67rem;
+}
+
+h3 {
+  font-size: 1.27rem;
+}
+
+em {
+  color: #757575;
+}
+
+strong {
+  font-weight: 700;
+}
+
+/* main container */
+
+#resume {
+  padding: 1.5rem;
+}
+
+/* every section wrapper */
+
+.section {
+  margin-bottom: 1rem;
+}
+
+section .location {
+  margin-right: 0.5em;
+  color: #606d76;
+  font-weight: 700;
+}
+
+#contact {
+  margin-top: 0.5rem;
+}
+
+#profiles .item {
+  padding: 0;
+}
+
+#header > #profiles,
+#header > #contact,
+#skills,
+#languages,
+#interests {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+}
+
+#header > div {
+  line-height: 1.5;
+}
+
+#header > div > div {
+  margin-right: 1.2em;
+}
+
+#header h1.name {
+  font-size: 2.8rem;
+  font-weight: 100;
+  line-height: 100%;
+}
+
+#header h2.label {
+  color: #202931;
+  font-size: 1.47rem;
+  font-weight: 300;
+}
+
+#header .image {
+  width: 11em;
+  float: right;
+  border-radius: 4px;
+}
+
+.section.summary header {
+  margin-top: 1rem;
+}
+
+.main-summary {
+  background: #f1f8ff;
+  padding: 1.2em 1em;
+}
+
+.main-summary p {
+  margin: 0;
+}
+
+.section-title {
+  display: inline-block;
+  background: #fff;
+  padding: 0 1em 0.3em 0;
+  color: #ff6d1f;
+  text-transform: uppercase;
+  font-weight: 600;
+  border: none;
+  font-size: 0.9rem;
+}
+
+.section > header {
+  position: relative;
+}
+
+.fa {
+  margin-right: 0.25em;
+}
+
+.section > header::after {
+  position: absolute;
+  left: 0;
+  top: 0.7em;
+  height: 1px;
+  background: #ccc;
+  content: "";
+  width: 100%;
+  z-index: -100;
+  display: block;
+}
+
+.section.main-summary > section {
+  margin: 0;
+}
+
+.section > section > header {
+  font-size: 1.38rem;
+  position: relative;
+  margin-top: 0.7em;
+}
+
+.section > section > header:first-of-type {
+  margin: 0;
+}
+
+.section > section > header .space-left {
+  position: absolute;
+  left: -1.56rem;
+  top: 5px;
+  color: #aaa;
+  line-height: 1;
+  opacity: 0;
+}
+
+.position,
+.company,
+.organization,
+.institution,
+.date,
+.area,
+.studyType,
+.title,
+.awarder {
+  display: inline;
+}
+
+.position,
+.studyType,
+.area,
+.title,
+.language,
+.name {
   font-weight: 600;
 }
 
-header p, .content-text, .work-listing p, .content-text ul li:first-child, .work-listing .highlight, .content-text.skills-listing > ul > li > .highlight {
-  color:black;
+.company::before,
+.institution::before,
+.organization::before,
+.awarder::before {
+  content: "at ";
 }
 
-.content-text.skills-listing > ul > li span, .subtitle {
-  color:#212121;
+.company,
+.institution,
+.organization,
+.awarder {
+  color: #606d76;
+  font-weight: 400;
 }
 
-.content-text ul:last-child {
-  margin-bottom: 0.25em;
+.section header .date {
+  display: block;
+  font-size: 1rem;
+  padding: 0.1em 0;
+  color: #606d76;
+  font-weight: 400;
 }
 
-.content-text ul li:first-child {
-  width:50%;
+.keywords,
+.courses {
+  margin: 0.5em 0;
 }
 
-.profiles-listing ul li:first-child {
-  width:32%;
+.keywords li,
+.courses li {
+  display: inline-block;
+  margin: 2px 2px 2px 0;
+  padding: 4px 5px 5px;
+  font-size: 0.9rem;
+  line-height: 1;
+  color: #3e6d8e;
+  background-color: #dfeaf1;
+  border: 0 solid #dfeaf1;
+  white-space: nowrap;
 }
 
-div.content-text.skills-listing > ul > li {
-  width:33%;
+.keywords li:hover,
+.courses li:hover {
+  background: #dfeaf0;
 }
 
-.work-listing p {
-  margin-bottom: 0.1em;
+.highlights {
+  margin: 1em 0 0 0;
 }
 
-div.content-text.skills-listing > ul > li > p {
-  margin-top: 0.4em;
+.highlights > li > p {
   margin-bottom: 0.5em;
 }
 
-div.content-text.skills-listing > ul > li {
-  padding-left: 1.5em;
+.item {
+  overflow: hidden;
 }
 
-div.content-text.skills-listing > ul > li:first-child {
-  padding-left: 2em;
+.gpa {
+  clear: both;
+  padding-bottom: 0.5em;
 }
 
-.note {
-  display:none;
+.fa.social {
+  font-size: 1.1em;
 }
 
-.content-text:hover {
-  border-left:1px solid #eeeeee;
+/* Social Media Brand Colors */
+
+.google-plus {
+  color: #dd4b39;
 }
 
-.content-text ul li a:hover {
-  color:#4fc3f7;
+.tumblr {
+  color: #32506d;
 }
 
-.highlight:hover, .content-text.skills-listing > ul > li > .highlight:hover {
-  border-left:1px solid #eeeeee;
+.foursquare {
+  color: #0072b1;
 }
 
-.big-text {
-  padding-top: 0;
+.facebook {
+  color: #3b5998;
 }
-</style>
-</head>
-<body>
-  <div class="resume-wrapper">
-    <article class="paper">
+
+.linkedin {
+  color: #007bb6;
+}
+
+.pinterest {
+  color: #cb2027;
+}
+
+.dribbble {
+  color: #ea4c89;
+}
+
+.instagram {
+  color: #517fa4;
+}
+
+.twitter {
+  color: #00aced;
+}
+
+.soundcloud {
+  color: #ff3a00;
+}
+
+.wordpress {
+  color: #21759b;
+}
+
+.youtube {
+  color: #bb0000;
+}
+
+.github {
+  color: #171515;
+}
+
+.stack-overflow {
+  color: #828386;
+  position: relative;
+}
+
+.flickr {
+  color: #ff0084;
+}
+
+.reddit {
+  color: #ff4500;
+}
+
+.hacker-news {
+  color: #ff6600;
+}
+
+.stack-overflow::after {
+  position: absolute;
+  left: 0;
+  content: "\f16c";
+  color: #f68a1f;
+  overflow: hidden;
+  height: 100%;
+}
+
+.telegram {
+  color: #2291c3;
+}
+
+#languages .item,
+#skills .item,
+#interests .item {
+  width: 15em;
+  padding: 0 0.5em 0.5em 0;
+  border-bottom: none;
+}
+
+#skills .item {
+  width: 16em;
+}
+
+#skills .item .keywords {
+  width: 15em;
+}
+
+/* Skill chart */
+
+.level {
+  margin-bottom: 0.5em;
+}
+
+.level em {
+  padding-left: 0.2em;
+}
+
+.level .bar {
+  border: 1px solid #ddd;
+  display: block;
+  width: 10em;
+  height: 5px;
+  position: relative;
+}
+
+.level .bar::after {
+  position: absolute;
+  content: " ";
+  top: 0;
+  left: 0;
+  background: black;
+  height: 5px;
+}
+
+.level.beginner .bar::after {
+  background: #eb5f51;
+  width: 2.5em;
+}
+
+.level.intermediate .bar::after {
+  background: #ffdf1f;
+  width: 5em;
+}
+
+.level.advanced .bar::after,
+.level.fluent .bar::after {
+  background: #5cb85c;
+  width: 7.5em;
+}
+
+.level.master .bar::after,
+.level.native.speaker .bar::after {
+  background: #59c596;
+  width: 10em;
+}
+
+#references .item {
+  padding-left: 0.5em;
+  margin-bottom: 1em;
+  border-left: 5px solid #ff6d1f;
+}
+
+.section > section > section {
+  margin-bottom: 1rem;
+}
+
+/******************
+*	HELPER CLASSES
+******************/
+
+.clear::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.display {
+  display: block;
+  opacity: 1 !important;
+}
+
+/****************
+*		TABLET
+****************/
+
+@media screen and (min-width: 602px) {
+  #resume {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .section header .date {
+    float: right;
+    font-weight: 600;
+    color: #000;
+  }
+}
+
+/****************
+*		LAPTOP
+****************/
+
+@media screen and (min-width: 1025px) {
+  li {
+    margin-left: 1.5em;
+  }
+  #resume {
+    width: 820px;
+    margin: 2rem auto;
+  }
+  .section > section > header .space-left {
+    opacity: 1;
+    cursor: pointer;
+  }
+  .section > section:not(.main-summary) {
+    margin-left: 1.67rem;
+  }
+  .company::before,
+  .institution::before,
+  .organization::before,
+  .awarder::before {
+    content: "| ";
+  }
+  .header-left {
+    float: left;
+    width: 70%;
+    word-break: normal;
+  }
+  .section header .date {
+    padding: 0.2em;
+  }
+  .display {
+    display: none;
+  }
+  .display:not(.none) {
+    display: block;
+  }
+}
+
+@media print {
+  #profiles a:not(.hide-href-print)::after{
+    content: " (" attr(href) ") ";
+  }
+  #profiles .url .show-only-url-print {
+    display: none;
+  }
+  #profiles .url a::after {
+    content: attr(href);
+  }
+  #resume {
+    margin: 0.1em;
+    padding: 0.1em;
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+    line-height: 1.25;
+  }
+  @page {
+    margin: 1cm 1.4cm;
+  }
+  .item-count {
+    display: none;
+  }
+  .company a {
+    color: #40484f;
+  }
+  .company::before,
+  .institution::before,
+  .organization::before,
+  .awarder::before {
+    content: "at ";
+  }
+  .main-summary {
+    padding: 0;
+    background: transparent;
+  }
+  .section {
+    margin: 0.8rem 0;
+    padding: 0;
+  }
+  .section header {
+    padding-bottom: 0.15rem;
+  }
+  .section .location {
+    padding-bottom: 0.15rem;
+  }
+  .section > section > section {
+    border-bottom: 1px solid #fdfdfd;
+    margin: .5em 0;
+  }
+  .section > section > section:last-of-type {
+    margin: 0;
+  }
+  .stack-overflow::after {
+    content: "";
+  }
+  .fa.social {
+    color: #828386;
+  }
+  ul {
+    margin-top: 0.4em;
+  }
+  ul,
+  li {
+    padding: 0;
+  }
+  ul.keywords li,
+  ul.courses li {
+    margin: 0;
+    padding: 0;
+    font-size: 0.8rem;
+    background: transparent;
+  }
+  ul.keywords li::after,
+  ul.courses li::after {
+    padding: 0 0 0 0.1rem;
+    content: ", ";
+  }
+  ul.keywords::before,
+  ul.courses::before {
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+  #skills .item {
+    display: flex;
+    flex-direction: column;
+    margin: 0.3rem 0;
+    padding: 0;
+  }
+  #skills .level {
+    margin: 0.1rem 0;
+    font-weight: 400;
+  }
+  #skills .keywords {
+    font-size: 0.9rem;
+    margin: 0;
+  }
+  .highlights {
+    margin: 0.5em 0 0 0;
+  }
+  .highlights > li > p {
+    margin-bottom: 0.3em;
+  }
+  ul.keywords::before {
+    content: "Skills: ";
+    font-size: 1rem;
+  }
+  #skills .keywords::before {
+    content: none;
+  }
+  .section p {
+    margin: 0;
+    padding: 0;
+  }
+  ul.courses::before {
+    content: "Major courses: ";
+    font-size: 1rem;
+  }
+  ul.keywords li,
+  ul.courses li {
+    font-size: 1rem;
+    line-height: inherit;
+  }
+  ul.keywords li:last-of-type::after,
+  ul.courses li:last-of-type::after {
+    content: "";
+  }
+  .level em {
+    font-style: normal;
+    padding: 0.1em 0;
+  }
+  .level .bar {
+    display: none;
+  }
+  #profiles .item {
+    padding: 0;
+  }
+  .item.display {
+    display: block;
+    opacity: 1 !important;
+  }
+  .fa-location-dot:before {
+    padding-left: 0.1em;
+  }
+}
+
+  </style>
+  
+  </head>
+  <body>
+  
+  <div id="resume">
+    	<header id="header" class="clear">
+    		<img class="image" src="https://wellness.uchida.link/images/profile.png" alt="打田 裕馬 (Yuma Uchida)" />
+    		<div class="middle">
+    			<h1 class="name">打田 裕馬 (Yuma Uchida)</h1>
+    			<h2 class="label">Engineer × PM</h2>
+    		</div>
+    
+    		<span class="location">
+    			<span class="city">Tokyo,</span>
+    			<span class="region">Japan</span>
+    			<span class="countryCode">(JP)</span>
+    		</span>
+    
+    
+    		<div id="contact">
+    			<div class="email">
+    				<span class="fa-regular fa-envelope"></span>
+    				<a class="hide-href-print" href="mailto:uchida.yuma@routeplus.co.jp">uchida.yuma@routeplus.co.jp</a>
+    			</div>
+    		</div>
+    
+    		<div id="profiles">
+    			<div class="item">
+    				<div class="username">
+    					<span class="fa-brands fa-github github social"></span>
+    					<span class="url">
+    						<a target="_blank" href="https://github.com/uchidayuma"><span class="show-only-url-print">uchidayuma</span></a>
+    					</span>
+    				</div>
+    			</div>
+    		</div>
+    	</header>
+    
+    	<section class="section summary">
         <header>
-          <div class="header-content">
-            <div class="header-text">
-              <p>
-                打田 裕馬 (Yuma Uchida)
-              </p>
-              <p class="subtitle">Engineer × PM</p>
-            </div>
-          </div>
+          <h2 class="section-title">summary</h2>
         </header>
-        <div class="content-wrapper">
-          <!-- CONTACT -->
-          <section class="content">
-            <div class="row">
-              <div class="content-cat">
-                Contact
-              </div>
-              <div class="content-text">
-                  <ul>
-                    <li>Email</li>
-                    <li><a href="mailto:uchida.yuma@routeplus.co.jp">uchida.yuma@routeplus.co.jp</a></li>
-                  </ul>
-              </div>
-            </div>
-          </section>
-
-              <section class="content">
-                <div class="row">
-                  <div class="content-cat">
-                    Location
-                  </div>
-                  <div class="content-text">
-                      <ul>
-                        <li>Region</li>
-                        <li>Japan</li>
-                      </ul>
-                  </div>
-                </div>
-              </section>
-
-          <section class="content">
-            <div class="row">
-              <div class="content-cat">
-                Professional Skills Summary
-              </div>
-              <div class="content-text skills-listing">
-                  <p>
-                    <span class="name">
-                        <strong>
-                          Backend:
-                        </strong>
-                    </span>
-                      PHP (Laravel), Go, Node.js, Python
-                  </p>
-                  <p>
-                    <span class="name">
-                        <strong>
-                          Frontend:
-                        </strong>
-                    </span>
-                      React, Vue.js, TypeScript, Next.js
-                  </p>
-                  <p>
-                    <span class="name">
-                        <strong>
-                          Infra:
-                        </strong>
-                    </span>
-                      AWS, Docker, K8s, Terraform/CDK
-                  </p>
-              </div>
-            </div>
-          </section>
-
-
-        
-                <section class="content">
-                  <div class="row">
-                    <div class="content-cat big-text">
-                        Work  Experience
-                          <p>2025-09 to 2025-12</p>
-                    </div>
-                    <div class="content-text work-listing education-listing">
-                          <p>
-                            <strong>Tech Lead:</strong>
-                        </p>
-                        <p>宿泊施設向け予約・スマートロック管理ツール開発</p>
-                          <p class="highlight">インフラCDK化(IaC) / Playwrightテスト導入</p>
-                          <p class="highlight">多国籍チームマネジメント</p>
-                    </div>
-                  </div>
-                </section>
-                <section class="content work-content">
-                  <div class="row">
-                    <div class="content-cat big-text">
-                          <p>2025-06 to 2025-07</p>
-                    </div>
-                    <div class="content-text work-listing education-listing">
-                          <p>
-                            <strong>Solo Developer:</strong>
-                        </p>
-                        <p>MEOサービス提供会社向けツール群</p>
-                          <p class="highlight">リスト自動生成・分析ツール等を1ヶ月で開発</p>
-                          <p class="highlight">Next.js, Supabase, Google Maps API</p>
-                    </div>
-                  </div>
-                </section>
-                <section class="content work-content">
-                  <div class="row">
-                    <div class="content-cat big-text">
-                          <p>2024-01 to 2025-04</p>
-                    </div>
-                    <div class="content-text work-listing education-listing">
-                          <p>
-                            <strong>PM / Lead:</strong>
-                        </p>
-                        <p>医療機関向けCRM・LINEミニアプリ</p>
-                          <p class="highlight">20名のチームマネジメント / 3部署の利害調整</p>
-                          <p class="highlight">要件定義・自動テスト(Playwright)推進</p>
-                    </div>
-                  </div>
-                </section>
-                <section class="content work-content">
-                  <div class="row">
-                    <div class="content-cat big-text">
-                          <p>2019-06 to 2024-02</p>
-                    </div>
-                    <div class="content-text work-listing education-listing">
-                          <p>
-                            <strong>Lead Engineer:</strong>
-                        </p>
-                        <p>フランチャイズ本部・加盟店管理システム</p>
-                          <p class="highlight">在庫・発注・施工管理の一元化</p>
-                          <p class="highlight">Laravel 6-&gt;10刷新 / AWS ECS / CI/CD</p>
-                    </div>
-                  </div>
-                </section>
-
-
-
-
-
-              <section class="content">
-                <div class="row">
-                  <div class="content-cat big-text">
-                      Awards
-                      <p>Udemy Best Seller</p>
-                      <p>2024-01-01</p>
-                  </div>
-                  <div class="content-text work-listing">
-                      <strong><p class="heading">Udemy</p></strong>
-                      <p class="highlight">Docker/K8s講座 (受講者2.5万人超)</p>
-                  </div>
-                </div>
-              </section>
-              <section class="content">
-                <div class="row">
-                  <div class="content-cat big-text">
-                      <p>Impress Academy 講師</p>
-                      <p>2020-06-01</p>
-                  </div>
-                  <div class="content-text work-listing">
-                      <strong><p class="heading">Impress</p></strong>
-                      <p class="highlight">Docker / Kubernetes 研修</p>
-                  </div>
-                </div>
-              </section>
-
-
-            <!-- PROFILES -->
-              <section class="content profiles">
-                <div class="row">
-                  <div class="content-cat">
-                    Profiles
-                  </div>
-                  <div class="content-text profiles-listing">
-                    <ul>
-                          <li>
-                            <a href="https://github.com/uchidayuma" target="_blank">
-                              GitHub
-                            </a>
-                          </li>
-                    </ul>
-                  </div>
-                </div>
-              </section>
-
-
+    		<section class="main-summary">
+    			<div><p><p>AI時代でも価値が下がらないエンジニアPM戦略。技術×マネジメントでキャリアを切り拓く。経営と現場の本当の橋渡しを担うPM。開発現場の深い理解（技術スキル）と経営的な視座（PMスキル）を兼ね備え、プロジェクトの成功確率を最大化します。</p></p></div>
+    		</section>
+    	</section>
+    
+    <section class="section">
+      <header>
+        <h2 class='section-title'>Skills</h2>
+      </header>
+      <section id="skills">
+        <div class="item">
+          <h3 class="name">
+            Backend
+          </h3>
+          <ul class="keywords">
+            <li>PHP (Laravel)</li>
+            <li>Go</li>
+            <li>Node.js</li>
+            <li>Python</li>
+          </ul>
         </div>
-    </article>
-  </div>
-</body>
+        <div class="item">
+          <h3 class="name">
+            Frontend
+          </h3>
+          <ul class="keywords">
+            <li>React</li>
+            <li>Vue.js</li>
+            <li>TypeScript</li>
+            <li>Next.js</li>
+          </ul>
+        </div>
+        <div class="item">
+          <h3 class="name">
+            Infra
+          </h3>
+          <ul class="keywords">
+            <li>AWS</li>
+            <li>Docker</li>
+            <li>K8s</li>
+            <li>Terraform/CDK</li>
+          </ul>
+        </div>
+      </section>
+    </section>
+    <section class="section">
+      <header>
+        <h2 class='section-title'>Work Experience <span class="item-count">(4)</span></h2>
+      </header>
+    
+      <section id="work">
+        <section class="work-item">
+            <label for="work-item-0"></label>
+    
+            <header class="clear">
+              <div class="date">
+                <span class="startDate">Sep 2025</span>
+                <span class="endDate">- Dec 2025</span>
+              </div>
+              <div class="position">Tech Lead</div>
+                <div class="company"></div>
+            </header>
+    
+           <div class="item" id="work-item">
+            <div class="summary"><p><p>宿泊施設向け予約管理・オートロック管理ツール開発プロジェクト。既存システムの刷新と機能拡張。</p></p></div>
+            <ul class="highlights">
+              <li><p><p>インフラをCDKでコード化 (IaC)し、環境構築の自動化と再現性を担保。デプロイ時間を50%短縮。</p></p></li>
+              <li><p><p>PlaywrightによるE2Eテストをゼロから導入し、リリース前の回帰テストを自動化。品質担保のコストを大幅削減。</p></p></li>
+              <li><p><p>多国籍（日本・フィリピン・ベトナム）チームのTech Leadとして、コードレビューや設計指針の策定を担当。英語でのコミュニケーションを主導。</p></p></li>
+            </ul>
+          </div>
+        </section>
+        <section class="work-item">
+            <label for="work-item-1"></label>
+    
+            <header class="clear">
+              <div class="date">
+                <span class="startDate">Jun 2025</span>
+                <span class="endDate">- Jul 2025</span>
+              </div>
+              <div class="position">Solo Developer</div>
+                <div class="company"></div>
+            </header>
+    
+           <div class="item" id="work-item">
+            <div class="summary"><p><p>MEO（Map Engine Optimization）サービス提供会社向けの営業リスト作成・分析ツール開発。</p></p></div>
+            <ul class="highlights">
+              <li><p><p>営業リスト自動生成ツール、競合分析ツール、順位計測ツールなど複数のツールを1ヶ月で開発・納品。</p></p></li>
+              <li><p><p>要件定義から技術選定（Next.js, Supabase）、実装、デプロイ、顧客へのレクチャーまでを一人で完遂。</p></p></li>
+              <li><p><p>Google Maps API, Places APIを駆使し、低コストで高精度なデータ収集を実現。</p></p></li>
+            </ul>
+          </div>
+        </section>
+        <section class="work-item">
+            <label for="work-item-2"></label>
+    
+            <header class="clear">
+              <div class="date">
+                <span class="startDate">Jan 2024</span>
+                <span class="endDate">- Apr 2025</span>
+              </div>
+              <div class="position">PM / Lead</div>
+                <div class="company"></div>
+            </header>
+    
+           <div class="item" id="work-item">
+            <div class="summary"><p><p>医療機関向けCRM（患者管理システム）およびLINEミニアプリの新規開発・運用。</p></p></div>
+            <ul class="highlights">
+              <li><p><p>20名規模の開発チーム（エンジニア、デザイナー、QA）のプロジェクトマネージャー兼開発リード。</p></p></li>
+              <li><p><p>営業・CS・開発の3部署間の利害調整を行い、ロードマップ策定と優先順位付けを実施。</p></p></li>
+              <li><p><p>品質低下が課題となっていたため、Playwrightによる自動テスト導入を推進。QAチームと連携し、テストカバレッジを向上。</p></p></li>
+            </ul>
+          </div>
+        </section>
+        <section class="work-item">
+            <label for="work-item-3"></label>
+    
+            <header class="clear">
+              <div class="date">
+                <span class="startDate">Jun 2019</span>
+                <span class="endDate">- Feb 2024</span>
+              </div>
+              <div class="position">Lead Engineer</div>
+                <div class="company"></div>
+            </header>
+    
+           <div class="item" id="work-item">
+            <div class="summary"><p><p>フランチャイズ本部および加盟店向けの業務基幹システム（在庫・見積・発注・施工管理）の新規開発と保守。</p></p></div>
+            <ul class="highlights">
+              <li><p><p>Excelや紙で管理されていた業務フローをシステム化し、在庫・見積・発注・施工管理を一元化。業務効率を約30%向上。</p></p></li>
+              <li><p><p>Laravel 6から10へのメジャーバージョンアップを実施。レガシーコードの改善と技術負債の解消を主導。</p></p></li>
+              <li><p><p>オンプレミス環境からAWS（ECS Fargate）への移行を設計・実施。CI/CDパイプライン（CodePipeline）を構築し、デプロイ頻度を向上。</p></p></li>
+            </ul>
+          </div>
+        </section>
+      </section>
+    </section>
+    <section class="section">
+      <header>
+        <h2 class='section-title'>Projects <span class="item-count">(1)</span></h2>
+      </header>
+      <section id="projects">
+        <section class="project-item">
+            <label for="project-item-0"></label>
+    
+          <header class="clear">
+            <div class="position">AI Therapy Hub</div>
+            <div class="date">
+              <span class="startDate">Jun 2023</span>
+              <span class="endDate">- Dec 2024</span>
+            </div>
+          </header>
+          <div class="item">
+              <div class="summary"><p><p>AIカウンセリングアプリ (個人開発)</p></p></div>
+            <ul class="highlights">
+                <li><p><p>ChatGPT API, React Native, Next.js</p></p></li>
+                <li><p><p>企画・実装・リリースまで完遂</p></p></li>
+            </ul>
+          </div>
+        </section>
+      </section>
+    </section>
+      <section class="section">
+        <header>
+          <h2 class="section-title">Awards</h2>
+        </header>
+        <section id="awards">
+            <section class="award-item">
+                <label for="award-item-0"></label>
+    
+              <header class="clear">
+                  <div class="date">
+                    2024
+                  </div>
+                <div class="header-left">
+                    <div class="title">
+                      Udemy Best Seller
+                    </div>
+                    <div class="awarder">
+                      Udemy
+                    </div>
+                </div>
+              </header>
+    
+              <div class="item">
+                  <div class="summary"><p><p>Docker/K8s講座 (受講者2.5万人超)</p></p></div>
+              </div>
+            </section>
+            <section class="award-item">
+                <label for="award-item-1"></label>
+    
+              <header class="clear">
+                  <div class="date">
+                    2020
+                  </div>
+                <div class="header-left">
+                    <div class="title">
+                      Impress Academy 講師
+                    </div>
+                    <div class="awarder">
+                      Impress
+                    </div>
+                </div>
+              </header>
+    
+              <div class="item">
+                  <div class="summary"><p><p>Docker / Kubernetes 研修</p></p></div>
+              </div>
+            </section>
+        </section>
+      </section>
+
+  </body>
 </html>

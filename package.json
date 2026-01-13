@@ -7,11 +7,11 @@
     "doc": "docs"
   },
   "scripts": {
-    "serve": "resume serve --theme jsonresume-theme-paper",
-    "serve:en": "resume serve --resume resume-en.json --theme jsonresume-theme-paper",
+    "serve": "resume serve --theme jsonresume-theme-stackoverflow",
+    "serve:en": "resume serve --resume resume-en.json --theme jsonresume-theme-stackoverflow",
     "export": "mkdir -p resume && npm run export:ja && npm run export:en",
-    "export:ja": "resume export resume/resume-ja.pdf --resume resume.json --theme jsonresume-theme-paper && resume export resume/index.html --resume resume.json --theme jsonresume-theme-paper",
-    "export:en": "resume export resume/resume-en.pdf --resume resume-en.json --theme jsonresume-theme-paper && resume export resume/resume-en.html --resume resume-en.json --theme jsonresume-theme-paper"
+    "export:ja": "resume export resume/resume-ja.pdf --resume resume.json --theme jsonresume-theme-stackoverflow && resume export resume/index.html --resume resume.json --theme jsonresume-theme-stackoverflow",
+    "export:en": "resume export resume/resume-en.pdf --resume resume-en.json --theme jsonresume-theme-stackoverflow && resume export resume/resume-en.html --resume resume-en.json --theme jsonresume-theme-stackoverflow"
   },
   "repository": {
     "type": "git",
@@ -27,6 +27,7 @@
   "homepage": "https://github.com/uchidayuma/wellness-uchida-link#readme",
   "devDependencies": {
     "jsonresume-theme-even": "^0.26.1",
+    "jsonresume-theme-stackoverflow": "^2.1.0",
     "resume-cli": "^3.0.8"
   },
   "dependencies": {

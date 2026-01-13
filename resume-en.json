@@ -25,10 +25,11 @@
             "position": "Tech Lead / Project Manager",
             "startDate": "2025-09",
             "endDate": "2025-12",
+            "summary": "Development of a unified booking management and smart lock control tool for accommodations.",
             "highlights": [
-                "Architected and automated cloud infrastructure using AWS CDK, reducing deployment time.",
-                "Established automated quality assurance with Playwright E2E testing.",
-                "Led a multi-national development team, ensuring seamless communication and delivery."
+                "Infrastructure as Code (IaC) with AWS CDK: Automated environment provisioning and ensured reproducibility, reducing deployment time by 50%.",
+                "E2E Testing with Playwright: Introduced automated regression testing from scratch, significantly reducing manual QA costs and improving release confidence.",
+                "Tech Lead for a multi-national team (Japan, Philippines, Vietnam): Led code reviews, architectural decisions, and facilitated English communication across borders."
             ]
         },
         {
@@ -36,11 +37,11 @@
             "position": "Solo Developer",
             "startDate": "2025-06",
             "endDate": "2025-07",
-            "summary": "MEO/Sales support tools.",
+            "summary": "Development of a suite of tools for an MEO (Map Engine Optimization) service provider.",
             "highlights": [
-                "Auto-list generation tool",
-                "Next.js, Supabase, Google Maps",
-                "Solo delivery: discovery to launch"
+                "Developed multiple tools (sales list generator, competitor analysis, rank tracking) within a single month.",
+                "End-to-end Solo Development: Handled everything from requirements definition and tech stack selection (Next.js, Supabase) to implementation, deployment, and client training.",
+                "Leveraged Google Maps & Places APIs to achieve high-precision data collection at low cost."
             ]
         },
         {
@@ -48,11 +49,11 @@
             "position": "PM / Lead",
             "startDate": "2024-01",
             "endDate": "2025-04",
-            "summary": "Medical CRM & LINE Mini App.",
+            "summary": "New development and operation of a CRM (Patient Management System) and LINE Mini App for medical institutions.",
             "highlights": [
-                "Managed 20-person team",
-                "Stakeholder alignment (3 depts)",
-                "Promoted Playwright automation"
+                "PM & Dev Lead for a 20-person team (Engineers, Designers, QA).",
+                "Stakeholder Management: Aligned interests across Sales, CS, and Engineering departments, defining roadmaps and prioritization.",
+                "Quality Improvement: Spearheaded the introduction of Playwright for automated testing to address quality degradation, working closely with the QA team to increase test coverage."
             ]
         },
         {
@@ -60,11 +61,11 @@
             "position": "Lead Engineer",
             "startDate": "2019-06",
             "endDate": "2024-02",
-            "summary": "Franchise management system.",
+            "summary": "Development and maintenance of a core business system (Inventory, Estimation, Ordering, Construction Management) for a franchise headquarters and its franchisees.",
             "highlights": [
-                "Unified inventory/ordering system",
-                "Laravel 6->10 Upgrade",
-                "AWS ECS / CI/CD pipeline"
+                "Digital Transformation: Centralized fragmented workflows (Excel/Paper) into a unified system, improving operational efficiency by approximately 30%.",
+                "Major Upgrade: Executed a migration from Laravel 6 to 10, leading the refactoring of legacy code and reduction of technical debt.",
+                "Cloud Migration: Designed and implemented the migration from on-premise to AWS (ECS Fargate) and built a CI/CD pipeline (CodePipeline) to accelerate deployment frequency."
             ]
         }
     ],
