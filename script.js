@@ -530,7 +530,8 @@ document.addEventListener("DOMContentLoaded", function () {
         href.startsWith("http") ||
         href.startsWith("#") ||
         href.startsWith("mailto:") ||
-        href.startsWith("tel:")
+        href.startsWith("tel:") ||
+        href.endsWith(".pdf")
       ) {
         return;
       }
