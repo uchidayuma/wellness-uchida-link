@@ -69,18 +69,7 @@
       ]
     }
   ],
-  "projects": [
-    {
-      "name": "AI Therapy Hub",
-      "startDate": "2023-06",
-      "endDate": "2024-12",
-      "summary": "AIカウンセリングアプリ (個人開発)",
-      "highlights": [
-        "ChatGPT API, React Native, Next.js",
-        "企画・実装・リリースまで完遂"
-      ]
-    }
-  ],
+  "projects": [],
   "education": [],
   "awards": [
     {
