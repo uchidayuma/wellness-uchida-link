@@ -317,6 +317,32 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// ===== 年齢の自動計算 =====
+function updateAge() {
+  const birthDate = new Date("1988-10-06");
+  const today = new Date();
+  let age = today.getFullYear() - birthDate.getFullYear();
+  const m = today.getMonth() - birthDate.getMonth();
+  if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+    age--;
+  }
+
+  const ageEl = document.getElementById("age-display");
+  if (ageEl) {
+    ageEl.setAttribute("data-ja", age + "歳");
+    ageEl.setAttribute("data-en", age.toString());
+    
+    // 現在の言語に合わせて表示を更新
+    const currentLang = document.documentElement.getAttribute("lang") || "ja";
+    if (currentLang === "ja") {
+      ageEl.textContent = age + "歳";
+    } else {
+      ageEl.textContent = age.toString();
+    }
+  }
+}
+document.addEventListener("DOMContentLoaded", updateAge);
+
 // ===== 言語切り替え機能 =====
 function initLanguageSwitcher() {
   // 保存された言語を取得

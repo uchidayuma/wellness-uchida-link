@@ -1,0 +1,129 @@
+{
+    "basics": {
+        "name": "Yuma Uchida",
+        "label": "Engineer × PM",
+        "image": "https://wellness.uchida.link/images/profile.png",
+        "email": "uchida.yuma@routeplus.co.jp",
+        "url": "https://wellness.uchida.link",
+        "summary": "Engineer/PM bridging leadership and engineering. Expert in project recovery and technical management.",
+        "location": {
+            "city": "Tokyo",
+            "countryCode": "JP",
+            "region": "Japan"
+        },
+        "profiles": [
+            {
+                "network": "GitHub",
+                "username": "uchidayuma",
+                "url": "https://github.com/uchidayuma"
+            }
+        ]
+    },
+    "work": [
+        {
+            "name": "OR Lab Inc.",
+            "position": "Tech Lead",
+            "startDate": "2025-09",
+            "endDate": "2025-12",
+            "summary": "Lodging reservation & smart lock tool.",
+            "highlights": [
+                "Infrastructure as Code (CDK)",
+                "E2E Testing (Playwright)",
+                "Multi-national team mgmt"
+            ]
+        },
+        {
+            "name": "Rich Honeycomb Co.",
+            "position": "Solo Developer",
+            "startDate": "2025-06",
+            "endDate": "2025-07",
+            "summary": "MEO/Sales support tools.",
+            "highlights": [
+                "Auto-list generation tool",
+                "Next.js, Supabase, Google Maps",
+                "Solo delivery: discovery to launch"
+            ]
+        },
+        {
+            "name": "Company S (Medical)",
+            "position": "PM / Lead",
+            "startDate": "2024-01",
+            "endDate": "2025-04",
+            "summary": "Medical CRM & LINE Mini App.",
+            "highlights": [
+                "Managed 20-person team",
+                "Stakeholder alignment (3 depts)",
+                "Promoted Playwright automation"
+            ]
+        },
+        {
+            "name": "Company S (Franchise)",
+            "position": "Lead Engineer",
+            "startDate": "2019-06",
+            "endDate": "2024-02",
+            "summary": "Franchise management system.",
+            "highlights": [
+                "Unified inventory/ordering system",
+                "Laravel 6->10 Upgrade",
+                "AWS ECS / CI/CD pipeline"
+            ]
+        }
+    ],
+    "projects": [
+        {
+            "name": "AI Therapy Hub",
+            "startDate": "2023-06",
+            "endDate": "2024-12",
+            "summary": "Personal Dev: AI Counseling App.",
+            "highlights": [
+                "ChatGPT API, React Native, Next.js",
+                "Full lifecycle development"
+            ]
+        }
+    ],
+    "education": [],
+    "awards": [
+        {
+            "title": "Udemy Best Seller Instructor",
+            "date": "2024-01-01",
+            "awarder": "Udemy",
+            "summary": "Docker/K8s courses (25k+ students)"
+        },
+        {
+            "title": "Impress Academy Lecturer",
+            "date": "2020-06-01",
+            "awarder": "Impress Academy",
+            "summary": "Docker / Kubernetes Workshops"
+        }
+    ],
+    "skills": [
+        {
+            "name": "Backend",
+            "keywords": [
+                "PHP (Laravel)",
+                "Go",
+                "Node.js",
+                "Python"
+            ]
+        },
+        {
+            "name": "Frontend",
+            "keywords": [
+                "React",
+                "Vue.js",
+                "TypeScript",
+                "Next.js"
+            ]
+        },
+        {
+            "name": "Infra",
+            "keywords": [
+                "AWS",
+                "Docker",
+                "ECS",
+                "K8s",
+                "Terraform/CDK"
+            ]
+        }
+    ]
+}

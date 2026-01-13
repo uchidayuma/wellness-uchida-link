@@ -1,0 +1,33 @@
+name: Generate Resume
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          
+      - name: Install dependencies (including devDependencies)
+        run: npm install
+        
+      - name: Install Puppeteer Dependencies
+        # Puppeteer sometimes needs libs on linux
+        run: sudo apt-get update && sudo apt-get install -y libgbm-dev
+        
+      - name: Generate Resume
+        run: npm run export
+        
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: resume-files
+          path: resume/

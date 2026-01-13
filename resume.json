@@ -1,0 +1,124 @@
+{
+  "basics": {
+    "name": "打田 裕馬 (Yuma Uchida)",
+    "label": "Engineer × PM",
+    "image": "https://wellness.uchida.link/images/profile.png",
+    "email": "uchida.yuma@routeplus.co.jp",
+    "url": "https://wellness.uchida.link",
+    "summary": "技術×マネジメントで経営と現場をつなぐPM。プロジェクト立て直し・組織改善が得意。",
+    "location": {
+      "city": "Tokyo",
+      "countryCode": "JP",
+      "region": "Japan"
+    },
+    "profiles": [
+      {
+        "network": "GitHub",
+        "username": "uchidayuma",
+        "url": "https://github.com/uchidayuma"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "オーアール・ラボ株式会社",
+      "position": "Tech Lead",
+      "startDate": "2025-09",
+      "endDate": "2025-12",
+      "summary": "宿泊施設向け予約・スマートロック管理ツール開発",
+      "highlights": [
+        "インフラCDK化(IaC) / Playwrightテスト導入",
+        "多国籍チームマネジメント"
+      ]
+    },
+    {
+      "name": "リッチハニカム株式会社",
+      "position": "Solo Developer",
+      "startDate": "2025-06",
+      "endDate": "2025-07",
+      "summary": "MEOサービス提供会社向けツール群",
+      "highlights": [
+        "リスト自動生成・分析ツール等を1ヶ月で開発",
+        "Next.js, Supabase, Google Maps API"
+      ]
+    },
+    {
+      "name": "株式会社S (Medical)",
+      "position": "PM / Lead",
+      "startDate": "2024-01",
+      "endDate": "2025-04",
+      "summary": "医療機関向けCRM・LINEミニアプリ",
+      "highlights": [
+        "20名のチームマネジメント / 3部署の利害調整",
+        "要件定義・自動テスト(Playwright)推進"
+      ]
+    },
+    {
+      "name": "有限会社S (Franchise)",
+      "position": "Lead Engineer",
+      "startDate": "2019-06",
+      "endDate": "2024-02",
+      "summary": "フランチャイズ本部・加盟店管理システム",
+      "highlights": [
+        "在庫・発注・施工管理の一元化",
+        "Laravel 6->10刷新 / AWS ECS / CI/CD"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "AI Therapy Hub",
+      "startDate": "2023-06",
+      "endDate": "2024-12",
+      "summary": "AIカウンセリングアプリ (個人開発)",
+      "highlights": [
+        "ChatGPT API, React Native, Next.js",
+        "企画・実装・リリースまで完遂"
+      ]
+    }
+  ],
+  "education": [],
+  "awards": [
+    {
+      "title": "Udemy Best Seller",
+      "date": "2024-01-01",
+      "awarder": "Udemy",
+      "summary": "Docker/K8s講座 (受講者2.5万人超)"
+    },
+    {
+      "title": "Impress Academy 講師",
+      "date": "2020-06-01",
+      "awarder": "Impress",
+      "summary": "Docker / Kubernetes 研修"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Backend",
+      "keywords": [
+        "PHP (Laravel)",
+        "Go",
+        "Node.js",
+        "Python"
+      ]
+    },
+    {
+      "name": "Frontend",
+      "keywords": [
+        "React",
+        "Vue.js",
+        "TypeScript",
+        "Next.js"
+      ]
+    },
+    {
+      "name": "Infra",
+      "keywords": [
+        "AWS",
+        "Docker",
+        "K8s",
+        "Terraform/CDK"
+      ]
+    }
+  ]
+}

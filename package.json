@@ -1,0 +1,35 @@
+{
+  "name": "wellness-uchida-link",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "serve": "resume serve --theme jsonresume-theme-paper",
+    "serve:en": "resume serve --resume resume-en.json --theme jsonresume-theme-paper",
+    "export": "mkdir -p resume && npm run export:ja && npm run export:en",
+    "export:ja": "resume export resume/resume-ja.pdf --resume resume.json --theme jsonresume-theme-paper && resume export resume/index.html --resume resume.json --theme jsonresume-theme-paper",
+    "export:en": "resume export resume/resume-en.pdf --resume resume-en.json --theme jsonresume-theme-paper && resume export resume/resume-en.html --resume resume-en.json --theme jsonresume-theme-paper"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uchidayuma/wellness-uchida-link.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/uchidayuma/wellness-uchida-link/issues"
+  },
+  "homepage": "https://github.com/uchidayuma/wellness-uchida-link#readme",
+  "devDependencies": {
+    "jsonresume-theme-even": "^0.26.1",
+    "resume-cli": "^3.0.8"
+  },
+  "dependencies": {
+    "jsonresume-theme-paper": "^0.5.0"
+  }
+}
