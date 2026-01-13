@@ -537,6 +537,16 @@ document.addEventListener("DOMContentLoaded", function () {
           ? href
           : window.location.pathname.replace(/\/[^\/]*$/, "/") + href;
 
+        // URLオブジェクトを作成してパスのみを取得（ハッシュやクエリパラメータを除去）
+        let targetPathName;
+        try {
+           // hrefが絶対パスか相対パスかで処理を分ける
+           const tempUrl = new URL(targetPath, window.location.origin);
+           targetPathName = tempUrl.pathname;
+        } catch (e) {
+           targetPathName = targetPath.split('#')[0].split('?')[0];
+        }
+
         // GitHub Pages用の有効パスリスト
         const validPaths = [
           "/",
@@ -550,16 +560,17 @@ document.addEventListener("DOMContentLoaded", function () {
         // ベースパスを考慮した有効パスチェック
         const isValidPath = validPaths.some((path) => {
           const fullPath = basePath + path;
-          if (
-            path === "/" &&
-            (targetPath === basePath + "/" || targetPath === "/")
-          )
-            return true;
-          if (
-            path !== "/" &&
-            (targetPath.endsWith(path) || targetPath.endsWith(fullPath))
-          )
-            return true;
+          
+          // パスが一致するか、またはbasePath付きのパスと一致するか確認
+          if (targetPathName === path || targetPathName === fullPath) {
+             return true;
+          }
+          
+          // 末尾が一致するか確認（サブディレクトリ対策）
+          if (path !== "/" && (targetPathName.endsWith(path) || targetPathName.endsWith(fullPath))) {
+             return true;
+          }
+          
           return false;
         });
 
