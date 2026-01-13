@@ -281,7 +281,7 @@ document.addEventListener("DOMContentLoaded", function () {
   updateCareerIcons();
 });
 
-// ===== メンタリングページ FAQアコーディオン =====
+// ===== FAQアコーディオン =====
 document.addEventListener("DOMContentLoaded", function () {
   const faqQuestions = document.querySelectorAll(".faq-question");
 
@@ -449,7 +449,6 @@ document.addEventListener("DOMContentLoaded", function () {
     "/index.html",
     "/404.html",
     "/achievements.html",
-    "/services/mentoring.html",
     "/services/pm.html",
     "/services/pm-rescue.html",
   ];
@@ -518,7 +517,6 @@ document.addEventListener("DOMContentLoaded", function () {
           "/index.html",
           "/404.html",
           "/achievements.html",
-          "/services/mentoring.html",
           "/services/pm.html",
           "/services/pm-rescue.html",
         ];

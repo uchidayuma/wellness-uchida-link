@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,28 +16,41 @@
       text-align: center;
       margin-bottom: 3rem;
     }
-    .case-grid, .strength-grid {
+
+    .case-grid,
+    .strength-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 1.5rem;
     }
-    .problem-list, .rescue-plan, .strength-card, .case-card, .cta-section {
+
+    .problem-list,
+    .rescue-plan,
+    .strength-card,
+    .case-card,
+    .cta-section {
       background: var(--color-bg-light);
       border-radius: 12px;
       padding: 1.8rem;
       border-left: 5px solid var(--color-accent);
       box-shadow: 0 2px 12px var(--color-shadow);
     }
-    .problem-list ul, .rescue-plan ul {
+
+    .problem-list ul,
+    .rescue-plan ul {
       list-style: none;
       padding: 0;
     }
-    .problem-list li, .rescue-plan li {
+
+    .problem-list li,
+    .rescue-plan li {
       padding-left: 1.6rem;
       margin-bottom: 0.6rem;
       position: relative;
     }
-    .problem-list li::before, .rescue-plan li::before {
+
+    .problem-list li::before,
+    .rescue-plan li::before {
       content: '✓';
       position: absolute;
       left: 0;
@@ -44,12 +58,14 @@
     }
   </style>
 </head>
+
 <body data-title-ja="PM救出プラン | 打田裕馬" data-title-en="PM Rescue Plan | Yuma Uchida">
   <header class="header">
     <div class="header-inner">
       <a href="/index.html" class="logo-link"><img src="/images/profile.png" alt="プロフィール画像" class="profile-img"></a>
       <div class="header-info">
-        <h1 class="name"><a href="/index.html" data-ja="打田裕馬" data-en="Yuma Uchida">打田裕馬</a> <span class="title" data-ja="Engineer × PM × メンタルケア" data-en="Engineer × PM × Mental Care">Engineer × PM × メンタルケア</span></h1>
+        <h1 class="name"><a href="/index.html" data-ja="打田裕馬" data-en="Yuma Uchida">打田裕馬</a> <span class="title"
+            data-ja="Engineer × PM" data-en="Engineer × PM">Engineer × PM</span></h1>
         <nav class="nav">
           <ul>
             <li><a href="/index.html#about">About</a></li>
@@ -71,9 +87,13 @@
 
   <main>
     <section class="hero-section fade-in">
-      <nav class="breadcrumb"><a href="/index.html#services" data-ja="提供サービス" data-en="Services">提供サービス</a> &gt; <span data-ja="PM救出プラン" data-en="PM Rescue Plan">PM救出プラン</span></nav>
-      <h1 class="hero-title" data-ja="炎上プロジェクトと疲弊したPMを立て直す" data-en="A Rescue Plan For Burning Projects & Burned-Out PMs">炎上プロジェクトと疲弊したPMを立て直す</h1>
-      <p class="hero-subtitle" data-ja="経営と現場の両視点を持つPMが、状況整理から改善実行まで伴走します。" data-en="I bring both leadership and engineering experience to diagnose, stabilize, and evolve troubled projects.">経営と現場の両視点を持つPMが、状況整理から改善実行まで伴走します。</p>
+      <nav class="breadcrumb"><a href="/index.html#services" data-ja="提供サービス" data-en="Services">提供サービス</a> &gt; <span
+          data-ja="PM救出プラン" data-en="PM Rescue Plan">PM救出プラン</span></nav>
+      <h1 class="hero-title" data-ja="炎上プロジェクトと疲弊したPMを立て直す"
+        data-en="A Rescue Plan For Burning Projects & Burned-Out PMs">炎上プロジェクトと疲弊したPMを立て直す</h1>
+      <p class="hero-subtitle" data-ja="経営と現場の両視点を持つPMが、状況整理から改善実行まで伴走します。"
+        data-en="I bring both leadership and engineering experience to diagnose, stabilize, and evolve troubled projects.">
+        経営と現場の両視点を持つPMが、状況整理から改善実行まで伴走します。</p>
       <div class="stats-grid" style="margin:2.5rem auto 1rem;max-width:900px;">
         <div class="stat-card">
           <div class="stat-number">3</div>
@@ -96,9 +116,12 @@
         <div class="problem-list">
           <h3 data-ja="PMが疲弊している" data-en="PM Is Burning Out">PMが疲弊している</h3>
           <ul>
-            <li data-ja="意思決定の孤立・責任過多" data-en="Isolated decision-making and excessive responsibility.">意思決定の孤立・責任過多</li>
-            <li data-ja="タスクが細分化されずマネジメントに集中できない" data-en="No support structure, so they can't focus on management.">タスクが細分化されずマネジメントに集中できない</li>
-            <li data-ja="経営との調整とチームケアを両立できていない" data-en="Struggle to balance stakeholder alignment and team care.">経営との調整とチームケアを両立できていない</li>
+            <li data-ja="意思決定の孤立・責任過多" data-en="Isolated decision-making and excessive responsibility.">意思決定の孤立・責任過多
+            </li>
+            <li data-ja="タスクが細分化されずマネジメントに集中できない" data-en="No support structure, so they can't focus on management.">
+              タスクが細分化されずマネジメントに集中できない</li>
+            <li data-ja="経営との調整とチームケアを両立できていない" data-en="Struggle to balance stakeholder alignment and team care.">
+              経営との調整とチームケアを両立できていない</li>
           </ul>
         </div>
         <div class="problem-list">
@@ -106,13 +129,15 @@
           <ul>
             <li data-ja="仕様変更と追加要望が止まらない" data-en="Unbounded scope and constant change requests.">仕様変更と追加要望が止まらない</li>
             <li data-ja="優先順位や責任者が曖昧" data-en="No clear priorities or owners.">優先順位や責任者が曖昧</li>
-            <li data-ja="ビジネスと開発の信頼関係が崩れている" data-en="Trust between business and engineering is broken.">ビジネスと開発の信頼関係が崩れている</li>
+            <li data-ja="ビジネスと開発の信頼関係が崩れている" data-en="Trust between business and engineering is broken.">
+              ビジネスと開発の信頼関係が崩れている</li>
           </ul>
         </div>
         <div class="problem-list">
           <h3 data-ja="経営が状況を把握できない" data-en="Leadership Lacks Visibility">経営が状況を把握できない</h3>
           <ul>
-            <li data-ja="報告粒度がバラバラで現状が見えない" data-en="Reporting lacks consistency; status is opaque.">報告粒度がバラバラで現状が見えない</li>
+            <li data-ja="報告粒度がバラバラで現状が見えない" data-en="Reporting lacks consistency; status is opaque.">報告粒度がバラバラで現状が見えない
+            </li>
             <li data-ja="数値的な根拠がなく判断できない" data-en="No metrics to support decisions.">数値的な根拠がなく判断できない</li>
             <li data-ja="リスク検知が遅く手遅れになりがち" data-en="Risks surface too late.">リスク検知が遅く手遅れになりがち</li>
           </ul>
@@ -124,10 +149,18 @@
       <h2 class="accent" data-ja="4ステップ救出プロセス" data-en="Four-Step Rescue Process">4ステップ救出プロセス</h2>
       <div class="rescue-plan">
         <ol>
-          <li data-ja="診断：ヒアリング・成果物レビュー・数値分析で現状を可視化" data-en="Diagnose: interviews, artifact reviews, and metrics to visualize reality.">診断：ヒアリング・成果物レビュー・数値分析で現状を可視化</li>
-          <li data-ja="設計：優先順位と責任分解を明確化し、経営・現場の合意を形成" data-en="Design: clarify priorities and ownership, align leadership and teams.">設計：優先順位と責任分解を明確化し、経営・現場の合意を形成</li>
-          <li data-ja="実行：短サイクルで改善策を実装し、進捗・品質を毎週トラッキング" data-en="Execute: run short improvement cycles, track progress/quality weekly.">実行：短サイクルで改善策を実装し、進捗・品質を毎週トラッキング</li>
-          <li data-ja="定着：ナレッジ化とPM育成を並行し、自走できる状態へ移行" data-en="Institutionalize: document learnings, coach PMs, and transition to a self-sustaining system.">定着：ナレッジ化とPM育成を並行し、自走できる状態へ移行</li>
+          <li data-ja="診断：ヒアリング・成果物レビュー・数値分析で現状を可視化"
+            data-en="Diagnose: interviews, artifact reviews, and metrics to visualize reality.">
+            診断：ヒアリング・成果物レビュー・数値分析で現状を可視化</li>
+          <li data-ja="設計：優先順位と責任分解を明確化し、経営・現場の合意を形成"
+            data-en="Design: clarify priorities and ownership, align leadership and teams.">
+            設計：優先順位と責任分解を明確化し、経営・現場の合意を形成</li>
+          <li data-ja="実行：短サイクルで改善策を実装し、進捗・品質を毎週トラッキング"
+            data-en="Execute: run short improvement cycles, track progress/quality weekly.">
+            実行：短サイクルで改善策を実装し、進捗・品質を毎週トラッキング</li>
+          <li data-ja="定着：ナレッジ化とPM育成を並行し、自走できる状態へ移行"
+            data-en="Institutionalize: document learnings, coach PMs, and transition to a self-sustaining system.">
+            定着：ナレッジ化とPM育成を並行し、自走できる状態へ移行</li>
         </ol>
       </div>
     </section>
@@ -138,24 +171,30 @@
         <div class="case-card">
           <h3 data-ja="医療CRMプロジェクト再建" data-en="Medical CRM Recovery">医療CRMプロジェクト再建</h3>
           <ul>
-            <li data-ja="3部署の利害がぶつかり仕様が混乱" data-en="Conflicting requirements across three departments.">3部署の利害がぶつかり仕様が混乱</li>
-            <li data-ja="診断→部門別要件→統合レビューで整理" data-en="Structured interviews per department, then held integration reviews.">診断→部門別要件→統合レビューで整理</li>
+            <li data-ja="3部署の利害がぶつかり仕様が混乱" data-en="Conflicting requirements across three departments.">3部署の利害がぶつかり仕様が混乱
+            </li>
+            <li data-ja="診断→部門別要件→統合レビューで整理"
+              data-en="Structured interviews per department, then held integration reviews.">診断→部門別要件→統合レビューで整理</li>
             <li data-ja="16ヶ月の計画通りにリリース" data-en="Delivered on schedule after 16 months.">16ヶ月の計画通りにリリース</li>
           </ul>
         </div>
         <div class="case-card">
           <h3 data-ja="フランチャイズDX継続支援" data-en="Franchise DX Support">フランチャイズDX継続支援</h3>
           <ul>
-            <li data-ja="5年間小規模チームで全工程を担当" data-en="Owned every phase with a compact team for 5 years.">5年間小規模チームで全工程を担当</li>
-            <li data-ja="段階的なリリースとCI/CDで安定運用" data-en="Phased releases and CI/CD stabilized operations.">段階的なリリースとCI/CDで安定運用</li>
-            <li data-ja="業務効率30%向上・投資回収2年" data-en="30% efficiency boost, ROI achieved in 2 years.">業務効率30%向上・投資回収2年</li>
+            <li data-ja="5年間小規模チームで全工程を担当" data-en="Owned every phase with a compact team for 5 years.">5年間小規模チームで全工程を担当
+            </li>
+            <li data-ja="段階的なリリースとCI/CDで安定運用" data-en="Phased releases and CI/CD stabilized operations.">
+              段階的なリリースとCI/CDで安定運用</li>
+            <li data-ja="業務効率30%向上・投資回収2年" data-en="30% efficiency boost, ROI achieved in 2 years.">業務効率30%向上・投資回収2年
+            </li>
           </ul>
         </div>
         <div class="case-card">
           <h3 data-ja="PM/EMオンボーディング支援" data-en="PM/EM Onboarding">PM/EMオンボーディング支援</h3>
           <ul>
             <li data-ja="複数PMが同時に離脱し体制が崩壊危機" data-en="Multiple PMs resigned, structure at risk.">複数PMが同時に離脱し体制が崩壊危機</li>
-            <li data-ja="暫定PMとして参画し、後任採用と育成を並走" data-en="Joined as interim PM while hiring and coaching successors.">暫定PMとして参画し、後任採用と育成を並走</li>
+            <li data-ja="暫定PMとして参画し、後任採用と育成を並走" data-en="Joined as interim PM while hiring and coaching successors.">
+              暫定PMとして参画し、後任採用と育成を並走</li>
             <li data-ja="3ヶ月で自走状態に移行" data-en="Transitioned back to self-sufficiency in 3 months.">3ヶ月で自走状態に移行</li>
           </ul>
         </div>
@@ -169,7 +208,8 @@
           <h3 data-ja="緊急スタビライズプラン" data-en="Emergency Stabilize Plan">緊急スタビライズプラン</h3>
           <ul style="color:var(--color-sub);font-size:1rem;line-height:1.7;text-align:left;">
             <li data-ja="週3-4日 / 最短1ヶ月" data-en="3–4 days per week / 1 month minimum">週3-4日 / 最短1ヶ月</li>
-            <li data-ja="現状診断と90日アクションプランの策定" data-en="Full diagnostic plus 90-day action plan.">現状診断と90日アクションプランの策定</li>
+            <li data-ja="現状診断と90日アクションプランの策定" data-en="Full diagnostic plus 90-day action plan.">現状診断と90日アクションプランの策定
+            </li>
             <li data-ja="経営層・現場へのレポートと伴走" data-en="Joint leadership + team updates each week.">経営層・現場へのレポートと伴走</li>
           </ul>
           <p data-ja="料金: 200万円/月〜（税込）" data-en="Fee: from ¥2M per month (tax incl.)">料金: 200万円/月〜（税込）</p>
@@ -178,8 +218,10 @@
           <h3 data-ja="継続コンサルティング" data-en="Ongoing Consulting">継続コンサルティング</h3>
           <ul style="color:var(--color-sub);font-size:1rem;line-height:1.7;text-align:left;">
             <li data-ja="週1-2日 / 3ヶ月以上" data-en="1–2 days per week / 3+ months">週1-2日 / 3ヶ月以上</li>
-            <li data-ja="PM育成・ナレッジ化・プロセス定着" data-en="PM coaching, documentation, and process embedding.">PM育成・ナレッジ化・プロセス定着</li>
-            <li data-ja="必要に応じて採用/チーム構築もサポート" data-en="Support recruiting and team design as needed.">必要に応じて採用/チーム構築もサポート</li>
+            <li data-ja="PM育成・ナレッジ化・プロセス定着" data-en="PM coaching, documentation, and process embedding.">
+              PM育成・ナレッジ化・プロセス定着</li>
+            <li data-ja="必要に応じて採用/チーム構築もサポート" data-en="Support recruiting and team design as needed.">
+              必要に応じて採用/チーム構築もサポート</li>
           </ul>
           <p data-ja="料金: 120万円/月〜（税込）" data-en="Fee: from ¥1.2M per month (tax incl.)">料金: 120万円/月〜（税込）</p>
         </div>
@@ -189,10 +231,13 @@
     <section id="contact" class="section fade-in">
       <div class="cta-section">
         <h2 data-ja="48時間以内に初回レスポンス" data-en="First Response Within 48 Hours">48時間以内に初回レスポンス</h2>
-        <p data-ja="状況共有だけでも構いません。匿名化した資料やタイムラインがあれば、事前に共有いただけると診断がスムーズです。" data-en="Even if you're only sharing context for now, that's fine. Redacted docs or timelines help me respond faster.">状況共有だけでも構いません。匿名化した資料やタイムラインがあれば、事前に共有いただけると診断がスムーズです。</p>
+        <p data-ja="状況共有だけでも構いません。匿名化した資料やタイムラインがあれば、事前に共有いただけると診断がスムーズです。"
+          data-en="Even if you're only sharing context for now, that's fine. Redacted docs or timelines help me respond faster.">
+          状況共有だけでも構いません。匿名化した資料やタイムラインがあれば、事前に共有いただけると診断がスムーズです。</p>
         <div class="cta-buttons">
           <a href="/index.html#contact" class="cta-btn" data-ja="問い合わせフォームへ" data-en="Go to Contact Form">問い合わせフォームへ</a>
-          <a href="/achievements.html" class="cta-btn secondary" data-ja="関連実績を見る" data-en="See Related Work">関連実績を見る</a>
+          <a href="/achievements.html" class="cta-btn secondary" data-ja="関連実績を見る"
+            data-en="See Related Work">関連実績を見る</a>
         </div>
       </div>
     </section>
@@ -200,10 +245,12 @@
 
   <footer class="footer">
     <div class="footer-inner">
-      <span data-ja="&copy; 2024 打田裕馬 | Engineer × PM × MentalCare" data-en="&copy; 2024 Yuma Uchida | Engineer × PM × Mental Care">&copy; 2024 打田裕馬 | Engineer × PM × MentalCare</span>
+      <span data-ja="&copy; 2024 打田裕馬 | Engineer × PM" data-en="&copy; 2024 Yuma Uchida | Engineer × PM">&copy; 2024
+        打田裕馬 | Engineer × PM</span>
     </div>
   </footer>
 
   <script src="/script.js"></script>
 </body>
+
 </html>
