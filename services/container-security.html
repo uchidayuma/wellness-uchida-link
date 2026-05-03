@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="コンテナ・ソースコードセキュリティ診断 | 打田裕馬。Docker・Kubernetes専門家によるセキュリティ診断。30万円〜。">
+  <title>コンテナ・ソースコードセキュリティ診断 | 打田裕馬</title>
+  <link rel="icon" href="../images/favicon.png" type="image/png">
+  <link rel="stylesheet" href="../styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <script async data-id="101489745" src="https://static.getclicky.com/js"></script>
+  <style>
+    .diagnosis-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.97rem;
+    }
+    .diagnosis-table th {
+      background: var(--color-accent);
+      color: #fff;
+      padding: 0.7em 1em;
+      text-align: left;
+      font-weight: 700;
+    }
+    .diagnosis-table td {
+      padding: 0.65em 1em;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      vertical-align: top;
+      color: var(--color-sub);
+      line-height: 1.6;
+    }
+    .diagnosis-table tr:hover td {
+      background: rgba(255,255,255,0.03);
+    }
+    .diagnosis-table .category {
+      font-weight: 700;
+      color: var(--color-text);
+      white-space: nowrap;
+      width: 9em;
+    }
+    .severity-badge {
+      display: inline-block;
+      padding: 0.15em 0.6em;
+      border-radius: 3px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      margin-left: 0.4em;
+      vertical-align: middle;
+    }
+    .severity-critical { background: #e53e3e; color: #fff; }
+    .severity-high { background: #dd6b20; color: #fff; }
+    .severity-medium { background: #d69e2e; color: #fff; }
+
+    .process-steps {
+      display: flex;
+      gap: 0;
+      flex-wrap: wrap;
+      margin: 2rem 0;
+      position: relative;
+    }
+    .process-step {
+      flex: 1;
+      min-width: 140px;
+      text-align: center;
+      padding: 1.5rem 1rem;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      position: relative;
+    }
+    .process-step:not(:last-child)::after {
+      content: '→';
+      position: absolute;
+      right: -0.7em;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--color-accent);
+      font-size: 1.2rem;
+      z-index: 1;
+    }
+    .process-step-num {
+      display: inline-block;
+      width: 2em;
+      height: 2em;
+      line-height: 2em;
+      border-radius: 50%;
+      background: var(--color-accent);
+      color: #fff;
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 0.6em;
+    }
+    .process-step-title {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--color-text);
+      margin-bottom: 0.3em;
+    }
+    .process-step-detail {
+      font-size: 0.82rem;
+      color: var(--color-sub);
+      line-height: 1.5;
+    }
+
+    .credential-box {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin: 2rem 0;
+    }
+    .credential-card {
+      flex: 1;
+      min-width: 220px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
+      padding: 1.4rem 1.5rem;
+    }
+    .credential-card .cred-icon {
+      font-size: 2rem;
+      margin-bottom: 0.6rem;
+      color: var(--color-accent);
+    }
+    .credential-card h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+      color: var(--color-text);
+    }
+    .credential-card p {
+      font-size: 0.88rem;
+      color: var(--color-sub);
+      line-height: 1.6;
+      margin: 0;
+    }
+    .credential-card a {
+      color: var(--color-accent);
+      text-decoration: none;
+    }
+    .credential-card a:hover { text-decoration: underline; }
+
+    .deliverable-list {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin: 1.5rem 0;
+    }
+    .deliverable-item {
+      flex: 1;
+      min-width: 200px;
+      background: rgba(0, 200, 150, 0.06);
+      border-left: 4px solid var(--color-accent);
+      padding: 1.2rem 1.4rem;
+      border-radius: 0 6px 6px 0;
+    }
+    .deliverable-item h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--color-accent);
+      margin-bottom: 0.4rem;
+    }
+    .deliverable-item p {
+      font-size: 0.87rem;
+      color: var(--color-sub);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .pricing-note {
+      font-size: 0.88rem;
+      color: var(--color-sub);
+      margin-top: 0.6rem;
+      line-height: 1.6;
+    }
+    .stat-label {
+      font-size: 0.88rem;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="particles-bg"></canvas>
+  <header class="header">
+    <div class="header-inner">
+      <a href="../index.html" class="logo-link"><img src="../images/profile.png" alt="プロフィール画像" class="profile-img"></a>
+      <div class="header-info">
+        <h1 class="name"><a href="../index.html">打田裕馬</a> <span class="title">Engineer × PM</span></h1>
+        <nav class="nav">
+          <ul>
+            <li><a href="../index.html#about">About</a></li>
+            <li><a href="../index.html#skills">Skills</a></li>
+            <li><a href="../index.html#works">Works</a></li>
+            <li><a href="../index.html#career">Career</a></li>
+            <li><a href="../index.html#services">Services</a></li>
+            <li><a href="../index.html#contact">Contact</a></li>
+            <li><a href="../achievements.html">Achievements</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero-section fade-in">
+      <div class="hero-content">
+        <h1 class="hero-title">そのコンテナ環境、<br>本当に安全ですか？</h1>
+        <p class="hero-subtitle">
+          Docker・Kubernetes専門家がソースコードからインフラ設定まで一気通貫で診断。設定ミス1つで本番環境がインターネットに丸見えになるリスクを、今すぐ可視化します。
+        </p>
+        <div class="stats-grid" style="margin:2.5rem 0 1.5rem;">
+          <div class="stat-card">
+            <div class="stat-number">26,500+</div>
+            <div class="stat-label">Udemy総受講生</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">★5</div>
+            <div class="stat-label">セキュリティ<br>講座レビュー</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">2講座</div>
+            <div class="stat-label">インプレス社<br>研修講師</div>
+          </div>
+        </div>
+        <a href="#contact" class="hero-cta">無料相談を申し込む</a>
+      </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <section class="section fade-in">
+      <nav class="breadcrumb">
+        <a href="../index.html#services">提供サービス</a> &gt;
+        <span>コンテナ・ソースコードセキュリティ診断</span>
+      </nav>
+
+      <!-- Pain points -->
+      <h2 class="accent">こんな状況、心当たりありませんか？</h2>
+      <div style="display:flex;flex-wrap:wrap;gap:1rem;margin-bottom:1rem;">
+        <div class="problem-card" style="flex:1;min-width:260px;">
+          <i class="fas fa-exclamation-triangle" style="color:var(--color-accent);margin-right:0.5em;"></i>
+          <span>Docker・Kubernetesを本番稼働しているが、セキュリティレビューを一度もしたことがない</span>
+        </div>
+        <div class="problem-card" style="flex:1;min-width:260px;">
+          <i class="fas fa-exclamation-triangle" style="color:var(--color-accent);margin-right:0.5em;"></i>
+          <span>脆弱性スキャンの結果は出るが、どれを優先すべきか社内で判断できる人がいない</span>
+        </div>
+        <div class="problem-card" style="flex:1;min-width:260px;">
+          <i class="fas fa-exclamation-triangle" style="color:var(--color-accent);margin-right:0.5em;"></i>
+          <span>rootで動いているコンテナがあるかもしれないが、影響範囲がわからない</span>
+        </div>
+        <div class="problem-card" style="flex:1;min-width:260px;">
+          <i class="fas fa-exclamation-triangle" style="color:var(--color-accent);margin-right:0.5em;"></i>
+          <span>ソースコードにシークレットや認証の抜け穴が混入していないか不安</span>
+        </div>
+        <div class="problem-card" style="flex:1;min-width:260px;">
+          <i class="fas fa-exclamation-triangle" style="color:var(--color-accent);margin-right:0.5em;"></i>
+          <span>ISMSや外部監査を控えており、コンテナ環境のリスクを事前に把握しておきたい</span>
+        </div>
+        <div class="problem-card" style="flex:1;min-width:260px;">
+          <i class="fas fa-exclamation-triangle" style="color:var(--color-accent);margin-right:0.5em;"></i>
+          <span>コンテナに詳しいセキュリティ診断業者が見つからない</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Diagnosis scope -->
+    <section class="section fade-in">
+      <h2 class="accent">診断内容</h2>
+      <p style="color:var(--color-sub);margin-bottom:1.5rem;line-height:1.8;">
+        コンテナが安全でも、その上で動くソースコードに穴があれば意味がありません。<br>
+        アプリケーション層からインフラ設定まで、スタック全体を一気通貫で診断します。
+      </p>
+
+      <table class="diagnosis-table">
+        <thead>
+          <tr>
+            <th style="width:9em;">診断対象</th>
+            <th>チェック内容</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="category">
+              <i class="fas fa-code" style="color:var(--color-accent);margin-right:0.4em;"></i>
+              ソースコード
+            </td>
+            <td>
+              ハードコードされたシークレット・APIキーの検出
+              <span class="severity-badge severity-critical">Critical</span><br>
+              認証・認可ロジックの実装不備（OWASP Top 10）
+              <span class="severity-badge severity-critical">Critical</span><br>
+              依存パッケージの既知脆弱性（npm / Composer / pip 等）
+              <span class="severity-badge severity-high">High</span><br>
+              SQLインジェクション・XSS等インジェクション系の脆弱性<br>
+              セキュリティヘッダー・CORS設定の不備<br>
+              環境変数・設定ファイルの管理方法
+            </td>
+          </tr>
+          <tr>
+            <td class="category">
+              <i class="fab fa-docker" style="color:var(--color-accent);margin-right:0.4em;"></i>
+              Dockerfile
+            </td>
+            <td>
+              rootユーザーでの実行
+              <span class="severity-badge severity-critical">Critical</span><br>
+              ビルド引数・ENV経由のシークレット漏洩
+              <span class="severity-badge severity-critical">Critical</span><br>
+              ベースイメージの陳腐化・非公式イメージの使用
+              <span class="severity-badge severity-high">High</span><br>
+              不要なパッケージ・デバッグツールの混入<br>
+              マルチステージビルドの未活用によるイメージ肥大化
+            </td>
+          </tr>
+          <tr>
+            <td class="category">
+              <i class="fas fa-layer-group" style="color:var(--color-accent);margin-right:0.4em;"></i>
+              コンテナ<br>イメージ
+            </td>
+            <td>
+              既知CVE脆弱性スキャン（Trivy等による自動診断）
+              <span class="severity-badge severity-high">High</span><br>
+              イメージの最小化・不要ファイルの混入<br>
+              イメージ署名・改ざん検知の有無
+            </td>
+          </tr>
+          <tr>
+            <td class="category">
+              <i class="fas fa-dharmachakra" style="color:var(--color-accent);margin-right:0.4em;"></i>
+              Kubernetes<br>設定
+            </td>
+            <td>
+              RBAC設定の過剰権限
+              <span class="severity-badge severity-critical">Critical</span><br>
+              NetworkPolicyの未設定（コンテナ間通信が全開放）
+              <span class="severity-badge severity-high">High</span><br>
+              Secrets の平文保存・不適切な参照方法
+              <span class="severity-badge severity-high">High</span><br>
+              Pod Security Standards への準拠状況<br>
+              特権モード・危険なCapabilityの付与<br>
+              ResourceLimitsの未設定（DoSリスク）
+            </td>
+          </tr>
+          <tr>
+            <td class="category">
+              <i class="fas fa-box" style="color:var(--color-accent);margin-right:0.4em;"></i>
+              レジストリ・<br>CI/CD
+            </td>
+            <td>
+              プライベートレジストリのアクセス制御<br>
+              CI/CDパイプライン上のシークレット管理<br>
+              イメージスキャンの自動化状況<br>
+              デプロイ権限の最小化
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Deliverables -->
+    <section class="section fade-in">
+      <h2 class="accent">成果物</h2>
+      <div class="deliverable-list">
+        <div class="deliverable-item">
+          <h4><i class="fas fa-file-alt"></i> 診断レポート</h4>
+          <p>発見事項をCritical / High / Medium / Lowで優先度付け。それぞれの問題の原因・影響範囲・修正方針を記載。</p>
+        </div>
+        <div class="deliverable-item">
+          <h4><i class="fas fa-tasks"></i> 修正アクション一覧</h4>
+          <p>チームがそのまま着手できる具体的な修正タスクリスト。優先順位・対応工数の目安つき。</p>
+        </div>
+        <div class="deliverable-item">
+          <h4><i class="fas fa-video"></i> オンライン報告会</h4>
+          <p>診断完了後に1時間の報告会を実施。開発チーム向け・経営層向け、どちらのスタイルにも対応。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section class="section fade-in">
+      <h2 class="accent">診断の流れ</h2>
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="process-step-num">1</div>
+          <div class="process-step-title">無料相談<br>（30分）</div>
+          <div class="process-step-detail">環境規模・使用技術・懸念点を確認。見積りをご提示します。</div>
+        </div>
+        <div class="process-step">
+          <div class="process-step-num">2</div>
+          <div class="process-step-title">NDA締結・<br>資料共有</div>
+          <div class="process-step-detail">秘密保持契約後に、Dockerfileやマニフェストなどをご提供ください。</div>
+        </div>
+        <div class="process-step">
+          <div class="process-step-num">3</div>
+          <div class="process-step-title">診断実施<br>（1〜2週間）</div>
+          <div class="process-step-detail">ソースコードからKubernetes設定まで一気通貫で診断します。</div>
+        </div>
+        <div class="process-step">
+          <div class="process-step-num">4</div>
+          <div class="process-step-title">レポート<br>納品</div>
+          <div class="process-step-detail">優先度つきの診断レポートと修正アクション一覧をご提出します。</div>
+        </div>
+        <div class="process-step">
+          <div class="process-step-num">5</div>
+          <div class="process-step-title">オンライン<br>報告会</div>
+          <div class="process-step-detail">1時間の報告会で結果をご説明。修正・構築支援も対応可能です。</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why me -->
+    <section class="section fade-in">
+      <h2 class="accent">「コンテナを一番深く知っている人」に診てもらう</h2>
+      <p style="color:var(--color-sub);margin-bottom:1.5rem;line-height:1.8;">
+        汎用的なセキュリティ診断会社とは異なり、コンテナ技術そのものの専門家として<br>
+        「なぜそのリスクが生まれるか」まで含めて理解した診断を提供します。
+      </p>
+      <div class="credential-box">
+        <div class="credential-card">
+          <div class="cred-icon"><i class="fas fa-book"></i></div>
+          <h4>インプレス社 コンテナ技術講座 講師</h4>
+          <p>
+            <a href="https://academy.impress.co.jp/event/cloudnative/advanced/" target="_blank" rel="noopener">コンテナ技術講座＜実践編＞</a>（Kubernetes完全ガイド 第2版 準拠）および
+            <a href="https://academy.impress.co.jp/event/cloudnative202001/" target="_blank" rel="noopener">コンテナ技術講座＜Docker基礎実践編＞</a>（Docker実践ガイド 第2版 準拠）の講師を担当。
+          </p>
+        </div>
+        <div class="credential-card">
+          <div class="cred-icon"><i class="fas fa-graduation-cap"></i></div>
+          <h4>Udemy：Docker基礎コース 受講生15,000人超</h4>
+          <p>
+            <a href="https://www.udemy.com/user/uchidayuma/" target="_blank" rel="noopener">Udemyプロフィール</a>にて確認できる通り、総受講生26,500人以上。Docker基礎コースは15,000人が受講。コンテナセキュリティコースは★5評価を獲得。
+          </p>
+        </div>
+        <div class="credential-card">
+          <div class="cred-icon"><i class="fas fa-shield-alt"></i></div>
+          <h4>実務でのコンテナ設計・構築経験</h4>
+          <p>
+            Laravel・React・AWSを中心としたWebシステムの設計・開発において、コンテナ環境の構築・運用を数多く担当。攻撃者視点と設計者視点の両方から診断します。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="section fade-in">
+      <h2 class="accent">料金</h2>
+      <div class="services-list">
+        <div class="service-card" style="border-left:5px solid var(--color-accent);">
+          <h3>セキュリティ診断</h3>
+          <ul style="color:var(--color-sub);font-size:1rem;line-height:1.9;text-align:left;">
+            <li>ソースコード・Dockerfile・Kubernetes設定の一気通貫診断</li>
+            <li>優先度付き診断レポート（Critical / High / Medium / Low）</li>
+            <li>修正アクション一覧</li>
+            <li>オンライン報告会（1時間）</li>
+          </ul>
+          <p style="font-size:1.3rem;font-weight:700;color:var(--color-accent);margin-top:1rem;">
+            30万円〜（税込）
+          </p>
+          <p class="pricing-note">※ 診断対象の規模・サービス数によって変動します。まず無料相談にてお見積りいたします。</p>
+        </div>
+        <div class="service-card" style="border-left:5px solid #00C896;">
+          <h3>修正・セキュア構築支援</h3>
+          <ul style="color:var(--color-sub);font-size:1rem;line-height:1.9;text-align:left;">
+            <li>診断で発見した問題の修正実装</li>
+            <li>セキュアなコンテナ環境の再構築</li>
+            <li>CI/CDパイプラインへのセキュリティスキャン組み込み</li>
+            <li>開発チームへのナレッジ共有</li>
+          </ul>
+          <p style="font-size:1.3rem;font-weight:700;color:#00C896;margin-top:1rem;">
+            別途お見積り
+          </p>
+          <p class="pricing-note">※ 診断後のご要望に応じて、修正・再構築まで一貫してサポートします。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section fade-in">
+      <h2 class="accent">よくあるご質問</h2>
+      <div class="faq">
+        <div class="faq-item">
+          <div class="faq-question" tabindex="0">本番環境へのアクセスが必要ですか？</div>
+          <div class="faq-answer">
+            <p>基本的には設定ファイル（Dockerfile、Kubernetesマニフェスト、ソースコード）のご提供で診断できます。必要に応じてステージング環境へのアクセスをお願いする場合があります。本番環境への直接アクセスは原則不要です。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" tabindex="0">機密情報の取り扱いはどうなりますか？</div>
+          <div class="faq-answer">
+            <p>診断開始前に秘密保持契約（NDA）を締結します。提供いただいたコード・設定ファイルは診断目的にのみ使用し、第三者への提供や目的外利用は一切行いません。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" tabindex="0">どんな規模・構成が対象になりますか？</div>
+          <div class="faq-answer">
+            <p>スタートアップのシンプルなDocker Compose構成から、複数サービスのKubernetesクラスターまで対応可能です。まず無料相談にて環境をお聞かせください。規模に応じた適切な診断範囲と料金をご提案します。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" tabindex="0">修正は自社エンジニアでやらないといけませんか？</div>
+          <div class="faq-answer">
+            <p>いいえ。修正・再構築支援も承ります。診断レポートをもとに、自社チームで対応するか、修正まで依頼するかはご自由に選択できます。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" tabindex="0">診断にどのくらいの期間かかりますか？</div>
+          <div class="faq-answer">
+            <p>標準的な規模（マイクロサービス3〜5サービス程度）で1〜2週間です。大規模な環境や多数のサービスがある場合は別途ご相談ください。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="contact" class="section fade-in">
+      <div class="cta-section">
+        <h2>まず、無料でご相談ください</h2>
+        <p>
+          30分のオンライン相談（無料）にて、環境の概要をお聞きし、<br>
+          診断範囲・お見積りをご提示します。稟議書の作成もサポートします。
+        </p>
+        <div class="cta-buttons">
+          <a href="../index.html#contact" class="cta-primary">問い合わせフォームへ</a>
+          <a href="../achievements.html" class="cta-secondary">実績をもっと見る</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span>&copy; 2024 打田裕馬 | Engineer × PM</span>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+
+</html>

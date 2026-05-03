@@ -485,6 +485,7 @@ document.addEventListener("DOMContentLoaded", function () {
     "/achievements.html",
     "/services/pm.html",
     "/services/pm-rescue.html",
+    "/services/container-security.html",
   ];
 
   // GitHub Pagesのベースパスを考慮した有効ページリスト
@@ -564,6 +565,7 @@ document.addEventListener("DOMContentLoaded", function () {
           "/achievements.html",
           "/services/pm.html",
           "/services/pm-rescue.html",
+          "/services/container-security.html",
         ];
 
         // ベースパスを考慮した有効パスチェック
