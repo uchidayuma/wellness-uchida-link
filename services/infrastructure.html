@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ECS / Kubernetes インフラ構築支援 | 打田裕馬。AWS ECS Fargate・Kubernetes の設計から CI/CD・IaC 化まで一貫対応。">
+  <title>ECS / Kubernetes インフラ構築支援 | 打田裕馬</title>
+  <link rel="icon" href="../images/favicon.png" type="image/png">
+  <link rel="stylesheet" href="../styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <script async data-id="101489745" src="https://static.getclicky.com/js"></script>
+  <style>
+    .scope-grid {
+      display: flex;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+      margin: 1.5rem 0;
+    }
+    .scope-card {
+      flex: 1;
+      min-width: 220px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 10px;
+      padding: 1.4rem 1.5rem;
+    }
+    .scope-card .scope-icon {
+      font-size: 1.6rem;
+      color: var(--color-accent);
+      margin-bottom: 0.7rem;
+    }
+    .scope-card h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--color-text);
+      margin-bottom: 0.5rem;
+    }
+    .scope-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .scope-card ul li {
+      font-size: 0.87rem;
+      color: var(--color-sub);
+      padding: 0.28em 0;
+      padding-left: 1.2em;
+      position: relative;
+      line-height: 1.5;
+    }
+    .scope-card ul li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--color-accent);
+    }
+
+    .process-steps {
+      display: flex;
+      gap: 0;
+      flex-wrap: wrap;
+      margin: 2rem 0;
+      position: relative;
+    }
+    .process-step {
+      flex: 1;
+      min-width: 140px;
+      text-align: center;
+      padding: 1.5rem 1rem;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      position: relative;
+    }
+    .process-step:not(:last-child)::after {
+      content: '→';
+      position: absolute;
+      right: -0.7em;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--color-accent);
+      font-size: 1.2rem;
+      z-index: 1;
+    }
+    .process-step-num {
+      display: inline-block;
+      width: 2em;
+      height: 2em;
+      line-height: 2em;
+      border-radius: 50%;
+      background: var(--color-accent);
+      color: #fff;
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 0.6em;
+    }
+    .process-step-title {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--color-text);
+      margin-bottom: 0.3em;
+    }
+    .process-step-detail {
+      font-size: 0.82rem;
+      color: var(--color-sub);
+      line-height: 1.5;
+    }
+
+    .credential-box {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin: 2rem 0;
+    }
+    .credential-card {
+      flex: 1;
+      min-width: 220px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
+      padding: 1.4rem 1.5rem;
+    }
+    .credential-card .cred-icon {
+      font-size: 2rem;
+      margin-bottom: 0.6rem;
+      color: var(--color-accent);
+    }
+    .credential-card h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+      color: var(--color-text);
+    }
+    .credential-card p {
+      font-size: 0.88rem;
+      color: var(--color-sub);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .deliverable-list {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin: 1.5rem 0;
+    }
+    .deliverable-item {
+      flex: 1;
+      min-width: 200px;
+      background: rgba(0, 200, 150, 0.06);
+      border-left: 4px solid var(--color-accent);
+      padding: 1.2rem 1.4rem;
+      border-radius: 0 6px 6px 0;
+    }
+    .deliverable-item h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--color-accent);
+      margin-bottom: 0.4rem;
+    }
+    .deliverable-item p {
+      font-size: 0.87rem;
+      color: var(--color-sub);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .pricing-note {
+      font-size: 0.88rem;
+      color: var(--color-sub);
+      margin-top: 0.6rem;
+      line-height: 1.6;
+    }
+    .stat-label {
+      font-size: 0.88rem;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="particles-bg"></canvas>
+  <header class="header">
+    <div class="header-inner">
+      <a href="../index.html" class="logo-link"><img src="../images/profile.png" alt="プロフィール画像" class="profile-img"></a>
+      <div class="header-info">
+        <h1 class="name"><a href="../index.html">打田裕馬</a> <span class="title">Technical Orchestrator / Infrastructure &amp; AI Advisor</span></h1>
+        <nav class="nav">
+          <ul>
+            <li><a href="../index.html#about">About</a></li>
+            <li><a href="../index.html#services">Services</a></li>
+            <li><a href="../index.html#works">Works</a></li>
+            <li><a href="../index.html#contact">Contact</a></li>
+            <li><a href="../achievements.html">Achievements</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero-section fade-in">
+      <div class="hero-content">
+        <h1 class="hero-title">本番に耐えるコンテナ環境を、<br>一から設計・構築します。</h1>
+        <p class="hero-subtitle">
+          AWS ECS Fargate・Kubernetes の設計から、CI/CD・IaC 化・セキュリティ組み込みまで。<br>
+          「とりあえず動く」ではなく、運用まで考えたインフラを構築します。
+        </p>
+        <div class="stats-grid" style="margin:2.5rem 0 1.5rem;">
+          <div class="stat-card">
+            <div class="stat-number">26,500+</div>
+            <div class="stat-label">Udemy総受講生</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">50%</div>
+            <div class="stat-label">CDK導入で<br>デプロイ時間削減</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">ECS/EKS</div>
+            <div class="stat-label">本番移行・<br>CI/CD構築実績</div>
+          </div>
+        </div>
+        <a href="#contact" class="hero-cta">無料相談を申し込む</a>
+      </div>
+    </section>
+
+    <!-- Breadcrumb + Pain points -->
+    <section class="section fade-in">
+      <nav class="breadcrumb">
+        <a href="../index.html#services">提供サービス</a> &gt;
+        <span>ECS / Kubernetes インフラ構築支援</span>
+      </nav>
+
+      <h2 class="accent">こんな課題はありませんか？</h2>
+      <div style="display:flex;flex-wrap:wrap;gap:1rem;margin-bottom:1rem;">
+        <div class="problem-card" style="flex:1;min-width:260px;">
+          <i class="fas fa-exclamation-triangle" style="color:var(--color-accent);margin-right:0.5em;"></i>
+          <span>ECS や Kubernetes を導入したいが、社内に経験者がおらず何から始めればいいかわからない</span>
+        </div>
+        <div class="problem-card" style="flex:1;min-width:260px;">
+          <i class="fas fa-exclamation-triangle" style="color:var(--color-accent);margin-right:0.5em;"></i>
+          <span>動いてはいるが手作業デプロイのまま。CI/CD を整備する時間も人手もない</span>
+        </div>
+        <div class="problem-card" style="flex:1;min-width:260px;">
+          <i class="fas fa-exclamation-triangle" style="color:var(--color-accent);margin-right:0.5em;"></i>
+          <span>インフラがコード化されておらず、構成が属人化・ブラックボックス化している</span>
+        </div>
+        <div class="problem-card" style="flex:1;min-width:260px;">
+          <i class="fas fa-exclamation-triangle" style="color:var(--color-accent);margin-right:0.5em;"></i>
+          <span>オンプレ・VPS から AWS への移行を検討しているが、設計・作業コストが読めない</span>
+        </div>
+        <div class="problem-card" style="flex:1;min-width:260px;">
+          <i class="fas fa-exclamation-triangle" style="color:var(--color-accent);margin-right:0.5em;"></i>
+          <span>スタートアップで素早く本番環境を立ち上げたいが、品質も落としたくない</span>
+        </div>
+        <div class="problem-card" style="flex:1;min-width:260px;">
+          <i class="fas fa-exclamation-triangle" style="color:var(--color-accent);margin-right:0.5em;"></i>
+          <span>セキュリティ要件が厳しく、コンテナ環境のハードニングまで含めて整備したい</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scope -->
+    <section class="section fade-in">
+      <h2 class="accent">対応範囲</h2>
+      <p style="color:var(--color-sub);margin-bottom:1.5rem;line-height:1.8;">
+        設計だけ、構築だけではなく、「運用できる状態にして引き渡す」ことを目標にします。<br>
+        スコープはご要望に応じて柔軟に調整します。
+      </p>
+      <div class="scope-grid">
+        <div class="scope-card">
+          <div class="scope-icon"><i class="fas fa-drafting-compass"></i></div>
+          <h4>アーキテクチャ設計</h4>
+          <ul>
+            <li>要件ヒアリング・現状整理</li>
+            <li>AWS ECS Fargate / EKS 構成設計</li>
+            <li>ネットワーク・セキュリティグループ設計</li>
+            <li>コスト見積り</li>
+          </ul>
+        </div>
+        <div class="scope-card">
+          <div class="scope-icon"><i class="fas fa-layer-group"></i></div>
+          <h4>コンテナ環境構築</h4>
+          <ul>
+            <li>ECS Fargate / EKS クラスター構築</li>
+            <li>Dockerfile 最適化・マルチステージビルド</li>
+            <li>ECR レジストリ設定</li>
+            <li>ロードバランサー・オートスケール設定</li>
+          </ul>
+        </div>
+        <div class="scope-card">
+          <div class="scope-icon"><i class="fas fa-code-branch"></i></div>
+          <h4>CI/CD パイプライン</h4>
+          <ul>
+            <li>GitHub Actions による自動ビルド・デプロイ</li>
+            <li>AWS CodePipeline / CodeBuild 構築</li>
+            <li>ステージング → 本番の承認フロー</li>
+            <li>セキュリティスキャンの自動化</li>
+          </ul>
+        </div>
+        <div class="scope-card">
+          <div class="scope-icon"><i class="fas fa-file-code"></i></div>
+          <h4>IaC 化</h4>
+          <ul>
+            <li>AWS CDK（TypeScript）による全環境のコード化</li>
+            <li>環境差分（dev / stg / prod）の管理</li>
+            <li>既存環境のリバースエンジニアリング</li>
+            <li>Terraform 対応も可</li>
+          </ul>
+        </div>
+        <div class="scope-card">
+          <div class="scope-icon"><i class="fas fa-chart-line"></i></div>
+          <h4>監視・ログ</h4>
+          <ul>
+            <li>CloudWatch Logs / Metrics 設定</li>
+            <li>アラート設計（障害・コスト超過）</li>
+            <li>Datadog / Grafana 連携（任意）</li>
+            <li>ダッシュボード作成</li>
+          </ul>
+        </div>
+        <div class="scope-card">
+          <div class="scope-icon"><i class="fas fa-shield-alt"></i></div>
+          <h4>セキュリティ組み込み</h4>
+          <ul>
+            <li>IAM ロール最小権限設計</li>
+            <li>Secrets Manager / Parameter Store 連携</li>
+            <li>イメージスキャン（ECR / Trivy）自動化</li>
+            <li>非 root ユーザー・読み取り専用ファイルシステム</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Deliverables -->
+    <section class="section fade-in">
+      <h2 class="accent">成果物</h2>
+      <div class="deliverable-list">
+        <div class="deliverable-item">
+          <h4><i class="fas fa-project-diagram"></i> 構成図・設計ドキュメント</h4>
+          <p>AWS アーキテクチャ図、ネットワーク構成、サービス間の依存関係を図示。引き継ぎに使えるドキュメントとして納品します。</p>
+        </div>
+        <div class="deliverable-item">
+          <h4><i class="fas fa-file-code"></i> IaC コード（CDK / Terraform）</h4>
+          <p>インフラ全体を再現可能なコードで管理。環境ごとの差分も一元管理し、チームで運用できる状態にします。</p>
+        </div>
+        <div class="deliverable-item">
+          <h4><i class="fas fa-rocket"></i> CI/CD パイプライン</h4>
+          <p>コードプッシュから本番デプロイまでを自動化。ビルド・テスト・セキュリティスキャン・承認フローを組み込みます。</p>
+        </div>
+        <div class="deliverable-item">
+          <h4><i class="fas fa-book-open"></i> 運用手順書</h4>
+          <p>スケール変更・障害対応・ロールバック手順をまとめたランブック。社内エンジニアが自走できる状態を目指します。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section class="section fade-in">
+      <h2 class="accent">進め方</h2>
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="process-step-num">1</div>
+          <div class="process-step-title">無料相談<br>（30分）</div>
+          <div class="process-step-detail">現在の環境・課題・希望スケジュールを確認。見積りをご提示します。</div>
+        </div>
+        <div class="process-step">
+          <div class="process-step-num">2</div>
+          <div class="process-step-title">要件整理・<br>設計</div>
+          <div class="process-step-detail">構成図・IaC の設計案を作成。方向性を合意してから着手します。</div>
+        </div>
+        <div class="process-step">
+          <div class="process-step-num">3</div>
+          <div class="process-step-title">構築・<br>実装</div>
+          <div class="process-step-detail">週次でレビューしながら進捗共有。途中で要件が変わっても柔軟に対応します。</div>
+        </div>
+        <div class="process-step">
+          <div class="process-step-num">4</div>
+          <div class="process-step-title">テスト・<br>引き渡し</div>
+          <div class="process-step-detail">本番相当環境での動作確認後、ドキュメントとともに引き渡します。</div>
+        </div>
+        <div class="process-step">
+          <div class="process-step-num">5</div>
+          <div class="process-step-title">運用サポート<br>（任意）</div>
+          <div class="process-step-detail">引き渡し後のトラブル対応・追加開発にも対応します（別途）。</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why me -->
+    <section class="section fade-in">
+      <h2 class="accent">実務から来る、再現性のある構築力</h2>
+      <p style="color:var(--color-sub);margin-bottom:1.5rem;line-height:1.8;">
+        教科書どおりではなく、実際の本番環境で試行錯誤した経験をもとに構築します。<br>
+        「動いているけど怖い」環境から、「根拠を説明できる」環境へ。
+      </p>
+      <div class="credential-box">
+        <div class="credential-card">
+          <div class="cred-icon"><i class="fas fa-server"></i></div>
+          <h4>ECS Fargate 移行・CI/CD 構築実績</h4>
+          <p>
+            フランチャイズ向け基幹システム（在庫・見積・発注・工事管理）のオンプレから AWS ECS Fargate への移行を主導。CodePipeline による CI/CD を構築し、デプロイを自動化。
+          </p>
+        </div>
+        <div class="credential-card">
+          <div class="cred-icon"><i class="fas fa-code"></i></div>
+          <h4>AWS CDK で IaC 化・デプロイ時間 50% 削減</h4>
+          <p>
+            宿泊施設向け予約管理ツールにて AWS CDK を導入し、全インフラをコード化。環境の再現性を確保し、デプロイ時間を 50% 削減。多国籍チームでの運用を実現。
+          </p>
+        </div>
+        <div class="credential-card">
+          <div class="cred-icon"><i class="fas fa-graduation-cap"></i></div>
+          <h4>Udemy Docker / Kubernetes 講師（2.6万人）</h4>
+          <p>
+            コンテナ技術の基礎から本番運用まで体系的に教えてきた経験があるため、構築しながら社内エンジニアへのナレッジ共有も同時に行えます。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="section fade-in">
+      <h2 class="accent">料金</h2>
+      <div class="services-list">
+        <div class="service-card" style="border-left:5px solid var(--color-accent);">
+          <h3>単発プロジェクト</h3>
+          <ul style="color:var(--color-sub);font-size:1rem;line-height:1.9;text-align:left;">
+            <li>アーキテクチャ設計〜構築〜引き渡しまで</li>
+            <li>IaC コード・CI/CD・運用手順書を含む</li>
+            <li>週次レビューによる透明な進捗管理</li>
+            <li>引き渡し後 1ヶ月のサポート付き</li>
+          </ul>
+          <p style="font-size:1.3rem;font-weight:700;color:var(--color-accent);margin-top:1rem;">
+            要相談
+          </p>
+          <p class="pricing-note">※ 構築規模・技術スタック・期間によって変動します。まず無料相談にてお見積りいたします。</p>
+        </div>
+        <div class="service-card" style="border-left:5px solid #00C896;">
+          <h3>継続支援（月次）</h3>
+          <ul style="color:var(--color-sub);font-size:1rem;line-height:1.9;text-align:left;">
+            <li>インフラ運用・改善の継続支援</li>
+            <li>新機能追加・スケール対応</li>
+            <li>障害対応・パフォーマンスチューニング</li>
+            <li>社内エンジニアへのメンタリング</li>
+          </ul>
+          <p style="font-size:1.3rem;font-weight:700;color:#00C896;margin-top:1rem;">
+            要相談
+          </p>
+          <p class="pricing-note">※ 稼働時間・対応範囲に応じて月次でご契約いただけます。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section fade-in">
+      <h2 class="accent">よくあるご質問</h2>
+      <div class="faq">
+        <div class="faq-item">
+          <div class="faq-question" tabindex="0">AWS の知識がないと対応できませんか？</div>
+          <div class="faq-answer">
+            <p>いいえ。AWS の基礎がなくても対応できます。必要な IAM 権限の設定方法や操作方法も含めてご説明しながら進めます。引き渡し後に自走できることを目標にしています。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" tabindex="0">既存環境がある場合でも依頼できますか？</div>
+          <div class="faq-answer">
+            <p>はい。既存環境のリファクタリング・IaC 化・移行も対応します。まず現状をヒアリングし、リスクとコストを整理した上で進め方をご提案します。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" tabindex="0">ECS と Kubernetes、どちらが適していますか？</div>
+          <div class="faq-answer">
+            <p>チームの習熟度・運用コスト・要件によって変わります。スタートアップや少人数チームには ECS Fargate、将来的なポータビリティや柔軟なスケーリングを重視する場合は Kubernetes（EKS）をおすすめするケースが多いです。無料相談で要件をお聞きした上で判断します。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" tabindex="0">どのくらいの期間で完成しますか？</div>
+          <div class="faq-answer">
+            <p>シンプルな ECS Fargate 環境であれば 2〜4 週間、CI/CD や IaC 化を含む場合は 1〜2ヶ月が目安です。スコープに応じてスケジュールをご提示します。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" tabindex="0">セキュリティ診断と同時に依頼できますか？</div>
+          <div class="faq-answer">
+            <p>はい。構築と並行してセキュリティ要件を組み込む形で進めることも、構築後に別途診断を行うことも可能です。<a href="./container-security.html" style="color:var(--color-accent);">セキュリティ診断サービス</a>と組み合わせた場合は割引対応をご相談ください。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="contact" class="section fade-in">
+      <div class="cta-section">
+        <h2>まず、無料でご相談ください</h2>
+        <p>
+          30分のオンライン相談（無料）にて、現在の環境・課題をお聞きし、<br>
+          最適な構成と概算見積りをご提示します。
+        </p>
+        <div class="cta-buttons">
+          <a href="../index.html#contact" class="cta-primary">問い合わせフォームへ</a>
+          <a href="./container-security.html" class="cta-secondary">セキュリティ診断も見る</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span>&copy; 2024 打田裕馬 | Technical Orchestrator / Infrastructure &amp; AI Advisor</span>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+
+</html>

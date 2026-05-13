@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="打田裕馬 | AI時代に生き残るエンジニアPMのポートフォリオ。技術×マネジメントでキャリアを切り拓く。">
-  <title>打田裕馬 | エンジニアPMポートフォリオ</title>
+  <meta name="description" content="打田裕馬 | Docker・AWS ECS/Fargate・Kubernetes を専門とするインフラエンジニア。コンテナ環境の設計・構築からセキュリティ診断まで。Udemy 2.6万人受講生・インプレス研修講師。">
+  <title>打田裕馬 | Docker / ECS / Kubernetes インフラエンジニア</title>
   <link rel="icon" href="/images/favicon.png" type="image/png">
   <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,7 +16,7 @@
   <script async data-id="101489745" src="https://static.getclicky.com/js"></script>
 </head>
 
-<body data-title-ja="打田裕馬 | エンジニアPMポートフォリオ" data-title-en="Yuma Uchida | Engineer PM Portfolio">
+<body data-title-ja="打田裕馬 | Docker / ECS / Kubernetes インフラエンジニア" data-title-en="Yuma Uchida | Docker / ECS / Kubernetes Infrastructure Engineer">
   <!-- パーティクル背景 -->
   <canvas id="particles-bg"></canvas>
 
@@ -26,14 +26,12 @@
       <a href="/index.html" class="logo-link"><img src="images/profile.png" alt="プロフィール画像" class="profile-img"></a>
       <div class="header-info">
         <h1 class="name"><a href="/index.html" data-ja="打田裕馬" data-en="Yuma Uchida">打田裕馬</a> <span class="title"
-            data-ja="Engineer × PM" data-en="Engineer × PM">Engineer × PM</span></h1>
+            data-ja="Docker / ECS / Kubernetes インフラエンジニア" data-en="Docker / ECS / Kubernetes Infrastructure Engineer">Docker / ECS / Kubernetes インフラエンジニア</span></h1>
         <nav class="nav">
           <ul>
             <li><a href="/index.html#about">About</a></li>
-            <li><a href="/index.html#skills">Skills</a></li>
-            <li><a href="/index.html#works">Works</a></li>
-            <li><a href="/index.html#career">Career</a></li>
             <li><a href="/index.html#services">Services</a></li>
+            <li><a href="/index.html#works">Works</a></li>
             <li><a href="/index.html#contact">Contact</a></li>
             <li><a href="/achievements.html">Achievements</a></li>
           </ul>
@@ -51,35 +49,54 @@
     <h2 data-ja="About" data-en="About">About</h2>
     <div class="about-content">
       <div class="about-text">
-        <p class="typing" data-ja="Web・アプリ開発からプロジェクト管理まで。&#10;技術とマネジメントの力で、貴社の事業を加速させます。"
-          data-en="From Web/App development to Project Management.&#10;Accelerating your business with the power of Technology & Management.">
-          Web・アプリ開発からプロジェクト管理まで。<br>技術とマネジメントの力で、貴社の事業を加速させます。</p>
-        <ul>
-          <li><strong data-ja="名前：" data-en="Name: ">名前：</strong><span data-ja="打田裕馬（うちだ ゆうま）"
-              data-en="Yuma Uchida">打田裕馬（うちだ ゆうま）</span></li>
-          <li><strong data-ja="年齢：" data-en="Age: ">年齢：</strong><span id="age-display" data-ja="36歳"
-              data-en="36">36歳</span></li>
+        <p class="typing" data-ja="コンテナ環境のセキュリティと構築を、任せられる専門家。"
+          data-en="Container security and infrastructure you can rely on.">
+          コンテナ環境のセキュリティと構築を、任せられる専門家。</p>
 
-          <li><strong data-ja="拠点：" data-en="Location: ">拠点：</strong><span data-ja="東京23区"
-              data-en="Tokyo (23 Wards)">東京23区</span></li>
-          <li><strong data-ja="得意技術：" data-en="Expertise: ">得意技術：</strong><span data-ja="Laravel, React, AWS, Docker"
-              data-en="Laravel, React, AWS, Docker">Laravel, React, AWS, Docker</span></li>
-          <li><strong data-ja="得意業務：" data-en="Strengths: ">得意業務：</strong><span data-ja="プロジェクトマネジメント、システム・DB設計、実装"
-              data-en="Project management, system &amp; database design, implementation">プロジェクトマネジメント、システム・DB設計、実装</span>
-          </li>
-        </ul>
+        <p style="color:var(--color-sub); font-size:0.97rem; line-height:1.95; margin: 1.4rem 0 1.8rem;"
+          data-ja="Docker・AWS ECS/Fargate・Kubernetes を専門とするインフラエンジニアです。設計・構築からセキュリティ診断まで一貫して担います。Udemyでは2.6万人にコンテナ技術を教えてきた経験から、本番環境で躓きやすいポイントを熟知しています。IaC（AWS CDK）によるインフラのコード化や CI/CD 整備も得意としており、「動くだけ」ではなく運用まで考えた環境を作ることを大切にしています。"
+          data-en="Infrastructure engineer specializing in Docker, AWS ECS/Fargate, and Kubernetes — handling everything from design and build to security audits. Having taught container technology to 26,000 students on Udemy, I know exactly where production environments tend to go wrong. I'm also experienced in IaC (AWS CDK) and CI/CD setup, with a focus on building infrastructure that teams can actually operate after handover.">
+          Docker・AWS ECS/Fargate・Kubernetes を専門とするインフラエンジニアです。設計・構築からセキュリティ診断まで一貫して担います。<br>
+          Udemyでは2.6万人にコンテナ技術を教えてきた経験から、本番環境で躓きやすいポイントを熟知しています。IaC（AWS CDK）によるインフラのコード化や CI/CD 整備も得意としており、「動くだけ」ではなく運用まで考えた環境を作ることを大切にしています。
+        </p>
+
+        <div class="stat-badges">
+          <a href="https://www.udemy.com/user/uchidayuma/" target="_blank" rel="noopener" class="stat-badge" style="text-decoration:none;">
+            <span class="stat-number">26,000<span class="stat-plus">+</span></span>
+            <span class="stat-label" data-ja="Udemy 受講生" data-en="Udemy Students">Udemy 受講生</span>
+          </a>
+          <a href="https://www.udemy.com/user/uchidayuma/" target="_blank" rel="noopener" class="stat-badge stat-badge--secondary" style="text-decoration:none;">
+            <span class="stat-icon">🏆</span>
+            <span class="stat-label" data-ja="Best Seller 認定" data-en="Best Seller Certified">Best Seller 認定</span>
+          </a>
+          <a href="https://academy.impress.co.jp/event/cloudnative-k8s202109/" target="_blank" rel="noopener" class="stat-badge stat-badge--secondary" style="text-decoration:none;">
+            <span class="stat-icon">📖</span>
+            <span class="stat-label" data-ja="インプレス研修 満足度95%+" data-en="Impress Training 95%+ Rating">インプレス研修 満足度95%+</span>
+          </a>
+        </div>
+
         <div class="resume-links" style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 2rem;">
-          <a href="/resume/resume-ja.pdf" class="contact-btn lang-ja-only" target="_blank"
+          <a href="#contact" class="contact-btn cta-primary lang-ja-only"
+            style="width: auto; padding: 0.85em 2em; display: inline-flex; font-size: 1.1em;">
+            <i class="fas fa-calendar-check"></i>
+            <span>まずは相談する</span>
+          </a>
+          <a href="#contact" class="contact-btn cta-primary lang-en-only"
+            style="width: auto; padding: 0.85em 2em; display: inline-flex; font-size: 1.1em;">
+            <i class="fas fa-calendar-check"></i>
+            <span>Get in Touch</span>
+          </a>
+          <a href="/resume/resume-ja.pdf" class="contact-btn contact-btn--outline lang-ja-only" target="_blank"
             style="width: auto; padding: 0.7em 1.5em; display: inline-flex;">
             <i class="fas fa-file-pdf"></i>
-            <span>レジュメをダウンロード</span>
+            <span>レジュメ</span>
           </a>
-          <a href="/resume/resume-en.pdf" class="contact-btn lang-en-only" target="_blank"
+          <a href="/resume/resume-en.pdf" class="contact-btn contact-btn--outline lang-en-only" target="_blank"
             style="width: auto; padding: 0.7em 1.5em; display: inline-flex;">
             <i class="fas fa-file-pdf"></i>
-            <span>Download Resume</span>
+            <span>Resume</span>
           </a>
-          <a href="https://github.com/uchidayuma" class="contact-btn" target="_blank"
+          <a href="https://github.com/uchidayuma" class="contact-btn contact-btn--outline" target="_blank"
             style="width: auto; padding: 0.7em 1.5em; display: inline-flex;">
             <i class="fab fa-github"></i>
             <span>GitHub</span>
@@ -92,47 +109,83 @@
     </div>
   </section>
 
-  <!-- スキル -->
-  <section id="skills" class="section fade-in">
-    <h2 data-ja="Skills" data-en="Skills">Skills</h2>
-    <div class="skills-grid">
-      <div class="skill-card">
-        <h3><i class="fas fa-code"></i> <span data-ja="プログラミング" data-en="Programming">プログラミング</span></h3>
-        <div class="skill-bar" data-level="9"><span>PHP</span></div>
-        <div class="skill-bar" data-level="8"><span>JavaScript</span></div>
-        <div class="skill-bar" data-level="7"><span>React.js</span></div>
-        <div class="skill-bar" data-level="6"><span>Svelte.js</span></div>
-        <div class="skill-bar" data-level="4"><span>Go</span></div>
+  <!-- 課題リスト -->
+  <section id="problems" class="section fade-in">
+    <h2 data-ja="こんな状況、ありませんか？" data-en="Does this sound familiar?">こんな状況、ありませんか？</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:1rem;margin-bottom:2rem;">
+      <div class="problem-card" style="flex:1;min-width:260px;">
+        <i class="fas fa-exclamation-triangle" style="color:var(--color-accent);margin-right:0.5em;"></i>
+        <span data-ja="ECSやKubernetesを本番稼働しているが、セキュリティレビューを一度もしたことがない" data-en="Running ECS or Kubernetes in production but have never done a security review">ECSやKubernetesを本番稼働しているが、セキュリティレビューを一度もしたことがない</span>
       </div>
-      <div class="skill-card">
-        <h3><i class="fas fa-layer-group"></i> <span data-ja="バックエンド" data-en="Backend">バックエンド</span></h3>
-        <div class="skill-bar" data-level="7"><span>Laravel</span></div>
-        <div class="skill-bar" data-level="6"><span>Node.js</span></div>
-        <div class="skill-bar" data-level="5"><span>REST API設計</span></div>
+      <div class="problem-card" style="flex:1;min-width:260px;">
+        <i class="fas fa-exclamation-triangle" style="color:var(--color-accent);margin-right:0.5em;"></i>
+        <span data-ja="コンテナ移行を進めたいが、社内に設計・構築できるエンジニアがいない" data-en="Want to migrate to containers but don't have an engineer who can design and build it in-house">コンテナ移行を進めたいが、社内に設計・構築できるエンジニアがいない</span>
       </div>
-      <div class="skill-card">
-        <h3><i class="fas fa-server"></i> <span data-ja="インフラ" data-en="Infrastructure">インフラ</span></h3>
-        <div class="skill-bar" data-level="9"><span>Docker</span></div>
-        <div class="skill-bar" data-level="6"><span>AWS ECS</span></div>
-        <div class="skill-bar" data-level="4"><span>Kubernetes</span></div>
+      <div class="problem-card" style="flex:1;min-width:260px;">
+        <i class="fas fa-exclamation-triangle" style="color:var(--color-accent);margin-right:0.5em;"></i>
+        <span data-ja="インフラが属人化していて、IaC化やCI/CD整備を後回しにしてきた" data-en="Infrastructure is siloed in one person's head — IaC and CI/CD have been put off">インフラが属人化していて、IaC化やCI/CD整備を後回しにしてきた</span>
       </div>
-      <div class="skill-card">
-        <h3><i class="fas fa-database"></i> <span data-ja="データベース" data-en="Databases">データベース</span></h3>
-        <div class="skill-bar" data-level="8"><span>MySQL</span></div>
-        <div class="skill-bar" data-level="7"><span>PostgreSQL</span></div>
-        <div class="skill-bar" data-level="7"><span>MariaDB</span></div>
-        <div class="skill-bar" data-level="6"><span>Firestore</span></div>
+      <div class="problem-card" style="flex:1;min-width:260px;">
+        <i class="fas fa-exclamation-triangle" style="color:var(--color-accent);margin-right:0.5em;"></i>
+        <span data-ja="脆弱性スキャンの結果は出るが、何を優先すべきか社内で判断できる人がいない" data-en="Vulnerability scan results exist, but no one in-house can prioritize or interpret them">脆弱性スキャンの結果は出るが、何を優先すべきか社内で判断できる人がいない</span>
       </div>
-      <div class="skill-card">
-        <h3><i class="fas fa-users-cog"></i> <span data-ja="マネジメント/マーケ"
-            data-en="Management / Marketing">マネジメント/マーケ</span></h3>
-        <div class="skill-bar" data-level="9"><span>PM/PL</span></div>
-        <div class="skill-bar" data-level="8"><span data-ja="要件定義" data-en="Requirements Definition">要件定義</span></div>
-        <div class="skill-bar" data-level="7"><span data-ja="チームビルディング" data-en="Team Building">チームビルディング</span></div>
-        <div class="skill-bar" data-level="7"><span data-ja="データ分析" data-en="Data Analysis">データ分析</span></div>
+    </div>
+    <p style="color:var(--color-sub);font-size:0.93rem;line-height:1.8;margin:0;"
+      data-ja="まず30分、現状を聞かせてください。費用や進め方の話は後で構いません。"
+      data-en="Share your current situation in 30 minutes first. We can discuss costs and approach after.">
+      まず30分、現状を聞かせてください。費用や進め方の話は後で構いません。
+    </p>
+    <a href="#contact" class="contact-btn cta-primary lang-ja-only" style="width:auto;padding:0.8em 2em;display:inline-flex;margin-top:1.2rem;font-size:1rem;">
+      <i class="fas fa-calendar-check"></i><span>相談してみる</span>
+    </a>
+    <a href="#contact" class="contact-btn cta-primary lang-en-only" style="width:auto;padding:0.8em 2em;display:inline-flex;margin-top:1.2rem;font-size:1rem;">
+      <i class="fas fa-calendar-check"></i><span>Get in Touch</span>
+    </a>
+  </section>
+
+
+  <!-- サービス紹介 -->
+  <section id="services" class="section fade-in">
+    <h2 data-ja="提供サービス" data-en="Services">提供サービス</h2>
+    <div class="services-list" style="flex-direction: column; gap: 2.5rem;">
+
+      <!-- スポット相談（最上位・目立たせる） -->
+      <div style="display: flex; justify-content: center;">
+        <div class="service-card service-card--highlight" style="max-width: 700px; width: 100%;">
+          <div class="service-card__badge" data-ja="NEW" data-en="NEW">NEW</div>
+          <h3 data-ja="⚡ Spot Technical Consultation（60分）" data-en="⚡ Spot Technical Consultation (60 min)">⚡ Spot Technical Consultation（60分）<span style="font-size:0.82em; font-weight:400; color:var(--color-sub); margin-left:0.5em;">¥5,000（税抜）</span></h3>
+          <p data-ja="コンテナ設計・ECS移行・Kubernetes構成・CI/CD・セキュリティなど、1時間で課題を整理します。「どこから手をつければいいか」という段階でも構いません。"
+            data-en="Got a container design question, ECS migration plan, Kubernetes setup, CI/CD, or security concern? One focused hour to sort it out — even 'where do I even start?' is a fine place to begin.">
+            コンテナ設計・ECS移行・Kubernetes構成・CI/CD・セキュリティなど、1時間で課題を整理します。「どこから手をつければいいか」という段階でも構いません。</p>
+          <a href="#contact" class="contact-btn cta-primary" style="display: inline-flex; width: auto; padding: 0.85em 2.5em; margin-top: 0.5em; font-size: 1.1em;">
+            <i class="fas fa-calendar-check"></i>
+            <span data-ja="今すぐ予約する" data-en="Book Now">今すぐ予約する</span>
+          </a>
+        </div>
+      </div>
+
+      <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+        <a href="/services/container-security.html" class="service-card service-card--security">
+          <div class="service-card__badge service-card__badge--security" data-ja="推奨" data-en="Recommended">推奨</div>
+          <h3 data-ja="🔒 コンテナ・ソースコードセキュリティ診断" data-en="🔒 Container &amp; Source Code Security Audit">🔒 コンテナ・ソースコードセキュリティ診断</h3>
+          <p data-ja="Docker/Kubernetes専門家がソースコードからインフラ設定まで一気通貫で診断。脆弱性の特定・修正提案・再診断まで対応。30万円〜"
+            data-en="End-to-end security audit from source code to Kubernetes config by a Docker/Kubernetes specialist. Includes vulnerability identification, remediation proposals, and re-audit. From ¥300k.">
+            Docker/Kubernetes専門家がソースコードからインフラ設定まで一気通貫で診断。脆弱性の特定・修正提案・再診断まで対応。30万円〜</p>
+          <span class="service-link" data-ja="詳細を見る &rarr;" data-en="View Details &rarr;">詳細を見る &rarr;</span>
+        </a>
+        <a href="/services/infrastructure.html" class="service-card">
+          <h3 data-ja="🛠 ECS / Kubernetes インフラ構築支援" data-en="🛠 ECS / Kubernetes Infrastructure Setup">🛠 ECS / Kubernetes インフラ構築支援</h3>
+          <p data-ja="AWS ECS Fargate・Kubernetes の設計から CI/CD・IaC 化まで一貫対応。「動くだけ」ではなく、運用まで考えた本番品質のインフラを構築します。要相談。"
+            data-en="End-to-end support from AWS ECS Fargate / Kubernetes design through CI/CD and IaC setup. Production-grade infrastructure built for operability, not just functionality. Pricing on request.">
+            AWS ECS Fargate・Kubernetes の設計から CI/CD・IaC 化まで一貫対応。「動くだけ」ではなく、運用まで考えた本番品質のインフラを構築します。要相談。</p>
+          <span class="service-link" data-ja="詳細を見る &rarr;" data-en="View Details &rarr;">詳細を見る &rarr;</span>
+        </a>
       </div>
     </div>
   </section>
+
+
+
 
   <!-- 実績・成果 -->
   <section id="works" class="section fade-in">
@@ -153,25 +206,6 @@
             <li data-ja="概要: 宿泊施設の予約とオートロックを一元管理し、CDKで再現性あるインフラを構築したプロジェクト。"
               data-en="Overview: Unified reservations and smart locks for lodging teams with reproducible CDK infrastructure.">
               概要: 宿泊施設の予約とオートロックを一元管理し、CDKで再現性あるインフラを構築したプロジェクト。</li>
-            <li><a href="/achievements.html" class="service-link" data-ja="詳しく見る（Achievements）"
-                data-en="See details in Achievements">詳しく見る（Achievements）</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="work-card">
-        <button class="work-toggle" aria-expanded="false" aria-controls="work-detail-00">
-          <h3 data-ja="MEOサービス提供会社向けツール開発" data-en="Tool Suite for a Map SEO Service Provider">MEOサービス提供会社向けツール開発</h3>
-          <span class="toggle-icon">＋</span>
-        </button>
-        <div class="work-detail" id="work-detail-00" hidden>
-          <ul>
-            <li><strong data-ja="役割:" data-en="Role: ">役割:</strong><span data-ja="プログラマー（個人開発）"
-                data-en="Full-stack Engineer (solo delivery)">プログラマー（個人開発）</span></li>
-            <li><strong data-ja="期間:" data-en="Period: ">期間:</strong><span data-ja="2025年6月 - 2025年7月"
-                data-en="Jun 2025 – Jul 2025">2025年6月 - 2025年7月</span></li>
-            <li data-ja="概要: Google Map集客向けにGASとNext.jsを組み合わせた複数の営業支援ツールを短期間で開発。"
-              data-en="Overview: Delivered multiple Google Map acquisition tools by combining GAS and Next.js in weeks.">
-              概要: Google Map集客向けにGASとNext.jsを組み合わせた複数の営業支援ツールを短期間で開発。</li>
             <li><a href="/achievements.html" class="service-link" data-ja="詳しく見る（Achievements）"
                 data-en="See details in Achievements">詳しく見る（Achievements）</a></li>
           </ul>
@@ -219,377 +253,95 @@
           </ul>
         </div>
       </div>
-
-      <!-- 案件4 -->
-      <div class="work-card">
-        <button class="work-toggle" aria-expanded="false" aria-controls="work-detail-4">
-          <h3 data-ja="旅程立案アプリ" data-en="Itinerary Planning App">旅程立案アプリ</h3>
-          <span class="toggle-icon">＋</span>
-        </button>
-        <div class="work-detail" id="work-detail-4" hidden>
-          <ul>
-            <li><strong data-ja="役割:" data-en="Role: ">役割:</strong><span data-ja="リーダー・フロント/バック/インフラ全担当（5名規模）"
-                data-en="Lead engineer covering front-end, backend, and infrastructure (team of 5)">リーダー・フロント/バック/インフラ全担当（5名規模）</span>
-            </li>
-            <li><strong data-ja="期間:" data-en="Period: ">期間:</strong><span data-ja="2020年6月 - 2021年3月"
-                data-en="Jun 2020 – Mar 2021">2020年6月 - 2021年3月</span></li>
-            <li data-ja="概要: Go + Reactで旅程立案アプリを開発し、PWAでオフライン体験まで提供。"
-              data-en="Overview: Built a Go + React itinerary app with offline-ready PWA support.">概要: Go +
-              Reactで旅程立案アプリを開発し、PWAでオフライン体験まで提供。</li>
-            <li><a href="/achievements.html" class="service-link" data-ja="詳しく見る（Achievements）"
-                data-en="See details in Achievements">詳しく見る（Achievements）</a></li>
-          </ul>
-        </div>
-      </div>
-      <!-- 案件5 -->
-      <div class="work-card">
-        <button class="work-toggle" aria-expanded="false" aria-controls="work-detail-5">
-          <h3 data-ja="イベント企画会社向け営業ツール" data-en="Sales Tool for an Event Planning Firm">イベント企画会社向け営業ツール</h3>
-          <span class="toggle-icon">＋</span>
-        </button>
-        <div class="work-detail" id="work-detail-5" hidden>
-          <ul>
-            <li><strong data-ja="役割:" data-en="Role: ">役割:</strong><span data-ja="顧客ヒアリング・コーディング・インフラ構築（4名規模）"
-                data-en="Customer interviews, coding, and infrastructure (team of 4)">顧客ヒアリング・コーディング・インフラ構築（4名規模）</span>
-            </li>
-            <li><strong data-ja="期間:" data-en="Period: ">期間:</strong><span data-ja="2019年12月 - 2020年3月"
-                data-en="Dec 2019 – Mar 2020">2019年12月 - 2020年3月</span></li>
-            <li data-ja="概要: イベント企画会社向けにインタラクティブな営業ダッシュボードを短期開発。"
-              data-en="Overview: Delivered an interactive sales dashboard for an event planning firm under a tight deadline.">
-              概要: イベント企画会社向けにインタラクティブな営業ダッシュボードを短期開発。</li>
-            <li><a href="/achievements.html" class="service-link" data-ja="詳しく見る（Achievements）"
-                data-en="See details in Achievements">詳しく見る（Achievements）</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
     <div style="text-align:center; margin-top:2em;">
       <a href="/achievements.html" class="contact-btn" style="max-width:320px;" data-ja="実績・講師活動の詳細を見る"
         data-en="View Detailed Achievements &amp; Lectures">実績・講師活動の詳細を見る</a>
     </div>
   </section>
 
-  <!-- 経歴 -->
-  <section id="career" class="section fade-in">
-    <h2 data-ja="Career" data-en="Career">Career</h2>
-    <div class="timeline">
-      <div class="timeline-item">
-        <button class="career-toggle" aria-expanded="true" aria-controls="career-detail-1">
-          <span class="career-toggle-icon" aria-hidden="true">▼</span>
-          <span class="timeline-date" data-ja="2024年1月 - 現在" data-en="Jan 2024 – Present">2024年1月 - 現在</span>
-          <span class="timeline-title" data-ja="フリーランス プロジェクトマネージャー・プログラマー"
-            data-en="Freelance Project Manager / Programmer">フリーランス プロジェクトマネージャー・プログラマー</span>
-        </button>
-        <div class="career-detail" id="career-detail-1">
-          <div class="timeline-content">
-            <h3 data-ja="フリーランス プロジェクトマネージャー・プログラマー" data-en="Freelance Project Manager / Programmer">フリーランス
-              プロジェクトマネージャー・プログラマー</h3>
-            <p class="timeline-company" data-ja="医療機関向けシステム開発" data-en="Medical System Development">医療機関向けシステム開発</p>
-            <p data-ja="20名規模のチームを率いて医療機関向けCRMおよびLINEミニアプリを開発。3階層チームのマネジメントと技術的リーダーシップを両立。"
-              data-en="Lead a 20-person team delivering a medical CRM and LINE mini app, balancing three management layers with hands-on technical leadership.">
-              20名規模のチームを率いて医療機関向けCRMおよびLINEミニアプリを開発。3階層チームのマネジメントと技術的リーダーシップを両立。</p>
-            <ul>
-              <li data-ja="顧客折衝・要件定義から自動テスト導入戦略まで幅広く担当"
-                data-en="Own everything from client negotiations and requirements to automated test initiatives.">
-                顧客折衝・要件定義から自動テスト導入戦略まで幅広く担当</li>
-              <li data-ja="サブリーダーを含む3階層チームの効果的なマネジメント"
-                data-en="Manage an effective three-layer structure with sub-leads and engineers.">
-                サブリーダーを含む3階層チームの効果的なマネジメント</li>
-              <li data-ja="LINEミニアプリ開発・運用のノウハウ習得"
-                data-en="Built repeatable know-how for LINE mini-app development and operations.">LINEミニアプリ開発・運用のノウハウ習得
-              </li>
-              <li data-ja="マーケティングと連携したシステム開発戦略の立案"
-                data-en="Plan development strategies tightly synced with marketing initiatives.">マーケティングと連携したシステム開発戦略の立案
-              </li>
-            </ul>
-            <div class="timeline-highlights">
-              <div class="highlight-item"><strong data-ja="チーム規模:" data-en="Team Size: ">チーム規模:</strong><span
-                  data-ja="20名（リーダー1名、サブリーダー4名、PG12名、他）"
-                  data-en="20 people (1 lead, 4 sub-leads, 12 engineers, etc.)">20名（リーダー1名、サブリーダー4名、PG12名、他）</span>
-              </div>
-              <div class="highlight-item"><strong data-ja="主要成果:" data-en="Key Outcome: ">主要成果:</strong><span
-                  data-ja="任せるマネジメントスタイルの確立、利害関係者間の合意形成"
-                  data-en="Established a trust-based management style and drove stakeholder consensus.">任せるマネジメントスタイルの確立、利害関係者間の合意形成</span>
-              </div>
-              <div class="highlight-item"><strong data-ja="技術スタック:" data-en="Tech Stack: ">技術スタック:</strong><span
-                  data-ja="Laravel 9, MySQL 8.0, AWS, Docker, GitLab CI"
-                  data-en="Laravel 9, MySQL 8.0, AWS, Docker, GitLab CI">Laravel 9, MySQL 8.0, AWS, Docker, GitLab
-                  CI</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <button class="career-toggle" aria-expanded="false" aria-controls="career-detail-2">
-          <span class="career-toggle-icon" aria-hidden="true">▶</span>
-          <span class="timeline-date" data-ja="2019年6月 - 2024年2月" data-en="Jun 2019 – Feb 2024">2019年6月 - 2024年2月</span>
-          <span class="timeline-title" data-ja="プロジェクトマネージャー・プログラマー"
-            data-en="Project Manager / Programmer">プロジェクトマネージャー・プログラマー</span>
-        </button>
-        <div class="career-detail" id="career-detail-2" hidden>
-          <div class="timeline-content">
-            <h3 data-ja="プロジェクトマネージャー・プログラマー" data-en="Project Manager / Programmer">プロジェクトマネージャー・プログラマー</h3>
-            <p class="timeline-company" data-ja="人工芝フランチャイズ システム開発" data-en="Artificial Turf Franchise Platform">
-              人工芝フランチャイズ システム開発</p>
-            <p data-ja="顧客ヒアリングから運用まで全工程を担当し、フランチャイズ業務に特化したシステムを構築。小規模チームでの高効率開発を実現。"
-              data-en="Owned every phase from discovery to operations for a system tailored to franchise workflows, keeping a compact team highly productive.">
-              顧客ヒアリングから運用まで全工程を担当し、フランチャイズ業務に特化したシステムを構築。小規模チームでの高効率開発を実現。</p>
-            <ul>
-              <li data-ja="在庫管理・見積もり・発注・施工管理・顧客管理の統合システム開発"
-                data-en="Built an integrated system for inventory, estimates, ordering, construction, and CRM.">
-                在庫管理・見積もり・発注・施工管理・顧客管理の統合システム開発</li>
-              <li data-ja="AWS ECS・Lightsailによる本番インフラ構築・運用"
-                data-en="Constructed and operated production infrastructure on AWS ECS and Lightsail.">AWS
-                ECS・Lightsailによる本番インフラ構築・運用</li>
-              <li data-ja="E2Eテスト導入によるテスト駆動開発の実践" data-en="Introduced E2E testing to reinforce test-driven practices.">
-                E2Eテスト導入によるテスト駆動開発の実践</li>
-              <li data-ja="小規模チーム（2-5名）での効率的なプロジェクト推進" data-en="Drove efficient delivery with a 2–5 person team.">
-                小規模チーム（2-5名）での効率的なプロジェクト推進</li>
-            </ul>
-            <div class="timeline-highlights">
-              <div class="highlight-item"><strong data-ja="開発効率:" data-en="Delivery Speed: ">開発効率:</strong><span
-                  data-ja="CI/CDパイプライン構築により開発効率大幅向上"
-                  data-en="Boosted throughput via CI/CD pipelines.">CI/CDパイプライン構築により開発効率大幅向上</span></div>
-              <div class="highlight-item"><strong data-ja="技術進化:" data-en="Tech Evolution: ">技術進化:</strong><span
-                  data-ja="Laravel 6→8→10への段階的アップグレード成功" data-en="Guided upgrades from Laravel 6 → 8 → 10.">Laravel
-                  6→8→10への段階的アップグレード成功</span></div>
-              <div class="highlight-item"><strong data-ja="チーム育成:" data-en="Team Growth: ">チーム育成:</strong><span
-                  data-ja="メンバー指導によりチーム全体のスキル向上を実現"
-                  data-en="Mentored members to raise the entire team’s skill level.">メンバー指導によりチーム全体のスキル向上を実現</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <button class="career-toggle" aria-expanded="false" aria-controls="career-detail-3">
-          <span class="career-toggle-icon" aria-hidden="true">▶</span>
-          <span class="timeline-date" data-ja="2020年 - 現在" data-en="2020 – Present">2020年 - 現在</span>
-          <span class="timeline-title" data-ja="IT研修講師・コンテンツクリエイター"
-            data-en="IT Trainer &amp; Content Creator">IT研修講師・コンテンツクリエイター</span>
-        </button>
-        <div class="career-detail" id="career-detail-3" hidden>
-          <div class="timeline-content">
-            <h3 data-ja="IT研修講師・コンテンツクリエイター" data-en="IT Trainer &amp; Content Creator">IT研修講師・コンテンツクリエイター</h3>
-            <p class="timeline-company" data-ja="インプレス出版・Udemy Platform" data-en="Impress Publishing / Udemy Platform">
-              インプレス出版・Udemy Platform</p>
-            <p data-ja="Docker・Kubernetesの専門講師として、技術者向け研修とオンライン教育コンテンツ制作を並行実施。実践的な内容で高い受講者満足度を維持。"
-              data-en="Deliver Docker/Kubernetes training for engineers while producing online content that keeps satisfaction high through practical labs.">
-              Docker・Kubernetesの専門講師として、技術者向け研修とオンライン教育コンテンツ制作を並行実施。実践的な内容で高い受講者満足度を維持。</p>
-            <ul>
-              <li data-ja="インプレス出版でのDocker・Kubernetes講座（受講者60名、満足度95%以上）"
-                data-en="Docker/Kubernetes seminars at Impress (60 attendees, 95%+ satisfaction).">
-                インプレス出版でのDocker・Kubernetes講座（受講者60名、満足度95%以上）</li>
-              <li data-ja="実務で即活用できるハンズオン中心の講座設計"
-                data-en="Hands-on-first curricula designed for immediate on-the-job use.">実務で即活用できるハンズオン中心の講座設計</li>
-              <li data-ja="YouTubeチャンネル登録者6,000名のコンテンツ制作"
-                data-en="Produced content for a 6,000-subscriber YouTube channel.">YouTubeチャンネル登録者6,000名のコンテンツ制作</li>
-              <li data-ja="技術トレンドを踏まえた最新カリキュラムの継続的更新"
-                data-en="Continuously refreshed curricula aligned with infrastructure trends.">技術トレンドを踏まえた最新カリキュラムの継続的更新
-              </li>
-            </ul>
-            <div class="timeline-highlights">
-              <div class="highlight-item"><strong data-ja="Udemy実績:" data-en="Udemy: ">Udemy実績:</strong><span
-                  data-ja="ベストセラー講師認定、総受講者数25,000名"
-                  data-en="Best-Seller instructor with 25,000+ students.">ベストセラー講師認定、総受講者数25,000名</span></div>
-              <div class="highlight-item"><strong data-ja="企業研修:" data-en="Corporate Training: ">企業研修:</strong><span
-                  data-ja="UdemyBusinessでの企業研修対応"
-                  data-en="Courses adopted by Udemy Business cohorts.">UdemyBusinessでの企業研修対応</span></div>
-              <div class="highlight-item"><strong data-ja="専門領域:" data-en="Focus Areas: ">専門領域:</strong><span
-                  data-ja="Docker基礎実践・Kubernetes入門・インフラ技術"
-                  data-en="Practical Docker, introductory Kubernetes, infrastructure skills.">Docker基礎実践・Kubernetes入門・インフラ技術</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <button class="career-toggle" aria-expanded="false" aria-controls="career-detail-4">
-          <span class="career-toggle-icon" aria-hidden="true">▶</span>
-          <span class="timeline-date" data-ja="2018年4月 - 2019年9月" data-en="Apr 2018 – Sep 2019">2018年4月 - 2019年9月</span>
-          <span class="timeline-title" data-ja="プログラマー → プロジェクトマネージャー" data-en="Programmer → Project Manager">プログラマー →
-            プロジェクトマネージャー</span>
-        </button>
-        <div class="career-detail" id="career-detail-4" hidden>
-          <div class="timeline-content">
-            <h3 data-ja="プログラマー → プロジェクトマネージャー" data-en="Programmer → Project Manager">プログラマー → プロジェクトマネージャー</h3>
-            <p class="timeline-company" data-ja="経営者・個人事業主向けサービス開発"
-              data-en="Services for Entrepreneurs &amp; Sole Proprietors">経営者・個人事業主向けサービス開発</p>
-            <p data-ja="プログラマーとして参画後、プロジェクトマネージャーに昇格したキャリア転換点となった案件。大規模システム開発での初のマネジメント経験。"
-              data-en="Joined as a programmer and moved into project management on a large-scale system—my first major management role.">
-              プログラマーとして参画後、プロジェクトマネージャーに昇格したキャリア転換点となった案件。大規模システム開発での初のマネジメント経験。</p>
-            <ul>
-              <li data-ja="8名チーム（プログラマー5名、デザイナー2名）のマネジメント"
-                data-en="Managed an 8-person team (5 engineers, 2 designers).">8名チーム（プログラマー5名、デザイナー2名）のマネジメント</li>
-              <li data-ja="技術スキルの高いメンバーとの効果的な役割分担" data-en="Clarified roles among highly skilled members.">
-                技術スキルの高いメンバーとの効果的な役割分担</li>
-              <li data-ja="ドキュメント作成・顧客対応を積極的に担当しチーム生産性向上"
-                data-en="Took ownership of documentation and client comms to raise productivity.">
-                ドキュメント作成・顧客対応を積極的に担当しチーム生産性向上</li>
-              <li data-ja="要件定義の徹底による後工程での手戻り削減" data-en="Reduced rework by emphasizing thorough requirements.">
-                要件定義の徹底による後工程での手戻り削減</li>
-            </ul>
-            <div class="timeline-highlights">
-              <div class="highlight-item"><strong data-ja="キャリア転換:" data-en="Career Shift: ">キャリア転換:</strong><span
-                  data-ja="プログラマーからPMへの昇格を実現" data-en="Promoted from programmer to PM.">プログラマーからPMへの昇格を実現</span></div>
-              <div class="highlight-item"><strong data-ja="マネジメント手法:"
-                  data-en="Management Style: ">マネジメント手法:</strong><span data-ja="要件定義重視、メンバーの負荷軽減を意識した運営"
-                  data-en="Requirement-first operations focused on reducing member load.">要件定義重視、メンバーの負荷軽減を意識した運営</span>
-              </div>
-              <div class="highlight-item"><strong data-ja="技術基盤:" data-en="Tech Stack: ">技術基盤:</strong><span
-                  data-ja="Laravel, React, AWSを使った大規模開発"
-                  data-en="Large-scale builds on Laravel, React, and AWS.">Laravel, React, AWSを使った大規模開発</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <div class="timeline-item">
-        <button class="career-toggle" aria-expanded="false" aria-controls="career-detail-6">
-          <span class="career-toggle-icon" aria-hidden="true">▶</span>
-          <span class="timeline-date" data-ja="2018年 - 2020年" data-en="2018 – 2020">2018年 - 2020年</span>
-          <span class="timeline-title" data-ja="行政事業・地方創生コンサルティング"
-            data-en="Public Sector / Regional Revitalization Consulting">行政事業・地方創生コンサルティング</span>
-        </button>
-        <div class="career-detail" id="career-detail-6" hidden>
-          <div class="timeline-content">
-            <h3 data-ja="行政事業・地方創生コンサルティング" data-en="Public Sector / Regional Revitalization Consulting">
-              行政事業・地方創生コンサルティング</h3>
-            <p class="timeline-company" data-ja="人吉市役所 リモートワーク推進事業" data-en="Hitoyoshi City Remote Work Initiative">
-              人吉市役所 リモートワーク推進事業</p>
-            <p data-ja="人吉市からの委託により、高校生向けリモートワーク体験イベントを企画・実施。IT人材育成による地方創生戦略を提案し、実際にインターン採用まで実現。"
-              data-en="Commissioned by Hitoyoshi City to design and run remote-work bootcamps for students, proposing IT talent strategies that led to intern hires.">
-              人吉市からの委託により、高校生向けリモートワーク体験イベントを企画・実施。IT人材育成による地方創生戦略を提案し、実際にインターン採用まで実現。</p>
-            <ul>
-              <li data-ja="人吉市のIT都市構想サポートとリモートワーク人材育成事業"
-                data-en="Supported the city’s IT urban vision and remote talent program.">人吉市のIT都市構想サポートとリモートワーク人材育成事業
-              </li>
-              <li data-ja="高校生向けWebページ制作講座の企画・運営" data-en="Planned and ran website workshops for high schoolers.">
-                高校生向けWebページ制作講座の企画・運営</li>
-              <li data-ja="Slack、Asana、Zoom等のリモートワークツール導入研修" data-en="Trained students on Slack, Asana, Zoom, etc.">
-                Slack、Asana、Zoom等のリモートワークツール導入研修</li>
-              <li data-ja="地方でのIT人材確保・育成戦略の立案と実行"
-                data-en="Designed and executed IT talent strategies for regional areas.">地方でのIT人材確保・育成戦略の立案と実行</li>
-            </ul>
-            <div class="timeline-highlights">
-              <div class="highlight-item"><strong data-ja="行政案件受注:" data-en="Government Work: ">行政案件受注:</strong><span
-                  data-ja="人吉市役所からの正式委託事業として実施"
-                  data-en="Officially commissioned by Hitoyoshi City Hall.">人吉市役所からの正式委託事業として実施</span></div>
-              <div class="highlight-item"><strong data-ja="教育実績:" data-en="Education: ">教育実績:</strong><span
-                  data-ja="高校生5名が参加、全員課題完了、2名を採用"
-                  data-en="Trained five students; all finished, two were hired.">高校生5名が参加、全員課題完了、2名を採用</span></div>
-              <div class="highlight-item"><strong data-ja="地方創生提案:" data-en="Regional Strategy: ">地方創生提案:</strong><span
-                  data-ja="IT都市構想・リモートワーク推進戦略の策定"
-                  data-en="Drafted IT urban vision and remote-work strategies.">IT都市構想・リモートワーク推進戦略の策定</span></div>
-            </div>
-          </div>
+
+
+  <!-- スキル -->
+  <section id="skills" class="section fade-in">
+    <button class="skills-toggle" id="skills-toggle" aria-expanded="false" aria-controls="skills-content">
+      <h2 style="margin:0;" data-ja="Skills" data-en="Skills">Skills</h2>
+      <span class="toggle-icon" style="font-size:1.3rem;color:var(--color-accent);">＋</span>
+    </button>
+    <div id="skills-content" hidden>
+
+    <p class="skills-section-label" data-ja="── Expertise（主軸）" data-en="── Expertise (Core)">── Expertise（主軸）</p>
+    <div class="skills-grid skills-grid--expertise">
+      <div class="skill-card skill-card--featured">
+        <h3><i class="fas fa-server"></i> <span data-ja="Infrastructure" data-en="Infrastructure">Infrastructure</span></h3>
+        <div class="skill-bar" data-level="9"><span>Docker</span></div>
+        <div class="skill-bar" data-level="8"><span>AWS ECS / Fargate</span></div>
+        <div class="skill-bar" data-level="7"><span>AWS CDK</span></div>
+        <div class="skill-bar" data-level="6"><span>Kubernetes</span></div>
+        <div class="skill-bar" data-level="6"><span>CI/CD (GitHub Actions, GitLab CI)</span></div>
+        <div class="skill-tags">
+          <span class="skill-tag">ECS</span><span class="skill-tag">Fargate</span><span class="skill-tag">ECR</span><span class="skill-tag">CloudWatch</span>
         </div>
       </div>
-      <div class="timeline-item">
-        <button class="career-toggle" aria-expanded="false" aria-controls="career-detail-7">
-          <span class="career-toggle-icon" aria-hidden="true">▶</span>
-          <span class="timeline-date" data-ja="2017年9月 - 2018年2月" data-en="Sep 2017 – Feb 2018">2017年9月 - 2018年2月</span>
-          <span class="timeline-title" data-ja="初フリーランス・技術基盤構築期"
-            data-en="First Freelance Engagement">初フリーランス・技術基盤構築期</span>
-        </button>
-        <div class="career-detail" id="career-detail-7" hidden>
-          <div class="timeline-content">
-            <h3 data-ja="初フリーランス・技術基盤構築期" data-en="First Freelance Engagement">初フリーランス・技術基盤構築期</h3>
-            <p class="timeline-company" data-ja="ソーシャルギフトサービス「Anny」開発" data-en="Social Gifting Service “Anny”">
-              ソーシャルギフトサービス「Anny」開発</p>
-            <p data-ja="トレンダーズ株式会社（現株式会社Anny）での初のフリーランス案件。フロントエンド開発を担当し、Git Flowによるチーム開発を経験。"
-              data-en="First freelance contract with Trenders (now Anny Inc.), focusing on front-end development and learning Git Flow in a professional team.">
-              トレンダーズ株式会社（現株式会社Anny）での初のフリーランス案件。フロントエンド開発を担当し、Git Flowによるチーム開発を経験。</p>
-            <ul>
-              <li data-ja="Ruby on Rails環境でのフロントエンド開発（HTML, CSS, JavaScript）"
-                data-en="Front-end development (HTML/CSS/JavaScript) in a Rails environment.">Ruby on
-                Rails環境でのフロントエンド開発（HTML, CSS, JavaScript）</li>
-              <li data-ja="デザイナー・サーバーサイドエンジニアとの協働" data-en="Collaborated with designers and backend engineers.">
-                デザイナー・サーバーサイドエンジニアとの協働</li>
-              <li data-ja="ECサイト機能の実装・テスト" data-en="Implemented and tested e-commerce features.">ECサイト機能の実装・テスト</li>
-              <li data-ja="フリーランスとしての基礎的な業務スタイル確立" data-en="Established foundational freelance workflows.">
-                フリーランスとしての基礎的な業務スタイル確立</li>
-            </ul>
-            <div class="timeline-highlights">
-              <div class="highlight-item"><strong data-ja="フリーランス開始:"
-                  data-en="Freelance Start: ">フリーランス開始:</strong><span data-ja="初案件で4ヶ月間のプロジェクト成功"
-                  data-en="Completed the first four-month project successfully.">初案件で4ヶ月間のプロジェクト成功</span></div>
-              <div class="highlight-item"><strong data-ja="チーム開発:" data-en="Team Development: ">チーム開発:</strong><span
-                  data-ja="Git Flowによる本格的なチーム開発経験" data-en="Practiced full Git Flow collaboration.">Git
-                  Flowによる本格的なチーム開発経験</span></div>
-              <div class="highlight-item"><strong data-ja="技術習得:" data-en="Skills: ">技術習得:</strong><span
-                  data-ja="Sass、レスポンシブデザインの本格習得"
-                  data-en="Mastered Sass and responsive design.">Sass、レスポンシブデザインの本格習得</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <button class="career-toggle" aria-expanded="false" aria-controls="career-detail-8">
-          <span class="career-toggle-icon" aria-hidden="true">▶</span>
-          <span class="timeline-date" data-ja="2012年 - 2016年" data-en="2012 – 2016">2012年 - 2016年</span>
-          <span class="timeline-title" data-ja="製造業エンジニア・技術基礎構築期"
-            data-en="Manufacturing Engineer &amp; Technical Foundations">製造業エンジニア・技術基礎構築期</span>
-        </button>
-        <div class="career-detail" id="career-detail-8" hidden>
-          <div class="timeline-content">
-            <h3 data-ja="製造業エンジニア・技術基礎構築期" data-en="Manufacturing Engineer &amp; Technical Foundations">製造業エンジニア・技術基礎構築期
-            </h3>
-            <p class="timeline-company" data-ja="キヤノン株式会社" data-en="Canon Inc.">キヤノン株式会社</p>
-            <p data-ja="プリンター用トナーの研究開発に従事。製造技術系企業での論理的思考と仕事の基礎を学び、後のIT業界での技術的アプローチの土台を構築。"
-              data-en="Worked on printer toner R&amp;D, learning the logical thinking and professional rigor that would later shape my tech career.">
-              プリンター用トナーの研究開発に従事。製造技術系企業での論理的思考と仕事の基礎を学び、後のIT業界での技術的アプローチの土台を構築。</p>
-            <ul>
-              <li data-ja="化学・材料工学の知識を活用した製品開発"
-                data-en="Product development using chemistry and materials engineering.">化学・材料工学の知識を活用した製品開発</li>
-              <li data-ja="データ分析と品質管理手法の習得" data-en="Learned data analysis and quality control methods.">データ分析と品質管理手法の習得
-              </li>
-              <li data-ja="チームでの研究開発プロセス経験" data-en="Experienced collaborative R&amp;D workflows.">チームでの研究開発プロセス経験</li>
-              <li data-ja="技術文書作成・プレゼンテーション能力の向上" data-en="Improved technical documentation and presentation skills.">
-                技術文書作成・プレゼンテーション能力の向上</li>
-            </ul>
-            <div class="timeline-highlights">
-              <div class="highlight-item"><strong data-ja="研究開発:" data-en="R&amp;D: ">研究開発:</strong><span
-                  data-ja="プリンター用トナー技術の研究開発" data-en="Printer-toner technology research.">プリンター用トナー技術の研究開発</span></div>
-              <div class="highlight-item"><strong data-ja="論理的思考:" data-en="Logical Thinking: ">論理的思考:</strong><span
-                  data-ja="製造業での体系的・科学的アプローチ習得"
-                  data-en="Adopted systematic, scientific approaches.">製造業での体系的・科学的アプローチ習得</span></div>
-              <div class="highlight-item"><strong data-ja="基礎力:" data-en="Foundations: ">基礎力:</strong><span
-                  data-ja="技術業界での仕事の基礎とプロ意識の確立"
-                  data-en="Built professional discipline for the tech industry.">技術業界での仕事の基礎とプロ意識の確立</span></div>
-            </div>
-          </div>
+      <div class="skill-card skill-card--featured">
+        <h3><i class="fas fa-layer-group"></i> <span data-ja="Backend" data-en="Backend">Backend</span></h3>
+        <div class="skill-bar" data-level="9"><span>PHP</span></div>
+        <div class="skill-bar" data-level="8"><span>Laravel</span></div>
+        <div class="skill-bar" data-level="6"><span>Go</span></div>
+        <div class="skill-bar" data-level="7"><span data-ja="REST API設計" data-en="REST API Design">REST API設計</span></div>
+        <div class="skill-bar" data-level="8"><span>MySQL / PostgreSQL</span></div>
+        <div class="skill-tags">
+          <span class="skill-tag">Laravel 10</span><span class="skill-tag">Go</span><span class="skill-tag">DB設計</span>
         </div>
       </div>
     </div>
+
+    <p class="skills-section-label skills-section-label--sub" data-ja="── Sub Skills / Supportable" data-en="── Sub Skills / Supportable">── Sub Skills / Supportable</p>
+    <div class="skills-grid skills-grid--sub">
+      <div class="skill-card skill-card--sub">
+        <h3><i class="fas fa-code"></i> <span data-ja="Frontend（サポート可）" data-en="Frontend (Supportable)">Frontend（サポート可）</span></h3>
+        <div class="skill-bar" data-level="7"><span>JavaScript / TypeScript</span></div>
+        <div class="skill-bar" data-level="6"><span>React.js</span></div>
+        <div class="skill-bar" data-level="5"><span>Svelte.js</span></div>
+        <div class="skill-bar" data-level="4"><span>Next.js</span></div>
+      </div>
+    </div>
+
+    </div>
   </section>
 
-  <!-- サービス紹介 -->
-  <section id="services" class="section fade-in">
-    <h2 data-ja="提供サービス" data-en="Services">提供サービス</h2>
-    <div class="services-list" style="flex-direction: column; gap: 2.5rem;">
 
-      <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
-        <a href="services/pm.html" class="service-card">
-          <h3 data-ja="業務委託プロジェクトマネジメント" data-en="Project Management Services">業務委託プロジェクトマネジメント</h3>
-          <p data-ja="貴社のプロジェクトを成功に導く実践型PMサービス" data-en="Practical PM support that keeps your projects on track.">
-            貴社のプロジェクトを成功に導く実践型PMサービス</p>
-          <span class="service-link" data-ja="詳細を見る &rarr;" data-en="View Details &rarr;">詳細を見る &rarr;</span>
-        </a>
-        <a href="services/container-security.html" class="service-card">
-          <h3 data-ja="コンテナ・ソースコードセキュリティ診断" data-en="Container & Source Code Security Audit">コンテナ・ソースコードセキュリティ診断</h3>
-          <p data-ja="Docker/Kubernetes専門家がソースコードからインフラ設定まで一気通貫で診断。30万円〜"
-            data-en="End-to-end security audit from source code to Kubernetes config by a Docker/Kubernetes specialist. From ¥300k.">
-            Docker/Kubernetes専門家がソースコードからインフラ設定まで一気通貫で診断。30万円〜</p>
-          <span class="service-link" data-ja="詳細を見る &rarr;" data-en="View Details &rarr;">詳細を見る &rarr;</span>
-        </a>
+  <!-- フリーリソース -->
+  <section id="resources" class="section fade-in">
+    <h2 data-ja="Free Resource" data-en="Free Resource">Free Resource</h2>
+    <div style="background:linear-gradient(135deg,rgba(0,200,150,0.08) 0%,rgba(30,58,95,0.18) 100%);border:1.5px solid var(--color-accent);border-radius:16px;padding:2.2rem 2rem;display:flex;flex-wrap:wrap;gap:1.5rem;align-items:center;">
+      <div style="flex:1;min-width:220px;">
+        <div style="display:inline-block;background:rgba(0,200,150,0.12);color:var(--color-accent);border:1px solid rgba(0,200,150,0.3);border-radius:6px;padding:0.2em 0.8em;font-size:0.82rem;font-weight:700;margin-bottom:0.8rem;letter-spacing:0.04em;">FREE CHECKLIST</div>
+        <h3 style="font-size:1.2rem;color:var(--color-text);margin:0 0 0.5rem 0;" data-ja="コンテナセキュリティ 実務鉄板チェックリスト" data-en="Container Security Production Checklist">コンテナセキュリティ 実務鉄板チェックリスト</h3>
+        <p style="color:var(--color-sub);font-size:0.92rem;line-height:1.7;margin:0;" data-ja="Docker・ECS・Kubernetes の本番環境で見落としがちなセキュリティ設定を全5章にまとめました。名前とメールアドレスで無料受け取り。" data-en="A 5-chapter checklist covering commonly overlooked security settings for Docker, ECS, and Kubernetes in production. Free to receive with your name and email.">
+          Docker・ECS・Kubernetes の本番環境で見落としがちなセキュリティ設定を全5章にまとめました。名前とメールアドレスで無料受け取り。</p>
       </div>
+      <a href="/resources/checklist.html" class="contact-btn cta-primary" style="display:inline-flex;width:auto;padding:0.85em 2em;font-size:1rem;white-space:nowrap;" data-ja="チェックリストを見る →" data-en="View Checklist →">チェックリストを見る →</a>
     </div>
   </section>
 
   <!-- お問い合わせ -->
   <section id="contact" class="section fade-in">
     <h2 data-ja="Contact" data-en="Contact">Contact</h2>
+
+    <!-- クイック導線 -->
+    <div class="contact-quick-actions">
+      <a href="#contact" class="contact-btn cta-primary" style="display: inline-flex; width: auto; padding: 0.9em 2em; font-size: 1.1em;">
+        <i class="fas fa-calendar-check"></i>
+        <span data-ja="カレンダーから面談予約" data-en="Book a Meeting via Calendar">カレンダーから面談予約</span>
+      </a>
+      <a href="https://lin.ee/placeholder" class="contact-btn contact-btn--line" target="_blank" style="display: inline-flex; width: auto; padding: 0.9em 2em; font-size: 1.1em;">
+        <i class="fab fa-line"></i>
+        <span data-ja="公式LINEで相談する" data-en="Chat on LINE">公式LINEで相談する</span>
+      </a>
+    </div>
+    <p class="contact-divider" data-ja="または、フォームからお問い合わせください" data-en="Or send a message via the form below">または、フォームからお問い合わせください</p>
+
     <div class="contact-content">
       <form id="contact-form">
         <div class="form-group">
@@ -603,15 +355,15 @@
         <div class="form-group">
           <select id="inquiry_type" name="inquiry_type" required>
             <option value="" data-ja="種類を選択してください" data-en="Please select a type">種類を選択してください</option>
-            <option value="サービスについて" data-ja="サービスについて" data-en="About Services">サービスについて</option>
-            <option value="PM業務について" data-ja="PM業務について" data-en="About PM Services">PM業務について</option>
+            <option value="スポット相談について" data-ja="スポット相談について" data-en="About Spot Consultation">スポット相談について</option>
+            <option value="インフラ構築支援について" data-ja="インフラ構築支援について" data-en="About Infrastructure Setup">インフラ構築支援について</option>
             <option value="コンテナセキュリティ診断について" data-ja="コンテナセキュリティ診断について" data-en="About Container Security Audit">コンテナセキュリティ診断について</option>
             <option value="その他" data-ja="その他" data-en="Other">その他</option>
           </select>
         </div>
         <div class="form-group">
-          <textarea id="message" name="message" data-placeholder-ja="メッセージ" data-placeholder-en="Message"
-            placeholder="メッセージ" rows="5" required></textarea>
+          <textarea id="message" name="message" data-placeholder-ja="メッセージ（課題・背景・希望稼働形態など）" data-placeholder-en="Message (challenges, background, preferred engagement, etc.)"
+            placeholder="メッセージ（課題・背景・希望稼働形態など）" rows="5" required></textarea>
         </div>
         <button type="submit" class="contact-btn" data-ja="送信" data-en="Send">送信</button>
       </form>
@@ -637,12 +389,42 @@
 
   <footer class="footer">
     <div class="footer-inner">
-      <span data-ja="&copy; 2024 打田裕馬 | Engineer × PM" data-en="&copy; 2024 Yuma Uchida | Engineer × PM">&copy; 2024
-        打田裕馬 | Engineer × PM</span>
+      <span data-ja="&copy; 2024 打田裕馬 | Docker / ECS / Kubernetes インフラエンジニア" data-en="&copy; 2024 Yuma Uchida | Docker / ECS / Kubernetes Infrastructure Engineer">&copy; 2024
+        打田裕馬 | Docker / ECS / Kubernetes インフラエンジニア</span>
     </div>
   </footer>
 
   <script src="script.js"></script>
+  <script>
+    // Skills toggle
+    const skillsToggle = document.getElementById('skills-toggle');
+    const skillsContent = document.getElementById('skills-content');
+    if (skillsToggle && skillsContent) {
+      skillsToggle.addEventListener('click', function () {
+        const expanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', !expanded);
+        skillsContent.hidden = expanded;
+        const icon = this.querySelector('.toggle-icon');
+        if (icon) icon.textContent = expanded ? '＋' : '－';
+      });
+    }
+  </script>
+  <style>
+    .skills-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      background: none;
+      border: none;
+      border-bottom: 1px solid var(--color-border);
+      padding: 0.5rem 0 1rem;
+      cursor: pointer;
+      text-align: left;
+      gap: 1rem;
+    }
+    .skills-toggle:hover h2 { color: var(--color-accent); }
+  </style>
 </body>
 
 </html>
