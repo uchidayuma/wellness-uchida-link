@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="コンテナセキュリティ・実務鉄板チェックリスト | Docker・ECS・Kubernetes の設定を自己診断できる無料チェックリスト。打田裕馬が実務で使っている項目を公開。">
+  <title>コンテナセキュリティ 実務チェックリスト（無料）| 打田裕馬</title>
+  <link rel="icon" href="/images/favicon.png" type="image/png">
+  <link rel="stylesheet" href="/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script async data-id="101489745" src="https://static.getclicky.com/js"></script>
+  <style>
+    .checklist-preview {
+      background: var(--color-bg-light);
+      border-radius: 14px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      border-left: 5px solid var(--color-accent);
+      position: relative;
+    }
+    .checklist-preview h3 {
+      color: var(--color-accent);
+      font-size: 1.05rem;
+      margin: 1.4rem 0 0.7rem 0;
+      font-weight: 700;
+    }
+    .checklist-preview h3:first-child {
+      margin-top: 0;
+    }
+    .checklist-preview ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .checklist-preview ul li {
+      padding: 0.5em 0 0.5em 1.8em;
+      position: relative;
+      color: var(--color-sub);
+      font-size: 0.95rem;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      line-height: 1.6;
+    }
+    .checklist-preview ul li::before {
+      content: '☐';
+      position: absolute;
+      left: 0;
+      color: var(--color-accent);
+      font-size: 1.1em;
+    }
+    .checklist-preview ul li strong {
+      color: var(--color-text);
+      display: block;
+      margin-bottom: 0.2em;
+    }
+    .checklist-fade {
+      position: relative;
+    }
+    .checklist-fade::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 120px;
+      background: linear-gradient(to bottom, transparent, var(--color-card));
+      border-radius: 0 0 14px 14px;
+      pointer-events: none;
+    }
+    .download-box {
+      background: linear-gradient(135deg, var(--color-bg-light) 0%, rgba(0,200,150,0.07) 100%);
+      border: 2px solid var(--color-accent);
+      border-radius: 18px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      margin-top: 2rem;
+    }
+    .download-box h2 {
+      color: var(--color-accent);
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+      border: none;
+      padding: 0;
+    }
+    .download-box p {
+      color: var(--color-sub);
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+    }
+    .dl-form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+      max-width: 360px;
+      margin: 0 auto;
+    }
+    .dl-form input {
+      width: 100%;
+      padding: 0.8em 1em;
+      border: none;
+      border-radius: 8px;
+      background: var(--color-bg);
+      color: var(--color-text);
+      font-family: var(--font-mono);
+      font-size: 1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      outline: none;
+      box-sizing: border-box;
+    }
+    .dl-form input:focus {
+      box-shadow: 0 0 0 2px var(--color-accent);
+    }
+    .privacy-note {
+      font-size: 0.78rem;
+      color: var(--color-sub);
+      opacity: 0.7;
+      margin-top: 0.5rem;
+    }
+    .section-label {
+      display: inline-block;
+      background: rgba(0,200,150,0.12);
+      color: var(--color-accent);
+      border: 1px solid rgba(0,200,150,0.3);
+      border-radius: 6px;
+      padding: 0.2em 0.8em;
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+      letter-spacing: 0.04em;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="particles-bg"></canvas>
+
+  <header class="header">
+    <div class="header-inner">
+      <a href="/index.html" class="logo-link"><img src="/images/profile.png" alt="プロフィール画像" class="profile-img"></a>
+      <div class="header-info">
+        <h1 class="name"><a href="/index.html">打田裕馬</a> <span class="title">Technical Orchestrator / Infrastructure &amp; AI Advisor</span></h1>
+        <nav class="nav">
+          <ul>
+            <li><a href="/index.html#about">About</a></li>
+            <li><a href="/index.html#services">Services</a></li>
+            <li><a href="/index.html#works">Works</a></li>
+            <li><a href="/index.html#contact">Contact</a></li>
+            <li><a href="/achievements.html">Achievements</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section fade-in">
+      <div class="breadcrumb"><a href="/index.html">Home</a> &rsaquo; Resources &rsaquo; コンテナセキュリティ チェックリスト</div>
+      <span class="section-label">FREE RESOURCE</span>
+      <h2>コンテナセキュリティ<br>実務鉄板チェックリスト</h2>
+      <p style="color:var(--color-sub); font-size:1rem; margin-bottom:2rem; line-height:1.8;">
+        Docker・Amazon ECS・Kubernetes を本番運用しているチームが、見落としがちなセキュリティ設定を網羅したチェックリストです。<br>
+        Udemy で 2.6万人に教えてきた内容をベースに、実務で即使える形にまとめています。
+      </p>
+
+      <!-- プレビュー -->
+      <div class="checklist-fade">
+        <div class="checklist-preview">
+          <h3>1. 開発・サプライチェーン（作る段階）</h3>
+          <ul>
+            <li><strong>Gitへの機密情報混入チェック</strong>git-secrets や trufflehog を使い、APIキー・パスワードがコードに混入していないか。</li>
+            <li><strong>SBOM（ソフトウェア部品表）の生成</strong>syft でイメージ内の全ライブラリを可視化。trivy で脆弱性チェックができているか。</li>
+            <li><strong>チェックの自動化</strong>GitHub Actions 等で、セキュリティ不備を自動検知しているか。</li>
+          </ul>
+          <h3>2. コンテナイメージの作成と管理</h3>
+          <ul>
+            <li><strong>非rootユーザーの指定</strong>Dockerfile で USER 命令を使い、root 以外で実行しているか。</li>
+            <li><strong>ベースイメージの最小化</strong>alpine や distroless など、不要なツールを含まない軽量イメージを使っているか。</li>
+            <li><strong>脆弱性スキャンの実施</strong>ECR のプッシュ時スキャンを有効化し、深刻な脆弱性を放置していないか。</li>
+          </ul>
+          <h3>2-1. Amazon ECR 設定チェックリスト</h3>
+          <ul>
+            <li><strong>IAM 権限の確認</strong>AmazonEC2ContainerRegistryFullAccess（または同等）がアタッチされているか。</li>
+            <li><strong>Tag immutability（タグの不変性）</strong>同じタグで上書きされるのを防ぐ「鉄板」設定。Enable になっているか。</li>
+            <li><strong>Scan on push の有効化</strong>プッシュ時に自動スキャンが走る設定になっているか（Extended Scanning 推奨）。</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ダウンロードボックス -->
+      <div class="download-box" id="download-box">
+        <h2>残り 3セクションを無料で受け取る</h2>
+        <p>
+          インフラ・実行環境（ECS/EKS）、Kubernetes固有設定、<br>
+          運用・異常検知まで全5章をメールでお送りします。
+        </p>
+        <form class="dl-form" id="checklist-form">
+          <input type="text" name="user_name" placeholder="お名前" required>
+          <input type="email" name="user_email" placeholder="メールアドレス" required>
+          <button type="submit" class="contact-btn cta-primary" style="font-size:1rem; padding:0.85em 0;">
+            <i class="fas fa-paper-plane"></i>
+            &nbsp;チェックリストを受け取る
+          </button>
+          <p class="privacy-note">※ スパムは送りません。受け取ったメールアドレスは個別フォローアップのみに使用します。</p>
+        </form>
+        <div id="dl-success" style="display:none; padding:1.5rem 0;">
+          <div style="font-size:2rem; margin-bottom:0.5rem;">✅</div>
+          <h3 style="color:var(--color-accent);">送信完了！</h3>
+          <p style="color:var(--color-sub);">入力いただいたメールアドレスに送ります。<br>届かない場合はお手数ですが <a href="/index.html#contact" style="color:var(--color-accent);">お問い合わせ</a> ください。</p>
+        </div>
+        <div id="dl-error" style="display:none; padding:1.5rem 0;">
+          <div style="font-size:2rem; margin-bottom:0.5rem;">❌</div>
+          <p style="color:var(--color-sub);">送信に失敗しました。しばらく後にもう一度お試しください。</p>
+        </div>
+      </div>
+
+      <!-- セルフアピール -->
+      <div style="margin-top:3rem; padding-top:2rem; border-top:1px solid var(--color-border);">
+        <p style="color:var(--color-sub); font-size:0.92rem; line-height:1.8;">
+          このチェックリストの項目を一つひとつ確認・対応するのが難しい場合は、<strong style="color:var(--color-text);">コンテナ・ソースコードセキュリティ診断</strong>をご検討ください。<br>
+          ソースコードからインフラ設定まで一気通貫で診断し、対応策を提示します。
+        </p>
+        <a href="/services/container-security.html" class="contact-btn contact-btn--outline" style="display:inline-flex; width:auto; padding:0.7em 1.8em; margin-top:1rem; font-size:0.95rem;">
+          セキュリティ診断サービスを見る &rarr;
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span>&copy; 2024 打田裕馬 | Technical Orchestrator / Infrastructure &amp; AI Advisor</span>
+    </div>
+  </footer>
+
+  <script src="/script.js"></script>
+  <script>
+    // チェックリスト配布フォーム
+    // EmailJS テンプレート設定:
+    //   service_id : service_cm72dfl（既存と同じ）
+    //   template_id: EmailJS ダッシュボードで新規作成してください
+    //     変数: {{user_name}}, {{user_email}}
+    //     件名: 【コンテナセキュリティ チェックリスト】お受け取りください
+    //     本文: チェックリスト全文を貼り付け
+    //   → 作成後、下の CHECKLIST_TEMPLATE_ID を書き換えてください
+    const CHECKLIST_TEMPLATE_ID = "template_lxw98pe";
+
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.emailjs) emailjs.init("iCeORWdojmPHJx0je");
+
+      const form = document.getElementById("checklist-form");
+      if (!form) return;
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const btn = form.querySelector('button[type="submit"]');
+        btn.textContent = "送信中...";
+        btn.disabled = true;
+
+        emailjs.sendForm("service_cm72dfl", CHECKLIST_TEMPLATE_ID, form)
+          .then(() => {
+            form.style.display = "none";
+            document.getElementById("dl-success").style.display = "block";
+          })
+          .catch(() => {
+            document.getElementById("dl-error").style.display = "block";
+            btn.textContent = "チェックリストを受け取る";
+            btn.disabled = false;
+          });
+      });
+    });
+  </script>
+</body>
+</html>

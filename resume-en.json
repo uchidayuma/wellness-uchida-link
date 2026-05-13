@@ -1,11 +1,11 @@
 {
     "basics": {
         "name": "Yuma Uchida",
-        "label": "Engineer × PM",
+        "label": "Infrastructure Engineer / Project Manager",
         "image": "https://wellness.uchida.link/images/profile.png",
         "email": "uchida.yuma@routeplus.co.jp",
         "url": "https://wellness.uchida.link",
-        "summary": "Full-Stack Engineer and Project Manager with a track record of bridging technical execution and business strategy. Specialized in project recovery, team leadership, and scalable infrastructure design.",
+        "summary": "Engineer who handles both PM and technical lead roles. Covers the full range from technology selection and infrastructure design for new applications, through backend implementation and team management.",
         "location": {
             "city": "Tokyo",
             "countryCode": "JP",
@@ -27,21 +27,9 @@
             "endDate": "2025-12",
             "summary": "Development of a unified booking management and smart lock control tool for accommodations.",
             "highlights": [
-                "Infrastructure as Code (IaC) with AWS CDK: Automated environment provisioning and ensured reproducibility, reducing deployment time by 50%.",
-                "E2E Testing with Playwright: Introduced automated regression testing from scratch, significantly reducing manual QA costs and improving release confidence.",
-                "Tech Lead for a multi-national team (Japan, Philippines, Vietnam): Led code reviews, architectural decisions, and facilitated English communication across borders."
-            ]
-        },
-        {
-            "name": "Rich Honeycomb Co.",
-            "position": "Solo Developer",
-            "startDate": "2025-06",
-            "endDate": "2025-07",
-            "summary": "Development of a suite of tools for an MEO (Map Engine Optimization) service provider.",
-            "highlights": [
-                "Developed multiple tools (sales list generator, competitor analysis, rank tracking) within a single month.",
-                "End-to-end Solo Development: Handled everything from requirements definition and tech stack selection (Next.js, Supabase) to implementation, deployment, and client training.",
-                "Leveraged Google Maps & Places APIs to achieve high-precision data collection at low cost."
+                "Infrastructure as Code with AWS CDK: Automated environment provisioning and ensured reproducibility, reducing deployment time by 50%.",
+                "E2E Testing with Playwright: Introduced automated regression testing from scratch, significantly reducing manual QA costs.",
+                "Tech Lead for a multi-national team (Japan, Philippines, Vietnam): Led code reviews, architectural decisions, and English-language communication across borders."
             ]
         },
         {
@@ -52,8 +40,8 @@
             "summary": "New development and operation of a CRM (Patient Management System) and LINE Mini App for medical institutions.",
             "highlights": [
                 "PM & Dev Lead for a 20-person team (Engineers, Designers, QA).",
-                "Stakeholder Management: Aligned interests across Sales, CS, and Engineering departments, defining roadmaps and prioritization.",
-                "Quality Improvement: Spearheaded the introduction of Playwright for automated testing to address quality degradation, working closely with the QA team to increase test coverage."
+                "Introduced Playwright automated testing, cutting the release bug rate from 6% to 3% — a 50% reduction.",
+                "Stakeholder Management: Aligned interests across Sales, CS, and Engineering, defining roadmaps and priorities."
             ]
         },
         {
@@ -63,55 +51,70 @@
             "endDate": "2024-02",
             "summary": "Development and maintenance of a core business system (Inventory, Estimation, Ordering, Construction Management) for a franchise headquarters and its franchisees.",
             "highlights": [
-                "Digital Transformation: Centralized fragmented workflows (Excel/Paper) into a unified system, improving operational efficiency by approximately 30%.",
-                "Major Upgrade: Executed a migration from Laravel 6 to 10, leading the refactoring of legacy code and reduction of technical debt.",
-                "Cloud Migration: Designed and implemented the migration from on-premise to AWS (ECS Fargate) and built a CI/CD pipeline (CodePipeline) to accelerate deployment frequency."
+                "Digital Transformation: Centralized fragmented Excel/paper workflows into a unified system, improving operational efficiency by ~30%.",
+                "Cloud Migration: Designed and implemented migration from on-premise to AWS ECS Fargate; built a CI/CD pipeline (CodePipeline) to accelerate delivery.",
+                "Major Upgrade: Led migration from Laravel 6 to 10, refactoring legacy code and eliminating technical debt."
             ]
+        },
+        {
+            "name": "Canon Inc.",
+            "company": "Canon Inc.",
+            "position": "R&D Engineer, Chemical Development Division",
+            "startDate": "2012-04",
+            "endDate": "2016-09",
+            "summary": "Research and development of fuser materials for laser printers. Achieved a 10% reduction in text blur and degradation through material optimization. Transitioned to software engineering in September 2016.",
+            "highlights": []
         }
     ],
     "projects": [],
-    "education": [],
+    "education": [
+        {
+            "institution": "Nihon University",
+            "area": "Faculty of Engineering",
+            "studyType": "B.Eng.",
+            "endDate": "2012-03"
+        }
+    ],
     "awards": [
         {
             "title": "Udemy Best Seller Instructor",
             "date": "2024-01-01",
             "awarder": "Udemy",
-            "summary": "Docker/K8s courses (25k+ students)"
+            "summary": "Docker/Kubernetes courses (26,000+ students)"
         },
         {
             "title": "Impress Academy Lecturer",
             "date": "2020-06-01",
             "awarder": "Impress Academy",
-            "summary": "Docker / Kubernetes Workshops"
+            "summary": "Docker / Kubernetes corporate workshops (60 attendees, 95%+ satisfaction)"
         }
     ],
     "skills": [
         {
+            "name": "Infrastructure",
+            "keywords": [
+                "AWS ECS / Fargate",
+                "Docker",
+                "Kubernetes",
+                "AWS CDK",
+                "CI/CD (CodePipeline, GitHub Actions)"
+            ]
+        },
+        {
             "name": "Backend",
             "keywords": [
-                "PHP (Laravel)",
+                "PHP / Laravel",
                 "Go",
-                "Node.js",
-                "Python"
+                "MySQL / PostgreSQL",
+                "REST API Design"
             ]
         },
         {
-            "name": "Frontend",
+            "name": "Frontend / Other",
             "keywords": [
                 "React",
-                "Vue.js",
                 "TypeScript",
                 "Next.js"
-            ]
-        },
-        {
-            "name": "Infra",
-            "keywords": [
-                "AWS",
-                "Docker",
-                "ECS",
-                "K8s",
-                "Terraform/CDK"
             ]
         }
     ]

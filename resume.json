@@ -1,11 +1,11 @@
 {
   "basics": {
     "name": "打田 裕馬 (Yuma Uchida)",
-    "label": "Engineer × PM",
+    "label": "インフラエンジニア / プロジェクトマネージャー",
     "image": "https://wellness.uchida.link/images/profile.png",
     "email": "uchida.yuma@routeplus.co.jp",
     "url": "https://wellness.uchida.link",
-    "summary": "AI時代でも価値が下がらないエンジニアPM戦略。技術×マネジメントでキャリアを切り拓く。経営と現場の本当の橋渡しを担うPM。開発現場の深い理解（技術スキル）と経営的な視座（PMスキル）を兼ね備え、プロジェクトの成功確率を最大化します。",
+    "summary": "PMと開発リードを兼務できるエンジニア。新規アプリの技術選定・インフラ設計から、バックエンド実装・チームマネジメントまで一貫して担う。",
     "location": {
       "city": "Tokyo",
       "countryCode": "JP",
@@ -22,26 +22,14 @@
   "work": [
     {
       "name": "オーアール・ラボ株式会社",
-      "position": "Tech Lead",
+      "position": "Tech Lead / プロジェクトマネージャー",
       "startDate": "2025-09",
       "endDate": "2025-12",
       "summary": "宿泊施設向け予約管理・オートロック管理ツール開発プロジェクト。既存システムの刷新と機能拡張。",
       "highlights": [
-        "インフラをCDKでコード化 (IaC)し、環境構築の自動化と再現性を担保。デプロイ時間を50%短縮。",
-        "PlaywrightによるE2Eテストをゼロから導入し、リリース前の回帰テストを自動化。品質担保のコストを大幅削減。",
-        "多国籍（日本・フィリピン・ベトナム）チームのTech Leadとして、コードレビューや設計指針の策定を担当。英語でのコミュニケーションを主導。"
-      ]
-    },
-    {
-      "name": "リッチハニカム株式会社",
-      "position": "Solo Developer",
-      "startDate": "2025-06",
-      "endDate": "2025-07",
-      "summary": "MEO（Map Engine Optimization）サービス提供会社向けの営業リスト作成・分析ツール開発。",
-      "highlights": [
-        "営業リスト自動生成ツール、競合分析ツール、順位計測ツールなど複数のツールを1ヶ月で開発・納品。",
-        "要件定義から技術選定（Next.js, Supabase）、実装、デプロイ、顧客へのレクチャーまでを一人で完遂。",
-        "Google Maps API, Places APIを駆使し、低コストで高精度なデータ収集を実現。"
+        "AWS CDKによるインフラのコード化（IaC）を導入し、環境構築の自動化と再現性を担保。デプロイ時間を50%短縮。",
+        "PlaywrightによるE2Eテストをゼロから導入し、リリース前の回帰テストを自動化。品質担保コストを大幅削減。",
+        "日本・フィリピン・ベトナムの多国籍チームのTech Leadとして、コードレビューと設計指針の策定を担当。英語でのコミュニケーションを主導。"
       ]
     },
     {
@@ -52,8 +40,8 @@
       "summary": "医療機関向けCRM（患者管理システム）およびLINEミニアプリの新規開発・運用。",
       "highlights": [
         "20名規模の開発チーム（エンジニア、デザイナー、QA）のプロジェクトマネージャー兼開発リード。",
-        "営業・CS・開発の3部署間の利害調整を行い、ロードマップ策定と優先順位付けを実施。",
-        "品質低下が課題となっていたため、Playwrightによる自動テスト導入を推進。QAチームと連携し、テストカバレッジを向上。"
+        "Playwright自動テストの導入を主導し、リリース時のバグ発生率を6%から3%へ半減。QAチームと連携しテスト設計から実装まで担当。",
+        "営業・CS・開発の3部署間の利害調整を行い、ロードマップ策定と優先順位付けを実施。"
       ]
     },
     {
@@ -64,53 +52,69 @@
       "summary": "フランチャイズ本部および加盟店向けの業務基幹システム（在庫・見積・発注・施工管理）の新規開発と保守。",
       "highlights": [
         "Excelや紙で管理されていた業務フローをシステム化し、在庫・見積・発注・施工管理を一元化。業務効率を約30%向上。",
-        "Laravel 6から10へのメジャーバージョンアップを実施。レガシーコードの改善と技術負債の解消を主導。",
-        "オンプレミス環境からAWS（ECS Fargate）への移行を設計・実施。CI/CDパイプライン（CodePipeline）を構築し、デプロイ頻度を向上。"
+        "オンプレミス環境からAWS（ECS Fargate）への移行を設計・実施。CI/CDパイプライン（CodePipeline）を構築し、デプロイ頻度を向上。",
+        "Laravel 6から10へのメジャーバージョンアップを主導。レガシーコードの改善と技術負債を解消。"
       ]
+    },
+    {
+      "name": "キヤノン株式会社",
+      "company": "キヤノン株式会社",
+      "position": "研究開発エンジニア（化成開発室）",
+      "startDate": "2012-04",
+      "endDate": "2016-09",
+      "summary": "プリンター用定着素材の研究開発。担当素材の改良により文字のかすれ・劣化を10%低減。2016年9月、ソフトウェアエンジニアとして独立。",
+      "highlights": []
     }
   ],
   "projects": [],
-  "education": [],
+  "education": [
+    {
+      "institution": "日本大学",
+      "area": "工学部",
+      "studyType": "学士",
+      "endDate": "2012-03"
+    }
+  ],
   "awards": [
     {
       "title": "Udemy Best Seller",
       "date": "2024-01-01",
       "awarder": "Udemy",
-      "summary": "Docker/K8s講座 (受講者2.5万人超)"
+      "summary": "Docker/Kubernetes講座（受講者2.6万人超）"
     },
     {
       "title": "Impress Academy 講師",
       "date": "2020-06-01",
       "awarder": "Impress",
-      "summary": "Docker / Kubernetes 研修"
+      "summary": "Docker / Kubernetes 企業研修（受講者60名・満足度95%以上）"
     }
   ],
   "skills": [
     {
+      "name": "Infrastructure",
+      "keywords": [
+        "AWS ECS / Fargate",
+        "Docker",
+        "Kubernetes",
+        "AWS CDK",
+        "CI/CD (CodePipeline, GitHub Actions)"
+      ]
+    },
+    {
       "name": "Backend",
       "keywords": [
-        "PHP (Laravel)",
+        "PHP / Laravel",
         "Go",
-        "Node.js",
-        "Python"
+        "MySQL / PostgreSQL",
+        "REST API設計"
       ]
     },
     {
-      "name": "Frontend",
+      "name": "Frontend / Other",
       "keywords": [
         "React",
-        "Vue.js",
         "TypeScript",
         "Next.js"
-      ]
-    },
-    {
-      "name": "Infra",
-      "keywords": [
-        "AWS",
-        "Docker",
-        "K8s",
-        "Terraform/CDK"
       ]
     }
   ]
