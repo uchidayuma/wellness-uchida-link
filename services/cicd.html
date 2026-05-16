@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CI/CD・自動テスト基盤構築 | 打田裕馬。GitHub Actions・CodePipeline・Playwright E2Eテストで、リリースのたびにバグが怖い状態を解消します。">
+  <title>CI/CD・自動テスト基盤構築 | 打田裕馬</title>
+  <link rel="icon" href="../images/favicon.png" type="image/png">
+  <link rel="stylesheet" href="../styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <script async data-id="101489745" src="https://static.getclicky.com/js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+
+<body>
+  <canvas id="particles-bg"></canvas>
+  <header class="header">
+    <div class="header-inner">
+      <a href="../index.html" class="logo-link"><img src="../images/profile.png" alt="プロフィール画像" class="profile-img"></a>
+      <div class="header-info">
+        <h1 class="name"><a href="../index.html">打田裕馬</a> <span class="title">Docker / ECS / Kubernetesインフラエンジニア</span></h1>
+        <nav class="nav">
+          <ul>
+            <li><a href="../index.html#about">About</a></li>
+            <li><a href="../index.html#services">Services</a></li>
+            <li><a href="../index.html#works">Works</a></li>
+            <li><a href="../index.html#contact">Contact</a></li>
+            <li><a href="../achievements.html">Achievements</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero-section fade-in">
+      <div class="hero-content">
+        <h1 class="hero-title">リリースのたびに<br>バグが怖くなっていませんか？</h1>
+        <p class="hero-subtitle">
+          自動化パイプラインで、品質と速度を両立します。<br>
+          GitHub Actions・CodePipeline・Playwright E2Eテストで、人の判断に頼らない品質保証の仕組みを作ります。
+        </p>
+        <div class="stats-grid" style="margin:2.5rem 0 1.5rem;">
+          <div class="stat-card">
+            <div class="stat-number">50%</div>
+            <div class="stat-label">デプロイ時間<br>削減実績</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">6%→3%</div>
+            <div class="stat-label">バグ発生率<br>半減実績</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">26,000+</div>
+            <div class="stat-label">Udemy<br>受講生</div>
+          </div>
+        </div>
+        <a href="#contact" class="hero-cta">まず30分、お話を聞かせてください</a>
+      </div>
+    </section>
+
+    <!-- Pain points -->
+    <section class="section fade-in">
+      <nav class="breadcrumb">
+        <a href="../index.html#services">提供サービス</a> &gt;
+        <span>CI/CD・自動テスト基盤構築</span>
+      </nav>
+
+      <h2 class="accent">こんな課題はありませんか？</h2>
+      <div style="display:flex;flex-wrap:wrap;gap:1rem;margin-bottom:1rem;">
+        <div class="problem-card" style="flex:1;min-width:260px;">
+          <i class="fas fa-exclamation-triangle" style="color:var(--color-accent);margin-right:0.5em;"></i>
+          <span>リリースのたびに手動テストが必要で、チェック漏れによるバグが本番に出る</span>
+        </div>
+        <div class="problem-card" style="flex:1;min-width:260px;">
+          <i class="fas fa-exclamation-triangle" style="color:var(--color-accent);margin-right:0.5em;"></i>
+          <span>git pushから本番デプロイまでが手作業で、ミスが起きやすい・時間がかかる</span>
+        </div>
+        <div class="problem-card" style="flex:1;min-width:260px;">
+          <i class="fas fa-exclamation-triangle" style="color:var(--color-accent);margin-right:0.5em;"></i>
+          <span>テストコードがなく、リファクタリングや機能追加のたびにリグレッションが怖い</span>
+        </div>
+        <div class="problem-card" style="flex:1;min-width:260px;">
+          <i class="fas fa-exclamation-triangle" style="color:var(--color-accent);margin-right:0.5em;"></i>
+          <span>CIはあるが、テストが遅い・不安定で誰も信頼していない（flaky test）</span>
+        </div>
+        <div class="problem-card" style="flex:1;min-width:260px;">
+          <i class="fas fa-exclamation-triangle" style="color:var(--color-accent);margin-right:0.5em;"></i>
+          <span>品質チェックが特定の人の<strong>目視確認</strong>に依存していて、スケールしない</span>
+        </div>
+        <div class="problem-card" style="flex:1;min-width:260px;">
+          <i class="fas fa-exclamation-triangle" style="color:var(--color-accent);margin-right:0.5em;"></i>
+          <span>GitHub Actionsや CodePipelineを使いたいが、設定方法が分からず後回しになっている</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scope -->
+    <section class="section fade-in">
+      <h2 class="accent">対応範囲</h2>
+      <p style="color:var(--color-sub);margin-bottom:1.5rem;line-height:1.8;">
+        <strong>パイプラインを置くだけ</strong>ではなく、チームが継続して使いこなせる状態を目指します。<br>
+        スコープはご要望に応じて柔軟に調整します。
+      </p>
+      <div class="scope-grid">
+        <div class="scope-card">
+          <div class="scope-icon"><i class="fas fa-code-branch"></i></div>
+          <h4>CIパイプライン設計・構築</h4>
+          <ul>
+            <li>GitHub Actionsワークフロー設計</li>
+            <li>AWS CodePipeline / CodeBuild構築</li>
+            <li>GitLab CI対応（任意）</li>
+            <li>ブランチ戦略との整合性設計</li>
+          </ul>
+        </div>
+        <div class="scope-card">
+          <div class="scope-icon"><i class="fas fa-rocket"></i></div>
+          <h4>CD（自動デプロイ）構築</h4>
+          <ul>
+            <li>ステージング → 本番の承認フロー</li>
+            <li>Blue/Greenデプロイ・ローリングアップデート</li>
+            <li>ロールバック手順の整備</li>
+            <li>ECS / Kubernetes対応</li>
+          </ul>
+        </div>
+        <div class="scope-card">
+          <div class="scope-icon"><i class="fas fa-vial"></i></div>
+          <h4>自動テスト導入</h4>
+          <ul>
+            <li>Playwright E2Eテスト設計・実装</li>
+            <li>ユニットテスト・統合テストの整備</li>
+            <li>テスト並列化による高速化</li>
+            <li>既存コードへのテスト追加</li>
+          </ul>
+        </div>
+        <div class="scope-card">
+          <div class="scope-icon"><i class="fas fa-shield-alt"></i></div>
+          <h4>セキュリティ自動化</h4>
+          <ul>
+            <li>依存関係の脆弱性スキャン（Trivy / Snyk）</li>
+            <li>Secrets漏洩チェック（git-secrets / trufflehog）</li>
+            <li>コンテナイメージスキャン自動化</li>
+            <li>SAST / DASTの組み込み（任意）</li>
+          </ul>
+        </div>
+        <div class="scope-card">
+          <div class="scope-icon"><i class="fas fa-chart-bar"></i></div>
+          <h4>品質指標の可視化</h4>
+          <ul>
+            <li>テストカバレッジのレポート化</li>
+            <li>ビルド成功率・デプロイ頻度の可視化</li>
+            <li>障害復旧時間（MTTR）の計測設計</li>
+          </ul>
+        </div>
+        <div class="scope-card">
+          <div class="scope-icon"><i class="fas fa-book-open"></i></div>
+          <h4>チーム展開支援</h4>
+          <ul>
+            <li>CI/CDフローのドキュメント整備</li>
+            <li>チームへのレクチャー・ハンズオン</li>
+            <li>運用上のルール設定（マージ条件等）</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Deliverables -->
+    <section class="section fade-in">
+      <h2 class="accent">成果物</h2>
+      <div class="deliverable-list">
+        <div class="deliverable-item">
+          <h4><i class="fas fa-code-branch"></i> CI/CDパイプライン</h4>
+          <p>コードプッシュから本番デプロイまでを自動化。ビルド・テスト・セキュリティスキャン・承認フローを組み込みます。</p>
+        </div>
+        <div class="deliverable-item">
+          <h4><i class="fas fa-vial"></i> 自動テストコード</h4>
+          <p>Playwright E2Eテストを中心に、主要なユーザーフローをカバーする自動テスト一式を納品します。</p>
+        </div>
+        <div class="deliverable-item">
+          <h4><i class="fas fa-file-alt"></i> CI/CD設計ドキュメント</h4>
+          <p>パイプラインの構成図、ブランチ戦略、デプロイフロー、ロールバック手順を整理したドキュメント一式。</p>
+        </div>
+        <div class="deliverable-item">
+          <h4><i class="fas fa-book"></i> 運用手順書</h4>
+          <p>デプロイ手順・テスト追加方法・トラブル対応フローをまとめたランブック。チームが自走できる状態を目指します。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section class="section fade-in">
+      <h2 class="accent">進め方</h2>
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="process-step-num">1</div>
+          <div class="process-step-title">無料相談<br>（30分）</div>
+          <div class="process-step-detail">現在の開発フロー・課題・希望スケジュールを確認。見積りをご提示します。</div>
+        </div>
+        <div class="process-step">
+          <div class="process-step-num">2</div>
+          <div class="process-step-title">現状分析・<br>設計</div>
+          <div class="process-step-detail">既存のリポジトリ・インフラ構成を確認し、CI/CDの設計案を作成します。</div>
+        </div>
+        <div class="process-step">
+          <div class="process-step-num">3</div>
+          <div class="process-step-title">構築・<br>テスト実装</div>
+          <div class="process-step-detail">週次でレビューしながら進捗共有。パイプラインとテストを段階的に整備します。</div>
+        </div>
+        <div class="process-step">
+          <div class="process-step-num">4</div>
+          <div class="process-step-title">動作確認・<br>引き渡し</div>
+          <div class="process-step-detail">本番環境での動作確認後、ドキュメントとともにチームに引き渡します。</div>
+        </div>
+        <div class="process-step">
+          <div class="process-step-num">5</div>
+          <div class="process-step-title">運用サポート<br>（任意）</div>
+          <div class="process-step-detail">引き渡し後のトラブル対応・追加テスト実装にも対応します（別途）。</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why me -->
+    <section class="section fade-in">
+      <h2 class="accent">なぜ任せられるか</h2>
+      <p style="color:var(--color-sub);margin-bottom:1.5rem;line-height:1.8;">
+        理論ではなく、実際のプロジェクトで CI/CD・自動テストを導入してきた実務経験をもとに構築します。<br>
+        <strong>入れただけ</strong>ではなく、チームが継続して使える仕組みを作ることを大切にしています。
+      </p>
+      <div class="credential-box">
+        <div class="credential-card">
+          <div class="cred-icon"><i class="fas fa-vial"></i></div>
+          <h4>Playwright E2Eテスト実績</h4>
+          <p>医療向け CRM（20名規模チーム）に Playwrightを導入し、バグ発生率を 6% から 3% に半減。リリースサイクルを維持しながら品質を向上させた実績があります。</p>
+        </div>
+        <div class="credential-card">
+          <div class="cred-icon"><i class="fas fa-rocket"></i></div>
+          <h4>CI/CDパイプライン構築実績</h4>
+          <p>AWS CodePipeline・GitHub Actionsによるリリース自動化を複数プロジェクトで構築。デプロイ時間 50% 削減、手動作業ゼロを実現した実績があります。</p>
+        </div>
+        <div class="credential-card">
+          <div class="cred-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+          <h4>Udemy 2.6万人にコンテナ技術を教えた経験</h4>
+          <p>現場で躓くポイントを熟知しているため、<strong>使いにくいパイプライン</strong>・<strong>誰も触らないテスト</strong>にならない設計を心がけています。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="section fade-in">
+      <h2 class="accent">料金</h2>
+      <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.09);border-radius:10px;padding:2rem;">
+        <p style="color:var(--color-sub);font-size:0.95rem;line-height:1.8;margin:0 0 1rem;">
+          スコープ・現在の環境・チーム規模によって大きく異なります。<br>
+          まずヒアリングした上で、お見積りをご提示します。
+        </p>
+        <ul style="list-style:none;padding:0;margin:0 0 1.5rem;color:var(--color-sub);font-size:0.9rem;line-height:2;">
+          <li>▸ CI/CDパイプライン構築のみ（小規模）: 20万円〜</li>
+          <li>▸ 自動テスト導入（E2E + 設計）: 30万円〜</li>
+          <li>▸ CI/CD + テスト + チーム展開支援: 50万円〜</li>
+          <li>▸ スポット相談（60分）: ¥10,000（税抜）</li>
+        </ul>
+        <p style="color:var(--color-sub);font-size:0.85rem;margin:0;">
+          ※ 月次顧問契約（継続改善）にも対応しています。
+        </p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section fade-in">
+      <h2 class="accent">よくある質問</h2>
+      <button class="faq-question">既存のコードにテストがゼロの状態でも依頼できますか？</button>
+      <div class="faq-answer">
+        <p>はい、対応可能です。既存コードのテスト追加は多くのケースで対応しています。まずヒアリングで現状のコードベース・フレームワーク・優先テスト対象を確認し、段階的に導入する計画を立てます。</p>
+      </div>
+      <button class="faq-question">GitHub Actionsと AWS CodePipeline、どちらを使うべきですか？</button>
+      <div class="faq-answer">
+        <p>チームの技術スタック・AWSの利用状況・コストによって変わります。GitHubを使っているなら GitHub Actionsが導入しやすく、AWSに寄せたいなら CodePipelineが相性が良いです。ヒアリング時に現状を聞いた上で推奨をご提示します。</p>
+      </div>
+      <button class="faq-question">テスト導入後、チームが自分たちでテストを追加・維持できますか？</button>
+      <div class="faq-answer">
+        <p>そこを一番大切にしています。テストコードのパターンをドキュメント化し、チームへのレクチャーも行います。<strong>入れて終わり</strong>ではなく、<strong>自走できる状態</strong>での引き渡しを目標にします。</p>
+      </div>
+      <button class="faq-question">フロントエンドのみ・バックエンドのみの対応は可能ですか？</button>
+      <div class="faq-answer">
+        <p>はい、可能です。Playwright E2Eはフロントエンド中心ですが、APIテスト（バックエンド）にも対応しています。スコープはご相談ください。</p>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section fade-in" id="contact">
+      <div style="background:linear-gradient(135deg,rgba(0,200,150,0.08) 0%,rgba(30,58,95,0.18) 100%);border:1.5px solid var(--color-accent);border-radius:16px;padding:2.5rem 2rem;text-align:center;">
+        <h2 style="color:var(--color-accent);border:none;padding:0;margin-bottom:0.5rem;font-size:1.5rem;">まず30分、現状を聞かせてください。</h2>
+        <p style="color:var(--color-sub);font-size:0.95rem;margin:0 0 2rem;line-height:1.8;">費用や進め方の話はその後で構いません。</p>
+        <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+          <a href="https://calendly.com/yumauchida/meet-with-me" target="_blank" rel="noopener" class="contact-btn cta-primary" style="display:inline-flex;width:auto;padding:0.9em 2.5em;font-size:1.1em;">
+            <i class="fas fa-calendar-check"></i>
+            <span>カレンダーから相談予約</span>
+          </a>
+          <a href="https://lin.ee/g7PLHqb" target="_blank" rel="noopener" class="contact-btn contact-btn--line" style="display:inline-flex;width:auto;padding:0.9em 2em;font-size:1.1em;">
+            <i class="fab fa-line"></i>
+            <span>LINEで相談する</span>
+          </a>
+        </div>
+        <p class="contact-divider" style="margin:2rem 0 1.5rem;">または、フォームからお問い合わせください</p>
+        <div class="contact-content" style="text-align:left;max-width:560px;margin:0 auto;">
+          <form id="contact-form">
+            <div class="form-group">
+              <input type="text" name="user_name" placeholder="お名前" required>
+            </div>
+            <div class="form-group">
+              <input type="email" name="user_email" placeholder="メールアドレス" required>
+            </div>
+            <div class="form-group">
+              <select name="inquiry_type" required>
+                <option value="">種類を選択してください</option>
+                <option value="コンテナインフラ構築について">コンテナインフラ構築について</option>
+                <option value="CI/CD・自動テストについて" selected>CI/CD・自動テストについて</option>
+                <option value="チーム開発プロセスについて">チーム開発プロセスについて</option>
+                <option value="セキュリティ診断について">セキュリティ診断について</option>
+                <option value="スポット相談について">スポット相談について</option>
+                <option value="その他">その他</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <textarea name="message" placeholder="メッセージ（課題・背景・希望稼働形態など）" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="contact-btn">送信</button>
+          </form>
+          <div id="form-success" style="display: none;">
+            <div class="form-message success-message">
+              <div class="message-icon">✅</div>
+              <h3>送信完了！</h3>
+              <p>お問い合わせありがとうございます。<br>48時間以内にご返信いたします。</p>
+            </div>
+          </div>
+          <div id="form-error" style="display: none;">
+            <div class="form-message error-message">
+              <div class="message-icon">❌</div>
+              <h3>送信エラー</h3>
+              <p>申し訳ございません。<br>しばらく後にもう一度お試しください。</p>
+            </div>
+          </div>
+        </div>
+        <p style="color:var(--color-sub);font-size:0.85rem;margin:2rem 0 0;">
+          関連サービス：<a href="/services/management.html" style="color:var(--color-accent);">チーム開発プロセス整備 →</a>
+          &nbsp;|&nbsp;
+          <a href="/services/infrastructure.html" style="color:var(--color-accent);">コンテナインフラ構築 →</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span>&copy; 2024 打田裕馬 | Docker / ECS / Kubernetesインフラエンジニア</span>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const faqQuestions = document.querySelectorAll(".faq-question");
+      faqQuestions.forEach((question) => {
+        question.addEventListener("click", function () {
+          const answer = this.nextElementSibling;
+          const isActive = this.classList.contains("active");
+          faqQuestions.forEach((q) => {
+            q.classList.remove("active");
+            if (q.nextElementSibling) q.nextElementSibling.classList.remove("active");
+          });
+          if (!isActive) {
+            this.classList.add("active");
+            if (answer) answer.classList.add("active");
+          }
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>
