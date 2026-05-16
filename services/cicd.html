@@ -359,25 +359,6 @@
   </footer>
 
   <script src="../script.js"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const faqQuestions = document.querySelectorAll(".faq-question");
-      faqQuestions.forEach((question) => {
-        question.addEventListener("click", function () {
-          const answer = this.nextElementSibling;
-          const isActive = this.classList.contains("active");
-          faqQuestions.forEach((q) => {
-            q.classList.remove("active");
-            if (q.nextElementSibling) q.nextElementSibling.classList.remove("active");
-          });
-          if (!isActive) {
-            this.classList.add("active");
-            if (answer) answer.classList.add("active");
-          }
-        });
-      });
-    });
-  </script>
 </body>
 
 </html>
