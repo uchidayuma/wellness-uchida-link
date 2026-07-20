@@ -1,6 +1,6 @@
 # サイト設計図 — wellness.uchida.link
 
-最終更新: 2026-05-16
+最終更新: 2026-07-20
 
 ---
 
@@ -17,11 +17,11 @@
 
 | 項目     | 内容                                                                           |
 | -------- | ------------------------------------------------------------------------------ |
-| 職種     | CTO・エンジニアリングマネージャー・事業責任者                                   |
+| 職種     | 社長・CTO・エンジニアリングマネージャー                                         |
 | 会社規模 | 10〜100名程度のスタートアップ〜中小企業                                          |
-| 状況     | インフラの属人化・開発品質の不安定・チームが特定の人に依存している              |
-| 流入経路 | Udemyの受講生、紹介、検索                                                       |
-| 心理状態 | 「誰かに頼みたいが、誰を選べばいいかわからない」「営業されたくない」            |
+| 状況     | 中堅PM/テックリード不在。社長は優秀だがエンジニアは実装特化で、全体設計・レビュー・AI活用の仕切り役がいない |
+| 流入経路 | YouTube動画、Udemyの受講生、紹介、検索                                           |
+| 心理状態 | 「エンジニアはいるのに開発がうまく回らない」「AIを入れたけど活用できていない」    |
 
 ---
 
@@ -55,17 +55,17 @@
 
 | 柱 | 顧客の課題（感情） | 解決 | 提供する成果 |
 |----|-----------------|------|-------------|
-| **① コンテナ化・IaC** | 「サーバー管理に人手が取られている」 | インフラをコードで管理 | 管理コスト削減・再現性・スケーリング |
-| **② CI/CD・自動テスト** | 「リリースのたびにバグが怖い」 | 自動化パイプライン構築 | バグ削減・リリース速度向上 |
-| **③ チーム仕組み化** | 「自分がいないと開発が止まる」 | 開発プロセスとルール整備 | 管理者不在でも継続できる体制 |
+| **① AI導入・活用設計** | 「AIツールを入れたけど使いこなせていない」 | ツール選定・規約策定・研修 | 生産性向上・品質統一 |
+| **② チーム開発体制構築** | 「社長がいないと判断が止まる」 | レビュー体制・設計判断・PM代行 | 自走できるチーム |
+| **③ DevOps・インフラ整備** | 「リリースが怖い、属人化している」 | コンテナ化・IaC・CI/CD | 安定した自動化基盤 |
 
 ### サービスメニュー
 
 | # | サービス名 | 価格 | ページ | 状態 |
 |---|-----------|------|--------|------|
-| ① | コンテナインフラ構築（IaC・ECS/K8s） | 要相談 | infrastructure.html | ✅ 既存 |
-| ② | CI/CD・自動テスト 基盤構築 | 要相談 | cicd.html | 🔲 新規作成 |
-| ③ | チーム開発プロセス整備 | 要相談 | management.html | 🔲 新規作成 |
+| ① | AI導入・活用設計 | 要相談 | ai.html | 🔲 新規作成 |
+| ② | チーム開発体制構築 | 要相談 | management.html | ✅ 既存（リブランド） |
+| ③ | DevOps・インフラ整備 | 要相談 | devops.html | 🔲 新規作成（infrastructure.html + cicd.html を統合） |
 | ④ | コンテナセキュリティ診断 | 30万円〜 | container-security.html | ✅ 既存 |
 | ⑤ | スポット相談（60分） | ¥10,000（税抜） | → Contact | ✅ 実装済み |
 
@@ -77,10 +77,10 @@
 wellness.uchida.link/
 ├── index.html                  # トップページ（メイン）
 ├── services/
-│   ├── container-security.html # ④ コンテナセキュリティ診断（既存）
-│   ├── infrastructure.html     # ① コンテナインフラ構築（既存）
-│   ├── cicd.html               # ② CI/CD・自動テスト基盤構築（新規）
-│   └── management.html         # ③ チーム開発プロセス整備（新規）
+│   ├── ai.html                 # ① AI導入・活用設計（新規）
+│   ├── management.html         # ② チーム開発体制構築（既存・リブランド）
+│   ├── devops.html             # ③ DevOps・インフラ整備（新規・infrastructure.html + cicd.html 統合）
+│   └── container-security.html # ④ コンテナセキュリティ診断（既存）
 ├── resources/
 │   └── checklist.html          # チェックリストDLページ（既存）
 ├── achievements.html           # 実績・講師活動（既存）
@@ -104,8 +104,9 @@ wellness.uchida.link/
 
 - `index.html` → 各サービスページ（3本柱セクション・Servicesセクションから）
 - `container-security.html` → `resources/checklist.html`（自己診断導線）
-- `infrastructure.html` ↔ `container-security.html`（クロスリンク）
-- `cicd.html` ↔ `management.html`（クロスリンク）
+- `ai.html` ↔ `management.html`（クロスリンク: AI活用にはチーム体制が必要）
+- `management.html` ↔ `devops.html`（クロスリンク: チーム体制にはDevOps基盤が必要）
+- `devops.html` ↔ `container-security.html`（クロスリンク）
 - 全サービスページ → Calendly / `index.html#contact`（CTA）
 
 ---
@@ -116,10 +117,10 @@ wellness.uchida.link/
 
 | セクション | 役割 | CTA |
 |-----------|------|-----|
-| Hero | 顧客の課題から入る・自己紹介 | Calendly 面談予約 |
-| 3本柱 | 課題→解決→成果数値 | 各サービスページへ |
+| Hero | 顧客の課題から入る・自己紹介（エンジニアチーム強化パートナー） | Calendly 面談予約 |
+| 3本柱 | AI導入→チーム体制→DevOps（課題→解決→成果数値） | 各サービスページへ |
 | Works | 3件・Before/After・数値付き | Achievementsへ |
-| Services | 4サービスのカード | 各サービスページへ |
+| Services | 4サービスのカード（AI導入・チーム体制・DevOps・セキュリティ診断） | 各サービスページへ |
 | Resources | チェックリスト | checklist.html へ |
 | Contact | フォーム・Calendly・LINE | 送信・予約 |
 
@@ -145,8 +146,8 @@ EmailJS で自動返信（template_lxw98pe）
 
 | 項目 | 決定内容 |
 |------|---------|
-| 肩書き | Docker / ECS / Kubernetes インフラエンジニア |
-| 専門領域 | コンテナ化・IaC・CI/CD・チーム仕組み化 |
+| 肩書き | エンジニアチーム強化パートナー（EN: Engineering Team Enhancement Partner） |
+| 専門領域 | AI導入設計・チーム開発体制構築・DevOps |
 | トーン | 誠実・平易な言葉・低圧力・実務家として語る |
 | デザイン | 黒背景・緑アクセント（ミニマリスト）を維持 |
 | CTA文言 | 「まず30分、現状を聞かせてください。費用の話はその後で。」|
@@ -156,16 +157,16 @@ EmailJS で自動返信（template_lxw98pe）
 ## 9. 実装タスク一覧
 
 ### サービスページ
+- [ ] ai.html — 新規作成（AI導入・活用設計）
+- [ ] management.html — 既存リブランド（チーム開発体制構築）
+- [ ] devops.html — 新規作成（infrastructure.html + cicd.html を統合）
 - [x] container-security.html — 完成
-- [x] infrastructure.html — 完成
-- [ ] cicd.html — 新規作成
-- [ ] management.html — 新規作成
 
 ### index.html
-- [ ] Hero を顧客の課題・感情から入る文章に変更
-- [ ] 3本柱セクションを新規追加（課題→解決→成果数値）
+- [ ] Hero を顧客の課題・感情から入る文章に変更（エンジニアチーム強化パートナー）
+- [ ] 3本柱セクションを新規追加（AI導入→チーム体制→DevOps）
 - [ ] Works を Before/After・数値付き形式に更新
-- [ ] Services セクションを4サービス＋スポットに整理
+- [ ] Services セクションを4サービス＋スポットに整理（AI導入・チーム体制・DevOps・セキュリティ診断）
 - [ ] CTA文言を低圧力スタイルに変更
 
 ### その他
@@ -173,4 +174,5 @@ EmailJS で自動返信（template_lxw98pe）
 - [x] Calendly・LINE リンクの設置
 - [ ] サービス価格の決定（スポット以外）
 - [ ] Udemyの講座説明欄にサイトリンクを追加
+- [ ] infrastructure.html・cicd.html → devops.html へリダイレクト設定
 - [ ] pm.html・pm-rescue.html を削除またはリダイレクト

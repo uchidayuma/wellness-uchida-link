@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AI導入・活用設計 | 打田裕馬。Cursor / Claude Code / Copilot の選定から、チームAI規約策定・研修・レビュー体制構築まで一貫対応。">
+  <title>AI導入・活用設計 | 打田裕馬</title>
+  <link rel="icon" href="/images/favicon.png" type="image/png">
+  <link rel="stylesheet" href="/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <script async data-id="101489745" src="https://static.getclicky.com/js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <style>
+    .pricing-note {
+      font-size: 0.95rem;
+      color: var(--color-sub);
+      margin-top: 0.6rem;
+      line-height: 1.6;
+    }
+    .stat-label {
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+
+<body data-title-ja="AI導入・活用設計 | 打田裕馬" data-title-en="AI Implementation &amp; Strategy | Yuma Uchida">
+  <canvas id="particles-bg"></canvas>
+  <header class="header">
+    <div class="header-inner">
+      <a href="/index.html" class="logo-link"><img src="/images/profile.png" alt="プロフィール画像" class="profile-img"></a>
+      <div class="header-info">
+        <h1 class="name"><a href="/index.html" data-ja="打田裕馬" data-en="Yuma Uchida">打田裕馬</a> <span class="title"
+            data-ja="エンジニアチーム強化パートナー" data-en="Engineering Team Partner">エンジニアチーム強化パートナー</span></h1>
+        <nav class="nav">
+          <ul>
+            <li><a href="/index.html#about">About</a></li>
+            <li><a href="/index.html#services">Services</a></li>
+            <li><a href="/index.html#works">Works</a></li>
+            <li><a href="/index.html#contact">Contact</a></li>
+            <li><a href="/achievements.html">Achievements</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="lang-switcher">
+        <button class="lang-btn" data-lang="ja">日本語</button>
+        <button class="lang-btn" data-lang="en">English</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero-section fade-in">
+      <div class="hero-content">
+        <h1 class="hero-title"
+          data-ja="AIツールを導入したけど、<br>チームが使いこなせていませんか？"
+          data-en="Your team adopted AI tools —<br>but are they actually using them well?">AIツールを導入したけど、<br>チームが使いこなせていませんか？</h1>
+        <p class="hero-subtitle"
+          data-ja="Cursor / Claude Code / Copilot の選定から、チームAI規約策定・研修・レビュー体制構築まで。<br><strong>ツールを入れただけ</strong>ではなく、チーム全体で成果が出る仕組みを設計します。"
+          data-en="From selecting Cursor / Claude Code / Copilot to crafting team AI guidelines, hands-on training, and review workflows.<br>We go beyond <strong>just installing tools</strong> — we design systems that deliver results across the entire team.">
+          Cursor / Claude Code / Copilot の選定から、チームAI規約策定・研修・レビュー体制構築まで。<br>
+          <strong>ツールを入れただけ</strong>ではなく、チーム全体で成果が出る仕組みを設計します。
+        </p>
+        <div class="stats-grid" style="margin:2.5rem 0 1.5rem;">
+          <div class="stat-card">
+            <div class="stat-number">26,500+</div>
+            <div class="stat-label" data-ja="Udemy総受講生" data-en="Udemy Students">Udemy総受講生</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">95%+</div>
+            <div class="stat-label" data-ja="インプレス研修<br>満足度" data-en="Impress Training<br>Satisfaction">インプレス研修<br>満足度</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">20名</div>
+            <div class="stat-label" data-ja="最大チーム<br>マネジメント規模" data-en="Largest Team<br>Managed">最大チーム<br>マネジメント規模</div>
+          </div>
+        </div>
+        <a href="#contact" class="hero-cta" data-ja="無料相談を申し込む" data-en="Book a Free Consultation">無料相談を申し込む</a>
+      </div>
+    </section>
+
+    <!-- Breadcrumb + Pain points -->
+    <section class="section fade-in">
+      <nav class="breadcrumb">
+        <a href="/index.html#services" data-ja="提供サービス" data-en="Services">提供サービス</a> &gt;
+        <span data-ja="AI導入・活用設計" data-en="AI Implementation &amp; Strategy">AI導入・活用設計</span>
+      </nav>
+
+      <h2 class="accent" data-ja="こんな状況ありませんか？" data-en="Sound Familiar?">こんな状況ありませんか？</h2>
+      <div style="display:flex;flex-wrap:wrap;gap:1rem;margin-bottom:1rem;">
+        <div class="problem-card" style="flex:1;min-width:260px;">
+          <i class="fas fa-exclamation-triangle" style="color:var(--color-accent);margin-right:0.5em;"></i>
+          <span data-ja="CopilotやChatGPTを契約したが、使い方が人によってバラバラ"
+            data-en="You're paying for Copilot or ChatGPT, but everyone uses them differently">CopilotやChatGPTを契約したが、使い方が人によってバラバラ</span>
+        </div>
+        <div class="problem-card" style="flex:1;min-width:260px;">
+          <i class="fas fa-exclamation-triangle" style="color:var(--color-accent);margin-right:0.5em;"></i>
+          <span data-ja="AIに任せた結果のレビューができる人がいない"
+            data-en="No one on the team can properly review AI-generated output">AIに任せた結果のレビューができる人がいない</span>
+        </div>
+        <div class="problem-card" style="flex:1;min-width:260px;">
+          <i class="fas fa-exclamation-triangle" style="color:var(--color-accent);margin-right:0.5em;"></i>
+          <span data-ja="AI活用のルールや規約がなく、品質にムラがある"
+            data-en="No AI usage guidelines exist, leading to inconsistent quality">AI活用のルールや規約がなく、品質にムラがある</span>
+        </div>
+        <div class="problem-card" style="flex:1;min-width:260px;">
+          <i class="fas fa-exclamation-triangle" style="color:var(--color-accent);margin-right:0.5em;"></i>
+          <span data-ja="導入したはいいが、本当に生産性が上がっているか分からない"
+            data-en="Tools are deployed, but you can't tell if productivity actually improved">導入したはいいが、本当に生産性が上がっているか分からない</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scope -->
+    <section class="section fade-in">
+      <h2 class="accent" data-ja="対応範囲" data-en="What We Do">対応範囲</h2>
+      <p style="color:var(--color-sub);margin-bottom:1.5rem;line-height:1.8;"
+        data-ja="ツール選定だけ、研修だけではなく、<strong>チーム全体でAIを活用できる状態</strong>にすることを目標にします。<br>スコープはご要望に応じて柔軟に調整します。"
+        data-en="We don't just pick tools or run a workshop — the goal is to bring your <strong>entire team to effective AI adoption</strong>.<br>Scope is flexible based on your needs.">
+        ツール選定だけ、研修だけではなく、<strong>チーム全体でAIを活用できる状態</strong>にすることを目標にします。<br>
+        スコープはご要望に応じて柔軟に調整します。
+      </p>
+      <div class="scope-grid">
+        <div class="scope-card">
+          <div class="scope-icon"><i class="fas fa-tools"></i></div>
+          <h4 data-ja="AIツール選定・導入設計" data-en="AI Tool Selection & Rollout Design">AIツール選定・導入設計</h4>
+          <ul>
+            <li data-ja="Cursor / Claude Code / Copilot をチーム構成に合わせて選定"
+              data-en="Select Cursor / Claude Code / Copilot based on team composition">Cursor / Claude Code / Copilot をチーム構成に合わせて選定</li>
+            <li data-ja="「全員同じツール」ではなくタスク別の使い分けを設計"
+              data-en="Design task-specific tool allocation, not one-size-fits-all">「全員同じツール」ではなくタスク別の使い分けを設計</li>
+            <li data-ja="ライセンス・コスト最適化"
+              data-en="License and cost optimization">ライセンス・コスト最適化</li>
+            <li data-ja="導入ロードマップ策定"
+              data-en="Implementation roadmap planning">導入ロードマップ策定</li>
+          </ul>
+        </div>
+        <div class="scope-card">
+          <div class="scope-icon"><i class="fas fa-file-contract"></i></div>
+          <h4 data-ja="チームAI規約策定" data-en="Team AI Guidelines">チームAI規約策定</h4>
+          <ul>
+            <li data-ja="CLAUDE.mdやルールファイルでAIの挙動をコードとして管理"
+              data-en="Manage AI behavior as code via CLAUDE.md and rule files">CLAUDE.mdやルールファイルでAIの挙動をコードとして管理</li>
+            <li data-ja="属人的な使い方からチーム標準へ"
+              data-en="Move from ad-hoc usage to team-wide standards">属人的な使い方からチーム標準へ</li>
+            <li data-ja="プロンプトテンプレート・ベストプラクティス整備"
+              data-en="Prompt templates and best practices documentation">プロンプトテンプレート・ベストプラクティス整備</li>
+            <li data-ja="セキュリティ・コンプライアンスポリシー策定"
+              data-en="Security and compliance policy development">セキュリティ・コンプライアンスポリシー策定</li>
+          </ul>
+        </div>
+        <div class="scope-card">
+          <div class="scope-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+          <h4 data-ja="AI活用研修" data-en="AI Adoption Training">AI活用研修</h4>
+          <ul>
+            <li data-ja="Udemy 2.6万人受講の教育経験を活かしたカリキュラム"
+              data-en="Curriculum built on teaching experience with 26K+ Udemy students">Udemy 2.6万人受講の教育経験を活かしたカリキュラム</li>
+            <li data-ja="座学ではなく実務ベースのハンズオン研修"
+              data-en="Hands-on, task-based training — not lectures">座学ではなく実務ベースのハンズオン研修</li>
+            <li data-ja="ロール別（エンジニア / PM / デザイナー）研修設計"
+              data-en="Role-specific programs (engineers / PMs / designers)">ロール別（エンジニア / PM / デザイナー）研修設計</li>
+            <li data-ja="研修後のフォローアップ・定着支援"
+              data-en="Post-training follow-up and adoption support">研修後のフォローアップ・定着支援</li>
+          </ul>
+        </div>
+        <div class="scope-card">
+          <div class="scope-icon"><i class="fas fa-search"></i></div>
+          <h4 data-ja="レビュー体制構築" data-en="Review Workflow Design">レビュー体制構築</h4>
+          <ul>
+            <li data-ja="AIが書いたコードを正しくレビューできるチーム体制を設計"
+              data-en="Design team structures that can properly review AI-generated code">AIが書いたコードを正しくレビューできるチーム体制を設計</li>
+            <li data-ja="セキュリティ・品質の担保"
+              data-en="Ensure security and quality standards are maintained">セキュリティ・品質の担保</li>
+            <li data-ja="AIアウトプットの検証チェックリスト整備"
+              data-en="AI output verification checklists">AIアウトプットの検証チェックリスト整備</li>
+            <li data-ja="CI/CDへのAI品質ゲート組み込み"
+              data-en="Integrate AI quality gates into CI/CD pipelines">CI/CDへのAI品質ゲート組み込み</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section class="section fade-in">
+      <h2 class="accent" data-ja="進め方" data-en="How We Work">進め方</h2>
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="process-step-num">1</div>
+          <div class="process-step-title" data-ja="無料相談<br>（30分）" data-en="Free Consultation<br>(30 min)">無料相談<br>（30分）</div>
+          <div class="process-step-detail" data-ja="チームのAI活用状況・課題・目標をヒアリング。方向性をご提示します。"
+            data-en="We assess your team's current AI usage, challenges, and goals. Then outline a direction.">チームのAI活用状況・課題・目標をヒアリング。方向性をご提示します。</div>
+        </div>
+        <div class="process-step">
+          <div class="process-step-num">2</div>
+          <div class="process-step-title" data-ja="現状分析・<br>設計" data-en="Assessment &<br>Design">現状分析・<br>設計</div>
+          <div class="process-step-detail" data-ja="チームの技術スタック・ワークフローを分析し、最適なAIツール構成と規約の設計案を作成。"
+            data-en="Analyze your tech stack and workflows. Design the optimal AI tool mix and guidelines.">チームの技術スタック・ワークフローを分析し、最適なAIツール構成と規約の設計案を作成。</div>
+        </div>
+        <div class="process-step">
+          <div class="process-step-num">3</div>
+          <div class="process-step-title" data-ja="導入・<br>研修" data-en="Rollout &<br>Training">導入・<br>研修</div>
+          <div class="process-step-detail" data-ja="ツール導入とハンズオン研修を実施。実務タスクを使って定着を図ります。"
+            data-en="Deploy tools and run hands-on training using real work tasks to ensure adoption.">ツール導入とハンズオン研修を実施。実務タスクを使って定着を図ります。</div>
+        </div>
+        <div class="process-step">
+          <div class="process-step-num">4</div>
+          <div class="process-step-title" data-ja="レビュー体制<br>構築" data-en="Review<br>Workflow">レビュー体制<br>構築</div>
+          <div class="process-step-detail" data-ja="AI出力のレビュープロセスを設計し、チームに定着させます。品質ゲートの組み込みも対応。"
+            data-en="Design and embed AI output review processes. Set up quality gates in your pipeline.">AI出力のレビュープロセスを設計し、チームに定着させます。品質ゲートの組み込みも対応。</div>
+        </div>
+        <div class="process-step">
+          <div class="process-step-num">5</div>
+          <div class="process-step-title" data-ja="定着支援<br>（任意）" data-en="Ongoing Support<br>(Optional)">定着支援<br>（任意）</div>
+          <div class="process-step-detail" data-ja="導入後のフォローアップ・新メンバーのオンボーディング・規約のアップデートに対応します（別途）。"
+            data-en="Post-launch follow-up, onboarding new members, and guideline updates (separate engagement).">導入後のフォローアップ・新メンバーのオンボーディング・規約のアップデートに対応します（別途）。</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why me -->
+    <section class="section fade-in">
+      <h2 class="accent" data-ja="実務に裏打ちされた、AI活用の設計力" data-en="AI Strategy Grounded in Real-World Practice">実務に裏打ちされた、AI活用の設計力</h2>
+      <p style="color:var(--color-sub);margin-bottom:1.5rem;line-height:1.8;"
+        data-ja="AIツールを触ったことがあるだけではなく、<strong>日常的にプロダクション環境で使い込んでいる</strong>からこそ、現場で機能する設計ができます。"
+        data-en="I don't just know AI tools — I <strong>use them daily in production</strong>, which is why my designs actually work in practice.">
+        AIツールを触ったことがあるだけではなく、<strong>日常的にプロダクション環境で使い込んでいる</strong>からこそ、現場で機能する設計ができます。
+      </p>
+      <div class="credential-box">
+        <div class="credential-card">
+          <div class="cred-icon"><i class="fas fa-users-cog"></i></div>
+          <h4 data-ja="PM経験: 最大20名の多国籍チームをマネジメント" data-en="PM Experience: Led Multinational Teams of Up to 20">PM経験: 最大20名の多国籍チームをマネジメント</h4>
+          <p data-ja="フランチャイズ管理システムや医療CRMなど、大規模プロジェクトでチーム全体の生産性向上を設計・推進してきた経験があります。AI導入もチーム運営の延長線上で設計します。"
+            data-en="From franchise management systems to medical CRMs, I've designed and driven productivity improvements across large-scale projects. AI adoption is an extension of team operations — and I design it that way.">
+            フランチャイズ管理システムや医療CRMなど、大規模プロジェクトでチーム全体の生産性向上を設計・推進してきた経験があります。AI導入もチーム運営の延長線上で設計します。
+          </p>
+        </div>
+        <div class="credential-card">
+          <div class="cred-icon"><i class="fas fa-robot"></i></div>
+          <h4 data-ja="実務でのAI活用: スキル設計・エージェント定義レベルで日常使用" data-en="Daily AI Usage: Skill Design & Agent Definition Level">実務でのAI活用: スキル設計・エージェント定義レベルで日常使用</h4>
+          <p data-ja="Claude Codeをスキル設計・エージェント定義レベルで日常的に使用。CLAUDE.mdによるAI挙動管理、カスタムスキル開発、マルチエージェント設計など、最前線の活用ノウハウを持っています。"
+            data-en="I use Claude Code daily at the skill design and agent definition level. From managing AI behavior via CLAUDE.md to custom skill development and multi-agent design — I bring cutting-edge practical know-how.">
+            Claude Codeをスキル設計・エージェント定義レベルで日常的に使用。CLAUDE.mdによるAI挙動管理、カスタムスキル開発、マルチエージェント設計など、最前線の活用ノウハウを持っています。
+          </p>
+        </div>
+        <div class="credential-card">
+          <div class="cred-icon"><i class="fas fa-graduation-cap"></i></div>
+          <h4 data-ja="教育実績: Udemy 2.6万人受講生、インプレス研修講師（満足度95%+）" data-en="Education: 26K+ Udemy Students, Impress Instructor (95%+ Satisfaction)">教育実績: Udemy 2.6万人受講生、インプレス研修講師（満足度95%+）</h4>
+          <p data-ja="技術を分かりやすく伝えることに定評があります。研修は座学ではなく、受講者が翌日から実務で使えるハンズオン形式を徹底しています。"
+            data-en="Known for making complex tech accessible. All training is hands-on — participants apply what they learn to real work starting the next day.">
+            技術を分かりやすく伝えることに定評があります。研修は座学ではなく、受講者が翌日から実務で使えるハンズオン形式を徹底しています。
+          </p>
+        </div>
+        <div class="credential-card">
+          <div class="cred-icon"><i class="fas fa-layer-group"></i></div>
+          <h4 data-ja="フルスタック: AI出力のレビューに必要な技術力" data-en="Full-Stack: The Technical Depth to Review AI Output">フルスタック: AI出力のレビューに必要な技術力</h4>
+          <p data-ja="React / Next.js / Laravel / AWS / Kubernetes — AIが生成したコードの品質・セキュリティを正しく評価できる技術的バックグラウンドがあります。"
+            data-en="React / Next.js / Laravel / AWS / Kubernetes — I have the technical background to properly evaluate the quality and security of AI-generated code.">
+            React / Next.js / Laravel / AWS / Kubernetes — AIが生成したコードの品質・セキュリティを正しく評価できる技術的バックグラウンドがあります。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="section fade-in">
+      <h2 class="accent" data-ja="料金" data-en="Pricing">料金</h2>
+      <div class="services-list">
+        <div class="service-card" style="border-left:5px solid var(--color-accent);">
+          <h3 data-ja="AI導入・活用設計" data-en="AI Implementation & Strategy">AI導入・活用設計</h3>
+          <ul style="color:var(--color-sub);font-size:1rem;line-height:1.9;text-align:left;">
+            <li data-ja="AIツール選定・導入設計" data-en="AI tool selection and rollout design">AIツール選定・導入設計</li>
+            <li data-ja="チームAI規約策定（CLAUDE.md / ルールファイル）" data-en="Team AI guidelines (CLAUDE.md / rule files)">チームAI規約策定（CLAUDE.md / ルールファイル）</li>
+            <li data-ja="実務ベースのハンズオン研修" data-en="Hands-on training based on real work tasks">実務ベースのハンズオン研修</li>
+            <li data-ja="レビュー体制構築・品質ゲート設計" data-en="Review workflow and quality gate design">レビュー体制構築・品質ゲート設計</li>
+          </ul>
+          <p style="font-size:1.3rem;font-weight:700;color:var(--color-accent);margin-top:1rem;"
+            data-ja="要相談（まずは現状のヒアリングから）"
+            data-en="Contact for pricing (starts with a free assessment)">
+            要相談（まずは現状のヒアリングから）
+          </p>
+          <p class="pricing-note" data-ja="※ チーム規模・導入範囲・研修回数によって変動します。まず無料相談にてお見積りいたします。"
+            data-en="* Varies by team size, scope, and number of training sessions. We'll provide an estimate after a free consultation.">※ チーム規模・導入範囲・研修回数によって変動します。まず無料相談にてお見積りいたします。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section fade-in">
+      <h2 class="accent" data-ja="よくあるご質問" data-en="FAQ">よくあるご質問</h2>
+      <div class="faq">
+        <div class="faq-item">
+          <div class="faq-question" tabindex="0" data-ja="エンジニア以外のチームにも対応できますか？" data-en="Can you support non-engineering teams?">エンジニア以外のチームにも対応できますか？</div>
+          <div class="faq-answer">
+            <p data-ja="はい。PM・デザイナー・マーケターなど、ロールに応じたAI活用研修を設計します。ChatGPT / Claude を業務で使いこなすための実践的なプログラムもご用意できます。"
+              data-en="Yes. We design role-specific AI training for PMs, designers, marketers, and more. We can also prepare practical programs for leveraging ChatGPT / Claude in daily work.">はい。PM・デザイナー・マーケターなど、ロールに応じたAI活用研修を設計します。ChatGPT / Claude を業務で使いこなすための実践的なプログラムもご用意できます。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" tabindex="0" data-ja="すでにCopilotを契約していますが、乗り換えが必要ですか？" data-en="We already have Copilot — do we need to switch?">すでにCopilotを契約していますが、乗り換えが必要ですか？</div>
+          <div class="faq-answer">
+            <p data-ja="必ずしも乗り換えは必要ありません。現在のツールの活用度を診断した上で、補完的に別ツールを追加するか、運用ルールの整備で十分かを判断します。"
+              data-en="Not necessarily. We'll assess how well your current tools are being used, then decide whether to add complementary tools or simply improve usage guidelines.">必ずしも乗り換えは必要ありません。現在のツールの活用度を診断した上で、補完的に別ツールを追加するか、運用ルールの整備で十分かを判断します。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" tabindex="0" data-ja="研修だけの依頼も可能ですか？" data-en="Can we request training only?">研修だけの依頼も可能ですか？</div>
+          <div class="faq-answer">
+            <p data-ja="はい。研修のみ、規約策定のみ、レビュー体制構築のみなど、スコープを絞ったご依頼にも対応します。まず無料相談で最適なスコープを一緒に決めましょう。"
+              data-en="Yes. We accept scoped engagements — training only, guidelines only, or review workflow only. Let's determine the best scope together in a free consultation.">はい。研修のみ、規約策定のみ、レビュー体制構築のみなど、スコープを絞ったご依頼にも対応します。まず無料相談で最適なスコープを一緒に決めましょう。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" tabindex="0" data-ja="AIのセキュリティリスクが心配です。" data-en="We're concerned about AI security risks.">AIのセキュリティリスクが心配です。</div>
+          <div class="faq-answer">
+            <p data-ja="AI規約の中にセキュリティポリシーを組み込みます。機密情報の取り扱いルール、入出力のフィルタリング、コードレビュー時のセキュリティチェック項目など、リスクを最小化する仕組みを設計します。"
+              data-en="Security policies are built into the AI guidelines. We design safeguards including confidential data handling rules, input/output filtering, and security checkpoints during code review to minimize risk.">AI規約の中にセキュリティポリシーを組み込みます。機密情報の取り扱いルール、入出力のフィルタリング、コードレビュー時のセキュリティチェック項目など、リスクを最小化する仕組みを設計します。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" tabindex="0" data-ja="どのくらいの期間で効果が出ますか？" data-en="How long before we see results?">どのくらいの期間で効果が出ますか？</div>
+          <div class="faq-answer">
+            <p data-ja="研修直後から個人レベルの生産性向上は実感いただけます。チーム全体への定着には1〜2ヶ月が目安です。規約策定からレビュー体制構築まで含めたフルスコープの場合は2〜3ヶ月でご提案しています。"
+              data-en="Individual productivity gains are felt right after training. Full team adoption typically takes 1–2 months. A full-scope engagement including guidelines and review workflows is usually proposed over 2–3 months.">研修直後から個人レベルの生産性向上は実感いただけます。チーム全体への定着には1〜2ヶ月が目安です。規約策定からレビュー体制構築まで含めたフルスコープの場合は2〜3ヶ月でご提案しています。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section fade-in" id="contact">
+      <div style="background:linear-gradient(135deg,rgba(0,200,150,0.08) 0%,rgba(30,58,95,0.18) 100%);border:1.5px solid var(--color-accent);border-radius:16px;padding:2.5rem 2rem;text-align:center;">
+        <h2 style="color:var(--color-accent);border:none;padding:0;margin-bottom:0.5rem;font-size:1.5rem;"
+          data-ja="まず30分、チームのAI活用状況を聞かせてください。"
+          data-en="Let's start with 30 minutes — tell me about your team's AI usage.">まず30分、チームのAI活用状況を聞かせてください。</h2>
+        <p style="color:var(--color-sub);font-size:0.95rem;margin:0 0 2rem;line-height:1.8;"
+          data-ja="費用や進め方の話はその後で構いません。"
+          data-en="We can discuss pricing and next steps after.">費用や進め方の話はその後で構いません。</p>
+        <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+          <a href="https://calendly.com/yumauchida/meet-with-me" target="_blank" rel="noopener" class="contact-btn cta-primary" style="display:inline-flex;width:auto;padding:0.9em 2.5em;font-size:1.1em;">
+            <i class="fas fa-calendar-check"></i>
+            <span data-ja="カレンダーから相談予約" data-en="Book via Calendar">カレンダーから相談予約</span>
+          </a>
+          <a href="https://lin.ee/g7PLHqb" target="_blank" rel="noopener" class="contact-btn contact-btn--line" style="display:inline-flex;width:auto;padding:0.9em 2em;font-size:1.1em;">
+            <i class="fab fa-line"></i>
+            <span data-ja="LINEで相談する" data-en="Chat on LINE">LINEで相談する</span>
+          </a>
+        </div>
+        <p class="contact-divider" style="margin:2rem 0 1.5rem;"
+          data-ja="または、フォームからお問い合わせください"
+          data-en="Or reach out via the form below">または、フォームからお問い合わせください</p>
+        <div class="contact-content" style="text-align:left;max-width:560px;margin:0 auto;">
+          <form id="contact-form">
+            <div class="form-group">
+              <input type="text" name="user_name" placeholder="お名前" required>
+            </div>
+            <div class="form-group">
+              <input type="email" name="user_email" placeholder="メールアドレス" required>
+            </div>
+            <div class="form-group">
+              <select name="inquiry_type" required>
+                <option value="" data-ja="種類を選択してください" data-en="Select inquiry type">種類を選択してください</option>
+                <option value="AI導入・活用設計について" selected data-ja="AI導入・活用設計について" data-en="AI Implementation & Strategy">AI導入・活用設計について</option>
+                <option value="AI活用研修について" data-ja="AI活用研修について" data-en="AI Training">AI活用研修について</option>
+                <option value="チームAI規約策定について" data-ja="チームAI規約策定について" data-en="Team AI Guidelines">チームAI規約策定について</option>
+                <option value="スポット相談について" data-ja="スポット相談について" data-en="One-time Consultation">スポット相談について</option>
+                <option value="その他" data-ja="その他" data-en="Other">その他</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <textarea name="message" placeholder="メッセージ（課題・背景・希望稼働形態など）" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="contact-btn" data-ja="送信" data-en="Send">送信</button>
+          </form>
+          <div id="form-success" style="display: none;">
+            <div class="form-message success-message">
+              <div class="message-icon">&#10004;</div>
+              <h3 data-ja="送信完了！" data-en="Message Sent!">送信完了！</h3>
+              <p data-ja="お問い合わせありがとうございます。<br>48時間以内にご返信いたします。"
+                data-en="Thank you for your inquiry.<br>We'll respond within 48 hours.">お問い合わせありがとうございます。<br>48時間以内にご返信いたします。</p>
+            </div>
+          </div>
+          <div id="form-error" style="display: none;">
+            <div class="form-message error-message">
+              <div class="message-icon">&#10060;</div>
+              <h3 data-ja="送信エラー" data-en="Sending Error">送信エラー</h3>
+              <p data-ja="申し訳ございません。<br>しばらく後にもう一度お試しください。"
+                data-en="We're sorry.<br>Please try again later.">申し訳ございません。<br>しばらく後にもう一度お試しください。</p>
+            </div>
+          </div>
+        </div>
+        <p style="color:var(--color-sub);font-size:0.85rem;margin:2rem 0 0;"
+          data-ja='関連サービス：<a href="/services/infrastructure.html" style="color:var(--color-accent);">ECS / Kubernetesインフラ構築支援 &rarr;</a> &nbsp;|&nbsp; <a href="/services/cicd.html" style="color:var(--color-accent);">CI/CD・自動テスト基盤構築 &rarr;</a>'
+          data-en='Related services: <a href="/services/infrastructure.html" style="color:var(--color-accent);">ECS / Kubernetes Infrastructure &rarr;</a> &nbsp;|&nbsp; <a href="/services/cicd.html" style="color:var(--color-accent);">CI/CD & Automated Testing &rarr;</a>'>
+          関連サービス：<a href="/services/infrastructure.html" style="color:var(--color-accent);">ECS / Kubernetesインフラ構築支援 &rarr;</a>
+          &nbsp;|&nbsp;
+          <a href="/services/cicd.html" style="color:var(--color-accent);">CI/CD・自動テスト基盤構築 &rarr;</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span data-ja="&copy; 2024 打田裕馬 | エンジニアチーム強化パートナー" data-en="&copy; 2024 Yuma Uchida | Engineering Team Partner">&copy; 2024 打田裕馬 | エンジニアチーム強化パートナー</span>
+    </div>
+  </footer>
+
+  <script src="/script.js"></script>
+</body>
+
+</html>
