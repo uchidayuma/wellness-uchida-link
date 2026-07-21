@@ -1531,18 +1531,6 @@ body::before {
   color: var(--color-bg) !important;
 }
 
-/* ── LINEボタン ── */
-.contact-btn--line {
-  background: #06C755 !important;
-  color: #fff !important;
-}
-.contact-btn--line span, .contact-btn--line i {
-  color: #fff !important;
-}
-.contact-btn--line:hover {
-  background: #05a647 !important;
-  transform: translateY(-2px) scale(1.03) !important;
-}
 
 /* ── 社会的証明セクション ── */
 .proof-lead {
