@@ -1,435 +1,269 @@
 <!DOCTYPE html>
-<html lang="ja" class="scroll-smooth">
+<html lang="ja">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>打田裕馬 | フラクショナルCTO</title>
-  <meta name="description" content="CTOが必要、でもフルタイムでは雇えない。週1-2日からチームに入り、技術の意思決定・コードレビュー・AI導入を引き受けるフラクショナルCTO。" />
-  <meta name="theme-color" content="#0c1220" />
-  <link rel="icon" href="/images/favicon.png" type="image/png" />
+  <meta name="description" content="CTOが必要、でもフルタイムでは雇えない。週1-2日からチームに入り、外注先の管理・エンジニア育成・AI活用方針を引き受けるフラクショナルCTO。" />
+  <meta name="theme-color" content="#fdfcf9" />
+  <link rel="icon" href="images/favicon.png" type="image/png" />
 
-  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script async data-id="101489745" src="https://static.getclicky.com/js"></script>
-
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            base: '#0c1220',
-            surface: '#131b2e',
-            'surface-2': '#1a2540',
-            line: '#1e2d4a',
-            accent: '#00C896',
-            'accent-dim': '#0a2e25',
-            muted: '#94a3b8',
-            faint: '#64748b',
-          },
-          fontFamily: {
-            sans: ['"Noto Sans JP"', 'sans-serif'],
-            mono: ['"JetBrains Mono"', 'monospace'],
-          },
-          maxWidth: {
-            content: '64rem',
-          },
-        },
-      },
-    };
-  </script>
-
-  <style>
-    body {
-      background: #0c1220;
-      color: #e2e8f0;
-      font-family: 'Noto Sans JP', sans-serif;
-      -webkit-font-smoothing: antialiased;
-    }
-    ::selection { background: #00C896; color: #0c1220; }
-    html { scrollbar-color: #1e2d4a #0c1220; }
-    section[id] { scroll-margin-top: 5rem; }
-
-    #particles-bg {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      z-index: 0;
-      pointer-events: none;
-    }
-
-    .lang-btn { color: #64748b; cursor: pointer; }
-    .lang-btn.active { background: #1e2d4a; color: #e2e8f0; }
-    .lang-ja-only { display: inline-flex; }
-    .lang-en-only { display: none; }
-
-    /* FAQ accordion */
-    details summary::-webkit-details-marker { display: none; }
-    details summary { list-style: none; }
-    details[open] summary .faq-icon { transform: rotate(45deg); }
-
-    /* Subtle glow behind hero photo */
-    .hero-glow {
-      position: relative;
-    }
-    .hero-glow::before {
-      content: '';
-      position: absolute;
-      inset: -20px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(0,200,150,0.08) 0%, transparent 70%);
-      z-index: -1;
-    }
-  </style>
 </head>
 
-<body class="min-h-screen" data-title-ja="打田裕馬 | フラクショナルCTO" data-title-en="Yuma Uchida | Fractional CTO">
-
-  <canvas id="particles-bg"></canvas>
+<body data-title-ja="打田裕馬 | フラクショナルCTO" data-title-en="Yuma Uchida | Fractional CTO">
 
   <!-- ============ HEADER ============ -->
-  <header class="sticky top-0 z-50 border-b bg-[#0c1220]/90 backdrop-blur-md" style="border-color: rgba(30,45,74,0.6)">
-    <div class="mx-auto flex max-w-content items-center justify-between px-6 py-3">
-      <a href="#top" class="flex items-center gap-3">
-        <img src="/images/profile.png" alt="打田裕馬"
-             class="h-9 w-9 rounded-full object-cover" style="box-shadow: 0 0 0 1px #1e2d4a" />
-        <span class="leading-tight">
-          <span class="block text-sm font-bold text-white" data-ja="打田裕馬" data-en="Yuma Uchida">打田裕馬</span>
-          <span class="block text-[10px] tracking-widest text-faint" style="letter-spacing: 0.12em" data-ja="フラクショナルCTO" data-en="FRACTIONAL CTO">フラクショナルCTO</span>
-        </span>
+  <header class="site-header">
+    <div class="container">
+      <a href="#top" class="brand">
+        <span class="brand-name" data-ja="打田裕馬" data-en="Yuma Uchida">打田裕馬</span>
+        <span class="brand-role" data-ja="フラクショナルCTO" data-en="Fractional CTO">フラクショナルCTO</span>
       </a>
 
-      <nav class="hidden items-center gap-7 md:flex">
-        <a href="#services" class="text-sm text-muted transition-colors hover:text-white" data-ja="サービス" data-en="Services">サービス</a>
-        <a href="#works" class="text-sm text-muted transition-colors hover:text-white" data-ja="実績" data-en="Works">実績</a>
-        <a href="#pricing" class="text-sm text-muted transition-colors hover:text-white" data-ja="料金" data-en="Pricing">料金</a>
-        <a href="#faq" class="text-sm text-muted transition-colors hover:text-white" data-ja="FAQ" data-en="FAQ">FAQ</a>
-        <a href="#contact"
-           class="rounded-md bg-accent px-4 py-1.5 text-sm font-bold text-base transition-opacity hover:opacity-90"
-           data-ja="無料相談" data-en="Free Consult">
-          無料相談
-        </a>
+      <nav class="global-nav">
+        <a href="#services" data-ja="サービス" data-en="Services">サービス</a>
+        <a href="#works" data-ja="実績" data-en="Works">実績</a>
+        <a href="#pricing" data-ja="料金" data-en="Pricing">料金</a>
+        <a href="#faq" data-ja="FAQ" data-en="FAQ">FAQ</a>
+        <a href="#contact" class="btn" data-ja="無料相談" data-en="Free Consult">無料相談</a>
       </nav>
 
-      <div class="flex items-center gap-3 md:hidden">
-        <a href="#contact" class="rounded-md bg-accent px-3 py-1.5 text-sm font-bold text-base">無料相談</a>
-      </div>
+      <button id="mobile-menu-btn" class="menu-btn" aria-label="メニュー">MENU</button>
     </div>
+    <nav id="mobile-menu" class="mobile-nav hidden">
+      <div class="container">
+        <a href="#services" data-ja="サービス" data-en="Services">サービス</a>
+        <a href="#works" data-ja="実績" data-en="Works">実績</a>
+        <a href="#pricing" data-ja="料金" data-en="Pricing">料金</a>
+        <a href="#faq" data-ja="FAQ" data-en="FAQ">FAQ</a>
+        <a href="#contact" data-ja="無料相談" data-en="Free Consult">無料相談</a>
+      </div>
+    </nav>
   </header>
 
-  <main id="top" class="relative z-10">
+  <main id="top">
 
-    <!-- ============ 1. HERO ============ -->
-    <section class="relative overflow-hidden">
-      <div class="mx-auto max-w-content px-6 pb-16 pt-20 md:pt-28">
-        <div class="flex flex-col items-center text-center">
-
-          <div class="hero-glow mx-auto h-36 w-36 overflow-hidden rounded-full md:h-44 md:w-44" style="box-shadow: 0 0 0 2px #1e2d4a, 0 0 0 6px #131b2e">
-            <img src="/images/profile.png" alt="打田裕馬" class="h-full w-full object-cover" />
-          </div>
-
-          <h1 class="mt-10 max-w-xl text-[1.75rem] font-black leading-[1.5] text-white md:text-[2.1rem]"
-              data-ja="CTOが必要。でもフルタイムでは雇えない。"
-              data-en="You need a CTO. But can't hire one full-time.">
-            CTOが必要。<br class="sm:hidden" />でもフルタイムでは雇えない。
-          </h1>
-
-          <p class="mt-5 max-w-lg text-[15px] leading-[1.8] text-muted"
-             data-ja="技術のことは「こう判断すればいい」と、社長の隣で翻訳します。週1-2日からチームに入って、経営に集中できる状態をつくります。"
-             data-en="I translate tech decisions into business language, right beside you. 1-2 days a week, so you can focus on running the business.">
-            技術のことは「こう判断すればいい」と、社長の隣で翻訳します。<br class="hidden sm:block" />週1-2日からチームに入って、経営に集中できる状態をつくります。
-          </p>
-
-          <div class="mt-5 flex flex-wrap items-center justify-center gap-x-5 gap-y-1 text-[13px] text-faint">
-            <span data-ja="エンジニア歴15年" data-en="15 yrs engineering">エンジニア歴15年</span>
-            <span class="text-line">·</span>
-            <span data-ja="最大20名チームのPM" data-en="PM'd 20-person teams">最大20名チームのPM</span>
-          </div>
-
-          <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-            <a href="https://calendly.com/yumauchida/meet-with-me" target="_blank" rel="noopener"
-               class="inline-flex items-center justify-center gap-2 rounded-lg bg-accent px-7 py-3.5 text-[15px] font-bold text-base transition-opacity hover:opacity-90">
-              <span data-ja="無料で30分相談する" data-en="Book a Free 30-min Call">無料で30分相談する</span>
-              <span aria-hidden="true">→</span>
-            </a>
-            <a href="#pricing" class="inline-flex items-center justify-center gap-2 px-3 py-3.5 text-sm text-muted transition-colors hover:text-white"
-               data-ja="料金を見る ↓" data-en="See Pricing ↓">
-              料金を見る ↓
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ 2. PROBLEM ============ -->
-    <section id="problems" class="border-t py-16" style="border-color: #1e2d4a">
-      <div class="mx-auto max-w-content px-6">
-        <h2 class="text-center text-xl font-bold text-white md:text-2xl"
-            data-ja="この中に、当てはまるものはありませんか？"
-            data-en="Do any of these sound familiar?">
-          この中に、当てはまるものはありませんか？
-        </h2>
-
-        <div class="mx-auto mt-10 max-w-3xl space-y-4">
-          <div class="rounded-lg border border-line/60 bg-surface px-6 py-5 transition-colors hover:border-line">
-            <p class="text-[15px] leading-[1.8] text-slate-200"
-               data-ja="外注先に月100万円以上払っている。でも「この見積もりは妥当なのか？」が自分では判断できない。"
-               data-en="You're paying over ¥1M/month to outsourcers. But you can't tell if their estimates are fair.">
-              外注先に月100万円以上払っている。でも「この見積もりは妥当なのか？」が自分では判断できない。
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <h1 data-ja="CTOが必要。でもフルタイムでは雇えない。"
+                data-en="You need a CTO. But can't hire one full-time.">
+              CTOが必要。<br />でもフルタイムでは雇えない。
+            </h1>
+            <p class="hero-lead"
+               data-ja="技術のことは「こう判断すればいい」と、社長の隣で翻訳します。週1-2日からチームに入って、経営に集中できる状態をつくります。"
+               data-en="I translate tech decisions into business language, right beside you. 1-2 days a week, so you can focus on running the business.">
+              技術のことは「こう判断すればいい」と、社長の隣で翻訳します。週1-2日からチームに入って、経営に集中できる状態をつくります。
             </p>
-            <p class="mt-2 text-[13px] text-faint"
-               data-ja="→ 言われるがまま払い続け、割高かどうかも分からない状態が続きます"
-               data-en="→ You keep paying without knowing if you're overpaying">
-              → 言われるがまま払い続け、割高かどうかも分からない状態が続きます
-            </p>
-          </div>
-          <div class="rounded-lg border border-line/60 bg-surface px-6 py-5 transition-colors hover:border-line">
-            <p class="text-[15px] leading-[1.8] text-slate-200"
-               data-ja="新しく雇ったエンジニアの仕事が良いのか悪いのか、社内の誰も評価できない。"
-               data-en="You hired an engineer, but nobody in the company can evaluate their work.">
-              新しく雇ったエンジニアの仕事が良いのか悪いのか、社内の誰も評価できない。
-            </p>
-            <p class="mt-2 text-[13px] text-faint"
-               data-ja="→ 前のエンジニアも8ヶ月で辞めた。同じことが繰り返されます"
-               data-en="→ The last engineer quit after 8 months. The cycle repeats">
-              → 前のエンジニアも8ヶ月で辞めた。同じことが繰り返されます
-            </p>
-          </div>
-          <div class="rounded-lg border border-line/60 bg-surface px-6 py-5 transition-colors hover:border-line">
-            <p class="text-[15px] leading-[1.8] text-slate-200"
-               data-ja="「AIで何かできるらしい」のは分かる。でも、うちの会社で何をすればいいのか誰にも聞けない。"
-               data-en="You know AI can do something. But you can't figure out what to do with it in your company.">
-              「AIで何かできるらしい」のは分かる。でも、うちの会社で何をすればいいのか誰にも聞けない。
-            </p>
-            <p class="mt-2 text-[13px] text-faint"
-               data-ja="→ 取締役会で「AI対応どうなってる？」と聞かれて答えられない状態が続きます"
-               data-en="→ The board keeps asking about AI strategy and you have no answer">
-              → 取締役会で「AI対応どうなってる？」と聞かれて答えられない状態が続きます
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ 3. SOLUTION ============ -->
-    <section id="services" class="border-t bg-surface/50 py-16" style="border-color: #1e2d4a">
-      <div class="mx-auto max-w-content px-6">
-        <h2 class="text-xl font-bold text-white md:text-2xl"
-            data-ja="週1-2日、チームに入って技術の意思決定を引き受けます"
-            data-en="I join your team 1-2 days/week and own the technical decisions">
-          週1-2日、チームに入って技術の意思決定を引き受けます
-        </h2>
-        <p class="mt-3 max-w-2xl text-[15px] leading-[1.8] text-muted"
-           data-ja="外注先との打ち合わせに同席して「その見積もりは妥当です」「ここはおかしい」と横で翻訳する。エンジニアの成果物をチェックしてフィードバックする。技術の「右腕」を、週1-2日・月額制で。"
-           data-en="I sit in on vendor meetings and translate: 'This estimate is fair' or 'This doesn't add up.' I review your engineer's work and give feedback. A technical right-hand, 1-2 days a week.">
-          外注先との打ち合わせに同席して「その見積もりは妥当です」「ここはおかしい」と横で翻訳する。<br class="hidden md:block" />エンジニアの成果物をチェックしてフィードバックする。技術の「右腕」を、週1-2日・月額制で。
-        </p>
-
-        <div class="mt-10 grid gap-5 lg:grid-cols-3">
-          <div class="group flex flex-col rounded-lg border border-line/60 bg-base p-6 transition-colors hover:border-accent/30">
-            <h3 class="text-[17px] font-bold text-white" data-ja="外注先・ベンダーとの橋渡し" data-en="Vendor Bridge">外注先・ベンダーとの橋渡し</h3>
-            <p class="mt-3 flex-1 text-[14px] leading-[1.8] text-muted"
-               data-ja="定例会議に同席し、見積もりや提案が妥当かをその場で判断します。「言われるがまま」の状態を終わらせます。"
-               data-en="I join your vendor meetings and judge estimates on the spot. No more paying whatever they ask.">
-              定例会議に同席し、見積もりや提案が妥当かをその場で判断します。「言われるがまま」の状態を終わらせます。
-            </p>
-            <p class="mt-3 text-[12px] text-faint" data-ja="→ 見積もり精査 / 技術提案の妥当性判断 / ベンダー選定" data-en="→ Estimate review / proposal evaluation / vendor selection">→ 見積もり精査 / 技術提案の妥当性判断 / ベンダー選定</p>
-          </div>
-
-          <div class="group flex flex-col rounded-lg border border-line/60 bg-base p-6 transition-colors hover:border-accent/30">
-            <h3 class="text-[17px] font-bold text-white" data-ja="エンジニアの育成・評価" data-en="Engineer Growth">エンジニアの育成・評価</h3>
-            <p class="mt-3 flex-1 text-[14px] leading-[1.8] text-muted"
-               data-ja="エンジニアの成果物を定期的にチェックして、本人にフィードバックします。「良いのか悪いのか分からない」状態をなくします。"
-               data-en="I review your engineer's output regularly and give them direct feedback. No more guessing if they're doing well.">
-              エンジニアの成果物を定期的にチェックして、本人にフィードバックします。「良いのか悪いのか分からない」状態をなくします。
-            </p>
-            <p class="mt-3 text-[12px] text-faint" data-ja="→ 成果物レビュー / 育成フィードバック / 評価基準の整備" data-en="→ Work review / growth feedback / evaluation criteria">→ 成果物レビュー / 育成フィードバック / 評価基準の整備</p>
-          </div>
-
-          <div class="group flex flex-col rounded-lg border border-line/60 bg-base p-6 transition-colors hover:border-accent/30">
-            <h3 class="text-[17px] font-bold text-white" data-ja="AI活用の方針づくり" data-en="AI Strategy">AI活用の方針づくり</h3>
-            <p class="mt-3 flex-1 text-[14px] leading-[1.8] text-muted"
-               data-ja="「AIをやれ」と言われても何から手をつければいいか分からない。御社の業務を見て、どこにAIが効くかを一緒に整理します。"
-               data-en="'Do something with AI' — but where to start? I look at your operations and identify where AI actually helps.">
-              「AIをやれ」と言われても何から手をつければいいか分からない。御社の業務を見て、どこにAIが効くかを一緒に整理します。
-            </p>
-            <p class="mt-3 text-[12px] text-faint" data-ja="→ 業務分析 / AI活用計画 / ツール選定・導入サポート" data-en="→ Operations review / AI plan / tool selection & rollout">→ 業務分析 / AI活用計画 / ツール選定・導入サポート</p>
-          </div>
-        </div>
-
-        <div class="mt-10 text-center">
-          <a href="https://calendly.com/yumauchida/meet-with-me" target="_blank" rel="noopener"
-             class="inline-flex items-center gap-2 rounded-lg bg-accent px-7 py-3.5 text-[15px] font-bold text-base transition-opacity hover:opacity-90"
-             data-ja="無料で30分相談する →" data-en="Book a Free 30-min Call →">
-            無料で30分相談する →
-          </a>
-          <p class="mt-2 text-[12px] text-faint" data-ja="営業はしません。課題と優先度を整理してお返しします。" data-en="No sales pitch. You'll walk away with clear priorities.">営業はしません。課題と優先度を整理してお返しします。</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ 4. WORKS ============ -->
-    <section id="works" class="border-t py-16" style="border-color: #1e2d4a">
-      <div class="mx-auto max-w-content px-6">
-        <h2 class="text-xl font-bold text-white md:text-2xl"
-            data-ja="入って数ヶ月で、こう変わりました"
-            data-en="A few months in — here's what changed">
-          入って数ヶ月で、こう変わりました
-        </h2>
-
-        <div class="mt-10 space-y-6">
-
-          <!-- Case 01 -->
-          <article class="overflow-hidden rounded-lg border border-line/60 bg-surface">
-            <div class="px-6 py-4">
-              <p class="text-[15px] font-bold text-white"
-                  data-ja="システム障害が頻発 → 管理職の負担が月6時間減り、新機能の開発速度が1.6倍に"
-                  data-en="Frequent system failures → 6h/month less management overhead, 1.6x faster feature delivery">
-                システム障害が頻発 → 管理職の負担が月6時間減り、新機能の開発速度が1.6倍に
-              </p>
-              <p class="mt-0.5 text-[13px] text-faint" data-ja="医療系の顧客管理システム / 20名チーム・全国60拠点" data-en="Healthcare customer system / 20-person team, 60 locations">医療系の顧客管理システム / 20名チーム・全国60拠点</p>
+            <div class="hero-actions">
+              <a href="https://calendly.com/yumauchida/meet-with-me" target="_blank" rel="noopener" class="btn"
+                 data-ja="無料で30分相談する" data-en="Book a Free 30-min Call">無料で30分相談する</a>
+              <a href="#pricing" data-ja="料金を見る" data-en="See Pricing">料金を見る</a>
             </div>
-            <div class="grid border-t border-line/40 md:grid-cols-12">
-              <div class="flex items-center justify-center gap-6 border-b border-line/40 bg-base/50 px-6 py-6 md:col-span-4 md:border-b-0 md:border-r md:flex-col md:gap-3">
-                <div class="text-center">
-                  <p class="font-mono text-4xl font-bold text-accent">-6h</p>
-                  <p class="text-[12px] text-muted" data-ja="管理職の月間負荷" data-en="Monthly mgmt load">管理職の月間負荷</p>
-                </div>
-                <div class="flex gap-5 text-center">
-                  <div>
-                    <p class="font-mono text-lg font-bold text-white">1.6<span class="text-sm text-faint">倍</span></p>
-                    <p class="text-[11px] text-faint" data-ja="開発速度" data-en="Dev speed">開発速度</p>
-                  </div>
-                </div>
+          </div>
+          <div class="hero-photo">
+            <img src="images/profile.png" alt="打田裕馬" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 01 PROBLEM ============ -->
+    <section id="problems" class="section section--alt">
+      <div class="container">
+        <div class="split">
+          <div class="sec-head">
+            <p class="sec-number"><span data-ja="01 課題" data-en="01 PAIN POINTS">01 課題</span></p>
+            <h2 data-ja="この中に、当てはまるものはありませんか？"
+                data-en="Do any of these sound familiar?">
+              この中に、当てはまるものはありませんか？
+            </h2>
+          </div>
+
+          <div class="ruled-list">
+            <div class="ruled-item">
+              <p><strong
+                 data-ja="外注先に毎月まとまった金額を払っている。でも「この見積もりは妥当なのか？」が自分では判断できない。"
+                 data-en="You're paying a significant sum to outsourcers every month. But you can't tell if their estimates are fair.">
+                外注先に毎月まとまった金額を払っている。でも「この見積もりは妥当なのか？」が自分では判断できない。
+              </strong></p>
+              <p class="sub"
+                 data-ja="言われるがまま払い続け、割高かどうかも分からない状態が続きます。"
+                 data-en="You keep paying without knowing if you're overpaying.">
+                言われるがまま払い続け、割高かどうかも分からない状態が続きます。
+              </p>
+            </div>
+            <div class="ruled-item">
+              <p><strong
+                 data-ja="新しく雇ったエンジニアの仕事が良いのか悪いのか、社内の誰も評価できない。"
+                 data-en="You hired an engineer, but nobody in the company can evaluate their work.">
+                新しく雇ったエンジニアの仕事が良いのか悪いのか、社内の誰も評価できない。
+              </strong></p>
+              <p class="sub"
+                 data-ja="前のエンジニアも8ヶ月で辞めた。同じことが繰り返されます。"
+                 data-en="The last engineer quit after 8 months. The cycle repeats.">
+                前のエンジニアも8ヶ月で辞めた。同じことが繰り返されます。
+              </p>
+            </div>
+            <div class="ruled-item">
+              <p><strong
+                 data-ja="「AIで何かできるらしい」のは分かる。でも、うちの会社で何をすればいいのか誰にも聞けない。"
+                 data-en="You know AI can do something. But you can't figure out what to do with it in your company.">
+                「AIで何かできるらしい」のは分かる。でも、うちの会社で何をすればいいのか誰にも聞けない。
+              </strong></p>
+              <p class="sub"
+                 data-ja="取締役会で「AI対応どうなってる？」と聞かれて答えられない状態が続きます。"
+                 data-en="The board keeps asking about AI strategy and you have no answer.">
+                取締役会で「AI対応どうなってる？」と聞かれて答えられない状態が続きます。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 02 SERVICES ============ -->
+    <section id="services" class="section">
+      <div class="container">
+        <div class="split">
+          <div class="sec-head">
+            <p class="sec-number"><span data-ja="02 サービス" data-en="02 SERVICES">02 サービス</span></p>
+            <h2 data-ja="週1-2日、チームに入って技術の意思決定を引き受けます"
+                data-en="I join your team 1-2 days/week and own the technical decisions">
+              週1-2日、チームに入って技術の意思決定を引き受けます
+            </h2>
+          </div>
+
+          <div>
+            <p data-ja="外注先との打ち合わせに同席して「その見積もりは妥当です」「ここはおかしい」と横で翻訳する。エンジニアの成果物をチェックしてフィードバックする。技術の「右腕」を、週1-2日・月額制で。"
+               data-en="I sit in on vendor meetings and translate: 'This estimate is fair' or 'This doesn't add up.' I review your engineer's work and give feedback. A technical right-hand, 1-2 days a week.">
+              外注先との打ち合わせに同席して「その見積もりは妥当です」「ここはおかしい」と横で翻訳する。エンジニアの成果物をチェックしてフィードバックする。技術の「右腕」を、週1-2日・月額制で。
+            </p>
+
+            <div class="ruled-list" style="margin-top: 2.5rem;">
+              <div class="ruled-item">
+                <p class="ruled-item-num">01</p>
+                <h3 data-ja="外注先・ベンダーとの橋渡し" data-en="Vendor Bridge">外注先・ベンダーとの橋渡し</h3>
+                <p data-ja="定例会議に同席し、見積もりや提案が妥当かをその場で判断します。「言われるがまま」の状態を終わらせます。"
+                   data-en="I join your vendor meetings and judge estimates on the spot. No more paying whatever they ask.">
+                  定例会議に同席し、見積もりや提案が妥当かをその場で判断します。「言われるがまま」の状態を終わらせます。
+                </p>
               </div>
-              <div class="px-6 py-5 md:col-span-8">
-                <p class="text-[14px] leading-[1.8] text-muted"
-                   data-ja="品質管理が1人に集中し、システム障害が月1回以上起きていた。チェック体制を整備し、管理職が確認に使っていた月6時間を解消。開発チームが新しい機能に集中できるようになり、リリース速度が1.6倍に。"
-                   data-en="Quality depended on one person, causing monthly system failures. Built a review structure, freed 6h/month of management time, and let the team focus on new features — 1.6x faster releases.">
-                  品質管理が1人に集中し、システム障害が月1回以上起きていた。チェック体制を整備し、管理職が確認に使っていた月6時間を解消。開発チームが新しい機能に集中できるようになり、リリース速度が1.6倍に。
+              <div class="ruled-item">
+                <p class="ruled-item-num">02</p>
+                <h3 data-ja="エンジニアの育成・評価" data-en="Engineer Growth">エンジニアの育成・評価</h3>
+                <p data-ja="エンジニアの成果物を定期的にチェックして、本人にフィードバックします。「良いのか悪いのか分からない」状態をなくします。"
+                   data-en="I review your engineer's output regularly and give them direct feedback. No more guessing if they're doing well.">
+                  エンジニアの成果物を定期的にチェックして、本人にフィードバックします。「良いのか悪いのか分からない」状態をなくします。
+                </p>
+              </div>
+              <div class="ruled-item">
+                <p class="ruled-item-num">03</p>
+                <h3 data-ja="AI活用の方針づくり" data-en="AI Strategy">AI活用の方針づくり</h3>
+                <p data-ja="「AIをやれ」と言われても何から手をつければいいか分からない。御社の業務を見て、どこにAIが効くかを一緒に整理します。"
+                   data-en="'Do something with AI' — but where to start? I look at your operations and identify where AI actually helps.">
+                  「AIをやれ」と言われても何から手をつければいいか分からない。御社の業務を見て、どこにAIが効くかを一緒に整理します。
                 </p>
               </div>
             </div>
-          </article>
 
-          <!-- Case 02 -->
-          <article class="overflow-hidden rounded-lg border border-line/60 bg-surface">
-            <div class="px-6 py-4">
-              <p class="text-[15px] font-bold text-white"
-                  data-ja="新メンバーが来るたびに半日つぶれる準備作業 → 自動化して月32時間を削減"
-                  data-en="Half-day setup for every new member → automated, saving 32h/month">
-                新メンバーが来るたびに半日つぶれる準備作業 → 自動化して月32時間を削減
-              </p>
-              <p class="mt-0.5 text-[13px] text-faint" data-ja="宿泊施設向けの予約管理ツール / 多国籍チーム" data-en="Hotel reservation tool / multinational team">宿泊施設向けの予約管理ツール / 多国籍チーム</p>
+            <div style="margin-top: 2.5rem;">
+              <a href="https://calendly.com/yumauchida/meet-with-me" target="_blank" rel="noopener" class="btn"
+                 data-ja="無料で30分相談する" data-en="Book a Free 30-min Call">無料で30分相談する</a>
+              <p class="btn-note" data-ja="営業はしません。課題と優先度を整理してお返しします。" data-en="No sales pitch. You'll walk away with clear priorities.">営業はしません。課題と優先度を整理してお返しします。</p>
             </div>
-            <div class="grid border-t border-line/40 md:grid-cols-12">
-              <div class="flex items-center justify-center border-b border-line/40 bg-base/50 px-6 py-6 md:col-span-4 md:border-b-0 md:border-r">
-                <div class="text-center">
-                  <p class="font-mono text-4xl font-bold text-accent">-32h</p>
-                  <p class="text-[12px] text-muted" data-ja="手作業の工数/月" data-en="Manual work/month">手作業の工数/月</p>
-                </div>
-              </div>
-              <div class="px-6 py-5 md:col-span-8">
-                <p class="text-[14px] leading-[1.8] text-muted"
-                   data-ja="新しいメンバーが入るたびに半日かけて手作業で環境を用意していた。この準備作業を自動化し、月12時間のリリース作業と月20時間の手動チェックを削減。誰がやっても同じ結果になる体制に。"
-                   data-en="Every new member meant half a day of manual setup. Automated the process, cutting 12h/month of release work and 20h/month of manual checks. Now anyone can do it with the same result.">
-                  新しいメンバーが入るたびに半日かけて手作業で環境を用意していた。この準備作業を自動化し、月12時間のリリース作業と月20時間の手動チェックを削減。誰がやっても同じ結果になる体制に。
-                </p>
-              </div>
-            </div>
-          </article>
-
-          <!-- Case 03 -->
-          <article class="overflow-hidden rounded-lg border border-line/60 bg-surface">
-            <div class="px-6 py-4">
-              <p class="text-[15px] font-bold text-white"
-                  data-ja="注文システムを1人のエンジニアに握られていた → 自動化して受注率+5%"
-                  data-en="Order system depended on one engineer → automated, +5% order rate">
-                注文システムを1人のエンジニアに握られていた → 自動化して受注率+5%
-              </p>
-              <p class="mt-0.5 text-[13px] text-faint" data-ja="フランチャイズの基幹システム" data-en="Franchise core system">フランチャイズの基幹システム</p>
-            </div>
-            <div class="grid border-t border-line/40 md:grid-cols-12">
-              <div class="flex items-center justify-center gap-2 border-b border-line/40 bg-base/50 px-6 py-6 md:col-span-4 md:border-b-0 md:border-r md:flex-col">
-                <p class="font-mono text-2xl font-bold text-accent" data-ja="属人化を解消" data-en="No more key-person risk">属人化を解消</p>
-                <p class="text-[13px] text-muted" data-ja="受注率 +5%" data-en="+5% order rate">受注率 +5%</p>
-              </div>
-              <div class="px-6 py-5 md:col-span-8">
-                <p class="text-[14px] leading-[1.8] text-muted"
-                   data-ja="システムの更新作業が特定の1人にしかできず、その人が休むと何も進まない状態だった。更新作業を自動化し、誰でもできる体制に移行。システムの安定化により当日受注率が5%向上した。"
-                   data-en="System updates depended on one person — if they were out, nothing moved. Automated the update process so anyone could handle it. System stability improved, boosting same-day order rate by 5%.">
-                  システムの更新作業が特定の1人にしかできず、その人が休むと何も進まない状態だった。更新作業を自動化し、誰でもできる体制に移行。システムの安定化により当日受注率が5%向上した。
-                </p>
-              </div>
-            </div>
-          </article>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ============ 5. CREDIBILITY BAR ============ -->
-    <section class="border-t border-b bg-surface/60 py-6" style="border-color: #1e2d4a">
-      <div class="mx-auto max-w-content px-6">
-        <div class="flex flex-wrap items-center justify-center gap-x-10 gap-y-3">
-          <div class="text-center">
-            <p class="font-mono text-xl font-bold text-white">26,000<span class="text-accent">+</span></p>
-            <p class="text-[11px] text-faint" data-ja="Udemy受講生" data-en="Udemy Students">Udemy受講生</p>
+    <!-- ============ 03 WORKS ============ -->
+    <section id="works" class="section section--alt">
+      <div class="container">
+        <div class="split">
+          <div class="sec-head">
+            <p class="sec-number"><span data-ja="03 実績" data-en="03 RESULTS">03 実績</span></p>
+            <h2 data-ja="これまでの現場で出した変化（実測）"
+                data-en="Measured changes delivered in past engagements">
+              これまでの現場で出した変化（実測）
+            </h2>
           </div>
-          <div class="hidden h-6 w-px sm:block" style="background:#1e2d4a"></div>
-          <div class="text-center">
-            <p class="text-xl font-bold text-white" data-ja="ベスト<span class='text-accent'>セラー</span>" data-en="Best<span class='text-accent'>Seller</span>">ベスト<span class="text-accent">セラー</span></p>
-            <p class="text-[11px] text-faint" data-ja="複数コース" data-en="Multiple Courses">複数コース</p>
+
+          <div>
+            <div class="ruled-list">
+              <div class="result-item">
+                <p class="result-value" data-ja="受注率 +5%" data-en="+5% orders">受注率 +5%</p>
+                <p data-ja="訪問先でその場で複数パターンの見積もりを出せる仕組みを作り、施工サービスの当日受注率が5%上がった。"
+                   data-en="Built a system that lets field staff present multiple quote options on the spot, raising the same-day order rate of a construction service by 5%.">
+                  訪問先でその場で複数パターンの見積もりを出せる仕組みを作り、施工サービスの当日受注率が5%上がった。
+                </p>
+              </div>
+              <div class="result-item">
+                <p class="result-value" data-ja="-32時間/月" data-en="-32h/month">-32時間/月</p>
+                <p data-ja="手作業だったリリース作業とテストを自動化し、開発チームの毎月32時間を削減した。"
+                   data-en="Automated previously manual release work and testing, saving the development team 32 hours every month.">
+                  手作業だったリリース作業とテストを自動化し、開発チームの毎月32時間を削減した。
+                </p>
+              </div>
+              <div class="result-item">
+                <p class="result-value" data-ja="-6時間/月" data-en="-6h/month">-6時間/月</p>
+                <p data-ja="プロジェクト責任者として判断を巻き取り、経営層の調整時間を毎月6時間減らした。"
+                   data-en="Took over decision-making as the project lead, cutting 6 hours of executive coordination time per month.">
+                  プロジェクト責任者として判断を巻き取り、経営層の調整時間を毎月6時間減らした。
+                </p>
+              </div>
+            </div>
+            <p class="result-note"
+               data-ja="※いずれも過去の支援先プロジェクトでの実測値です。"
+               data-en="* All figures are measured results from past client projects.">
+              ※いずれも過去の支援先プロジェクトでの実測値です。
+            </p>
+            <p class="small" style="margin-top: 1em;">
+              <a href="achievements.html" data-ja="経歴・実績の詳細を見る" data-en="See detailed career &amp; achievements">経歴・実績の詳細を見る</a>
+            </p>
           </div>
-          <div class="hidden h-6 w-px sm:block" style="background:#1e2d4a"></div>
-          <div class="text-center">
-            <p class="font-mono text-xl font-bold text-white">95<span class="text-accent">%+</span></p>
-            <p class="text-[11px] text-faint" data-ja="研修満足度" data-en="Training Satisfaction">研修満足度</p>
-          </div>
-          <div class="hidden h-6 w-px sm:block" style="background:#1e2d4a"></div>
-          <a href="/achievements.html" class="text-[13px] text-muted transition-colors hover:text-white"
-             data-ja="講師活動を見る →" data-en="View achievements →">
-            講師活動を見る →
-          </a>
         </div>
       </div>
     </section>
 
-    <!-- ============ 6. HOW IT WORKS ============ -->
-    <section id="how" class="py-16">
-      <div class="mx-auto max-w-content px-6">
-        <h2 class="text-center text-xl font-bold text-white md:text-2xl"
-            data-ja="始め方は3ステップ"
-            data-en="3 steps to get started">
-          始め方は3ステップ
-        </h2>
+    <!-- ============ 04 HOW IT WORKS ============ -->
+    <section id="how" class="section">
+      <div class="container">
+        <div class="split">
+          <div class="sec-head">
+            <p class="sec-number"><span data-ja="04 はじめかた" data-en="04 HOW IT WORKS">04 はじめかた</span></p>
+            <h2 data-ja="始め方は3ステップ" data-en="3 steps to get started">始め方は3ステップ</h2>
+          </div>
 
-        <div class="mx-auto mt-10 max-w-3xl">
-          <div class="grid gap-0 md:grid-cols-3">
-            <div class="relative border-b border-line/40 p-6 md:border-b-0 md:border-r">
-              <span class="text-[13px] font-bold text-accent">ステップ 1</span>
-              <h3 class="mt-2 text-[15px] font-bold text-white" data-ja="無料ヒアリング" data-en="Free Consultation">無料ヒアリング</h3>
-              <p class="mt-2 text-[14px] leading-[1.8] text-muted"
-                 data-ja="30分でチームの状況を聞きます。費用はかかりません。"
+          <div class="ruled-list">
+            <div class="ruled-item">
+              <p class="ruled-item-num">01</p>
+              <h3 data-ja="無料ヒアリング" data-en="Free Consultation">無料ヒアリング</h3>
+              <p data-ja="30分でチームの状況を聞きます。費用はかかりません。"
                  data-en="30 min to hear about your team. Completely free.">
                 30分でチームの状況を聞きます。費用はかかりません。
               </p>
             </div>
-            <div class="relative border-b border-line/40 p-6 md:border-b-0 md:border-r">
-              <span class="text-[13px] font-bold text-accent">ステップ 2</span>
-              <h3 class="mt-2 text-[15px] font-bold text-white" data-ja="スコープ提案" data-en="Scope Proposal">スコープ提案</h3>
-              <p class="mt-2 text-[14px] leading-[1.8] text-muted"
-                 data-ja="何をどの順でやるか提案します。合わなければここで終了OK。"
+            <div class="ruled-item">
+              <p class="ruled-item-num">02</p>
+              <h3 data-ja="スコープ提案" data-en="Scope Proposal">スコープ提案</h3>
+              <p data-ja="何をどの順でやるか提案します。合わなければここで終了OK。"
                  data-en="I propose what to do and in what order. No obligation to proceed.">
                 何をどの順でやるか提案します。合わなければここで終了OK。
               </p>
             </div>
-            <div class="p-6">
-              <span class="text-[13px] font-bold text-accent">ステップ 3</span>
-              <h3 class="mt-2 text-[15px] font-bold text-white" data-ja="チームに参画" data-en="Join the Team">チームに参画</h3>
-              <p class="mt-2 text-[14px] leading-[1.8] text-muted"
-                 data-ja="すぐ動き始めます。最初の1ヶ月は現状把握と優先順位の整理から。"
+            <div class="ruled-item">
+              <p class="ruled-item-num">03</p>
+              <h3 data-ja="チームに参画" data-en="Join the Team">チームに参画</h3>
+              <p data-ja="すぐ動き始めます。最初の1ヶ月は現状把握と優先順位の整理から。"
                  data-en="I start right away. Month 1 is about understanding the current state.">
                 すぐ動き始めます。最初の1ヶ月は現状把握と優先順位の整理から。
               </p>
@@ -439,203 +273,194 @@
       </div>
     </section>
 
-    <!-- ============ 7. PRICING ============ -->
-    <section id="pricing" class="border-t bg-surface/50 py-16" style="border-color: #1e2d4a">
-      <div class="mx-auto max-w-content px-6">
-        <h2 class="text-xl font-bold text-white md:text-2xl"
-            data-ja="料金の目安"
-            data-en="Pricing Guide">
-          料金の目安
-        </h2>
-
-        <p class="mt-3 text-[14px] text-muted"
-           data-ja="CTOを正社員で雇うと年1,000万円超。その「一部だけ」を、必要な分だけ使う選択肢です。"
-           data-en="A full-time CTO costs ¥10M+/year. This lets you use just the part you need.">
-          CTOを正社員で雇うと年1,000万円超。その「一部だけ」を、必要な分だけ使う選択肢です。
-        </p>
-
-        <div class="mt-10 grid gap-5 md:grid-cols-3">
-
-          <div class="relative rounded-lg border bg-base p-6" style="border-color: #00C896">
-            <span class="absolute -top-2.5 right-5 rounded-full bg-accent px-3 py-0.5 text-[11px] font-bold text-base" data-ja="まずはここから" data-en="Start here">まずはここから</span>
-            <h3 class="text-[15px] font-bold text-white" data-ja="スポット相談" data-en="Spot Consultation">スポット相談</h3>
-            <p class="mt-3">
-              <span class="font-mono text-3xl font-bold text-white">¥10,000</span>
-              <span class="text-[14px] text-muted"> / 60min</span>
-            </p>
-            <p class="mt-1 text-[13px] text-accent" data-ja="まず1時間、壁打ちしたい方" data-en="For a 1-hour sounding board">まず1時間、壁打ちしたい方</p>
-            <p class="mt-3 text-[14px] leading-[1.8] text-muted"
-               data-ja="何から手をつければいいかわからない、という段階でOKです。外注先の見積もり、エンジニアの評価、AI導入の相談に。"
-               data-en="Don't know where to start? That's fine. For vendor estimates, engineer evaluation, or AI adoption questions.">
-              何から手をつければいいかわからない、という段階でOKです。外注先の見積もり、エンジニアの評価、AI導入の相談に。
-            </p>
+    <!-- ============ 05 PRICING ============ -->
+    <section id="pricing" class="section section--alt">
+      <div class="container">
+        <div class="split">
+          <div class="sec-head">
+            <p class="sec-number"><span data-ja="05 料金" data-en="05 PRICING">05 料金</span></p>
+            <h2 data-ja="料金の目安" data-en="Pricing Guide">料金の目安</h2>
           </div>
 
-          <div class="rounded-lg border border-line/60 bg-base p-6">
-            <h3 class="text-[15px] font-bold text-white" data-ja="アドバイザリー" data-en="Advisory">アドバイザリー</h3>
-            <p class="mt-3">
-              <span class="font-mono text-3xl font-bold text-white">¥200,000</span>
-              <span class="text-[14px] text-muted" data-ja="〜 / 月" data-en="〜 / mo">〜 / 月</span>
-            </p>
-            <p class="mt-1 text-[13px] text-accent" data-ja="迷ったとき、すぐ聞ける人がほしい方" data-en="Need someone to ask when stuck">迷ったとき、すぐ聞ける人がほしい方</p>
-            <p class="mt-3 text-[14px] leading-[1.8] text-muted"
-               data-ja="月2-4回のレビュー・相談。チャットでの質問対応も含みます。外注先との定例に同席する使い方も。"
-               data-en="2-4 reviews per month plus chat support. Can also join your vendor meetings.">
-              月2-4回のレビュー・相談。チャットでの質問対応も含みます。外注先との定例に同席する使い方も。
-            </p>
-          </div>
-
-          <div class="rounded-lg border border-line/60 bg-base p-6">
-            <h3 class="text-[15px] font-bold text-white" data-ja="チーム参画" data-en="Team Embedded">チーム参画</h3>
-            <p class="mt-3">
-              <span class="font-mono text-3xl font-bold text-white">¥400,000</span>
-              <span class="text-[14px] text-muted" data-ja="〜 / 月" data-en="〜 / mo">〜 / 月</span>
-            </p>
-            <p class="mt-1 text-[13px] text-accent" data-ja="技術判断からエンジニア育成まで丸ごと任せたい方" data-en="Hand off all technical decisions and engineer growth">技術判断からエンジニア育成まで丸ごと任せたい方</p>
-            <p class="mt-3 text-[14px] leading-[1.8] text-muted"
-               data-ja="週1-2日、チームに入ります。外注先管理、エンジニアへのフィードバック、AI活用方針まで。"
-               data-en="1-2 days/week in your team. Vendor management, engineer feedback, and AI strategy.">
-              週1-2日、チームに入ります。外注先管理、エンジニアへのフィードバック、AI活用方針まで。
-            </p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ 8. FAQ ============ -->
-    <section id="faq" class="border-t py-16" style="border-color: #1e2d4a">
-      <div class="mx-auto max-w-content px-6">
-        <h2 class="text-xl font-bold text-white md:text-2xl"
-            data-ja="よくある質問"
-            data-en="Frequently Asked Questions">
-          よくある質問
-        </h2>
-
-        <div class="mx-auto mt-8 max-w-3xl divide-y" style="border-color: #1e2d4a">
-          <details class="group py-5" style="border-color: #1e2d4a">
-            <summary class="flex cursor-pointer items-center justify-between text-[15px] font-medium text-slate-200 transition-colors hover:text-white">
-              <span data-ja="フラクショナルCTOって何ですか？" data-en="What is a Fractional CTO?">フラクショナルCTOって何ですか？</span>
-              <span class="faq-icon ml-4 text-lg text-faint transition-transform">+</span>
-            </summary>
-            <p class="mt-3 text-[14px] leading-[1.8] text-muted"
-               data-ja="CTOと同じ役割（技術戦略、設計判断、チームマネジメント）を、週1-2日・月額制で提供するサービスです。フルタイムCTOの採用コスト（年800-1500万円）に比べて、必要な分だけ使えます。"
-               data-en="The same CTO role (tech strategy, design decisions, team management) delivered 1-2 days/week on a retainer. Compared to a full-time CTO (¥8-15M/year), you only pay for what you need.">
-              CTOと同じ役割（技術戦略、設計判断、チームマネジメント）を、週1-2日・月額制で提供するサービスです。フルタイムCTOの採用コスト（年800-1500万円）に比べて、必要な分だけ使えます。
-            </p>
-          </details>
-          <details class="group py-5" style="border-color: #1e2d4a">
-            <summary class="flex cursor-pointer items-center justify-between text-[15px] font-medium text-slate-200 transition-colors hover:text-white">
-              <span data-ja="週1-2日で本当に効果がありますか？" data-en="Can 1-2 days a week make a difference?">週1-2日で本当に効果がありますか？</span>
-              <span class="faq-icon ml-4 text-lg text-faint transition-transform">+</span>
-            </summary>
-            <p class="mt-3 text-[14px] leading-[1.8] text-muted"
-               data-ja="あります。現場が止まる原因の多くは「判断待ち」です。外注先への回答、エンジニアの成果物の確認、次に何をやるかの優先順位づけ。この判断を週1-2回入って回すだけで、チームの待ち時間が大幅に減ります。"
-               data-en="Yes. Most stalls come from 'waiting for a decision.' Vendor replies, reviewing engineer output, setting priorities. Making those calls 1-2 times a week dramatically reduces idle time.">
-              あります。現場が止まる原因の多くは「判断待ち」です。外注先への回答、エンジニアの成果物の確認、次に何をやるかの優先順位づけ。この判断を週1-2回入って回すだけで、チームの待ち時間が大幅に減ります。
-            </p>
-          </details>
-          <details class="group py-5" style="border-color: #1e2d4a">
-            <summary class="flex cursor-pointer items-center justify-between text-[15px] font-medium text-slate-200 transition-colors hover:text-white">
-              <span data-ja="最低契約期間はありますか？" data-en="Minimum contract period?">最低契約期間はありますか？</span>
-              <span class="faq-icon ml-4 text-lg text-faint transition-transform">+</span>
-            </summary>
-            <p class="mt-3 text-[14px] leading-[1.8] text-muted"
-               data-ja="ありません。月単位の契約で、いつでも終了できます。ただし効果を実感いただくには3ヶ月の継続をおすすめしています。"
-               data-en="No. Monthly contract, cancel anytime. I recommend 3 months to see real results.">
-              ありません。月単位の契約で、いつでも終了できます。ただし効果を実感いただくには3ヶ月の継続をおすすめしています。
-            </p>
-          </details>
-          <details class="group py-5" style="border-color: #1e2d4a">
-            <summary class="flex cursor-pointer items-center justify-between text-[15px] font-medium text-slate-200 transition-colors hover:text-white">
-              <span data-ja="リモートですか？出社もできますか？" data-en="Remote or on-site?">リモートですか？出社もできますか？</span>
-              <span class="faq-icon ml-4 text-lg text-faint transition-transform">+</span>
-            </summary>
-            <p class="mt-3 text-[14px] leading-[1.8] text-muted"
-               data-ja="基本はリモートですが、必要に応じて出社もします。初回は対面をおすすめしています。"
-               data-en="Primarily remote, but on-site visits are available. I recommend in-person for the first meeting.">
-              基本はリモートですが、必要に応じて出社もします。初回は対面をおすすめしています。
-            </p>
-          </details>
-          <details class="group py-5" style="border-color: #1e2d4a">
-            <summary class="flex cursor-pointer items-center justify-between text-[15px] font-medium text-slate-200 transition-colors hover:text-white">
-              <span data-ja="エンジニアは1人だけ、あとは外注ですが対象ですか？" data-en="We only have one engineer and use outsourcers — is that OK?">エンジニアは1人だけ、あとは外注ですが対象ですか？</span>
-              <span class="faq-icon ml-4 text-lg text-faint transition-transform">+</span>
-            </summary>
-            <p class="mt-3 text-[14px] leading-[1.8] text-muted"
-               data-ja="なります。むしろそういう方が一番多いです。外注先の管理や、1人のエンジニアの育成・評価こそ「技術がわかる人」が横にいる効果が大きいです。"
-               data-en="Absolutely — that's the most common case. Managing outsourcers and growing a solo engineer is exactly where having a tech-savvy advisor helps most.">
-              なります。むしろそういう方が一番多いです。外注先の管理や、1人のエンジニアの育成・評価こそ「技術がわかる人」が横にいる効果が大きいです。
-            </p>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ 9. CONTACT ============ -->
-    <section id="contact" class="border-t bg-surface/50 py-16" style="border-color: #1e2d4a">
-      <div class="mx-auto max-w-content px-6">
-        <div class="grid gap-12 lg:grid-cols-12 lg:gap-14">
-          <div class="lg:col-span-5">
-            <h2 class="text-xl font-bold text-white md:text-2xl"
-                data-ja="まずは30分、話しませんか"
-                data-en="Let's talk for 30 minutes">
-              まずは30分、話しませんか
-            </h2>
-            <p class="mt-4 text-[15px] leading-[1.8] text-muted"
-               data-ja="チームの状況を聞いて、何ができそうか率直にお伝えします。30分で課題と優先度を整理してお返しします。しつこい営業はしません。"
-               data-en="I'll listen to your situation and give you an honest take. You'll leave with clear priorities. No pushy follow-ups.">
-              チームの状況を聞いて、何ができそうか率直にお伝えします。30分で課題と優先度を整理してお返しします。しつこい営業はしません。
+          <div>
+            <p data-ja="CTOを正社員で雇うと年1,000万円超。その「一部だけ」を、必要な分だけ使う選択肢です。"
+               data-en="A full-time CTO costs ¥10M+/year. This lets you use just the part you need.">
+              CTOを正社員で雇うと年1,000万円超。その「一部だけ」を、必要な分だけ使う選択肢です。
             </p>
 
-            <div class="mt-8">
-              <a href="https://calendly.com/yumauchida/meet-with-me" target="_blank" rel="noopener noreferrer"
-                 class="flex items-center justify-between rounded-lg bg-accent px-5 py-4 font-bold text-base transition-opacity hover:opacity-90">
-                <span class="flex items-center gap-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="M8 2v4"/><path d="M16 2v4"/></svg>
-                  <span class="text-[14px]" data-ja="Calendlyで日程を予約" data-en="Book via Calendly">Calendlyで日程を予約</span>
-                </span>
-                <span aria-hidden="true">→</span>
-              </a>
+            <div class="table-scroll" style="margin-top: 2rem;">
+              <table class="price-table">
+                <thead>
+                  <tr>
+                    <th data-ja="プラン" data-en="Plan">プラン</th>
+                    <th data-ja="料金" data-en="Price">料金</th>
+                    <th data-ja="内容" data-en="What you get">内容</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="plan-name" data-ja="スポット相談" data-en="Spot Consultation">スポット相談</td>
+                    <td class="plan-price">¥30,000 <span class="per" data-ja="/ 回（60分）" data-en="/ session (60 min)">/ 回（60分）</span></td>
+                    <td>
+                      <span class="plan-for" data-ja="まず1時間、壁打ちしたい方" data-en="For a 1-hour sounding board">まず1時間、壁打ちしたい方</span>
+                      <span data-ja="何から手をつければいいかわからない、という段階でOKです。外注先の見積もり、エンジニアの評価、AI導入の相談に。"
+                            data-en="Don't know where to start? That's fine. For vendor estimates, engineer evaluation, or AI adoption questions.">
+                        何から手をつければいいかわからない、という段階でOKです。外注先の見積もり、エンジニアの評価、AI導入の相談に。
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="plan-name" data-ja="開発チーム見える化診断" data-en="Dev Team Visibility Audit">開発チーム見える化診断</td>
+                    <td class="plan-price">¥150,000 <span class="per" data-ja="（買い切り）" data-en="(one-time)">（買い切り）</span></td>
+                    <td>
+                      <span class="plan-for" data-ja="開発チームの現状をまず把握したい方" data-en="For understanding your dev team's current state">開発チームの現状をまず把握したい方</span>
+                      <span data-ja="エンジニア全員への1対1ヒアリング、タスク一覧の作成、報告書と改善提案。リモート完結、納期目安2週間。スポット相談とアドバイザリーの中間の位置づけです。"
+                            data-en="1-on-1 interviews with every engineer, a full task inventory, plus a report with improvement proposals. Fully remote, delivered in about 2 weeks. Positioned between the spot consultation and the advisory plan.">
+                        エンジニア全員への1対1ヒアリング、タスク一覧の作成、報告書と改善提案。リモート完結、納期目安2週間。スポット相談とアドバイザリーの中間の位置づけです。
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="plan-name" data-ja="アドバイザリー" data-en="Advisory">アドバイザリー</td>
+                    <td class="plan-price">¥200,000<span class="per" data-ja="〜 / 月" data-en="+ / mo">〜 / 月</span></td>
+                    <td>
+                      <span class="plan-for" data-ja="迷ったとき、すぐ聞ける人がほしい方" data-en="Need someone to ask when stuck">迷ったとき、すぐ聞ける人がほしい方</span>
+                      <span data-ja="月2-4回のレビュー・相談。チャットでの質問対応も含みます。外注先との定例に同席する使い方も。"
+                            data-en="2-4 reviews per month plus chat support. Can also join your vendor meetings.">
+                        月2-4回のレビュー・相談。チャットでの質問対応も含みます。外注先との定例に同席する使い方も。
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="plan-name" data-ja="チーム参画" data-en="Team Embedded">チーム参画</td>
+                    <td class="plan-price">¥400,000<span class="per" data-ja="〜 / 月" data-en="+ / mo">〜 / 月</span></td>
+                    <td>
+                      <span class="plan-for" data-ja="技術判断からエンジニア育成まで丸ごと任せたい方" data-en="Hand off all technical decisions and engineer growth">技術判断からエンジニア育成まで丸ごと任せたい方</span>
+                      <span data-ja="週1-2日、チームに入ります。外注先管理、エンジニアへのフィードバック、AI活用方針まで。"
+                            data-en="1-2 days/week in your team. Vendor management, engineer feedback, and AI strategy.">
+                        週1-2日、チームに入ります。外注先管理、エンジニアへのフィードバック、AI活用方針まで。
+                      </span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
 
-          <div class="lg:col-span-7">
-            <p class="mb-4 text-[13px] text-faint" data-ja="日程が合わない方はこちらからどうぞ" data-en="If the calendar doesn't work, use this form">日程が合わない方はこちらからどうぞ</p>
-            <form id="contact-form" class="rounded-lg border border-line/60 bg-base p-6 md:p-8">
-              <div class="grid gap-5 sm:grid-cols-2">
-                <div>
-                  <label for="name" class="mb-1.5 block text-[13px] text-slate-300"><span data-ja="お名前" data-en="Name">お名前</span> <span class="text-accent">*</span></label>
+    <!-- ============ 06 FAQ ============ -->
+    <section id="faq" class="section">
+      <div class="container">
+        <div class="split">
+          <div class="sec-head">
+            <p class="sec-number"><span data-ja="06 FAQ" data-en="06 FAQ">06 FAQ</span></p>
+            <h2 data-ja="よくある質問" data-en="Frequently Asked Questions">よくある質問</h2>
+          </div>
+
+          <div class="faq-list">
+            <details>
+              <summary><span data-ja="フラクショナルCTOって何ですか？" data-en="What is a Fractional CTO?">フラクショナルCTOって何ですか？</span></summary>
+              <p class="faq-answer"
+                 data-ja="CTOと同じ役割（技術の方針決め、外注先の管理、エンジニアの育成）を、週1-2日・月額制で提供するサービスです。フルタイムCTOの採用コスト（年1,000万円超）に比べて、必要な分だけ使えます。"
+                 data-en="The same CTO role (tech strategy, vendor management, engineer growth) delivered 1-2 days/week on a retainer. Compared to a full-time CTO (¥10M+/year), you only pay for what you need.">
+                CTOと同じ役割（技術の方針決め、外注先の管理、エンジニアの育成）を、週1-2日・月額制で提供するサービスです。フルタイムCTOの採用コスト（年1,000万円超）に比べて、必要な分だけ使えます。
+              </p>
+            </details>
+            <details>
+              <summary><span data-ja="週1-2日で本当に効果がありますか？" data-en="Can 1-2 days a week make a difference?">週1-2日で本当に効果がありますか？</span></summary>
+              <p class="faq-answer"
+                 data-ja="あります。現場が止まる原因の多くは「判断待ち」です。外注先への回答、エンジニアの成果物の確認、次に何をやるかの優先順位づけ。この判断を週1-2回入って回すだけで、チームの待ち時間が大幅に減ります。"
+                 data-en="Yes. Most stalls come from 'waiting for a decision.' Making those calls 1-2 times a week dramatically reduces idle time.">
+                あります。現場が止まる原因の多くは「判断待ち」です。外注先への回答、エンジニアの成果物の確認、次に何をやるかの優先順位づけ。この判断を週1-2回入って回すだけで、チームの待ち時間が大幅に減ります。
+              </p>
+            </details>
+            <details>
+              <summary><span data-ja="最低契約期間はありますか？" data-en="Minimum contract period?">最低契約期間はありますか？</span></summary>
+              <p class="faq-answer"
+                 data-ja="ありません。月単位の契約で、いつでも終了できます。ただし効果を実感いただくには3ヶ月の継続をおすすめしています。"
+                 data-en="No. Monthly contract, cancel anytime. I recommend 3 months to see real results.">
+                ありません。月単位の契約で、いつでも終了できます。ただし効果を実感いただくには3ヶ月の継続をおすすめしています。
+              </p>
+            </details>
+            <details>
+              <summary><span data-ja="エンジニアは1人だけ、あとは外注ですが対象ですか？" data-en="We only have one engineer and use outsourcers — is that OK?">エンジニアは1人だけ、あとは外注ですが対象ですか？</span></summary>
+              <p class="faq-answer"
+                 data-ja="なります。むしろそういう方が一番多いです。外注先の管理や、1人のエンジニアの育成・評価こそ「技術がわかる人」が横にいる効果が大きいです。"
+                 data-en="Absolutely — that's the most common case. Managing outsourcers and growing a solo engineer is exactly where having a tech-savvy advisor helps most.">
+                なります。むしろそういう方が一番多いです。外注先の管理や、1人のエンジニアの育成・評価こそ「技術がわかる人」が横にいる効果が大きいです。
+              </p>
+            </details>
+            <details>
+              <summary><span data-ja="「無料相談」と「スポット相談（¥30,000）」は何が違いますか？" data-en="What's the difference between the free consultation and a paid spot session?">「無料相談」と「スポット相談（¥30,000）」は何が違いますか？</span></summary>
+              <p class="faq-answer"
+                 data-ja="無料相談（30分）は、お互いの相性と課題の全体像を確認する場です。スポット相談（60分・¥30,000）は、最初から具体的な相談に入ります（例：外注先の見積もりレビュー、エンジニアの評価方法など）。迷ったらまず無料相談をご予約ください。どちらが合うか一緒に決めます。"
+                 data-en="The free call (30 min) is to confirm fit and understand your situation. The paid spot session (60 min, ¥30,000) dives into a specific question right away. Not sure? Book the free call first — we'll figure out which option fits.">
+                無料相談（30分）は、お互いの相性と課題の全体像を確認する場です。スポット相談（60分・¥30,000）は、最初から具体的な相談に入ります（例：外注先の見積もりレビュー、エンジニアの評価方法など）。迷ったらまず無料相談をご予約ください。どちらが合うか一緒に決めます。
+              </p>
+            </details>
+            <details>
+              <summary><span data-ja="訪問ですか？リモートですか？" data-en="On-site or remote?">訪問ですか？リモートですか？</span></summary>
+              <p class="faq-answer"
+                 data-ja="基本はオンライン（Zoom等）です。必要に応じて訪問も対応します。地方の企業様もオンラインで問題なくサポートしています。"
+                 data-en="Primarily online (Zoom, etc.). On-site visits available when needed. I support companies nationwide via remote.">
+                基本はオンライン（Zoom等）です。必要に応じて訪問も対応します。地方の企業様もオンラインで問題なくサポートしています。
+              </p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 07 CONTACT ============ -->
+    <section id="contact" class="section section--alt">
+      <div class="container">
+        <div class="split">
+          <div class="sec-head">
+            <p class="sec-number"><span data-ja="07 お問い合わせ" data-en="07 CONTACT">07 お問い合わせ</span></p>
+            <h2 data-ja="まずは30分、話しませんか" data-en="Let's talk for 30 minutes">まずは30分、話しませんか</h2>
+          </div>
+
+          <div>
+            <p data-ja="チームの状況を聞いて、何ができそうか率直にお伝えします。課題と優先度を整理してお返しします。しつこい営業はしません。"
+               data-en="I'll listen to your situation and give you an honest take. You'll leave with clear priorities. No pushy follow-ups.">
+              チームの状況を聞いて、何ができそうか率直にお伝えします。課題と優先度を整理してお返しします。しつこい営業はしません。
+            </p>
+
+            <div style="margin-top: 2rem;">
+              <a href="https://calendly.com/yumauchida/meet-with-me" target="_blank" rel="noopener noreferrer" class="btn"
+                 data-ja="Calendlyで日程を予約する" data-en="Book via Calendly">Calendlyで日程を予約する</a>
+            </div>
+
+            <div style="margin-top: 3.5rem;">
+              <p class="small" data-ja="日程が合わない方はこちらからどうぞ" data-en="If the calendar doesn't work, use this form">日程が合わない方はこちらからどうぞ</p>
+              <form id="contact-form" style="margin-top: 1.2rem; max-width: 38em;">
+                <div class="form-field">
+                  <label for="name"><span data-ja="お名前" data-en="Name">お名前</span> <span class="req">*</span></label>
                   <input id="name" name="user_name" type="text" required
-                         class="w-full rounded-md border border-line bg-surface px-4 py-2.5 text-[15px] text-white placeholder-faint outline-none transition-colors focus:border-accent"
                          data-placeholder-ja="山田 太郎" data-placeholder-en="Your Name" placeholder="山田 太郎" />
                 </div>
-                <div>
-                  <label for="email" class="mb-1.5 block text-[13px] text-slate-300"><span data-ja="メールアドレス" data-en="Email">メールアドレス</span> <span class="text-accent">*</span></label>
+                <div class="form-field">
+                  <label for="email"><span data-ja="メールアドレス" data-en="Email">メールアドレス</span> <span class="req">*</span></label>
                   <input id="email" name="user_email" type="email" required
-                         class="w-full rounded-md border border-line bg-surface px-4 py-2.5 text-[15px] text-white placeholder-faint outline-none transition-colors focus:border-accent"
                          data-placeholder-ja="you@example.com" data-placeholder-en="you@example.com" placeholder="you@example.com" />
                 </div>
-              </div>
-              <div class="mt-5">
-                <label for="message" class="mb-1.5 block text-[13px] text-slate-300"><span data-ja="相談内容（任意）" data-en="Message (optional)">相談内容（任意）</span></label>
-                <textarea id="message" name="message" rows="3"
-                          class="w-full resize-none rounded-md border border-line bg-surface px-4 py-2.5 text-[15px] text-white placeholder-faint outline-none transition-colors focus:border-accent"
-                          data-placeholder-ja="一言でOK（例：外注先の見積もりが妥当か見てほしい）" data-placeholder-en="One line is fine (e.g., 'Want a second opinion on vendor estimates')"
-                          placeholder="一言でOK（例：外注先の見積もりが妥当か見てほしい）"></textarea>
-              </div>
-              <button type="submit"
-                      class="mt-6 w-full rounded-md bg-accent px-6 py-3 text-[15px] font-bold text-base transition-opacity hover:opacity-90"
-                      data-ja="送信する" data-en="Send">
-                送信する
-              </button>
-              <div id="form-success" class="mt-4 hidden rounded-md border border-accent/30 bg-accent/10 p-3 text-center text-[14px] text-accent">
-                <span data-ja="送信ありがとうございます。48時間以内にご返信します。" data-en="Thank you! I'll respond within 48 hours.">送信ありがとうございます。48時間以内にご返信します。</span>
-              </div>
-              <div id="form-error" class="mt-4 hidden rounded-md border border-red-500/30 bg-red-500/10 p-3 text-center text-[14px] text-red-400">
-                <span data-ja="送信エラーが発生しました。しばらくしてからもう一度お試しください。" data-en="An error occurred. Please try again shortly.">送信エラーが発生しました。しばらくしてからもう一度お試しください。</span>
-              </div>
-            </form>
+                <div class="form-field">
+                  <label for="message"><span data-ja="相談内容（任意）" data-en="Message (optional)">相談内容（任意）</span></label>
+                  <textarea id="message" name="message" rows="3"
+                            data-placeholder-ja="一言でOK（例：外注先の見積もりが妥当か見てほしい）" data-placeholder-en="One line is fine (e.g., 'Want a second opinion on vendor estimates')"
+                            placeholder="一言でOK（例：外注先の見積もりが妥当か見てほしい）"></textarea>
+                </div>
+                <button type="submit" class="btn" data-ja="送信する" data-en="Send">送信する</button>
+                <div id="form-success" class="form-message hidden">
+                  <span data-ja="送信ありがとうございます。48時間以内にご返信します。" data-en="Thank you! I'll respond within 48 hours.">送信ありがとうございます。48時間以内にご返信します。</span>
+                </div>
+                <div id="form-error" class="form-message hidden">
+                  <span data-ja="送信エラーが発生しました。しばらくしてからもう一度お試しください。" data-en="An error occurred. Please try again shortly.">送信エラーが発生しました。しばらくしてからもう一度お試しください。</span>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </div>
@@ -644,29 +469,28 @@
   </main>
 
   <!-- ============ FOOTER ============ -->
-  <footer class="relative z-10 border-t" style="border-color: #1e2d4a">
-    <div class="mx-auto max-w-content px-6 py-8">
-      <div class="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
-        <div class="flex items-center gap-3">
-          <img src="/images/profile.png" alt="" class="h-8 w-8 rounded-full object-cover" style="box-shadow: 0 0 0 1px #1e2d4a" />
-          <div>
-            <p class="text-sm font-bold text-white" data-ja="打田裕馬" data-en="Yuma Uchida">打田裕馬</p>
-            <p class="text-[10px] tracking-wider text-faint" data-ja="フラクショナルCTO" data-en="FRACTIONAL CTO">フラクショナルCTO</p>
-          </div>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <p class="footer-name" data-ja="打田裕馬" data-en="Yuma Uchida">打田裕馬</p>
+          <p class="footer-role" data-ja="フラクショナルCTO" data-en="Fractional CTO">フラクショナルCTO</p>
         </div>
-        <div class="flex flex-wrap items-center gap-5 text-[13px] text-faint">
-          <a href="/achievements.html" class="transition-colors hover:text-white" data-ja="講師活動" data-en="Achievements">講師活動</a>
-          <a href="/resume/resume-ja.pdf" target="_blank" class="lang-ja-only transition-colors hover:text-white">レジュメ</a>
-          <a href="/resume/resume-en.pdf" target="_blank" class="lang-en-only transition-colors hover:text-white">Resume</a>
-          <a href="https://github.com/uchidayuma" target="_blank" class="transition-colors hover:text-white">GitHub</a>
-          <a href="https://www.udemy.com/user/uchidayuma/" target="_blank" class="transition-colors hover:text-white">Udemy</a>
-          <div class="flex items-center gap-0.5 rounded border px-1 py-0.5" style="border-color: #1e2d4a">
-            <button class="lang-btn rounded px-2 py-0.5 text-[11px]" data-lang="ja">日本語</button>
-            <button class="lang-btn rounded px-2 py-0.5 text-[11px]" data-lang="en">EN</button>
-          </div>
-        </div>
+        <nav>
+          <a href="achievements.html" data-ja="経歴・実績" data-en="Career">経歴・実績</a>
+          <a href="tokushoho.html" data-ja="特定商取引法に基づく表記" data-en="Legal Notice">特定商取引法に基づく表記</a>
+          <a href="https://www.youtube.com/@yumaapp" target="_blank">YouTube</a>
+          <a href="https://www.udemy.com/user/uchidayuma/" target="_blank">Udemy</a>
+          <a href="https://github.com/uchidayuma" target="_blank">GitHub</a>
+          <a href="/resume/resume-ja.pdf" target="_blank" class="lang-ja-only">レジュメ</a>
+          <a href="/resume/resume-en.pdf" target="_blank" class="lang-en-only">Resume</a>
+          <span class="lang-switch">
+            <button class="lang-btn" data-lang="ja">日本語</button>
+            <button class="lang-btn" data-lang="en">EN</button>
+          </span>
+        </nav>
       </div>
-      <p class="mt-6 font-mono text-[11px] text-faint">&copy; 2026 Yuma Uchida. All rights reserved.</p>
+      <p class="copyright">&copy; 2026 Yuma Uchida. All rights reserved.</p>
     </div>
   </footer>
 
