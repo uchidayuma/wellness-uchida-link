@@ -2,9 +2,9 @@
     "basics": {
         "name": "Yuma Uchida",
         "label": "Infrastructure Engineer / Project Manager",
-        "image": "https://wellness.uchida.link/images/profile.png",
+        "image": "https://cto.uchida.link/images/profile.png",
         "email": "uchida.yuma@routeplus.co.jp",
-        "url": "https://wellness.uchida.link",
+        "url": "https://cto.uchida.link",
         "summary": "Engineer who handles both PM and technical lead roles. Covers the full range from technology selection and infrastructure design for new applications, through backend implementation and team management.",
         "location": {
             "city": "Tokyo",

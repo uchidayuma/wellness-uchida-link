@@ -2,7 +2,7 @@
 # サイトの基本設定
 title: "打田裕馬 | Engineer × PM × メンタルケア"
 description: "AI時代に生き残るエンジニアPMのポートフォリオ。技術×マネジメント×メンタルケアでキャリアを切り拓く。"
-url: "https://wellness.uchida.link/" # あなたのGitHub Pages URLに変更してください
+url: "https://cto.uchida.link/"
 baseurl: "/wellness-uchida-link" # リポジトリ名に変更してください
 
 # プラグイン設定

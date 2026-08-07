@@ -1,4 +1,4 @@
-# サイト設計図 — wellness.uchida.link
+# サイト設計図 — cto.uchida.link
 
 最終更新: 2026-07-20
 
@@ -74,7 +74,7 @@
 ## 5. ページ構成（Sitemap）
 
 ```
-wellness.uchida.link/
+cto.uchida.link/
 ├── index.html                  # トップページ（メイン）
 ├── services/
 │   ├── ai.html                 # ① AI導入・活用設計（新規）
