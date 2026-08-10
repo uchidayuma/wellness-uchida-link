@@ -8,7 +8,7 @@
 :root {
   --ink: #1f1f1f;
   --paper: #fdfcf9;
-  --paper-2: #f5f3ee;
+  --paper-2: #f5f5f2;
   --indigo: #2b4a6f;
   --rule: #d8d5cd;
   --serif: "Noto Serif JP", serif;
@@ -143,15 +143,27 @@ strong {
   font-weight: 600;
   letter-spacing: 0.2em;
   color: var(--indigo);
-  border-bottom: 1px solid var(--rule);
-  display: inline-block;
-  padding-bottom: 0.4em;
+  display: flex;
+  align-items: center;
+  gap: 0.8em;
   margin-bottom: 1.2em;
+}
+
+.sec-number::before {
+  content: "";
+  display: inline-block;
+  width: 2em;
+  height: 1px;
+  background: var(--indigo);
+  flex-shrink: 0;
 }
 
 .section--ink .sec-number {
   color: var(--paper-2);
-  border-bottom-color: var(--paper-2);
+}
+
+.section--ink .sec-number::before {
+  background: var(--paper-2);
 }
 
 .sec-head h2 {
@@ -383,7 +395,7 @@ h3 {
 
 .ruled-item {
   border-bottom: 1px solid var(--rule);
-  padding: 2rem 0;
+  padding: 2.5rem 0;
 }
 
 .ruled-item-num {
@@ -408,20 +420,20 @@ h3 {
 /* ---------- 実績（実測値） ---------- */
 .result-item {
   border-bottom: 1px solid var(--rule);
-  padding: 2rem 0;
+  padding: 2.5rem 0;
   display: grid;
-  grid-template-columns: 11rem 1fr;
-  gap: 1.5rem;
+  grid-template-columns: 14rem 1fr;
+  gap: 2rem;
   align-items: baseline;
 }
 
 .result-value {
   font-family: var(--serif);
   font-feature-settings: "palt";
-  font-size: 1.9375rem;
+  font-size: 2.5rem;
   font-weight: 700;
   color: var(--indigo);
-  line-height: 1.3;
+  line-height: 1.2;
 }
 
 .result-label {
@@ -618,6 +630,15 @@ textarea {
 
 .cta-band .btn {
   margin-top: 2em;
+}
+
+/* 濃色背景上のテキストリンクは紙色にする（DESIGN_CONSTRAINTS 5.5） */
+.cta-band a:not(.btn) {
+  color: var(--paper);
+}
+
+.cta-band a:not(.btn):hover {
+  color: var(--paper-2);
 }
 
 /* ---------- フッター ---------- */
@@ -889,4 +910,25 @@ textarea {
   .legal-table th {
     width: 38%;
   }
+}
+
+/* ---------- ページリード（引用風） ---------- */
+.page-lead {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  line-height: 1.8;
+  border-left: 2px solid var(--indigo);
+  padding-left: 1.5em;
+  max-width: 32em;
+}
+
+/* ---------- サービス詳細ページ（/services/） ---------- */
+.page-services h4 {
+  font-family: var(--sans);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--indigo);
+  margin: 2.5em 0 0.5em;
+  padding-top: 1.5em;
+  border-top: 1px solid var(--rule);
 }
