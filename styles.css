@@ -388,6 +388,146 @@ h3 {
   margin-left: auto;
 }
 
+/* ---------- 信頼バッジ帯 ---------- */
+.trust-strip {
+  background: var(--paper-2);
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  padding-block: 2rem;
+}
+
+.trust-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.2rem 3rem;
+  margin: 0;
+  padding: 0;
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.trust-icon {
+  width: 1.25em;
+  height: 1.25em;
+  color: var(--indigo);
+  flex-shrink: 0;
+}
+
+/* ---------- 実績セクション導入文 ---------- */
+.works-intro {
+  margin-bottom: 2rem;
+}
+
+/* ---------- ターゲット明示 ---------- */
+.target-statement {
+  font-family: var(--serif);
+  font-feature-settings: "palt";
+  font-size: 1.125rem;
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+}
+
+/* ---------- 見える化診断セクション ---------- */
+.diagnosis-for {
+  border: 1px solid var(--rule);
+  padding: 1.8rem 2rem;
+}
+
+.diagnosis-for-heading {
+  font-weight: 700;
+  font-size: 0.9375rem;
+  margin-bottom: 0.8em;
+}
+
+.diagnosis-for-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.diagnosis-for-list li {
+  position: relative;
+  padding-left: 1.4em;
+  padding-block: 0.3em;
+  font-size: 0.9375rem;
+}
+
+.diagnosis-for-list li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--indigo);
+}
+
+.diagnosis-sample {
+  margin-top: 2.5rem;
+}
+
+.diagnosis-sample-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8em;
+  padding: 2.5rem 2rem;
+  border: 2px dashed var(--rule);
+  color: var(--rule);
+  font-size: 0.875rem;
+}
+
+.diagnosis-sample-placeholder svg {
+  width: 1.5em;
+  height: 1.5em;
+}
+
+.diagnosis-bottom {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 2rem 3rem;
+}
+
+.diagnosis-price {
+  font-family: var(--serif);
+  font-feature-settings: "palt";
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--indigo);
+  line-height: 1.3;
+}
+
+.diagnosis-price-note {
+  font-family: var(--sans);
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--ink);
+}
+
+.diagnosis-specs {
+  list-style: none;
+  padding: 0;
+  margin: 0.5em 0 0;
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.875rem;
+}
+
+.plan-detail-link {
+  display: inline-block;
+  margin-top: 0.5em;
+  font-size: 0.875rem;
+}
+
 /* ---------- 罫線リスト（課題・サービス・手順など） ---------- */
 .ruled-list {
   border-top: 1px solid var(--rule);
@@ -900,6 +1040,27 @@ textarea {
 
   .menu-btn {
     display: inline-block;
+  }
+
+  .trust-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem 1.5rem;
+    justify-items: start;
+  }
+
+  .trust-item {
+    white-space: normal;
+    font-size: 0.875rem;
+  }
+
+  .diagnosis-for {
+    padding: 1.4rem 1.2rem;
+  }
+
+  .diagnosis-bottom {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .result-item {
