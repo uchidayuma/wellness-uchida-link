@@ -68,6 +68,29 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+// ===== お問い合わせ種別プリセット =====
+document.addEventListener("DOMContentLoaded", function () {
+  var select = document.getElementById("inquiry_type");
+  if (!select) return;
+
+  function presetType(type) {
+    var option = select.querySelector('option[value="' + type + '"]');
+    if (option) select.value = type;
+  }
+
+  // URL ?type= パラメータからプリセット（GitHub Pages は hash 前に query が来る）
+  var params = new URLSearchParams(window.location.search);
+  var typeParam = params.get("type");
+  if (typeParam) presetType(typeParam);
+
+  // data-contact-type 付きリンクのクリックでプリセット
+  document.querySelectorAll("[data-contact-type]").forEach(function (link) {
+    link.addEventListener("click", function () {
+      presetType(this.getAttribute("data-contact-type"));
+    });
+  });
+});
+
 // ===== 言語切り替え機能 =====
 function initLanguageSwitcher() {
   let currentLang = localStorage.getItem("preferredLanguage");

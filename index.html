@@ -245,9 +245,9 @@
               <div class="ruled-item">
                 <p class="ruled-item-num">01</p>
                 <h3 data-ja="ヒアリング" data-en="Interviews">ヒアリング</h3>
-                <p data-ja="エンジニア・外注先それぞれに1対1で話を聞きます。技術的な課題だけでなく、コミュニケーション上のボトルネックも洗い出します。"
-                   data-en="1-on-1 interviews with each engineer and vendor. I surface not just technical issues but communication bottlenecks too.">
-                  エンジニア・外注先それぞれに1対1で話を聞きます。技術的な課題だけでなく、コミュニケーション上のボトルネックも洗い出します。
+                <p data-ja="経営者・エンジニア・外注先、それぞれに1対1で話を聞きます。技術的な課題だけでなく、コミュニケーション上のボトルネックも洗い出します。"
+                   data-en="1-on-1 interviews with the executive, engineers, and vendors. I surface not just technical issues but communication bottlenecks too.">
+                  経営者・エンジニア・外注先、それぞれに1対1で話を聞きます。技術的な課題だけでなく、コミュニケーション上のボトルネックも洗い出します。
                 </p>
               </div>
               <div class="ruled-item">
@@ -281,9 +281,9 @@
                 </ul>
               </div>
               <div>
-                <a href="#contact" class="btn"
+                <a href="#contact" class="btn" data-contact-type="diagnosis"
                    data-ja="診断を申し込む" data-en="Apply for the Audit">診断を申し込む</a>
-                <p class="btn-note" data-ja="フォームから「見える化診断希望」とお送りください。" data-en="Mention 'Visibility Audit' in the contact form.">フォームから「見える化診断希望」とお送りください。</p>
+                <p class="btn-note" data-ja="フォームで種別「見える化診断」を選んでお送りください。" data-en="Select 'Visibility Audit' in the form and submit.">フォームで種別「見える化診断」を選んでお送りください。</p>
               </div>
             </div>
           </div>
@@ -425,9 +425,9 @@
                     <td class="plan-price">¥150,000 <span class="per" data-ja="（買い切り）" data-en="(one-time)">（買い切り）</span></td>
                     <td>
                       <span class="plan-for" data-ja="開発チームの現状をまず把握したい方" data-en="For understanding your dev team's current state">開発チームの現状をまず把握したい方</span>
-                      <span data-ja="エンジニア全員への1対1ヒアリング、タスク一覧の作成、報告書と改善提案。リモート完結、納期目安2週間。スポット相談とアドバイザリーの中間の位置づけです。"
-                            data-en="1-on-1 interviews with every engineer, a full task inventory, plus a report with improvement proposals. Fully remote, delivered in about 2 weeks. Positioned between the spot consultation and the advisory plan.">
-                        エンジニア全員への1対1ヒアリング、タスク一覧の作成、報告書と改善提案。リモート完結、納期目安2週間。スポット相談とアドバイザリーの中間の位置づけです。
+                      <span data-ja="経営者・エンジニア・外注先への1対1ヒアリング、タスク一覧の作成、報告書と改善提案。リモート完結、納期目安2週間。スポット相談とアドバイザリーの中間の位置づけです。"
+                            data-en="1-on-1 interviews with the executive, engineers, and vendors, a full task inventory, plus a report with improvement proposals. Fully remote, delivered in about 2 weeks. Positioned between the spot consultation and the advisory plan.">
+                        経営者・エンジニア・外注先への1対1ヒアリング、タスク一覧の作成、報告書と改善提案。リモート完結、納期目安2週間。スポット相談とアドバイザリーの中間の位置づけです。
                       </span>
                       <a href="#diagnosis" class="plan-detail-link" data-ja="詳しく見る →" data-en="Learn more →">詳しく見る →</a>
                     </td>
@@ -555,6 +555,16 @@
                   <label for="name"><span data-ja="お名前" data-en="Name">お名前</span> <span class="req">*</span></label>
                   <input id="name" name="user_name" type="text" required
                          data-placeholder-ja="山田 太郎" data-placeholder-en="Your Name" placeholder="山田 太郎" />
+                </div>
+                <div class="form-field">
+                  <label for="inquiry_type"><span data-ja="ご相談内容の種別" data-en="Inquiry type">ご相談内容の種別</span></label>
+                  <select id="inquiry_type" name="inquiry_type">
+                    <option value="" data-ja="選択してください" data-en="Please select">選択してください</option>
+                    <option value="free_consultation" data-ja="無料相談について" data-en="Free consultation">無料相談について</option>
+                    <option value="spot" data-ja="スポット相談（¥30,000）" data-en="Spot consultation (¥30,000)">スポット相談（¥30,000）</option>
+                    <option value="diagnosis" data-ja="開発チーム見える化診断（¥150,000）" data-en="Dev Team Visibility Audit (¥150,000)">開発チーム見える化診断（¥150,000）</option>
+                    <option value="other" data-ja="その他" data-en="Other">その他</option>
+                  </select>
                 </div>
                 <div class="form-field">
                   <label for="email"><span data-ja="メールアドレス" data-en="Email">メールアドレス</span> <span class="req">*</span></label>
