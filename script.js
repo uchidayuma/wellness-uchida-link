@@ -132,7 +132,11 @@ function switchLanguage(lang) {
   document.querySelectorAll("[data-ja][data-en]").forEach((element) => {
     const text = element.getAttribute(lang === "ja" ? "data-ja" : "data-en");
     if (text !== null) {
-      element.textContent = text;
+      if (element.hasAttribute("data-lang-html")) {
+        element.innerHTML = text;
+      } else {
+        element.textContent = text;
+      }
     }
   });
 
