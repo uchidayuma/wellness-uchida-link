@@ -171,9 +171,25 @@
           </div>
 
           <div>
-            <p data-ja="外注先との打ち合わせに同席して「その見積もりは妥当です」「ここはおかしい」と横で翻訳する。エンジニアの成果物をチェックしてフィードバックする。技術の「右腕」を、週1-2日・月額制で。"
-               data-en="I sit in on vendor meetings and translate: 'This estimate is fair' or 'This doesn't add up.' I review your engineer's work and give feedback. A technical right-hand, 1-2 days a week.">
-              外注先との打ち合わせに同席して「その見積もりは妥当です」「ここはおかしい」と横で翻訳する。エンジニアの成果物をチェックしてフィードバックする。技術の「右腕」を、週1-2日・月額制で。
+            <figure class="role-map" aria-label="社長と外注先・エンジニアの間に立ち、両方の言葉を翻訳する">
+              <div class="role-node">
+                <p class="role-name" data-ja="社長" data-en="CEO">社長</p>
+                <p class="role-sub" data-ja="経営の言葉" data-en="Business terms">経営の言葉</p>
+              </div>
+              <svg class="role-arrow" viewBox="0 0 48 12" aria-hidden="true"><path d="M5 6h38M9 2 5 6l4 4M39 2l4 4-4 4"/></svg>
+              <div class="role-node role-node--me">
+                <p class="role-name" data-ja="打田" data-en="Yuma">打田</p>
+                <p class="role-sub" data-ja="翻訳・判断" data-en="Translate &amp; judge">翻訳・判断</p>
+              </div>
+              <svg class="role-arrow" viewBox="0 0 48 12" aria-hidden="true"><path d="M5 6h38M9 2 5 6l4 4M39 2l4 4-4 4"/></svg>
+              <div class="role-node">
+                <p class="role-name" data-lang-html data-ja="外注先・<br>エンジニア" data-en="Vendors &amp;<br>engineers">外注先・<br>エンジニア</p>
+                <p class="role-sub" data-ja="技術の言葉" data-en="Tech terms">技術の言葉</p>
+              </div>
+            </figure>
+            <p data-ja="打ち合わせに同席し、成果物を見て、社長が判断できる言葉に直します。週1-2日・月額制です。"
+               data-en="I sit in on meetings, review the work, and put it in terms you can decide on. 1-2 days a week, monthly.">
+              打ち合わせに同席し、成果物を見て、社長が判断できる言葉に直します。週1-2日・月額制です。
             </p>
 
             <div class="ruled-list" style="margin-top: 2.5rem;">
@@ -542,6 +558,41 @@
                data-en="A full-time CTO costs ¥10M+/year. This lets you use just the part you need.">
               CTOを正社員で雇うと年1,000万円超。その「一部だけ」を、必要な分だけ使う選択肢です。
             </p>
+
+            <figure class="price-stairs" aria-label="関わりが深くなるほど料金が上がる5段階のプラン">
+              <ol class="price-stairs-list">
+                <li class="price-step price-step--1">
+                  <span class="price-step-price" data-ja="3万円" data-en="¥30k">3万円</span>
+                  <span class="price-step-bar"></span>
+                  <span class="price-step-name" data-ja="スポット相談" data-en="Spot">スポット相談</span>
+                </li>
+                <li class="price-step price-step--2">
+                  <span class="price-step-price" data-ja="5万円" data-en="¥50k">5万円</span>
+                  <span class="price-step-bar"></span>
+                  <span class="price-step-name" data-ja="見積もりレビュー" data-en="Quote review">見積もりレビュー</span>
+                </li>
+                <li class="price-step price-step--3">
+                  <span class="price-step-price" data-ja="15万円" data-en="¥150k">15万円</span>
+                  <span class="price-step-bar"></span>
+                  <span class="price-step-name" data-ja="見える化診断" data-en="Team audit">見える化診断</span>
+                </li>
+                <li class="price-step price-step--4">
+                  <span class="price-step-price" data-ja="20万円〜/月" data-en="¥200k+/mo">20万円〜/月</span>
+                  <span class="price-step-bar"></span>
+                  <span class="price-step-name" data-ja="アドバイザリー" data-en="Advisory">アドバイザリー</span>
+                </li>
+                <li class="price-step price-step--5">
+                  <span class="price-step-price" data-ja="40万円〜/月" data-en="¥400k+/mo">40万円〜/月</span>
+                  <span class="price-step-bar"></span>
+                  <span class="price-step-name" data-ja="チーム参画" data-en="Embedded">チーム参画</span>
+                </li>
+              </ol>
+              <div class="price-stairs-span">
+                <span data-ja="単発" data-en="One-time">単発</span>
+                <span data-ja="月額" data-en="Monthly">月額</span>
+              </div>
+              <figcaption class="price-stairs-axis" data-ja="右へ行くほど、関わりが深くなります" data-en="Further right, deeper involvement">右へ行くほど、関わりが深くなります</figcaption>
+            </figure>
 
             <div class="table-scroll" style="margin-top: 2rem;">
               <table class="price-table">

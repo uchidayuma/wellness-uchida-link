@@ -1111,3 +1111,138 @@ textarea {
   padding-top: 1.5em;
   border-top: 1px solid var(--rule);
 }
+
+/* ============ 図解（罫線と藍のみ） ============ */
+.role-map {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 3rem minmax(0, 1.2fr) 3rem minmax(0, 1fr);
+  align-items: center;
+  margin: 0 0 2rem;
+}
+
+.role-node {
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  padding: 1rem 0.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.role-node--me {
+  border: 2px solid var(--indigo);
+}
+
+.role-name {
+  font-family: "Noto Serif JP", serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.role-node--me .role-name {
+  color: var(--indigo);
+}
+
+.role-sub {
+  font-size: 0.8rem;
+  line-height: 1.5;
+  margin: 0.3em 0 0;
+}
+
+.role-arrow {
+  align-self: center;
+  width: 100%;
+  height: 12px;
+  fill: none;
+  stroke: var(--indigo);
+  stroke-width: 1.5;
+}
+
+.price-stairs {
+  margin: 2rem 0 0;
+}
+
+.price-stairs-list {
+  display: flex;
+  align-items: flex-end;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid var(--ink);
+}
+
+.price-step {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.price-step-price {
+  font-family: "Noto Serif JP", serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  line-height: 1.3;
+  color: var(--indigo);
+  padding-bottom: 0.4rem;
+}
+
+.price-step-bar {
+  display: block;
+  border-top: 2px solid var(--indigo);
+  border-left: 1px solid var(--rule);
+}
+
+.price-step--1 .price-step-bar { height: 1rem; border-left: 0; }
+.price-step--2 .price-step-bar { height: 2rem; }
+.price-step--3 .price-step-bar { height: 3.5rem; }
+.price-step--4 .price-step-bar { height: 4.5rem; }
+.price-step--5 .price-step-bar { height: 6.5rem; }
+
+.price-step-name {
+  order: 3;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  padding-top: 0.5rem;
+  margin-bottom: -2.4rem;
+  height: 2.4rem;
+}
+
+.price-stairs-list {
+  margin-bottom: 2.4rem;
+}
+
+.price-stairs-span {
+  display: flex;
+  margin-top: 0.6rem;
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+.price-stairs-span span {
+  border-top: 1px solid var(--rule);
+  padding-top: 0.2rem;
+}
+
+.price-stairs-span span:first-child { flex: 3; margin-right: 0.5rem; }
+.price-stairs-span span:last-child { flex: 2; }
+
+.price-stairs-axis {
+  font-size: 0.8rem;
+  margin-top: 0.8rem;
+}
+
+@media (max-width: 600px) {
+  .role-map {
+    grid-template-columns: minmax(0, 1fr) 1.5rem minmax(0, 1fr) 1.5rem minmax(0, 1fr);
+  }
+  .role-name { font-size: 0.9rem; }
+  .role-sub { font-size: 0.7rem; }
+  .role-node { padding: 0.8rem 0.25rem; }
+  .price-step-price { font-size: 0.75rem; }
+  .price-step-name { font-size: 0.68rem; }
+}
