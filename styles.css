@@ -1236,7 +1236,7 @@ textarea {
     grid-template-columns: minmax(0, 1fr) 1.5rem minmax(0, 1fr) 1.5rem minmax(0, 1fr);
   }
   .role-name { font-size: 0.9rem; }
-  .role-sub { font-size: 0.7rem; }
+  .role-sub { font-size: 0.75rem; }
   .role-node { padding: 0.8rem 0.25rem; }
   /* 階段は横棒に倒す（名前・棒・価格の横一行を縦に積む） */
   .price-stairs-list {
@@ -1278,7 +1278,43 @@ textarea {
   .price-step--3 .price-step-bar { width: 45%; }
   .price-step--4 .price-step-bar { width: 60%; }
   .price-step--5 .price-step-bar { width: 100%; }
-  .price-stairs-span { display: none; }
+  /* 単発は枠だけ、月額は塗りの棒にし、間に区切り線を引く */
+  .price-step--1 .price-step-bar,
+  .price-step--2 .price-step-bar,
+  .price-step--3 .price-step-bar {
+    background: none;
+    border: 1px solid var(--indigo) !important;
+  }
+  .price-step--4 {
+    border-top: 1px solid var(--rule);
+    margin-top: 0.35rem;
+    padding-top: 0.7rem;
+  }
+  .price-stairs-span {
+    gap: 1.5rem;
+    margin-top: 0.8rem;
+    font-size: 0.8125rem;
+  }
+  .price-stairs-span span,
+  .price-stairs-span span:first-child,
+  .price-stairs-span span:last-child {
+    flex: none;
+    margin: 0;
+    border-top: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .price-stairs-span span::before {
+    content: "";
+    width: 1.5rem;
+    height: 0.5rem;
+    border: 1px solid var(--indigo);
+  }
+  .price-stairs-span span:last-child::before {
+    background: var(--indigo);
+  }
 }
 
 /* 課題→入口の対応図 */
