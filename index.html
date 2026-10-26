@@ -113,46 +113,37 @@
             </p>
           </div>
 
-          <div class="ruled-list">
-            <div class="ruled-item">
-              <p><strong
-                 data-ja="外注先に毎月まとまった金額を払っている。でも「この見積もりは妥当なのか？」が自分では判断できない。"
-                 data-en="You're paying a significant sum to outsourcers every month. But you can't tell if their estimates are fair.">
-                外注先に毎月まとまった金額を払っている。でも「この見積もりは妥当なのか？」が自分では判断できない。
-              </strong></p>
-              <p class="sub"
-                 data-ja="言われるがまま払い続け、割高かどうかも分からない状態が続きます。"
-                 data-en="You keep paying without knowing if you're overpaying.">
-                言われるがまま払い続け、割高かどうかも分からない状態が続きます。
-              </p>
-              <a href="#quote-review" class="plan-detail-link"
-                 data-ja="→ まず見積もりを1本見てもらう（外注見積もりレビュー・¥50,000）"
-                 data-en="→ Start by having one quote reviewed (Vendor Quote Review, ¥50,000)">→ まず見積もりを1本見てもらう（外注見積もりレビュー・¥50,000）</a>
+          <div>
+            <div class="problem-map-head">
+              <span data-ja="よくある悩み" data-en="Common problem">よくある悩み</span>
+              <span data-ja="まずはここから" data-en="Where to start">まずはここから</span>
             </div>
-            <div class="ruled-item">
-              <p><strong
-                 data-ja="新しく雇ったエンジニアの仕事が良いのか悪いのか、社内の誰も評価できない。"
-                 data-en="You hired an engineer, but nobody in the company can evaluate their work.">
-                新しく雇ったエンジニアの仕事が良いのか悪いのか、社内の誰も評価できない。
-              </strong></p>
-              <p class="sub"
-                 data-ja="前のエンジニアも8ヶ月で辞めた。同じことが繰り返されます。"
-                 data-en="The last engineer quit after 8 months. The cycle repeats.">
-                前のエンジニアも8ヶ月で辞めた。同じことが繰り返されます。
-              </p>
-            </div>
-            <div class="ruled-item">
-              <p><strong
-                 data-ja="「AIで何かできるらしい」のは分かる。でも、うちの会社で何をすればいいのか誰にも聞けない。"
-                 data-en="You know AI can do something. But you can't figure out what to do with it in your company.">
-                「AIで何かできるらしい」のは分かる。でも、うちの会社で何をすればいいのか誰にも聞けない。
-              </strong></p>
-              <p class="sub"
-                 data-ja="取締役会で「AI対応どうなってる？」と聞かれて答えられない状態が続きます。"
-                 data-en="The board keeps asking about AI strategy and you have no answer.">
-                取締役会で「AI対応どうなってる？」と聞かれて答えられない状態が続きます。
-              </p>
-            </div>
+            <ol class="problem-map">
+              <li class="problem-map-row">
+                <p class="problem-map-pain" data-ja="外注先の見積もりが妥当か、自分では判断できない" data-en="You can't tell whether vendor quotes are fair">外注先の見積もりが妥当か、自分では判断できない</p>
+                <svg class="problem-map-arrow" viewBox="0 0 24 12" aria-hidden="true"><path d="M2 6h19M17 2l4 4-4 4"/></svg>
+                <a class="problem-map-entry" href="#quote-review">
+                  <span class="problem-map-name" data-ja="外注見積もりレビュー" data-en="Vendor Quote Review">外注見積もりレビュー</span>
+                  <span class="problem-map-price">¥50,000</span>
+                </a>
+              </li>
+              <li class="problem-map-row">
+                <p class="problem-map-pain" data-ja="雇ったエンジニアの仕事を、社内の誰も評価できない" data-en="No one can evaluate your engineer's work">雇ったエンジニアの仕事を、社内の誰も評価できない</p>
+                <svg class="problem-map-arrow" viewBox="0 0 24 12" aria-hidden="true"><path d="M2 6h19M17 2l4 4-4 4"/></svg>
+                <a class="problem-map-entry" href="#diagnosis">
+                  <span class="problem-map-name" data-ja="開発チーム見える化診断" data-en="Dev Team Visibility Audit">開発チーム見える化診断</span>
+                  <span class="problem-map-price">¥150,000</span>
+                </a>
+              </li>
+              <li class="problem-map-row">
+                <p class="problem-map-pain" data-ja="AIで何をすればいいか、誰にも聞けない" data-en="You have no one to ask what to do with AI">AIで何をすればいいか、誰にも聞けない</p>
+                <svg class="problem-map-arrow" viewBox="0 0 24 12" aria-hidden="true"><path d="M2 6h19M17 2l4 4-4 4"/></svg>
+                <a class="problem-map-entry" href="#pricing">
+                  <span class="problem-map-name" data-ja="スポット相談" data-en="Spot Consultation">スポット相談</span>
+                  <span class="problem-map-price">¥30,000</span>
+                </a>
+              </li>
+            </ol>
           </div>
         </div>
       </div>
@@ -245,9 +236,9 @@
           </div>
 
           <div>
-            <p data-ja="見積書を送っていただくだけで始められます。ヒアリングや打ち合わせはありません。工数・単価・作業範囲に分けて、どこが妥当で、どこを確認すべきかをお返しします。"
-               data-en="All you need to do is send the quote. No interviews, no meetings. I break it down into effort, rates, and scope, and tell you what's reasonable and what needs checking.">
-              見積書を送っていただくだけで始められます。ヒアリングや打ち合わせはありません。工数・単価・作業範囲に分けて、どこが妥当で、どこを確認すべきかをお返しします。
+            <p data-ja="見積書を送るだけで始められます。打ち合わせはありません。"
+               data-en="Just send the quote. No meetings needed.">
+              見積書を送るだけで始められます。打ち合わせはありません。
             </p>
 
             <div class="diagnosis-for" style="margin-top: 2.5rem;">
@@ -266,48 +257,36 @@
               </ul>
             </div>
 
-            <div class="ruled-list" style="margin-top: 2.5rem;">
-              <div class="ruled-item">
+            <ol class="step-flow" aria-label="見積もりレビューの流れ">
+              <li class="step-flow-item">
                 <p class="ruled-item-num">01</p>
-                <h3 data-ja="見積書を送る" data-en="Send the Quote">見積書を送る</h3>
-                <p data-ja="見積書（PDFや画像）と、あれば要件や提案書をお送りください。あわせて3つだけ伺います。何を作りたいか、予算感、いつまでに必要か。"
-                   data-en="Send the quote (PDF or image), plus any requirements or proposal documents you have. I'll also ask three questions: what you want to build, your rough budget, and when you need it.">
-                  見積書（PDFや画像）と、あれば要件や提案書をお送りください。あわせて3つだけ伺います。何を作りたいか、予算感、いつまでに必要か。
-                </p>
-              </div>
-              <div class="ruled-item">
+                <h3 data-ja="見積書を送る" data-en="Send the quote">見積書を送る</h3>
+                <p data-ja="見積書と、作りたいもの・予算・期限の3点だけ" data-en="The quote, plus what you want built, budget, and deadline">見積書と、作りたいもの・予算・期限の3点だけ</p>
+              </li>
+              <li class="step-flow-arrow" aria-hidden="true"><svg class="flow-arrow" viewBox="0 0 24 12" aria-hidden="true"><path d="M2 6h19M17 2l4 4-4 4"/></svg></li>
+              <li class="step-flow-item">
                 <p class="ruled-item-num">02</p>
                 <h3 data-ja="レビュー" data-en="Review">レビュー</h3>
-                <p data-ja="工数・単価・作業範囲に分解して読み込みます。外注先には一切連絡しません。"
-                   data-en="I break the quote down into effort, rates, and scope. I never contact the vendor.">
-                  工数・単価・作業範囲に分解して読み込みます。外注先には一切連絡しません。
-                </p>
-              </div>
-              <div class="ruled-item">
+                <p data-ja="工数・単価・範囲に分けて読む。外注先には連絡しません" data-en="I break down effort, rates, and scope. I never contact the vendor">工数・単価・範囲に分けて読む。外注先には連絡しません</p>
+              </li>
+              <li class="step-flow-arrow" aria-hidden="true"><svg class="flow-arrow" viewBox="0 0 24 12" aria-hidden="true"><path d="M2 6h19M17 2l4 4-4 4"/></svg></li>
+              <li class="step-flow-item">
                 <p class="ruled-item-num">03</p>
-                <h3 data-ja="判定と質問リストの納品" data-en="Assessment &amp; Question List">判定と質問リストの納品</h3>
-                <p data-ja="妥当・割高・要確認の判定と根拠、外注先に確認すべき質問、交渉できるポイントをお渡しします。ご希望があれば30分のオンライン解説も行います。"
-                   data-en="You receive a verdict — reasonable, overpriced, or needs clarification — with the reasoning, the questions to ask your vendor, and points open to negotiation. If you'd like, I'll walk you through it in a 30-minute online call.">
-                  妥当・割高・要確認の判定と根拠、外注先に確認すべき質問、交渉できるポイントをお渡しします。ご希望があれば30分のオンライン解説も行います。
-                </p>
-              </div>
-            </div>
+                <h3 data-ja="判定を納品" data-en="Get the verdict">判定を納品</h3>
+                <p data-ja="妥当・割高・要確認の判定と、外注先への質問リスト" data-en="A verdict — fair, overpriced, or unclear — and questions for your vendor">妥当・割高・要確認の判定と、外注先への質問リスト</p>
+              </li>
+            </ol>
 
-            <div style="margin-top: 2rem;">
+            <div class="flow-notes">
               <p class="small"
-                 data-ja="見積もりは第三者に見せず、レビュー後はご希望に応じて破棄します。NDAにも対応します。"
-                 data-en="Your quote is never shown to anyone else, and I'll delete it after the review if you wish. NDAs are welcome.">
-                見積もりは第三者に見せず、レビュー後はご希望に応じて破棄します。NDAにも対応します。
+                 data-ja="見積もりは第三者に見せません。NDA対応、ご希望でレビュー後に破棄します。"
+                 data-en="Your quote is never shown to anyone else. NDAs welcome; I'll delete it after the review if you wish.">
+                見積もりは第三者に見せません。NDA対応、ご希望でレビュー後に破棄します。
               </p>
-              <p class="small" style="margin-top: 0.8em;"
-                 data-ja="発注するかどうかを決めるのは社長です。私は判断材料を出す側に徹します。"
-                 data-en="Whether to place the order is your call. My job is to give you what you need to decide.">
-                発注するかどうかを決めるのは社長です。私は判断材料を出す側に徹します。
-              </p>
-              <p class="small" style="margin-top: 0.8em;"
-                 data-ja="見積もり以外に、外注先の管理や開発体制に課題が見えたときは、その点もお伝えします。見える化診断という次の選択肢もありますが、必要なければここで終了で大丈夫です。"
-                 data-en="If I spot issues beyond the quote itself — in how vendors are managed or how development is organized — I'll mention them. The Visibility Audit is one possible next step, but if you don't need it, we can stop here.">
-                見積もり以外に、外注先の管理や開発体制に課題が見えたときは、その点もお伝えします。見える化診断という次の選択肢もありますが、必要なければここで終了で大丈夫です。
+              <p class="small"
+                 data-ja="発注を決めるのは社長です。見積もり以外の課題に気づけばお伝えしますが、必要なければここで終了で大丈夫です。"
+                 data-en="Whether to order is your call. If I notice issues beyond the quote, I'll mention them, but if you don't need more, we can stop here.">
+                発注を決めるのは社長です。見積もり以外の課題に気づけばお伝えしますが、必要なければここで終了で大丈夫です。
               </p>
             </div>
 
@@ -358,32 +337,25 @@
               </ul>
             </div>
 
-            <div class="ruled-list" style="margin-top: 2.5rem;">
-              <div class="ruled-item">
+            <ol class="step-flow" aria-label="見える化診断の流れ">
+              <li class="step-flow-item">
                 <p class="ruled-item-num">01</p>
                 <h3 data-ja="ヒアリング" data-en="Interviews">ヒアリング</h3>
-                <p data-ja="経営者・エンジニア・外注先、それぞれに1対1で話を聞きます。技術的な課題だけでなく、コミュニケーション上のボトルネックも洗い出します。"
-                   data-en="1-on-1 interviews with the executive, engineers, and vendors. I surface not just technical issues but communication bottlenecks too.">
-                  経営者・エンジニア・外注先、それぞれに1対1で話を聞きます。技術的な課題だけでなく、コミュニケーション上のボトルネックも洗い出します。
-                </p>
-              </div>
-              <div class="ruled-item">
+                <p data-ja="経営者・エンジニア・外注先に1対1で話を聞く" data-en="1-on-1 with the executive, engineers, and vendors">経営者・エンジニア・外注先に1対1で話を聞く</p>
+              </li>
+              <li class="step-flow-arrow" aria-hidden="true"><svg class="flow-arrow" viewBox="0 0 24 12" aria-hidden="true"><path d="M2 6h19M17 2l4 4-4 4"/></svg></li>
+              <li class="step-flow-item">
                 <p class="ruled-item-num">02</p>
                 <h3 data-ja="棚卸し" data-en="Inventory">棚卸し</h3>
-                <p data-ja="タスク一覧と開発フローを整理し、どこに無駄があるか・何が見えていないかを可視化します。"
-                   data-en="I organize the full task list and dev workflow, making waste and blind spots visible.">
-                  タスク一覧と開発フローを整理し、どこに無駄があるか・何が見えていないかを可視化します。
-                </p>
-              </div>
-              <div class="ruled-item">
+                <p data-ja="仕事と開発の流れを整理し、無駄と見えていない所を出す" data-en="Map the work and workflow; surface waste and blind spots">仕事と開発の流れを整理し、無駄と見えていない所を出す</p>
+              </li>
+              <li class="step-flow-arrow" aria-hidden="true"><svg class="flow-arrow" viewBox="0 0 24 12" aria-hidden="true"><path d="M2 6h19M17 2l4 4-4 4"/></svg></li>
+              <li class="step-flow-item">
                 <p class="ruled-item-num">03</p>
-                <h3 data-ja="報告書＋改善提案の納品" data-en="Report &amp; Recommendations">報告書＋改善提案の納品</h3>
-                <p data-ja="現状分析報告書と、優先順位をつけた改善提案を納品します。何から手をつけるべきかが明確になります。"
-                   data-en="You receive a status report and prioritized improvement proposals. You'll know exactly where to start.">
-                  現状分析報告書と、優先順位をつけた改善提案を納品します。何から手をつけるべきかが明確になります。
-                </p>
-              </div>
-            </div>
+                <h3 data-ja="報告書を納品" data-en="Report">報告書を納品</h3>
+                <p data-ja="現状の報告書と、優先順位つきの改善提案" data-en="A status report and prioritized recommendations">現状の報告書と、優先順位つきの改善提案</p>
+              </li>
+            </ol>
 
             <p class="small" style="margin-top: 2rem;">
               <a href="sample-report.html" data-ja="サンプル報告書を見る（架空の企業による見本）" data-en="View a sample report (fictional company)">サンプル報告書を見る（架空の企業による見本）</a>
@@ -422,9 +394,9 @@
 
           <div>
             <p class="works-intro"
-               data-ja="キヤノンでトナーの新製品開発に携わったあと、2016年にソフトウェアエンジニアとして独立しました。これまで医療・金融・宿泊・フランチャイズなど10の業界で、システムを発注する側と受ける側の両方を経験しています。いまは金融機関で、ベンダーの設計書をリリース前に評価する立場にいます。"
-               data-en="After developing new toner products at Canon, I went independent as a software engineer in 2016. Across 10 industries — including healthcare, finance, hospitality, and franchising — I've worked on both sides: the company ordering a system and the team building it. Today I evaluate vendor design documents before release at a financial institution.">
-              キヤノンでトナーの新製品開発に携わったあと、2016年にソフトウェアエンジニアとして独立しました。これまで医療・金融・宿泊・フランチャイズなど10の業界で、システムを発注する側と受ける側の両方を経験しています。いまは金融機関で、ベンダーの設計書をリリース前に評価する立場にいます。
+               data-ja="キヤノンの研究開発を経て、2016年に独立。10の業界で、システムを発注する側と受ける側の両方を経験してきました。"
+               data-en="After R&amp;D at Canon, I went independent in 2016. Across 10 industries, I've been on both sides: ordering systems and building them.">
+              キヤノンの研究開発を経て、2016年に独立。10の業界で、システムを発注する側と受ける側の両方を経験してきました。
             </p>
 
             <h3 class="works-subhead" data-ja="いま担当していること" data-en="What I'm doing now">いま担当していること</h3>
@@ -432,66 +404,53 @@
               <div class="ruled-item">
                 <p class="ruled-item-num">01</p>
                 <h3 data-ja="金融機関でのセキュリティの最終判断" data-en="Final Security Sign-off at a Financial Institution">金融機関でのセキュリティの最終判断</h3>
-                <p data-ja="金融機関で、ベンダー5社が出す設計書をリリース前に読み、セキュリティ上のリスクを評価して、リリースしてよいかを最終判断しています。これまでにレビューした設計書は15件以上です。社員エンジニア6名の教育も担当しています。"
-                   data-en="At a financial institution, I read design documents from 5 vendors before release, assess the security risks, and make the final call on whether they can go live. I've reviewed 15+ design documents so far, and I also train 6 in-house engineers.">
-                  金融機関で、ベンダー5社が出す設計書をリリース前に読み、セキュリティ上のリスクを評価して、リリースしてよいかを最終判断しています。これまでにレビューした設計書は15件以上です。社員エンジニア6名の教育も担当しています。
+                <p data-ja="ベンダーの設計書をリリース前に評価し、出してよいかを最終判断しています。"
+                   data-en="I assess vendor design documents before release and make the final go/no-go call.">
+                  ベンダーの設計書をリリース前に評価し、出してよいかを最終判断しています。
                 </p>
+                <ul class="mini-stats">
+                  <li><strong>5</strong><span data-ja="社のベンダー" data-en="vendors">社のベンダー</span></li>
+                  <li><strong>15+</strong><span data-ja="件の設計書を審査" data-en="designs reviewed">件の設計書を審査</span></li>
+                  <li><strong>6</strong><span data-ja="名の社員を教育" data-en="engineers trained">名の社員を教育</span></li>
+                </ul>
               </div>
               <div class="ruled-item">
                 <p class="ruled-item-num">02</p>
                 <h3 data-ja="宿泊サービスの開発マネージャー" data-en="Development Manager for a Hospitality Service">宿泊サービスの開発マネージャー</h3>
-                <p data-ja="システムの作り替え、サーバー環境の移行、暗号化などのセキュリティ強化を進めています。同時に、開発チームの進め方や、問い合わせ対応・テスト担当者の作業手順をゼロから整えています。"
-                   data-en="I'm leading a system rebuild, a server migration, and security hardening such as encryption. At the same time, I'm building the development team's workflow and the step-by-step procedures for support and QA staff from scratch.">
-                  システムの作り替え、サーバー環境の移行、暗号化などのセキュリティ強化を進めています。同時に、開発チームの進め方や、問い合わせ対応・テスト担当者の作業手順をゼロから整えています。
+                <p data-ja="システムの作り替えとセキュリティ強化、開発チームの進め方づくりを担当しています。"
+                   data-en="I'm leading a system rebuild, security hardening, and how the dev team works.">
+                  システムの作り替えとセキュリティ強化、開発チームの進め方づくりを担当しています。
                 </p>
               </div>
             </div>
 
             <h3 class="works-subhead" data-ja="これまでの成果（実測）" data-en="Past results (measured)">これまでの成果（実測）</h3>
-            <div class="ruled-list">
-              <div class="result-item">
+            <ul class="stat-grid">
+              <li class="stat-item">
                 <p class="result-value" data-ja="受注率 +5%" data-en="+5% orders">受注率 +5%</p>
-                <p data-ja="訪問先でその場で複数パターンの見積もりを出せる仕組みを作り、施工サービスの当日受注率が5%上がった。"
-                   data-en="Built a system that lets field staff present multiple quote options on the spot, raising the same-day order rate of a construction service by 5%.">
-                  訪問先でその場で複数パターンの見積もりを出せる仕組みを作り、施工サービスの当日受注率が5%上がった。
-                </p>
-              </div>
-              <div class="result-item">
+                <p class="stat-desc" data-ja="施工サービスで、訪問先でその場で見積もりを出せる仕組みを作った" data-en="On-site quoting for a construction service">施工サービスで、訪問先でその場で見積もりを出せる仕組みを作った</p>
+              </li>
+              <li class="stat-item">
                 <p class="result-value" data-ja="-32時間/月" data-en="-32h/month">-32時間/月</p>
-                <p data-ja="手作業だったリリース作業とテストを自動化し、開発チームの毎月32時間を削減した。"
-                   data-en="Automated previously manual release work and testing, saving the development team 32 hours every month.">
-                  手作業だったリリース作業とテストを自動化し、開発チームの毎月32時間を削減した。
-                </p>
-              </div>
-              <div class="result-item">
+                <p class="stat-desc" data-ja="宿泊サービスで、リリース作業とテストを自動化した" data-en="Automated releases and testing for a hospitality service">宿泊サービスで、リリース作業とテストを自動化した</p>
+              </li>
+              <li class="stat-item">
                 <p class="result-value" data-ja="-6時間/月" data-en="-6h/month">-6時間/月</p>
-                <p data-ja="プロジェクト責任者として判断を巻き取り、経営層の調整時間を毎月6時間減らした。"
-                   data-en="Took over decision-making as the project lead, cutting 6 hours of executive coordination time per month.">
-                  プロジェクト責任者として判断を巻き取り、経営層の調整時間を毎月6時間減らした。
-                </p>
-              </div>
-              <div class="result-item">
-                <p class="result-value" data-ja="会議時間 -60%" data-en="-60% meeting time">会議時間 -60%</p>
-                <p data-ja="誰が何をいつまでにやるかが一目で分かる状態にして、経営層との会議時間を60%減らした。"
-                   data-en="Made it clear at a glance who is doing what and by when, cutting meeting time with executives by 60%.">
-                  誰が何をいつまでにやるかが一目で分かる状態にして、経営層との会議時間を60%減らした。
-                </p>
-              </div>
-              <div class="result-item">
-                <p class="result-value" data-ja="不具合率 1.1%→0.7%" data-en="Incidents 1.1%→0.7%">不具合率 1.1%→0.7%</p>
-                <p data-ja="顧客20万人超の医療機関向け予約システムで、自動テストと設計レビューの仕組みを入れ、本番での不具合の発生率を下げた。"
-                   data-en="On a medical booking system with 200,000+ customers, introduced automated testing and design reviews, lowering the rate of production incidents.">
-                  顧客20万人超の医療機関向け予約システムで、自動テストと設計レビューの仕組みを入れ、本番での不具合の発生率を下げた。
-                </p>
-              </div>
-              <div class="result-item">
-                <p class="result-value" data-ja="顧客20万人規模" data-en="200,000+ customers">顧客20万人規模</p>
-                <p data-ja="全国60拠点で動く予約システムで、テレビCMによるアクセス集中に耐える設計を提案した。半年間のインフラトラブルは1回に抑えた。"
-                   data-en="Proposed an architecture for a booking system running across 60 locations nationwide that could handle traffic spikes from TV commercials. Infrastructure trouble was held to one incident in six months.">
-                  全国60拠点で動く予約システムで、テレビCMによるアクセス集中に耐える設計を提案した。半年間のインフラトラブルは1回に抑えた。
-                </p>
-              </div>
-            </div>
+                <p class="stat-desc" data-ja="判断を巻き取り、経営層の調整時間を減らした" data-en="Took over decisions, cutting executive coordination time">判断を巻き取り、経営層の調整時間を減らした</p>
+              </li>
+              <li class="stat-item">
+                <p class="result-value" data-ja="会議 -60%" data-en="-60% meetings">会議 -60%</p>
+                <p class="stat-desc" data-ja="誰が何をいつまでにやるかを一目で分かるようにした" data-en="Made who-does-what-by-when visible at a glance">誰が何をいつまでにやるかを一目で分かるようにした</p>
+              </li>
+              <li class="stat-item">
+                <p class="result-value" data-ja="不具合率 1.1%→0.7%" data-en="Defects 1.1%→0.7%">不具合率 1.1%→0.7%</p>
+                <p class="stat-desc" data-ja="顧客20万人超の予約システムに、テストと設計レビューを入れた" data-en="Added testing and design reviews to a booking system with 200k+ customers">顧客20万人超の予約システムに、テストと設計レビューを入れた</p>
+              </li>
+              <li class="stat-item">
+                <p class="result-value" data-ja="障害 半年で1回" data-en="1 outage in 6 months">障害 半年で1回</p>
+                <p class="stat-desc" data-ja="全国60拠点の予約システムで、テレビCMのアクセス集中に耐える設計にした" data-en="Designed a 60-location booking system to withstand TV-ad traffic spikes">全国60拠点の予約システムで、テレビCMのアクセス集中に耐える設計にした</p>
+              </li>
+            </ul>
             <p class="result-note"
                data-ja="※いずれも過去の支援先プロジェクトでの実測値です。"
                data-en="* All figures are measured results from past client projects.">
@@ -514,31 +473,26 @@
             <h2 data-ja="始め方は3ステップ" data-en="3 steps to get started">始め方は3ステップ</h2>
           </div>
 
-          <div class="ruled-list">
-            <div class="ruled-item">
-              <p class="ruled-item-num">01</p>
-              <h3 data-ja="無料ヒアリング" data-en="Free Consultation">無料ヒアリング</h3>
-              <p data-ja="30分でチームの状況を聞きます。費用はかかりません。"
-                 data-en="30 min to hear about your team. Completely free.">
-                30分でチームの状況を聞きます。費用はかかりません。
-              </p>
-            </div>
-            <div class="ruled-item">
-              <p class="ruled-item-num">02</p>
-              <h3 data-ja="スコープ提案" data-en="Scope Proposal">スコープ提案</h3>
-              <p data-ja="何をどの順でやるか提案します。合わなければここで終了OK。"
-                 data-en="I propose what to do and in what order. No obligation to proceed.">
-                何をどの順でやるか提案します。合わなければここで終了OK。
-              </p>
-            </div>
-            <div class="ruled-item">
-              <p class="ruled-item-num">03</p>
-              <h3 data-ja="チームに参画" data-en="Join the Team">チームに参画</h3>
-              <p data-ja="すぐ動き始めます。最初の1ヶ月は現状把握と優先順位の整理から。"
-                 data-en="I start right away. Month 1 is about understanding the current state.">
-                すぐ動き始めます。最初の1ヶ月は現状把握と優先順位の整理から。
-              </p>
-            </div>
+          <div>
+            <ol class="step-flow" aria-label="はじめかたの流れ">
+              <li class="step-flow-item">
+                <p class="ruled-item-num">01</p>
+                <h3 data-ja="無料ヒアリング" data-en="Free call">無料ヒアリング</h3>
+                <p data-ja="30分、無料で状況を聞きます" data-en="30 minutes, free, to hear your situation">30分、無料で状況を聞きます</p>
+              </li>
+              <li class="step-flow-arrow" aria-hidden="true"><svg class="flow-arrow" viewBox="0 0 24 12" aria-hidden="true"><path d="M2 6h19M17 2l4 4-4 4"/></svg></li>
+              <li class="step-flow-item">
+                <p class="ruled-item-num">02</p>
+                <h3 data-ja="スコープ提案" data-en="Proposal">スコープ提案</h3>
+                <p data-ja="何をどの順でやるか提案。合わなければここで終了OK" data-en="What to do and in what order. No obligation">何をどの順でやるか提案。合わなければここで終了OK</p>
+              </li>
+              <li class="step-flow-arrow" aria-hidden="true"><svg class="flow-arrow" viewBox="0 0 24 12" aria-hidden="true"><path d="M2 6h19M17 2l4 4-4 4"/></svg></li>
+              <li class="step-flow-item">
+                <p class="ruled-item-num">03</p>
+                <h3 data-ja="チームに参画" data-en="Join the team">チームに参画</h3>
+                <p data-ja="最初の1ヶ月は現状把握と優先順位の整理から" data-en="Month 1: understand the current state and set priorities">最初の1ヶ月は現状把握と優先順位の整理から</p>
+              </li>
+            </ol>
           </div>
         </div>
       </div>
