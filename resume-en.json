@@ -21,15 +21,35 @@
     },
     "work": [
         {
-            "name": "OR Lab Inc.",
-            "position": "Tech Lead / Project Manager",
+            "name": "Financial Institution (undisclosed)",
+            "position": "Security Engineer",
+            "startDate": "2026-07",
+            "summary": "Assess security risks in design documents submitted by multiple vendors and make the final go/no-go call before release.",
+            "highlights": [
+                "Review design documents from 5 vendors and make the final call to prevent security incidents before release (15+ reviews).",
+                "Train 6 in-house engineers on security."
+            ]
+        },
+        {
+            "name": "Hospitality Service Company (undisclosed)",
+            "position": "Development Manager",
+            "startDate": "2026",
+            "summary": "Development manager for a booking management and smart lock tool for accommodations.",
+            "highlights": [
+                "Leading the React rewrite, migration to ECS, and security hardening including encryption.",
+                "Built the development workflow and step-by-step procedures for support and QA staff from scratch."
+            ]
+        },
+        {
+            "name": "Hospitality Service Company (undisclosed)",
+            "position": "PM / Infrastructure Engineer",
             "startDate": "2025-09",
-            "endDate": "2025-12",
+            "endDate": "2026-02",
             "summary": "Development of a unified booking management and smart lock control tool for accommodations.",
             "highlights": [
-                "Infrastructure as Code with AWS CDK: Automated environment provisioning and ensured reproducibility, reducing deployment time by 50%.",
-                "E2E Testing with Playwright: Introduced automated regression testing from scratch, significantly reducing manual QA costs.",
-                "Tech Lead for a multi-national team (Japan, Philippines, Vietnam): Led code reviews, architectural decisions, and English-language communication across borders."
+                "Fully codified infrastructure with AWS CDK; automated deployment via GitHub Actions saved 12 hours of deployment work per month.",
+                "Introduced Playwright E2E testing, cutting manual testing by 20 hours per month.",
+                "Managed a multinational team of Vietnamese and Chinese engineers; made progress visible at a glance and cut executive meeting time by 60%."
             ]
         },
         {
@@ -39,21 +59,21 @@
             "endDate": "2025-04",
             "summary": "New development and operation of a CRM (Patient Management System) and LINE Mini App for medical institutions.",
             "highlights": [
-                "PM & Dev Lead for a 20-person team (Engineers, Designers, QA).",
-                "Introduced Playwright automated testing, cutting the release bug rate from 6% to 3% — a 50% reduction.",
-                "Stakeholder Management: Aligned interests across Sales, CS, and Engineering, defining roadmaps and priorities."
+                "PM and dev lead for a ~20-person, three-layer team, running a booking/CRM platform serving 200,000+ customers across 60 locations nationwide.",
+                "Introduced E2E testing (Playwright) and design reviews, reducing the production incident rate from 1.1% to 0.7%.",
+                "Reorganized the team and delegated authority, increasing releases of client-requested features from 5 to 8 per quarter; cut management coordination time by 6 hours per month."
             ]
         },
         {
             "name": "Company S (Franchise)",
             "position": "Lead Engineer",
             "startDate": "2019-06",
-            "endDate": "2024-02",
+            "endDate": "2023-12",
             "summary": "Development and maintenance of a core business system (Inventory, Estimation, Ordering, Construction Management) for a franchise headquarters and its franchisees.",
             "highlights": [
-                "Digital Transformation: Centralized fragmented Excel/paper workflows into a unified system, improving operational efficiency by ~30%.",
-                "Cloud Migration: Designed and implemented migration from on-premise to AWS ECS Fargate; built a CI/CD pipeline (CodePipeline) to accelerate delivery.",
-                "Major Upgrade: Led migration from Laravel 6 to 10, refactoring legacy code and eliminating technical debt."
+                "Owned an integrated system for inventory, quotes, ordering, and construction management, from client interviews through operations.",
+                "Built a tablet feature for presenting multiple quote options on the spot, raising the same-day order rate by 5%.",
+                "Built production infrastructure on AWS (ECS, Lightsail) with CI/CD on CircleCI; upgraded Laravel from 6 to 10 in stages."
             ]
         },
         {
