@@ -7,3 +7,5 @@
 - 記事（`articles/`）の執筆は `/write-article`。方向性は `docs/articles-direction.md`、文体は `.claude/skills/write-article/references/writing-rules.md`
 - 料金の正典は `~/Documents/GitHub/youtube/fractional-cto/strategy/01_positioning.md`。サイト内のミラーは `strategy/README.md`
 - 動画の素材は `~/Documents/GitHub/youtube/<NN-slug>/`（台本・構成・字幕・公開情報・素材）
+
+- Google Analytics 4: 測定ID G-8G766V3E9K（alberorana@gmail.com のアカウント）。全ページの head で gtag.js と `/ga.js` を読み込む。新しいページを作るときも同じ2行を入れる。Search Console も同じアカウント（HTMLファイル googlec68581d368dcf47f.html は消さない）
