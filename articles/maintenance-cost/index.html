@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>システムの保守費用は高い？月額を3つに分けて社長が確かめる方法 | 打田裕馬 — フラクショナルCTO</title>
+  <meta name="description" content="システムの保守費用が高いかどうかは、開発会社に月額の内訳とこの1年の作業一覧をもらえば分かります。月額を実費・待機料・改修工数の3つに分けて確かめる方法を、保守を売る側だった元開発会社社長が説明します。" />
+  <link rel="canonical" href="https://cto.uchida.link/articles/maintenance-cost/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="システムの保守費用は高い？月額を3つに分けて社長が確かめる方法" />
+  <meta property="og:description" content="月額を実費・待機料・改修工数の3つに分け、この1年の作業一覧と並べる。開発会社に送るメールの文面つき。" />
+  <meta property="og:url" content="https://cto.uchida.link/articles/maintenance-cost/" />
+  <meta property="og:image" content="https://i.ytimg.com/vi/BAdxQl2J3jw/maxresdefault.jpg" />
+  <meta name="theme-color" content="#fdfcf9" />
+  <link rel="icon" href="../../images/favicon.png" type="image/png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","y2ihwlw86z");</script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "システムの保守費用は高い？月額を3つに分けて社長が確かめる方法",
+    "datePublished": "2026-11-01",
+    "dateModified": "2026-11-20",
+    "author": {"@type": "Person", "name": "打田裕馬", "url": "https://cto.uchida.link/"},
+    "mainEntityOfPage": "https://cto.uchida.link/articles/maintenance-cost/",
+    "video": {
+      "@type": "VideoObject",
+      "name": "システム保守費用は高い？月額を3つに分けて社長が判断する方法｜開発会社に出してもらう内訳",
+      "description": "システムの保守運用費用が高いのか安いのかは、開発会社に内訳を出してもらえば判断できます。",
+      "thumbnailUrl": "https://i.ytimg.com/vi/BAdxQl2J3jw/maxresdefault.jpg",
+      "uploadDate": "2026-11-01",
+      "embedUrl": "https://www.youtube.com/embed/BAdxQl2J3jw"
+    }
+  }
+  </script>
+</head>
+
+<body class="page-article">
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header">
+    <div class="container">
+      <a href="../../index.html" class="brand">
+        <span class="brand-name">打田裕馬</span>
+        <span class="brand-role">フラクショナルCTO</span>
+      </a>
+      <nav class="global-nav">
+        <a href="../index.html">記事一覧</a>
+        <a href="../../index.html">トップへ</a>
+        <a href="../../index.html#contact" class="btn">無料相談</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="section">
+      <div class="container">
+        <article class="article">
+
+          <p class="article-kicker">社長のためのシステム開発 — 保守費用</p>
+          <h1>システムの保守費用は高い？月額を3つに分けて、社長が妥当性を確かめる方法</h1>
+          <p class="article-meta">2026年11月1日公開 ｜ 打田裕馬（元システム開発会社社長・フラクショナルCTO）｜ 動画 6分</p>
+
+          <div class="article-lead">
+            <p>保守費用が高いかどうかは、開発会社に、月額の内訳と、この1年でやった作業の一覧をもらえば分かります。</p>
+          </div>
+
+          <div class="article-video">
+            <iframe src="https://www.youtube.com/embed/BAdxQl2J3jw" title="システム保守費用は高い？月額を3つに分けて社長が判断する方法" loading="lazy" allow="accelerated-2d-canvas; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <p class="article-video-note">この記事は動画と同じ内容です。文章で読みたい方はこのまま下へ。</p>
+
+          <div class="article-body">
+
+            <p>保守は毎月払うお金です。月8万円なら、5年で480万円。初期費用の300万円より大きくなることもあります。</p>
+            <p>僕は以前、システム開発の会社をやっていて、保守を売る側でした。正直に言うと、月額はノリと感覚で決めていました。だから、買う側で確かめる意味があります。その方法を3つ書きます。</p>
+
+            <h2><span class="num">01</span>月額の中身を3つに割る</h2>
+
+            <p>売る側が感覚で決めていることがある。だから、中身を割って見ます。保守の月額は、だいたい次の3つに分かれます。</p>
+            <ul>
+              <li><strong>実費</strong>。サーバー代、ドメイン代、使っているクラウドサービスの料金です。開発会社の外に払っているお金なので、請求書が存在します。</li>
+              <li><strong>待機料</strong>。障害が起きたときに動きます、という約束の代金です。何も起きない月も払います。</li>
+              <li><strong>改修工数</strong>。ちょっとした修正や、使い方の問い合わせへの対応です。月に何時間まで、という枠で決まっていることが多いです。</li>
+            </ul>
+
+            <p>たとえば、見積書に「保守一式、月8万円」とだけ書いてあったとします。こういう書き方はよくあります。これだと、3つのどれにいくら払っているのか分かりません。割ってもらうと、たとえばこうなります。</p>
+
+            <table class="article-table">
+              <caption>月額8万円を3つに割った例（サンプルとして作成）</caption>
+              <thead>
+                <tr><th>項目</th><th>中身</th><th class="amount">月額</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>実費</td><td>サーバー・ドメイン・外部サービス</td><td class="amount">12,000円</td></tr>
+                <tr><td>待機料</td><td>障害時に対応する約束</td><td class="amount">40,000円</td></tr>
+                <tr><td>改修工数</td><td>修正・問い合わせ対応、月4時間まで</td><td class="amount">28,000円</td></tr>
+                <tr><th>合計</th><th></th><th class="amount">80,000円</th></tr>
+              </tbody>
+            </table>
+
+            <p>こう並ぶと、聞けることが出てきます。実費の1万2千円は、請求書を見せてもらえば確かめられます。改修の4時間は、毎月使っているのか。ほとんど使っていないなら、枠を減らす相談ができます。待機料の4万円は、何を約束してもらっているのか。これは次の話です。</p>
+            <p>いま手元にある見積書か保守契約書を、一度見てみてください。この3つが分かれているか。「保守一式」とだけ書いてあるなら、分けてくださいと頼んでいいです。頼み方は「月額を実費と待機と改修の3つに分けて出してもらえますか」で十分です。</p>
+            <p>すぐに出てこなかったら、売る側も根拠を整理していなかったということです。僕もそうでした。頼まれて初めて整理する会社は多いので、責める話ではありません。整理してもらえば、次の更新のときに話ができます。</p>
+
+            <h2><span class="num">02</span>待機料は保険。何を約束してもらっているかを見る</h2>
+
+            <p>待機料は、保険に近いものです。障害が起きたときに、すぐ動いてもらうための代金です。保険なので、何を保証してもらっているかで値段が変わります。見るのは3つです。</p>
+            <ol>
+              <li><strong>復旧までの時間の約束があるか</strong>。たとえば、連絡から4時間以内に対応を始める、と書いてあるか。</li>
+              <li><strong>夜間と休日を含むか</strong>。平日の昼だけなのか、土日の夜も動いてくれるのか。ここで値段はかなり変わります。</li>
+              <li><strong>連絡先は誰か</strong>。担当者が1人だけなら、その人が休んだときにどうなるのか。</li>
+            </ol>
+            <p>同じ月4万円の待機料でも、「24時間365日、連絡から4時間以内に対応」と書いてある契約と、「平日の営業時間内、翌営業日までに対応」と書いてある契約では、買っているものがまったく違います。</p>
+            <p>そして実際に多いのは、何も書いていない契約です。約束が書いていない待機料は、何に払っているか誰も説明できません。契約書にこの3つがなければ、書いてもらってください。値段を下げる話ではなく、払っているものをはっきりさせる話です。</p>
+
+            <h2><span class="num">03</span>高いと感じたら、この1年の作業一覧を出してもらう</h2>
+
+            <p>やることは1つです。この1年で、保守として実際にやったことの一覧を出してもらいます。いつ、何をしたか、何時間かかったか。これだけで十分です。</p>
+            <p>たとえば月8万円の契約なら、1年で96万円です。一覧を出してもらったら、修正が3回で合わせて6時間。障害は一度も起きていなかった。こうなると、96万円のうち作業に使われたのは6時間分で、残りは実費と待機料だということが分かります。</p>
+
+            <table class="article-table">
+              <caption>1年分の保守実績の例（サンプルとして作成。月額8万円、改修枠は月4時間）</caption>
+              <thead>
+                <tr><th>時期</th><th>やったこと</th><th class="amount">時間</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>4月</td><td>帳票の項目追加</td><td class="amount">1.5時間</td></tr>
+                <tr><td>8月</td><td>ログイン画面の文言修正と問い合わせ対応</td><td class="amount">3.0時間</td></tr>
+                <tr><td>1月</td><td>取引先マスタの修正</td><td class="amount">1.5時間</td></tr>
+                <tr><td>障害対応</td><td>なし</td><td class="amount">0回</td></tr>
+                <tr><th>合計</th><th>改修枠48時間のうち</th><th class="amount">6.0時間</th></tr>
+              </tbody>
+            </table>
+
+            <p>これが悪いとは限りません。障害が起きなかったのは、裏で監視やアップデートをしていたからかもしれない。それなら、その作業も一覧に書いてもらえばいいんです。</p>
+            <p>大事なのは、一覧と月額を並べると、払っているものが見えることです。改修の枠がほとんど使われていないなら、枠を減らす相談ができます。待機料が大きいなら、その約束が自分の会社に要るのかを考えられます。夜中に止まっても翌朝の対応で困らない業務なら、夜間休日の約束は要らないかもしれません。</p>
+            <p>一覧がすぐに出てこないこともあります。それは、記録をつけていないということです。責める話ではありません。次の更新から、毎月の作業記録をもらう約束を足せば済みます。</p>
+
+            <h2><span class="num">04</span>まとめ</h2>
+            <ul>
+              <li>月額を、実費と待機料と改修の3つに割る</li>
+              <li>待機料は、何を約束してもらっているかを見る</li>
+              <li>この1年の実績一覧を出してもらって、月額と並べる</li>
+            </ul>
+
+          </div>
+
+          <div class="article-action">
+            <p class="article-kicker">明日やること</p>
+            <p>今お願いしている開発会社に、メールを1通送ってください。文面はこれで十分です。</p>
+            <div class="quote-block">
+              <p>保守の月額を、実費・待機・改修に分けたものと、この1年で保守として対応した作業の一覧をいただけますか。次の更新の前に、中身を確認しておきたいので。</p>
+            </div>
+            <p class="article-note" style="margin-top: 1.2em;">次の更新の前に確認したい、と理由を添えておけば、角は立ちません。返ってきたら、月額の12倍と並べてみてください。それだけで、次の更新で何を話すかが決まります。</p>
+          </div>
+
+          <div class="article-next">
+            <div class="ruled-item">
+              <div>
+                <p class="ruled-item-num">返ってきた内訳を、一緒に見てほしいとき</p>
+                <h3>見積もりレビュー ¥50,000</h3>
+                <p>保守契約書や見積書を送っていただければ、3営業日で、妥当・割高・要確認の判定と、開発会社への質問リストをお返しします。打ち合わせはありません。開発会社には連絡しません。</p>
+              </div>
+              <div>
+                <a href="../../index.html#quote-review" class="btn">見積もりレビューの詳細</a>
+              </div>
+            </div>
+            <div class="ruled-item">
+              <div>
+                <p class="ruled-item-num">まず状況を聞いてほしいとき</p>
+                <h3>無料相談 30分</h3>
+                <p>営業はしません。課題と優先度を整理してお返しします。</p>
+              </div>
+              <div>
+                <a href="https://calendly.com/yumauchida/meet-with-me" target="_blank" rel="noopener" class="btn btn--ghost">30分の無料相談を予約</a>
+              </div>
+            </div>
+          </div>
+
+          <p class="article-note" style="margin-top: 3rem;">
+            見積もりの読み方は、別の記事で2本書いています。初期費用の見積もりを見るときは、そちらも参考にしてください。<br />
+            動画内および本記事の見積書・表は、サンプルとして作成したものです。実在の会社・契約ではありません。
+          </p>
+
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <p class="footer-name">打田裕馬</p>
+          <p class="footer-role">フラクショナルCTO</p>
+        </div>
+        <nav>
+          <a href="../../index.html">トップ</a>
+          <a href="../index.html">記事一覧</a>
+          <a href="../../tokushoho.html">特定商取引法に基づく表記</a>
+          <a href="https://www.youtube.com/@yumaapp" target="_blank">YouTube</a>
+          <a href="https://www.udemy.com/user/uchidayuma/" target="_blank">Udemy</a>
+          <a href="https://github.com/uchidayuma" target="_blank">GitHub</a>
+        </nav>
+      </div>
+      <p class="copyright">&copy; 2026 Yuma Uchida. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

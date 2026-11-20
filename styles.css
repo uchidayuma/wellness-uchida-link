@@ -1638,3 +1638,219 @@ textarea {
 :lang(ja) .price-table .plan-name {
   word-break: auto-phrase;
 }
+
+/* ---------- 記事（articles/） ---------- */
+/* DESIGN_CONSTRAINTS.md に準拠。角丸・影・カードなし。色は墨・紙・藍・罫線のみ */
+.article {
+  max-width: 42em;
+}
+
+.article-kicker {
+  font-family: var(--serif);
+  font-feature-settings: "palt";
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: var(--indigo);
+  margin-bottom: 1.2em;
+}
+
+.article h1 {
+  font-size: 1.9375rem;
+}
+
+.article-meta {
+  font-size: 0.875rem;
+  margin-top: 1.2em;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.article-lead {
+  margin-top: 2.5rem;
+  padding: 1.6em 0;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--rule);
+  font-weight: 700;
+}
+
+.article-lead p {
+  max-width: none;
+}
+
+.article-video {
+  margin-top: 2.5rem;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: var(--ink);
+}
+
+.article-video iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.article-video-note {
+  font-size: 0.875rem;
+  margin-top: 0.8em;
+}
+
+.article-body h2 {
+  margin-top: 4rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--rule);
+}
+
+.article-body h2 .num {
+  display: block;
+  font-size: 0.875rem;
+  letter-spacing: 0.2em;
+  color: var(--indigo);
+  margin-bottom: 0.4em;
+}
+
+.article-body h3 {
+  margin-top: 2.5rem;
+}
+
+.article-body p {
+  margin-top: 1.2em;
+}
+
+.article-body ul,
+.article-body ol {
+  margin-top: 1.2em;
+  padding-left: 1.4em;
+  max-width: 38em;
+}
+
+.article-body li {
+  margin-top: 0.4em;
+}
+
+.article-table {
+  margin-top: 1.6em;
+  width: 100%;
+  max-width: 38em;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+}
+
+.article-table th,
+.article-table td {
+  text-align: left;
+  vertical-align: top;
+  padding: 0.8em 1em 0.8em 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.article-table th {
+  font-weight: 700;
+  border-bottom: 1px solid var(--ink);
+}
+
+.article-table td.amount,
+.article-table th.amount {
+  text-align: right;
+  white-space: nowrap;
+  font-feature-settings: "tnum";
+}
+
+.article-table caption {
+  text-align: left;
+  font-size: 0.875rem;
+  padding-bottom: 0.6em;
+  caption-side: top;
+}
+
+.article-note {
+  font-size: 0.875rem;
+}
+
+/* 明日やること（記事の末尾） */
+.article-action {
+  margin-top: 4rem;
+  padding: 2rem 0;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+}
+
+.article-action .article-kicker {
+  margin-bottom: 0.6em;
+}
+
+.article-action .quote-block {
+  margin-top: 1.2em;
+  font-size: 1rem;
+  max-width: 38em;
+}
+
+/* 次の一歩（サービスへの導線） */
+.article-next {
+  margin-top: 4rem;
+  border-top: 1px solid var(--rule);
+}
+
+.article-next .ruled-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1.5rem 3rem;
+  align-items: center;
+}
+
+.article-next .ruled-item > * {
+  min-width: 0;
+}
+
+.article-next h3 {
+  margin-bottom: 0.3em;
+}
+
+.article-next p {
+  margin-top: 0.3em;
+}
+
+/* 記事一覧 */
+.article-list {
+  border-top: 1px solid var(--rule);
+  max-width: 42em;
+}
+
+.article-list-item {
+  border-bottom: 1px solid var(--rule);
+  padding: 1.8rem 0;
+}
+
+.article-list-item a {
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.article-list-item a:hover h3 {
+  color: var(--indigo);
+}
+
+.article-list-item h3 {
+  font-size: 1.25rem;
+}
+
+.article-list-item p {
+  margin-top: 0.5em;
+  font-size: 0.9375rem;
+}
+
+.article-list-item .article-meta {
+  border: 0;
+  padding: 0;
+  margin-top: 0.6em;
+}
+
+@media (max-width: 860px) {
+  .article-next .ruled-item {
+    grid-template-columns: 1fr;
+  }
+}
