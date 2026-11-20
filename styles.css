@@ -1874,3 +1874,84 @@ textarea {
 .article-video-pending p {
   color: var(--paper);
 }
+
+/* ---------- 受け入れ状況（料金セクション冒頭の帯） ---------- */
+.availability {
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--rule);
+  padding: 1.2rem 0 0.4rem;
+  margin-bottom: 2.5rem;
+}
+
+.availability-head {
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.4rem;
+}
+
+.availability-list {
+  margin: 0;
+}
+
+.availability-row {
+  display: grid;
+  grid-template-columns: 15em 1fr;
+  gap: 0.2rem 1.5rem;
+  padding: 0.8rem 0;
+  border-top: 1px solid var(--rule);
+  font-size: 0.9375rem;
+  line-height: 1.7;
+}
+
+.availability-row > * {
+  min-width: 0;
+}
+
+.availability-row dt {
+  font-weight: 700;
+}
+
+/* プラン名は <wbr> の位置（・の後）でだけ折り返す */
+:lang(ja) .availability-row dt {
+  word-break: keep-all;
+}
+
+.availability-row dd {
+  margin: 0;
+}
+
+@media (max-width: 860px) {
+  .availability-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- 関連記事（見積もりレビュー節） ---------- */
+.related-reading {
+  margin-top: 3rem;
+}
+
+.related-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid var(--rule);
+  max-width: 38em;
+}
+
+.related-list li {
+  border-bottom: 1px solid var(--rule);
+  padding: 0.9rem 0;
+  font-size: 0.9375rem;
+  line-height: 1.7;
+}
+
+:lang(ja) .related-list a {
+  word-break: auto-phrase;
+}
+
+/* ヒーローの第一ボタンは <wbr>（読点の後）でだけ折り返す */
+:lang(ja) .hero-actions .btn {
+  word-break: keep-all;
+}

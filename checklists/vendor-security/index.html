@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>外注先に聞く、セキュリティの3つの質問チェックシート | 打田裕馬 — フラクショナルCTO</title>
+  <meta name="description" content="外注先に「セキュリティは大丈夫ですか」と聞いても「大丈夫です」としか返ってきません。代わりに聞く3つの質問と、返ってきた答えの見方をまとめた無料のチェックシートです。元開発会社社長が作りました。" />
+  <link rel="canonical" href="https://cto.uchida.link/checklists/vendor-security/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="外注先に聞く、セキュリティの3つの質問チェックシート" />
+  <meta property="og:description" content="外注先に「セキュリティは大丈夫ですか」と聞いても「大丈夫です」としか返ってきません。代わりに聞く3つの質問と、返ってきた答えの見方をまとめた無料のチェックシートです。元開発会社社長が作りました。" />
+  <meta property="og:url" content="https://cto.uchida.link/checklists/vendor-security/" />
+  <meta name="theme-color" content="#fdfcf9" />
+  <link rel="icon" href="../../images/favicon.png" type="image/png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","y2ihwlw86z");</script>
+</head>
+
+<body class="page-article">
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header">
+    <div class="container">
+      <a href="../../index.html" class="brand">
+        <span class="brand-name">打田裕馬</span>
+        <span class="brand-role">フラクショナルCTO</span>
+      </a>
+      <nav class="global-nav">
+        <a href="../index.html">チェックシート一覧</a>
+        <a href="../../index.html">トップへ</a>
+        <a href="../../index.html#contact" class="btn">無料相談</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="section">
+      <div class="container">
+        <article class="article">
+
+          <p class="article-kicker">社長のためのチェックシート</p>
+          <h1>外注先に聞く、セキュリティの3つの質問チェックシート</h1>
+          <p class="article-meta">外注先にシステムの安全面を確かめるときに使います。印刷して、返ってきた回答の横に置いてください。</p>
+
+          <div class="article-lead">
+            <p>外注先が安全面で何を決めていて、何を決めていないかが分かります。</p>
+          </div>
+
+          <div class="article-body">
+
+            <h2><span class="num">01</span>返ってきた答えで見る所</h2>
+            <ul class="check-list">
+              <li><strong>□ 部品を最後に更新した日付</strong>システムは外の会社が作った部品（ライブラリ）でできています。弱点を直した版に入れ替えているかを、日付で確かめます。<br />NGのサイン：日付が出ず、「随時やっています」で終わる。</li>
+              <li><strong>□ 攻撃や情報漏れに気づく仕組み</strong>何を見て気づくのかを聞きます。1分単位だけでなく、1か月単位でも回数を見ているかが目安です。<br />NGのサイン：仕組みの説明がなく、設計書にも書いていない。</li>
+              <li><strong>□ 漏れたとき、誰がいつ何をするか</strong>システムを止める、接続元を調べて止める、などの手順と担当者を見ます。<br />NGのサイン：その場で考える、という答え。</li>
+              <li><strong>□ 誰に報告するか</strong>外注先から自社の誰に、どの順で知らせるかを見ます。<br />NGのサイン：報告先が決まっていない。</li>
+              <li><strong>□ 担当が誰でも動けるように書いてあるか</strong>手順が書面になっていれば、担当が休んでも動けます。<br />NGのサイン：特定の1人の頭の中にしかない。</li>
+            </ul>
+          </div>
+
+          <div class="article-action">
+            <p class="article-kicker">外注先に送るメール</p>
+            <p>
+              「大丈夫ですか」とは聞かず、次の文面で送ってください。
+            </p>
+            <div class="quote-block">
+              <p>システムの安全面について、3点教えていただけますか。1. システムの部品（ライブラリ）を最後に更新したのはいつですか。2. 攻撃や情報漏れに、どうやって気づくようにしていますか。3. 情報が漏れたとき、誰がいつ何をして、誰に報告しますか。</p>
+            </div>
+            <p class="article-note" style="margin-top: 1.2em;">
+              「決めていませんでした」と返ってくることもあります。<br />
+              その場合は責めずに、外注先と一緒に決めるきっかけにしてください。
+            </p>
+          </div>
+
+          <div class="article-next">
+            <div class="ruled-item">
+              <div>
+                <p class="ruled-item-num">返ってきた答えを、一緒に見てほしいとき</p>
+                <h3>スポット相談 ¥30,000（60分）</h3>
+                <p>
+                  外注先からの回答をもとに、最初から具体的な相談に入ります。<br />
+                  足りない所と、外注先と何を決めればよいかを一緒に整理します。
+                </p>
+              </div>
+              <div>
+                <a href="../../index.html#pricing" class="btn">スポット相談の詳細</a>
+              </div>
+            </div>
+            <div class="ruled-item">
+              <div>
+                <p class="ruled-item-num">まず状況を聞いてほしいとき</p>
+                <h3>無料相談 30分</h3>
+                <p>営業はしません。課題と優先度を整理してお返しします。</p>
+              </div>
+              <div>
+                <a href="https://calendly.com/yumauchida/meet-with-me" target="_blank" rel="noopener" class="btn btn--ghost">30分の無料相談を予約</a>
+              </div>
+            </div>
+          </div>
+
+          <p class="article-note" style="margin-top: 3rem;">
+            元の記事は<a href="../../articles/security-three-questions/">外注先に「セキュリティは大丈夫？」と聞いてはいけない理由と、社長が代わりに聞く3つの質問</a>です。<br />
+            1分単位、1か月単位という数字は、仕組みを説明するための例です。
+          </p>
+
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <p class="footer-name">打田裕馬</p>
+          <p class="footer-role">フラクショナルCTO</p>
+        </div>
+        <nav>
+          <a href="../../index.html">トップ</a>
+          <a href="../../articles/index.html">記事一覧</a>
+          <a href="../index.html">チェックシート一覧</a>
+          <a href="../../tokushoho.html">特定商取引法に基づく表記</a>
+          <a href="https://www.youtube.com/@yumaapp" target="_blank">YouTube</a>
+          <a href="https://www.udemy.com/user/uchidayuma/" target="_blank">Udemy</a>
+          <a href="https://github.com/uchidayuma" target="_blank">GitHub</a>
+        </nav>
+      </div>
+      <p class="copyright">&copy; 2026 Yuma Uchida. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
