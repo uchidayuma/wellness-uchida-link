@@ -27,6 +27,7 @@ YouTubeの動画1本を、サイトの記事1本にする。読者は中小企�
 ## 2. 書く
 
 - `articles/maintenance-cost/index.html` をテンプレートとして複製する。head（title・description・canonical・og・JSON-LD）、kicker、h1、meta、lead、video、body、まとめ、明日やること、次の一歩、注記、の順を崩さない
+- 動画の枠は `<div class="article-video" data-video-id="<ID>" data-title="<タイトル>" data-publish-at="<YYYY-MM-DD>T<HH:MM>:00+09:00"></div>` と、`</body>` 直前の `<script src="../article.js"></script>` の形にする（例: `articles/security-three-questions/index.html`）。公開済みの動画なら `data-publish-at` は省略。時刻が来るまで公開予定を表示し、来たら埋め込みに変わる
 - スラッグは youtube 側のディレクトリ名から番号を外したもの（例: `08-maintenance-cost` → `maintenance-cost`）
 - 文体は `references/writing-rules.md`。**1文ごとに `<br />` で改行。話し言葉を文章体に直す。冗長な繰り返しを削る**
 - 表は `.article-table`。サンプルの数字には caption に「サンプルとして作成」と入れる
