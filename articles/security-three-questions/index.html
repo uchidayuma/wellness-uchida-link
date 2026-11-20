@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>外注先に「セキュリティ大丈夫？」と聞かない。代わりに聞く3つの質問 | 打田裕馬 — フラクショナルCTO</title>
+  <meta name="description" content="外注先に「セキュリティは大丈夫ですか」と聞いても、返ってくるのは「大丈夫です」だけです。社長が代わりに聞く、決めていないと答えられない3つの質問を、システム開発を売る側だった元開発会社社長が説明します。" />
+  <link rel="canonical" href="https://cto.uchida.link/articles/security-three-questions/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="外注先に「セキュリティ大丈夫？」と聞かない。代わりに聞く3つの質問" />
+  <meta property="og:description" content="部品を最後に更新したのはいつか。攻撃や漏れにどう気づくか。漏れたら誰が何をするか。外注先に送る質問の文面つき。" />
+  <meta property="og:url" content="https://cto.uchida.link/articles/security-three-questions/" />
+  <meta property="og:image" content="https://i.ytimg.com/vi/apMHJzF97UA/maxresdefault.jpg" />
+  <meta name="theme-color" content="#fdfcf9" />
+  <link rel="icon" href="../../images/favicon.png" type="image/png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","y2ihwlw86z");</script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "外注先に「セキュリティは大丈夫？」と聞いてはいけない理由と、社長が代わりに聞く3つの質問",
+    "datePublished": "2026-11-21",
+    "dateModified": "2026-11-21",
+    "author": {
+      "@type": "Person",
+      "name": "打田裕馬",
+      "url": "https://cto.uchida.link/"
+    },
+    "mainEntityOfPage": "https://cto.uchida.link/articles/security-three-questions/",
+    "video": {
+      "@type": "VideoObject",
+      "name": "外注先に「セキュリティ大丈夫？」と聞いてはいけない理由｜代わりに聞く3つの質問",
+      "description": "システムの外注先に「セキュリティ大丈夫ですか」と聞くと、必ず「大丈夫です」と返ってきます。代わりに、決めていないと答えられない具体的な質問を3つ紹介します。",
+      "thumbnailUrl": "https://i.ytimg.com/vi/apMHJzF97UA/maxresdefault.jpg",
+      "uploadDate": "2026-11-21",
+      "embedUrl": "https://www.youtube.com/embed/apMHJzF97UA"
+    }
+  }
+  </script>
+</head>
+
+<body class="page-article">
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header">
+    <div class="container">
+      <a href="../../index.html" class="brand">
+        <span class="brand-name">打田裕馬</span>
+        <span class="brand-role">フラクショナルCTO</span>
+      </a>
+      <nav class="global-nav">
+        <a href="../index.html">記事一覧</a>
+        <a href="../../index.html">トップへ</a>
+        <a href="../../index.html#contact" class="btn">無料相談</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="section">
+      <div class="container">
+        <article class="article">
+
+          <p class="article-kicker">社長のためのシステム開発 — セキュリティ</p>
+          <h1>外注先に「セキュリティは大丈夫？」と聞いてはいけない理由と、社長が代わりに聞く3つの質問</h1>
+          <p class="article-meta">2026年11月21日公開 ｜ 打田裕馬（元システム開発会社社長・フラクショナルCTO）｜ 動画 7分</p>
+
+          <div class="article-lead">
+            <p>「大丈夫ですか」ではなく、決めていないと答えられない3つの質問をしてください。</p>
+          </div>
+
+          <div class="article-video" data-video-id="apMHJzF97UA" data-title="外注先に「セキュリティ大丈夫？」と聞いてはいけない理由｜代わりに聞く3つの質問" data-publish-at="2026-11-21T12:00:00+09:00"></div>
+          <p class="article-video-note">記事の内容は動画と同じです。</p>
+
+          <div class="article-body">
+
+            <p>
+              システムの外注先に「セキュリティは大丈夫ですか」と聞くと、必ず「大丈夫です」と返ってきます。<br />
+              代わりに聞く質問は、次の3つです。
+            </p>
+            <ol>
+              <li>システムの部品を、最後に更新したのはいつですか</li>
+              <li>攻撃や情報漏れに、どうやって気づくようにしていますか</li>
+              <li>情報が漏れたとき、誰がいつ何をして、誰に報告しますか</li>
+            </ol>
+            <p>
+              私は以前、システム開発会社を経営し、開発を売る側にいました。<br />
+              その立場から、なぜこの3つなのかを説明します。
+            </p>
+
+            <h2><span class="num">01</span>外注先は「大丈夫」としか答えられない</h2>
+
+            <p>
+              外注先の立場では、「大丈夫です」と答えるしかありません。<br />
+              「大丈夫ではありません」と答えれば、どうなっているのかという話になるからです。<br />
+              聞かれれば、100%「ちゃんとやっています」と返ってきます。
+            </p>
+            <p>
+              ただし、実際に全部できているかは怪しいこともあります。<br />
+              小さい会社ほど、セキュリティは後回しにされがちです。<br />
+              最近は攻撃が増え、意識は高まりました。<br />
+              それでも、セキュリティは頑張ってもお金になりにくい仕事です。
+            </p>
+            <p>
+              だから、直接「大丈夫か」と聞くのはやめてください。<br />
+              代わりに、答えが具体的に返ってくる質問をします。<br />
+              少しだけ専門的な質問ですが、意味は以下で説明します。
+            </p>
+
+            <h2><span class="num">02</span>質問1：システムの部品を、最後に更新したのはいつか</h2>
+
+            <p>
+              システムは、外の会社が作った部品を組み合わせて作られています。<br />
+              車でいえば、エンジンやタイヤを別の会社が作っているのと同じです。<br />
+              この部品を、専門用語でライブラリと呼びます。
+            </p>
+            <p>
+              部品にも、弱点が見つかることがあります。<br />
+              最近の例では、ファイルのアップロード画面から特定の形式のファイルを送ると、システムに勝手に命令を実行させられる弱点がありました。<br />
+              弱点が見つかると、直した版が出ます。<br />
+              その版に入れ替え続ける必要があります。
+            </p>
+            <p>
+              最初の質問は、この入れ替えがきちんと行われているかを確かめるものです。<br />
+              「最後に更新したのはいつですか」と聞けば、日付で答えが返ってきます。
+            </p>
+
+            <h2><span class="num">03</span>質問2：攻撃や情報漏れに、どう気づくか</h2>
+
+            <p>
+              2つ目は、攻撃や情報漏れに気づく仕組みがあるかです。<br />
+              これは実は難しいことです。<br />
+              攻撃が巧妙になり、入られていても気づいていない例はおそらく多くあります。
+            </p>
+            <p>
+              例として、ログインのパスワードを片っ端から試す攻撃を考えます。<br />
+              よくある対策は、同じ接続元から1分間に5回失敗したらブロックする、というものです。<br />
+              裏を返せば、1分間に4回までなら通ります。<br />
+              今は、AIを使って1分間に4回ずつ試し、それを延々と繰り返す攻撃が出てきています。
+            </p>
+            <p>
+              これに気づくには、1分単位だけでなく、1か月単位でも回数を見る必要があります。<br />
+              攻撃と対策は、いたちごっこです。<br />
+              どう気づくようにしているかは、本来は設計書に書かれているべきことです。<br />
+              聞いてみれば、決めているかどうかが分かります。
+            </p>
+
+            <h2><span class="num">04</span>質問3：情報が漏れたとき、誰が何をするか</h2>
+
+            <p>
+              入られないことが一番です。<br />
+              ただ、AIを使った巧妙な攻撃には、防ぎきれない面もあります。<br />
+              そこで3つ目は、漏れが分かったときの動き方です。
+            </p>
+            <p>
+              たとえば、システムをいったん止める。<br />
+              接続元を調べてブロックする。<br />
+              こうした対応は、人が手で行うことも多くあります。
+            </p>
+            <p>
+              見るのは次の3点です。
+            </p>
+            <ul>
+              <li>いつ、誰が、何をするか</li>
+              <li>誰に報告するか</li>
+              <li>担当者が誰であっても、迷わず動けるように決めてあるか</li>
+            </ul>
+            <p>
+              こうした決まりごとは、いざというときに効きます。
+            </p>
+
+            <h2><span class="num">05</span>まとめ</h2>
+            <ul>
+              <li>「大丈夫ですか」とは聞かない。必ず「大丈夫です」と返ってくる</li>
+              <li>部品を最後に更新したのはいつかを聞く</li>
+              <li>攻撃や漏れにどう気づくようにしているかを聞く</li>
+              <li>漏れたら誰がいつ何をして、誰に報告するかを聞く</li>
+            </ul>
+            <p>
+              3つとも具体的な質問なので、決めていなければ答えられません。
+            </p>
+
+          </div>
+
+          <div class="article-action">
+            <p class="article-kicker">明日やること</p>
+            <p>
+              外注先に、3つの質問を送ってください。<br />
+              文面は次のもので足ります。
+            </p>
+            <div class="quote-block">
+              <p>システムの安全面について、3点教えていただけますか。<br />1. システムの部品（ライブラリ）を最後に更新したのはいつですか。<br />2. 攻撃や情報漏れに、どうやって気づくようにしていますか。<br />3. 情報が漏れたとき、誰がいつ何をして、誰に報告しますか。</p>
+            </div>
+            <p class="article-note" style="margin-top: 1.2em;">
+              「決めていませんでした」と返ってくることもあります。<br />
+              その場合は責めずに、一緒に決めるきっかけにしてください。<br />
+              外注先と話し合い、いざというときの動き方を今決めておきます。
+            </p>
+          </div>
+
+          <div class="article-next">
+            <div class="ruled-item">
+              <div>
+                <p class="ruled-item-num">返ってきた答えを、一緒に見てほしいとき</p>
+                <h3>スポット相談 ¥30,000（60分）</h3>
+                <p>
+                  外注先からの回答をもとに、最初から具体的な相談に入ります。<br />
+                  足りない所と、外注先と何を決めればよいかを一緒に整理します。
+                </p>
+              </div>
+              <div>
+                <a href="../../index.html#pricing" class="btn">スポット相談の詳細</a>
+              </div>
+            </div>
+            <div class="ruled-item">
+              <div>
+                <p class="ruled-item-num">まず状況を聞いてほしいとき</p>
+                <h3>無料相談 30分</h3>
+                <p>営業はしません。課題と優先度を整理してお返しします。</p>
+              </div>
+              <div>
+                <a href="https://calendly.com/yumauchida/meet-with-me" target="_blank" rel="noopener" class="btn btn--ghost">30分の無料相談を予約</a>
+              </div>
+            </div>
+          </div>
+
+          <p class="article-note" style="margin-top: 3rem;">
+            突破される会社に共通する原因は、<a href="../no-owner-gets-breached/index.html">システムが突破される会社の共通点</a>で書いています。<br />
+            設計書のもらい方とAIでの読み方は、<a href="../get-the-design-docs/index.html">システム開発の設計書は必ずもらう</a>で書いています。<br />
+            1分間に5回、4回という数字は、仕組みを説明するための例です。
+          </p>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <p class="footer-name">打田裕馬</p>
+          <p class="footer-role">フラクショナルCTO</p>
+        </div>
+        <nav>
+          <a href="../../index.html">トップ</a>
+          <a href="../index.html">記事一覧</a>
+          <a href="../../tokushoho.html">特定商取引法に基づく表記</a>
+          <a href="https://www.youtube.com/@yumaapp" target="_blank">YouTube</a>
+          <a href="https://www.udemy.com/user/uchidayuma/" target="_blank">Udemy</a>
+          <a href="https://github.com/uchidayuma" target="_blank">GitHub</a>
+        </nav>
+      </div>
+      <p class="copyright">&copy; 2026 Yuma Uchida. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../article.js"></script>
+
+</body>
+</html>

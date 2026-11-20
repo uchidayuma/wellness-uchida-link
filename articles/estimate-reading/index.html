@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>システム開発の見積書の読み方と、同じ開発で100万円変わる理由 | 打田裕馬 — フラクショナルCTO</title>
+  <meta name="description" content="同じシステム開発でも、見積もりが100万円変わることがあります。差は技術力ではなく、中身が見えるかどうかです。中身が分かれているか、誰が作るか、質問への反応の3つで見積書を読む方法を、元開発会社社長が説明します。" />
+  <link rel="canonical" href="https://cto.uchida.link/articles/estimate-reading/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="システム開発の見積書の読み方と、同じ開発で100万円変わる理由" />
+  <meta property="og:description" content="一式660万円と内訳つき550万円。2枚の見積書を比べて、中身・体制・質問への反応の3つで読む方法。" />
+  <meta property="og:url" content="https://cto.uchida.link/articles/estimate-reading/" />
+  <meta property="og:image" content="https://i.ytimg.com/vi/HNS9V7mI-FQ/maxresdefault.jpg" />
+  <meta name="theme-color" content="#fdfcf9" />
+  <link rel="icon" href="../../images/favicon.png" type="image/png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","y2ihwlw86z");</script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "システム開発の見積書の読み方と、同じ開発で100万円変わる理由",
+    "datePublished": "2026-08-11",
+    "dateModified": "2026-08-11",
+    "author": {
+      "@type": "Person",
+      "name": "打田裕馬",
+      "url": "https://cto.uchida.link/"
+    },
+    "mainEntityOfPage": "https://cto.uchida.link/articles/estimate-reading/",
+    "video": {
+      "@type": "VideoObject",
+      "name": "同じ開発で100万変わる理由｜システム開発見積書の読み方",
+      "description": "同じ開発で見積もりが100万円変わる理由は、技術力ではなく中身が見えるかどうかです。見積書で見るべき3つのポイントを、見積もりを作る側だった立場から説明します。",
+      "thumbnailUrl": "https://i.ytimg.com/vi/HNS9V7mI-FQ/maxresdefault.jpg",
+      "uploadDate": "2026-08-11",
+      "embedUrl": "https://www.youtube.com/embed/HNS9V7mI-FQ"
+    }
+  }
+  </script>
+</head>
+
+<body class="page-article">
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header">
+    <div class="container">
+      <a href="../../index.html" class="brand">
+        <span class="brand-name">打田裕馬</span>
+        <span class="brand-role">フラクショナルCTO</span>
+      </a>
+      <nav class="global-nav">
+        <a href="../index.html">記事一覧</a>
+        <a href="../../index.html">トップへ</a>
+        <a href="../../index.html#contact" class="btn">無料相談</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="section">
+      <div class="container">
+        <article class="article">
+
+          <p class="article-kicker">社長のためのシステム開発 — 見積書の読み方</p>
+          <h1>システム開発の見積書の読み方と、同じ開発で100万円変わる理由</h1>
+          <p class="article-meta">2026年8月11日公開 ｜ 打田裕馬（元システム開発会社社長・フラクショナルCTO）｜ 動画 5分</p>
+
+          <div class="article-lead">
+            <p>同じ開発の見積もりの差は、技術力ではなく、中身が見えるかどうかで生まれます。</p>
+          </div>
+
+          <div class="article-video">
+            <iframe src="https://www.youtube.com/embed/HNS9V7mI-FQ" title="同じ開発で100万変わる理由｜システム開発見積書の読み方" loading="lazy" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <p class="article-video-note">記事の内容は動画と同じです。</p>
+
+          <div class="article-body">
+
+            <p>
+              同じ開発で、見積もりが100万円変わることがあります。<br />
+              差は技術力ではありません。<br />
+              中身が見えるかどうかです。
+            </p>
+            <p>
+              私は開発会社の社長として、見積もりを作る側にいました。<br />
+              この記事では、技術が分からなくても見られる場所を3つ書きます。<br />
+              金額が高いか安いかの話ではありません。
+            </p>
+
+            <h2><span class="num">01</span>よくある判断は、どれも金額しか見ていない</h2>
+
+            <ul>
+              <li><strong>値切る</strong>。品質が下がるか、断られます。</li>
+              <li><strong>相見積もりで一番安い会社を選ぶ</strong>。安いほうが正しいとは限りません。</li>
+              <li><strong>そのまま通す</strong>。中身は分からないままです。</li>
+            </ul>
+            <p>
+              値切ると、削られるのは保険ではなく品質です。<br />
+              安い見積もりは、リスクの分が乗っていないだけかもしれません。<br />
+              3つとも、中身を見ていません。<br />
+              金額の前に、見る場所があります。
+            </p>
+
+            <h2><span class="num">02</span>同じ開発で、この2枚が届いたら</h2>
+
+            <p>
+              サンプルとして、同じ開発の見積書を2枚作りました。<br />
+              1枚目は「一式」の660万円です。
+            </p>
+
+            <table class="article-table">
+              <caption>見積書A：一式で660万円（サンプルとして作成）</caption>
+              <thead>
+                <tr><th>品名</th><th class="amount">数量</th><th class="amount">金額</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>システム開発</td><td class="amount">1式</td><td class="amount">4,700,000円</td></tr>
+                <tr><td>プロジェクト管理費</td><td class="amount">1式</td><td class="amount">1,000,000円</td></tr>
+                <tr><td>テスト費</td><td class="amount">1式</td><td class="amount">300,000円</td></tr>
+                <tr><td>小計</td><td></td><td class="amount">6,000,000円</td></tr>
+                <tr><td>消費税</td><td></td><td class="amount">600,000円</td></tr>
+                <tr><th>合計</th><th></th><th class="amount">6,600,000円</th></tr>
+              </tbody>
+            </table>
+
+            <p>
+              2枚目は、内訳のある550万円です。<br />
+              人日は、1人が1日働く量のことです。
+            </p>
+
+            <table class="article-table">
+              <caption>見積書B：内訳つきで550万円（サンプルとして作成）</caption>
+              <thead>
+                <tr><th>品名</th><th class="amount">数量</th><th class="amount">単価</th><th class="amount">金額</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>要件定義</td><td class="amount">10人日</td><td class="amount">60,000円</td><td class="amount">600,000円</td></tr>
+                <tr><td>画面設計</td><td class="amount">15人日</td><td class="amount">40,000円</td><td class="amount">600,000円</td></tr>
+                <tr><td>サーバー開発</td><td class="amount">40人日</td><td class="amount">40,000円</td><td class="amount">1,600,000円</td></tr>
+                <tr><td>画面の開発</td><td class="amount">20人日</td><td class="amount">40,000円</td><td class="amount">800,000円</td></tr>
+                <tr><td>テスト</td><td class="amount">15人日</td><td class="amount">40,000円</td><td class="amount">600,000円</td></tr>
+                <tr><td>プロジェクト管理</td><td class="amount">20人日</td><td class="amount">40,000円</td><td class="amount">800,000円</td></tr>
+                <tr><td>小計</td><td></td><td></td><td class="amount">5,000,000円</td></tr>
+                <tr><td>消費税</td><td></td><td></td><td class="amount">500,000円</td></tr>
+                <tr><th>合計</th><th></th><th></th><th class="amount">5,500,000円</th></tr>
+              </tbody>
+            </table>
+
+            <p>
+              見積書Bには、体制の欄もあります。<br />
+              プロジェクトの責任者が誰で経験何年か、開発を誰が担当するか、再委託はなし、と書かれています。
+            </p>
+            <p>
+              高いほうは中身が見えず、安いほうは中身が見えます。<br />
+              高い安いではなく、中身が見えるかどうかの違いです。<br />
+              見るところは3つです。
+            </p>
+
+            <h2><span class="num">03</span>見るもの①　中身が分かれているか</h2>
+
+            <p>
+              見積書Aは、全部が「一式」でした。<br />
+              一式と書いてあること自体が、すぐに駄目というわけではありません。<br />
+              大事なのは、分けてほしいと頼んだときに応じてくれるかどうかです。
+            </p>
+            <p>
+              応じてくれるなら、進め方の都合で一式にまとめていただけです。<br />
+              応じてくれないなら、中身を見せにくい事情があるのかもしれません。<br />
+              作る側の感覚では、分けられないものは見積もっていないのと同じです。
+            </p>
+
+            <h2><span class="num">04</span>見るもの②　誰が作るか</h2>
+
+            <p>
+              見積書Bには体制の欄がありました。<br />
+              金額が同じでも、作る人が違えば結果が変わります。<br />
+              体制の欄があるのは、自分たちで作るつもりがあるということです。
+            </p>
+            <p>
+              再委託（作業を別の会社に回すこと）があると、間に入る会社の取り分が乗ります。<br />
+              問題が起きたときに誰の責任かも、あいまいになります。<br />
+              体制の欄がない見積書なら、誰が作るのかを聞いてかまいません。<br />
+              きちんとした会社ほど、答えてくれます。
+            </p>
+
+            <h2><span class="num">05</span>見るもの③　質問したときの反応</h2>
+
+            <p>
+              「この項目はいくらですか」「なぜこの金額ですか」と聞いてください。<br />
+              反応は、おおむね2つに分かれます。
+            </p>
+            <ul>
+              <li>「技術的なことなので」と返される。中身を説明するつもりがない、と受け取ってよいでしょう。</li>
+              <li>「この部分はこういう理由で」と返される。説明できる高さです。</li>
+            </ul>
+            <p>
+              きちんとした会社は、この工程にはこれだけの作業時間がかかる、と説明できます。<br />
+              説明を全部理解できなくてもかまいません。<br />
+              説明しようとしてくれるかどうかを見てください。
+            </p>
+
+            <h2><span class="num">06</span>まとめ</h2>
+            <ul>
+              <li>中身が分かれているか。分けてほしいと頼んで、応じてくれるか</li>
+              <li>誰が作るか。体制の欄と再委託の有無</li>
+              <li>質問したときの反応。説明しようとしてくれるか</li>
+            </ul>
+            <p>
+              この3つで、中身の見えない見積もりは見分けられます。<br />
+              ただし、金額が妥当かどうかは、作業量の相場を知らないと判断できません。
+            </p>
+
+          </div>
+
+          <div class="article-action">
+            <p class="article-kicker">明日やること</p>
+
+            <p>
+              手元の見積書を出して、3つが確かめられるかを見てください。<br />
+              分かれていない、体制が書いていない、という場合は、開発会社に次のように聞けば足ります。
+            </p>
+            <div class="quote-block">
+              <p>一式になっている項目の内訳を、工程ごとに分けていただけますか。あわせて、担当される方の体制と、再委託の有無を教えてください。</p>
+            </div>
+          </div>
+
+          <div class="article-next">
+            <div class="ruled-item">
+              <div>
+                <p class="ruled-item-num">金額が妥当かどうかまで知りたいとき</p>
+                <h3>見積もりレビュー ¥50,000</h3>
+                <p>
+                  見積書を送っていただければ、3営業日で、妥当・割高・要確認の判定と、開発会社への質問リストをお返しします。<br />
+                  打ち合わせはありません。開発会社には連絡しません。
+                </p>
+              </div>
+              <div>
+                <a href="../../index.html#quote-review" class="btn">見積もりレビューの詳細</a>
+              </div>
+            </div>
+            <div class="ruled-item">
+              <div>
+                <p class="ruled-item-num">まず状況を聞いてほしいとき</p>
+                <h3>無料相談 30分</h3>
+                <p>営業はしません。課題と優先度を整理してお返しします。</p>
+              </div>
+              <div>
+                <a href="https://calendly.com/yumauchida/meet-with-me" target="_blank" rel="noopener" class="btn btn--ghost">30分の無料相談を予約</a>
+              </div>
+            </div>
+          </div>
+
+          <p class="article-note" style="margin-top: 3rem;">
+
+            見積もりが高くなる理由は<a href="../vague-request-quote/">見積もりが高くなる理由と下げ方</a>、毎月の費用は<a href="../maintenance-cost/">保守費用の確かめ方</a>の記事で書いています。<br />
+            動画内および本記事の見積書・表は、サンプルとして作成したものです。実在の会社・契約ではありません。
+          </p>
+
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <p class="footer-name">打田裕馬</p>
+          <p class="footer-role">フラクショナルCTO</p>
+        </div>
+        <nav>
+          <a href="../../index.html">トップ</a>
+          <a href="../index.html">記事一覧</a>
+          <a href="../../tokushoho.html">特定商取引法に基づく表記</a>
+          <a href="https://www.youtube.com/@yumaapp" target="_blank">YouTube</a>
+          <a href="https://www.udemy.com/user/uchidayuma/" target="_blank">Udemy</a>
+          <a href="https://github.com/uchidayuma" target="_blank">GitHub</a>
+        </nav>
+      </div>
+      <p class="copyright">&copy; 2026 Yuma Uchida. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Copilotだけでは情報漏洩を防げない理由｜社長が決めるAIの使い分け | 打田裕馬 — フラクショナルCTO</title>
+  <meta name="description" content="Copilot自体は安全ですが、Copilotだけにした会社では、社員が個人のAIを黙って使い始めます。入れていい情報の線引き、用途ごとのツールの分け方、外に出せない情報の扱いの3つを、企業研修でAI導入を教える元開発会社社長が説明します。" />
+  <link rel="canonical" href="https://cto.uchida.link/articles/copilot-not-enough/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Copilotだけでは情報漏洩を防げない理由｜社長が決めるAIの使い分け" />
+  <meta property="og:description" content="Copilotは安全。問題はカバーできる範囲にある。社員にAIを安全に使わせるために社長が決める3つの基準。" />
+  <meta property="og:url" content="https://cto.uchida.link/articles/copilot-not-enough/" />
+  <meta property="og:image" content="https://i.ytimg.com/vi/W2slVH42t-c/maxresdefault.jpg" />
+  <meta name="theme-color" content="#fdfcf9" />
+  <link rel="icon" href="../../images/favicon.png" type="image/png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","y2ihwlw86z");</script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Copilotだけでは情報漏洩を防げない理由｜社長が決めるAIの使い分け",
+    "datePublished": "2026-08-16",
+    "dateModified": "2026-11-20",
+    "author": {
+      "@type": "Person",
+      "name": "打田裕馬",
+      "url": "https://cto.uchida.link/"
+    },
+    "mainEntityOfPage": "https://cto.uchida.link/articles/copilot-not-enough/",
+    "video": {
+      "@type": "VideoObject",
+      "name": "Copilotだけの会社ほど漏洩リスクが高くなる理由｜AIの正しい使い分け",
+      "description": "Copilot自体は安全です。それでもCopilotだけにした会社ほど、社員が個人のAIを使い始め、情報漏洩のリスクが高くなります。社員にAIを安全に使わせる3つの決めごとを説明します。",
+      "thumbnailUrl": "https://i.ytimg.com/vi/W2slVH42t-c/maxresdefault.jpg",
+      "uploadDate": "2026-08-16",
+      "embedUrl": "https://www.youtube.com/embed/W2slVH42t-c"
+    }
+  }
+  </script>
+</head>
+
+<body class="page-article">
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header">
+    <div class="container">
+      <a href="../../index.html" class="brand">
+        <span class="brand-name">打田裕馬</span>
+        <span class="brand-role">フラクショナルCTO</span>
+      </a>
+      <nav class="global-nav">
+        <a href="../index.html">記事一覧</a>
+        <a href="../../index.html">トップへ</a>
+        <a href="../../index.html#contact" class="btn">無料相談</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="section">
+      <div class="container">
+        <article class="article">
+
+          <p class="article-kicker">社長のためのAI導入 — ツールの使い分け</p>
+          <h1>Copilotは安全でも、情報漏洩は防げない。社員のAI利用で社長が決める3つの使い分け</h1>
+          <p class="article-meta">2026年8月16日公開 ｜ 打田裕馬（元システム開発会社社長・フラクショナルCTO）｜ 動画 8分</p>
+
+          <div class="article-lead">
+            <p>Copilot自体は安全です。問題は、Copilotだけでは社員の仕事をカバーしきれないことにあります。</p>
+          </div>
+
+          <div class="article-video">
+            <iframe src="https://www.youtube.com/embed/W2slVH42t-c" title="Copilotだけの会社ほど漏洩リスクが高くなる理由｜AIの正しい使い分け" loading="lazy" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <p class="article-video-note">記事の内容は動画と同じです。</p>
+
+          <div class="article-body">
+
+            <p>
+              社員にAIを使わせたい。<br />
+              でも、情報が漏れるのが怖い。<br />
+              企業研修でAIの導入を教えていると、この板挟みにいる社長によく会います。
+            </p>
+            <p>
+              ここで扱うのは、Microsoft 365のCopilotです。<br />
+              WordやTeamsに組み込まれているAIで、プログラマー向けのGitHub Copilotとは別のものです。<br />
+              私は研修先で、Copilotだけを入れた会社ほど、別のところで漏洩のリスクが生まれるのを何度も見てきました。<br />
+              その仕組みと、防ぐために社長が決めることを順に書きます。
+            </p>
+
+            <h2><span class="num">01</span>ありがちな判断は2つ。どちらも危ない</h2>
+
+            <p>
+              1つ目は、全面禁止です。<br />
+              怖いから使わせない、という判断です。<br />
+              気持ちは分かりますが、これが一番危険です。
+            </p>
+            <p>
+              禁止しても、社員は仕事を早く終わらせたいので、個人のアカウントで無料のAIを黙って使い始めます。<br />
+              会社の目が届かないところに、顧客の情報が入っていきます。
+            </p>
+            <p>
+              2つ目は、既存の契約のついでに入れる判断です。<br />
+              Googleのアカウントがあるから、Gemini。<br />
+              Microsoftを契約しているから、Copilot。<br />
+              実際にはこのパターンが一番多いと感じています。
+            </p>
+            <p>
+              先に正確に書いておくと、Copilot自体は安全なツールです。<br />
+              社内の文書は、自社が契約しているMicrosoftの環境の中で処理され、外には出ません。<br />
+              ただし、これは正しく設定されていることが前提です。<br />
+              契約の種類や管理画面の設定によって、条件は変わります。
+            </p>
+            <p>
+              落とし穴は、安全なツールを入れたことで安心し、使い分けもルールも決めないことです。<br />
+              Geminiでも同じことが起きます。<br />
+              Googleだから大丈夫、で考えが止まってしまいます。
+            </p>
+
+            <h2><span class="num">02</span>Copilotだけでは足りない理由</h2>
+
+            <p>
+              Copilotの本領は、社内の文書を探して要約することです。<br />
+              考える力や文章を作る力は、ChatGPTやClaudeの上位のモデルのほうが上です。<br />
+              Copilotを悪く言いたいのではなく、役割が違うという話です。
+            </p>
+            <p>
+              社員がCopilotに聞いても思った答えが返ってこないと、別のAIを探し始めます。<br />
+              ここで、効率の話が安全の話に変わります。<br />
+              足りない分を、社員が自分で埋め始めるからです。
+            </p>
+            <p>
+              会社が把握していないところでAIが使われる状態を、シャドーAIと呼びます。<br />
+              エルテスの調査（2026年1月）では、生成AIの利用者のおよそ5人に1人が、このリスクに当てはまるとされています。
+            </p>
+            <p>
+              動画では、架空の顧客名簿を個人のAIに読ませる場面を再現しています。<br />
+              名簿の画像を渡して、今月フォローすべき先を優先順に並べてと頼みます。<br />
+              答えはすぐに返ってきて、仕事は早く終わります。<br />
+              ただ、その時点で顧客名簿は会社の外のサーバーに渡っています。
+            </p>
+            <p>
+              社員に悪意はありません。<br />
+              このくらいなら大丈夫だろう、と思って貼り付けるだけです。<br />
+              問題は社員ではなく、使い分けを決めていない会社の側にあります。
+            </p>
+
+            <h2><span class="num">03</span>決めること① 入れていい情報と、いけない情報</h2>
+
+            <p>
+              線は、契約と法令の上で社外に出してよい情報かどうかで引きます。<br />
+              迷ったら入れない、と決めておけば、事故のほとんどは防げます。
+            </p>
+            <p>
+              AIに学習されるかどうかで判断する人は多いのですが、それは条件の1つでしかありません。<br />
+              顧客と秘密保持の契約を結んでいれば、学習されるかどうかに関係なく、外に出すこと自体が問題になりえます。<br />
+              個人情報は、社外のサービスに渡した時点で別のルールがかかります。
+            </p>
+
+            <table class="article-table">
+              <caption>線引きの例（一般的な目安。実際の可否は各社の契約によって変わります）</caption>
+              <thead>
+                <tr><th>情報</th><th>AIに入れてよいか</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>社内の会議の議事録</td><td>入れてよい</td></tr>
+                <tr><td>顧客との打ち合わせの議事録</td><td>契約を確認してから</td></tr>
+                <tr><td>契約書</td><td>原則として入れない</td></tr>
+              </tbody>
+            </table>
+
+            <p>
+              ここで示しているのは判断の軸だけです。<br />
+              個別の情報を出してよいかは、契約書の中身と、法務の専門家の判断になります。
+            </p>
+
+            <h2><span class="num">04</span>決めること② 用途でツールを分ける</h2>
+
+            <p>
+              社内の文書を探す・要約する仕事はCopilotに任せます。<br />
+              考える・文章を作る・相談相手にする仕事は、ChatGPTやClaudeの有料版を会社で契約して使わせます。
+            </p>
+            <p>
+              有料版にする理由は、会社での利用を前提に作られているからです。<br />
+              無料版は、入れた内容がAIの学習に使われる可能性があります。<br />
+              細かい条件はサービスやプラン、時期によって変わるので、契約前に確認してください。
+            </p>
+            <p>
+              費用は1人あたり月に数千円です。<br />
+              シャドーAIで事故が起きたときの損失と比べれば、安い出費です。<br />
+              一番危ないのは、無料版をとりあえず使わせることです。<br />
+              有料版を契約するという判断そのものが、情報を守る対策になります。
+            </p>
+
+            <h2><span class="num">05</span>決めること③ 外に出せない情報には、別の方法がある</h2>
+
+            <p>
+              契約や法令の上で、どうしても社外に出せない情報があります。<br />
+              その情報にもAIを使いたい場合は、社内で完結するAIという選択肢があります。<br />
+              専門用語ではローカルLLMと呼びます。
+            </p>
+            <p>
+              私は企業研修で、この環境の作り方を教えています。<br />
+              ただし、全社に必要なものではありません。<br />
+              本当に必要な場面は限られます。<br />
+              どの業務のどの情報が対象になるかを見極め、作って運用するには専門の知識が要ります。<br />
+              ここでは、そういう選択肢があると知っておくだけで足ります。
+            </p>
+
+            <h2><span class="num">06</span>まとめ</h2>
+            <ul>
+              <li>Copilot自体は安全。問題は、Copilotだけでは仕事をカバーしきれないこと</li>
+              <li>入れていい情報と、いけない情報を決める。軸は契約と法令。迷ったら入れない</li>
+              <li>用途でツールを分ける。検索と要約はCopilot、考える仕事は有料版のChatGPTやClaude</li>
+              <li>外に出せない情報には、社内で完結するAIという別の方法がある</li>
+            </ul>
+            <p>
+              3つとも、社長が決められることです。<br />
+              技術の知識は要りません。
+            </p>
+
+          </div>
+
+          <div class="article-action">
+            <p class="article-kicker">明日やること</p>
+            <p>
+              社内の議事録・顧客との議事録・契約書の3つについて、AIに入れてよいかを決めてください。<br />
+              決めたら、社員に一言で伝えます。<br />
+              文面は次のもので足ります。
+            </p>
+            <div class="quote-block">
+              <p>AIに入れてよい情報を決めました。社内の議事録は可、顧客との議事録は確認してから、契約書は不可です。迷ったら入れずに、私に聞いてください。</p>
+            </div>
+            <p class="article-note" style="margin-top: 1.2em;">
+              禁止ではなく、使ってよい範囲を示すのがねらいです。<br />
+              範囲が分かれば、社員は会社が契約したAIを安心して使えます。
+            </p>
+          </div>
+
+          <div class="article-next">
+            <div class="ruled-item">
+              <div>
+                <p class="ruled-item-num">自社の業務に当てはめて切り分けたいとき</p>
+                <h3>スポット相談 ¥30,000（60分）</h3>
+                <p>
+                  どの業務にどの情報が乗っているか、どれをどのAIに任せるかを、60分で一緒に整理します。<br />
+                  社内で完結するAIが要るかどうかの見極めも、この場で扱えます。
+                </p>
+              </div>
+              <div>
+                <a href="../../index.html#pricing" class="btn">料金とプランの詳細</a>
+              </div>
+            </div>
+            <div class="ruled-item">
+              <div>
+                <p class="ruled-item-num">まず状況を聞いてほしいとき</p>
+                <h3>無料相談 30分</h3>
+                <p>営業はしません。課題と優先度を整理してお返しします。</p>
+              </div>
+              <div>
+                <a href="https://calendly.com/yumauchida/meet-with-me" target="_blank" rel="noopener" class="btn btn--ghost">30分の無料相談を予約</a>
+              </div>
+            </div>
+          </div>
+
+          <p class="article-note" style="margin-top: 3rem;">
+            社員にAIを使わせる前に決める3つのルールは、<a href="../ai-first-rules/">別の記事</a>で書いています。<br />
+            動画内の顧客名簿は架空のものです。<br />
+            Copilotやほかのサービスの仕様は、プランや時期によって変わります。導入の際は最新の公式情報を確認してください。
+          </p>
+
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <p class="footer-name">打田裕馬</p>
+          <p class="footer-role">フラクショナルCTO</p>
+        </div>
+        <nav>
+          <a href="../../index.html">トップ</a>
+          <a href="../index.html">記事一覧</a>
+          <a href="../../tokushoho.html">特定商取引法に基づく表記</a>
+          <a href="https://www.youtube.com/@yumaapp" target="_blank">YouTube</a>
+          <a href="https://www.udemy.com/user/uchidayuma/" target="_blank">Udemy</a>
+          <a href="https://github.com/uchidayuma" target="_blank">GitHub</a>
+        </nav>
+      </div>
+      <p class="copyright">&copy; 2026 Yuma Uchida. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

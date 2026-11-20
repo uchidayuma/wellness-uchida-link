@@ -1854,3 +1854,23 @@ textarea {
     grid-template-columns: 1fr;
   }
 }
+
+/* 公開予約中の動画の枠（article.js が差し込む） */
+.article-video-pending {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+  color: var(--paper);
+}
+
+.article-video-pending .article-kicker {
+  color: var(--paper-2);
+  margin-bottom: 0.6em;
+}
+
+.article-video-pending p {
+  color: var(--paper);
+}
